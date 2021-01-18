@@ -118,4 +118,14 @@ data = tf.data.Dataset.from_tensor_slices((输入特征，标签))
         <tag>机器学习</tag>
       </tags>
   </entry>
+  <entry>
+    <title>MyVue</title>
+    <url>/2021/01/17/Vue/</url>
+    <content><![CDATA[<h1 id=""><a href="#" class="headerlink" title=""></a></h1><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h2</span> <span class="attr">v-text</span>=<span class="string">&quot;message&quot;</span>&gt;</span> //直接将整个标签变为message的内容</span><br><span class="line">    &#123;&#123;message + &quot;!!&quot;&#125;&#125;深圳 //只讲大括号内的内容变为message(允许字符串拼接)</span><br><span class="line"><span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h2</span> <span class="attr">v-html</span>=<span class="string">&quot;content&quot;</span>&gt;</span></span><br><span class="line">    </span><br><span class="line"><span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">srcpit</span> <span class="attr">src</span> = <span class="string">&quot;https://cdn.jsdelivr.net/npm/vue/dist/vue.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">srcpit</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">	<span class="keyword">var</span> app = <span class="keyword">new</span> Vue&#123;</span></span><br><span class="line"><span class="javascript">        el:<span class="string">&quot;#app&quot;</span>,</span></span><br><span class="line">        data:&#123;</span><br><span class="line"><span class="javascript">            message:<span class="string">&quot;黑马&quot;</span></span></span><br><span class="line"><span class="handlebars"><span class="xml">            content:&quot;<span class="tag">&lt;<span class="name">a</span> <span class="attr">herf</span>=<span class="string">&#x27;http://www.itheima.com&#x27;</span>&gt;</span>黑马程序员<span class="tag">&lt;/<span class="name">a</span>&gt;</span>&quot;</span></span></span><br><span class="line">        &#125;</span><br><span class="line">        method</span><br><span class="line">    &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">v-text;v-html;</span><br><span class="line">v-on:click(或者monseenter(或者dblclick))</span><br></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>前端</tag>
+      </tags>
+  </entry>
 </search>
