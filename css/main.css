@@ -2585,6 +2585,7 @@ mark.search-keyword {
   justify-content: space-between;
   margin: 0 auto;
   width: calc(100% - 20px);
+  opacity: 0.9;
 }
 @media (min-width: 1200px) {
   .main {
@@ -2837,7 +2838,7 @@ mark.search-keyword {
   }
 }
 body {
-  background: url("/images/yourname.jpg");
+  background: url("/images/85045554_p0.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: 50% 50%;
@@ -2879,7 +2880,7 @@ body {
   margin-top: 10px;
   margin-bottom: 20px;
   padding: 30px 20px 20px 30px;
-  background: rgba(255,255,255,0.8);
+  background: rgba(255,255,255,0.9);
 }
 .post-block:hover {
   transition-property: all;
