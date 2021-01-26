@@ -40,7 +40,7 @@
 <meta property="og:image" content="http://windsfox.github.io/2020/12/27/Tenserflow/image-20210116202108770.png">
 <meta property="og:image" content="http://windsfox.github.io/2020/12/27/Tenserflow/image-20210119184157249.png">
 <meta property="article:published_time" content="2020-12-27T12:59:00.948Z">
-<meta property="article:modified_time" content="2021-01-19T14:05:55.667Z">
+<meta property="article:modified_time" content="2021-01-20T13:18:42.661Z">
 <meta property="article:author" content="windsfox">
 <meta property="article:tag" content="深度学习平台">
 <meta name="twitter:card" content="summary">
@@ -213,7 +213,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">7</span>
+          <span class="site-state-item-count">10</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -226,7 +226,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-count">8</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -304,7 +304,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-01-19 22:05:55" itemprop="dateModified" datetime="2021-01-19T22:05:55+08:00">2021-01-19</time>
+        <time title="修改时间：2021-01-20 21:18:42" itemprop="dateModified" datetime="2021-01-20T21:18:42+08:00">2021-01-20</time>
       </span>
 
   
@@ -349,7 +349,8 @@
 <h1 id="神经网络参数优化器"><a href="#神经网络参数优化器" class="headerlink" title="神经网络参数优化器"></a>神经网络参数优化器</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Sgd Sgdm Adagrad Rmsprop Adam</span><br></pre></td></tr></table></figure>
 <p>本质上就是不同的参数更新方式</p>
 <h1 id="六步法搭建网络八股"><a href="#六步法搭建网络八股" class="headerlink" title="六步法搭建网络八股"></a>六步法搭建网络八股</h1><p><img src="/2020/12/27/Tenserflow/image-20210119184157249.png" alt="image-20210119184157249"></p>
-<h2 id="model-tf-keras-models-Sequential-网络结构"><a href="#model-tf-keras-models-Sequential-网络结构" class="headerlink" title="model =  tf.keras.models.Sequential([网络结构])"></a>model =  tf.keras.models.Sequential([网络结构])</h2><h3 id="网络结构举例"><a href="#网络结构举例" class="headerlink" title="网络结构举例"></a>网络结构举例</h3><h4 id="拉直层：tf-keras-layers-Flatten"><a href="#拉直层：tf-keras-layers-Flatten" class="headerlink" title="拉直层：tf.keras.layers.Flatten()"></a>拉直层：tf.keras.layers.Flatten()</h4><h4 id="全连接层：tf-keras-layers-Dense-神经元个数，activation-“激活函数”-kernel-regularizer-哪儿种正则化"><a href="#全连接层：tf-keras-layers-Dense-神经元个数，activation-“激活函数”-kernel-regularizer-哪儿种正则化" class="headerlink" title="全连接层：tf.keras.layers.Dense(神经元个数，activation = “激活函数”,kernel_regularizer=哪儿种正则化)"></a>全连接层：tf.keras.layers.Dense(神经元个数，activation = “激活函数”,kernel_regularizer=哪儿种正则化)</h4>
+<h2 id="model-tf-keras-models-Sequential-网络结构"><a href="#model-tf-keras-models-Sequential-网络结构" class="headerlink" title="model =  tf.keras.models.Sequential([网络结构])"></a>model =  tf.keras.models.Sequential([网络结构])</h2><h3 id="网络结构举例"><a href="#网络结构举例" class="headerlink" title="网络结构举例"></a>网络结构举例</h3><h4 id="拉直层：tf-keras-layers-Flatten"><a href="#拉直层：tf-keras-layers-Flatten" class="headerlink" title="拉直层：tf.keras.layers.Flatten()"></a>拉直层：tf.keras.layers.Flatten()</h4><h4 id="全连接层：tf-keras-layers-Dense-神经元个数，activation-“激活函数”-kernel-regularizer-哪儿种正则化"><a href="#全连接层：tf-keras-layers-Dense-神经元个数，activation-“激活函数”-kernel-regularizer-哪儿种正则化" class="headerlink" title="全连接层：tf.keras.layers.Dense(神经元个数，activation = “激活函数”,kernel_regularizer=哪儿种正则化)"></a>全连接层：tf.keras.layers.Dense(神经元个数，activation = “激活函数”,kernel_regularizer=哪儿种正则化)</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">model.fit(训练集的输入特征，训练集的标签</span><br><span class="line">			batch_size&#x3D;,epochs&#x3D;,</span><br><span class="line">			validation_data&#x3D;(测试集的输入特征，测试集的标签)，</span><br><span class="line">			validation_split&#x3D;从训练集划分多少b比例给测试集，</span><br><span class="line">			validation_freq&#x3D;多少次epoch测试一次)</span><br><span class="line">model.summary() 打印出网络结构和参数统计</span><br></pre></td></tr></table></figure>
+
     </div>
 
     

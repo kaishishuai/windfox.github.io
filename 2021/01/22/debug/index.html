@@ -23,16 +23,21 @@
     var NexT = window.NexT || {};
     var CONFIG = {"hostname":"windsfox.github.io","root":"/","images":"/images","scheme":"Pisces","version":"8.1.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":true}};
   </script>
-<meta property="og:type" content="website">
-<meta property="og:title" content="windsfoxの博客">
-<meta property="og:url" content="http://windsfox.github.io/tags/%E5%9F%BA%E7%A1%80/index.html">
+<meta name="description" content="步出和回退的区别：  123步出：将一个方法体剩下的所有的代码走完，回到调用它的层级的下一条语句回退：回退到一个函数调用的时候的语句区别，一个是往前走完一个函数，一个是退出一个函数（没走） 条件断点：右键断点，当需要条件符合的时候程序才会停止 多线程调试：右键断点：将all改成Thread，挂起调试，这样多个线程到该断点都会停下来">
+<meta property="og:type" content="article">
+<meta property="og:title" content="debug">
+<meta property="og:url" content="http://windsfox.github.io/2021/01/22/debug/index.html">
 <meta property="og:site_name" content="windsfoxの博客">
+<meta property="og:description" content="步出和回退的区别：  123步出：将一个方法体剩下的所有的代码走完，回到调用它的层级的下一条语句回退：回退到一个函数调用的时候的语句区别，一个是往前走完一个函数，一个是退出一个函数（没走） 条件断点：右键断点，当需要条件符合的时候程序才会停止 多线程调试：右键断点：将all改成Thread，挂起调试，这样多个线程到该断点都会停下来">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-01-22T08:09:01.000Z">
+<meta property="article:modified_time" content="2021-01-22T08:38:04.664Z">
 <meta property="article:author" content="windsfox">
+<meta property="article:tag" content="工具">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="http://windsfox.github.io/tags/%E5%9F%BA%E7%A1%80/">
+<link rel="canonical" href="http://windsfox.github.io/2021/01/22/debug/">
 
 
 <script class="page-configurations">
@@ -40,11 +45,11 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
-<title>标签: 基础 | windsfoxの博客</title>
+<title>debug | windsfoxの博客</title>
   
 
 
@@ -246,50 +251,100 @@
 </noscript>
 
 
-    <div class="main-inner tag posts-collapse">
+    <div class="main-inner post posts-expand">
 
 
   
-  
-  
-  <div class="post-block">
-    <div class="post-content">
-      <div class="collection-title">
-        <h2 class="collection-header">基础
-          <small>标签</small>
-        </h2>
-      </div>
 
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://windsfox.github.io/2021/01/22/debug/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/kong.jpg">
+      <meta itemprop="name" content="windsfox">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="windsfoxの博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          debug
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
       
-    <div class="collection-year">
-      <span class="collection-header">2020</span>
+
+      <time title="创建时间：2021-01-22 16:09:01 / 修改时间：16:38:04" itemprop="dateCreated datePublished" datetime="2021-01-22T16:09:01+08:00">2021-01-22</time>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>步出和回退的区别：</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">步出：将一个方法体剩下的所有的代码走完，回到调用它的层级的下一条语句</span><br><span class="line">回退：回退到一个函数调用的时候的语句</span><br><span class="line">区别，一个是往前走完一个函数，一个是退出一个函数（没走）</span><br></pre></td></tr></table></figure>
+<p>条件断点：右键断点，当需要条件符合的时候程序才会停止</p>
+<p>多线程调试：右键断点：将all改成Thread，挂起调试，这样多个线程到该断点都会停下来</p>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2020-12-25T15:32:43+08:00"
-              content="2020-12-25">
-          12-25
-        </time>
-      </div>
+    
+    
+    
 
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/12/25/MyJava/" itemprop="url">
-            <span itemprop="name">Java学习</span>
-          </a>
-      </div>
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E5%B7%A5%E5%85%B7/" rel="tag"># 工具</a>
+          </div>
 
-      
-    </header>
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2021/01/20/%E7%88%AC%E8%99%AB%E5%AD%A6%E4%B9%A0/" rel="prev" title="My Web Crawlers">
+                  <i class="fa fa-chevron-left"></i> My Web Crawlers
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2021/01/25/MyLinux/" rel="next" title="MyLinux">
+                  MyLinux <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
   </article>
+</div>
 
-    </div>
-  </div>
-  
-  
-  
+
+
+
+
 
 
 <script>

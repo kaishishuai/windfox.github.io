@@ -197,7 +197,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">7</span>
+          <span class="site-state-item-count">10</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -210,7 +210,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-count">8</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -247,6 +247,334 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://windsfox.github.io/2021/01/25/MyLinux/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/kong.jpg">
+      <meta itemprop="name" content="windsfox">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="windsfoxの博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/01/25/MyLinux/" class="post-title-link" itemprop="url">MyLinux</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-01-25 10:21:09" itemprop="dateCreated datePublished" datetime="2021-01-25T10:21:09+08:00">2021-01-25</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-01-26 21:54:08" itemprop="dateModified" datetime="2021-01-26T21:54:08+08:00">2021-01-26</time>
+      </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="第一章：基础篇"><a href="#第一章：基础篇" class="headerlink" title="第一章：基础篇"></a>第一章：基础篇</h1><h2 id="1-网络连接的三种模式："><a href="#1-网络连接的三种模式：" class="headerlink" title="1.网络连接的三种模式："></a>1.网络连接的三种模式：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">-桥接模式：虚拟系统可以和外部系统通信，但容易照成IP冲突</span><br><span class="line">-NAT模式（网络地址转换模式）：不照成IP冲突</span><br><span class="line">-主机模式：独立的系统</span><br></pre></td></tr></table></figure>
+<h2 id="2-克隆"><a href="#2-克隆" class="headerlink" title="2.克隆"></a>2.克隆</h2><ol>
+<li>关闭挂起或者正在运行的虚拟机。</li>
+<li>右键虚拟机-》管理-》克隆——–》创建完整克隆</li>
+</ol>
+<h2 id="3-快照"><a href="#3-快照" class="headerlink" title="3.快照"></a>3.快照</h2><p>右键虚拟机-》快照-》拍摄快照</p>
+<p><img src="/2021/01/25/MyLinux/image-20210126131605999.png" alt="image-20210126131605999"></p>
+<p>右键虚拟机-》快照-》快照管理</p>
+<h2 id="4-vmtools"><a href="#4-vmtools" class="headerlink" title="4.vmtools"></a>4.vmtools</h2><p>可以和主机系统共享文件夹</p>
+<p>右键虚拟系统-》设置-》选项-》共享文件夹-》总是启用-》添加</p>
+<p>ps：一般工作中共享文件是使用远程方式完成的</p>
+<h2 id="5-目录结构"><a href="#5-目录结构" class="headerlink" title="5.目录结构"></a>5.目录结构</h2><p>在linux里一切皆为文件，硬件也映射为一个文件</p>
+<p>根目录下的一些子目录：</p>
+<ol>
+<li>bin【常用】：存放常用的命令</li>
+<li>sbin：存放系统管理员使用的系统管理程序</li>
+<li>home：存放普通用户的主目录，在Linux中每个用户都有一个自己的子目录</li>
+<li>root：管理员目录：只能管理员进入</li>
+<li>lib：开机所需要最基本的动态链接库，起作用类似于win里的dll文件，所有的应用程序都需要用到这些共享库</li>
+<li>lost+found：这个目录一般情况下是空的，当系统非法关机后，这里就存放了一些文件（隐藏了，需要在终端打开）</li>
+<li>usr【常用】：用于存放很多应用程序和重要文件，类似于win下的program files</li>
+<li>etc【常用】：系统管理所需要的配置文件和子目录，比如安装mysql数据库 my.conf</li>
+<li>boot【常用】：启动linux的一些核心文件，包括一些链接文件和镜像文件</li>
+<li>proc【别动】：虚拟的目录，是系统内存的映射，放稳这个目录获取系统信息</li>
+<li>srv【别动】：service的缩写，存放一些服务启动后需要提取的数据</li>
+<li>sys【别动】：Linux2.6内核的一个很大变化，安装2.6内核中新出现的一个文件系统sysfs=》【】</li>
+<li>tmp：存放一些临时文件</li>
+<li>dev：类似于win的设备管理器，所有硬件用文件形式存储</li>
+<li>media【常用】：linux系统自动识别设备，并把识别到的设备挂载到这个目录下</li>
+<li>mnt【常用】：让用户可以临时<strong>挂载</strong>别的文件系统，例如：myshare</li>
+<li>opt ：给主机额外<strong>安装软件</strong>所摆放的目录，利于oracle数据库就可放在该目录下，默认为空</li>
+</ol>
+<h2 id="6-远程登录"><a href="#6-远程登录" class="headerlink" title="6.远程登录"></a>6.远程登录</h2><p>客户端：Xshell和Xftp</p>
+<p>先找到linux系统在公网上的ip地址：（在终端使用命令：ifconfig）</p>
+<p><img src="/2021/01/25/MyLinux/image-20210126213436827.png" alt="image-20210126213436827"></p>
+<p>甚至reboot指令也能生效，重启linux系统</p>
+<p><img src="/2021/01/25/MyLinux/image-20210126213248577.png" alt="image-20210126213248577"></p>
+<h2 id="7-vi和vim"><a href="#7-vi和vim" class="headerlink" title="7.vi和vim"></a>7.vi和vim</h2><h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><p>vi：linux自带的一种文本编辑器</p>
+<ol>
+<li><p>vim Hello.java（命令）</p>
+</li>
+<li><p>进入文件后输入i，I,o,O,a,A,r,R中的任何一个字母才会进入编辑模式</p>
+<p><img src="/2021/01/25/MyLinux/image-20210126214359934.png" alt="image-20210126214359934"></p>
+</li>
+<li><p>切换刀命令行：esc：wq（回车）</p>
+</li>
+</ol>
+<h3 id="各种模式的切换"><a href="#各种模式的切换" class="headerlink" title="各种模式的切换"></a>各种模式的切换</h3><p><img src="/2021/01/25/MyLinux/image-20210126214614149.png" alt="image-20210126214614149"></p>
+<p><img src="/2021/01/25/MyLinux/image-20210126214854026.png" alt="image-20210126214854026"></p>
+<h2 id="8-Linux基础命令"><a href="#8-Linux基础命令" class="headerlink" title="8.Linux基础命令"></a>8.Linux基础命令</h2><p><img src="/2021/01/25/MyLinux/image-20210126215402555.png" alt="image-20210126215402555"></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://windsfox.github.io/2021/01/22/debug/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/kong.jpg">
+      <meta itemprop="name" content="windsfox">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="windsfoxの博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/01/22/debug/" class="post-title-link" itemprop="url">debug</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2021-01-22 16:09:01 / 修改时间：16:38:04" itemprop="dateCreated datePublished" datetime="2021-01-22T16:09:01+08:00">2021-01-22</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>步出和回退的区别：</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">步出：将一个方法体剩下的所有的代码走完，回到调用它的层级的下一条语句</span><br><span class="line">回退：回退到一个函数调用的时候的语句</span><br><span class="line">区别，一个是往前走完一个函数，一个是退出一个函数（没走）</span><br></pre></td></tr></table></figure>
+<p>条件断点：右键断点，当需要条件符合的时候程序才会停止</p>
+<p>多线程调试：右键断点：将all改成Thread，挂起调试，这样多个线程到该断点都会停下来</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://windsfox.github.io/2021/01/20/%E7%88%AC%E8%99%AB%E5%AD%A6%E4%B9%A0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/kong.jpg">
+      <meta itemprop="name" content="windsfox">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="windsfoxの博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/01/20/%E7%88%AC%E8%99%AB%E5%AD%A6%E4%B9%A0/" class="post-title-link" itemprop="url">My Web Crawlers</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-01-20 21:19:32" itemprop="dateCreated datePublished" datetime="2021-01-20T21:19:32+08:00">2021-01-20</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-01-24 22:12:50" itemprop="dateModified" datetime="2021-01-24T22:12:50+08:00">2021-01-24</time>
+      </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="第一章：requests模块"><a href="#第一章：requests模块" class="headerlink" title="第一章：requests模块"></a>第一章：requests模块</h1><h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><ol>
+<li>导入requests模块</li>
+<li>指定url</li>
+<li>UA伪装</li>
+<li>参数params</li>
+<li>response获取爬取结果</li>
+<li>持久化存储（list_data = response.text(json之类的)）</li>
+</ol>
+<p>ps：response.text和response.json()一个有括号一个没有括号</p>
+<h1 id="第二章：数据解析"><a href="#第二章：数据解析" class="headerlink" title="第二章：数据解析"></a>第二章：数据解析</h1><h2 id="聚焦爬虫："><a href="#聚焦爬虫：" class="headerlink" title="聚焦爬虫："></a>聚焦爬虫：</h2><p>爬取页面中指定的内容。</p>
+<p>编码流程：</p>
+<ol>
+<li>指定url</li>
+<li>发起请求</li>
+<li>获取相应数据</li>
+<li>数据解析</li>
+<li>持久化存储</li>
+</ol>
+<h2 id="数据解析分类"><a href="#数据解析分类" class="headerlink" title="数据解析分类"></a>数据解析分类</h2><ol>
+<li><p>正则：ex =(填div中的对应内容，使用（.<em>?）获取想得到的标签，或者标签里的属性，多余的数据用.</em>?省略)</p>
+</li>
+<li><p>bx4：实例化BeautifulSoup：(from bs4 import BeautifulSoup)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">#将本地的html文档的数据加载到该对象中</span><br><span class="line">fp &#x3D; open(&#39;.&#x2F;test.html&#39;,&#39;r&#39;,encoding &#x3D;&#39;utf-8&#39;)</span><br><span class="line">soup &#x3D; BeautifulSoup(fp,&#39;lxml&#39;)</span><br><span class="line">print(soup)</span><br><span class="line">#网页中的html对象</span><br><span class="line">page_text &#x3D; response.text</span><br><span class="line">soup &#x3D; BeautifulSoup(page_text,&#39;lxml&#39;)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">soup.tagname  #返回该标签名第一次出现的那个标签</span><br><span class="line">soup.find(&#39;div&#39;，class_&#x3D; &#39;song&#39;) #返回该属性的div</span><br><span class="line">soup.find_all(&#39;a&#39;)</span><br><span class="line"></span><br><span class="line">select(&#39;某种选择器（id,class,标签。。。。选择器))，返回的是一个列表</span><br><span class="line">soup.select(&#39;.tang&gt;ul&gt;li&gt;a&#39;)[0] #拿到a标签列表中的第一个a标签</span><br><span class="line">soup.select(&#39;.tang&gt;ul&gt; a&#39;)[0] #空格表示多个层级</span><br><span class="line">soup.a.text&#x2F;get_text&#x2F;string #string只能获取该标签下的直系文本内容，text获取全部文本内容</span><br><span class="line">soup.a[&#39;href&#39;] # 获取标签中的属性值</span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ol>
+<ol start="3">
+<li><p>xpath（重点，通用性强）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">1.实例化一个etree对象，并且需要将被解析的页面源码数据加载到该对象中</span><br><span class="line">2.调用etree对象中的xpath种方法结合xpath表达式实现标签的定位和内容的捕获</span><br><span class="line">3.实例化对象：etree.parse(filepath)(本地)；etree.HTML（page_text）（网页）</span><br><span class="line">4.xpath（&#39;xpath表达式&#39;）：</span><br><span class="line">	r &#x3D; tree.xpath(&#39;&#x2F;html&#x2F;body&#x2F;div&#39;) #返回一个列表</span><br><span class="line">	r &#x3D; tree.xpath(&#39;&#x2F;html&#x2F;&#x2F;div&#39;) #两个斜杠表示多个层级</span><br><span class="line">	r &#x3D; tree.xpath(&#39;&#x2F;&#x2F;div[@class&#x3D;&#39;song&#39;]&#x2F;p[3]&#39;) # 取出来p标签列表中的第四个元素</span><br><span class="line">	r &#x3D; tree.xpath(&#39;&#x2F;&#x2F;div&#x2F;[@class&#x3D;&quot;tang&quot;]&#x2F;&#x2F;li[5]&#x2F;a&#x2F;text()&#39;)[0] #取出来一个标签返回的也是列表，所以加上索引0，表示第一个元素</span><br><span class="line">	&#x2F;@attrName（&#x2F;@src） #取属性值</span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ol>
+<h2 id="数据解析原理"><a href="#数据解析原理" class="headerlink" title="数据解析原理"></a>数据解析原理</h2><ol>
+<li>解析的局部文本内容都会在标签纸剑或者标签对应的属性中进行存储</li>
+<li>进行指定标签的定位</li>
+<li>标签或者标签对应的属性中所存储的数据值进行提取（解析）</li>
+</ol>
+<h1 id="第三章：反爬机制"><a href="#第三章：反爬机制" class="headerlink" title="第三章：反爬机制"></a>第三章：反爬机制</h1><h2 id="验证码"><a href="#验证码" class="headerlink" title="验证码"></a>验证码</h2><p>使用第三方识别验证码平台（超级鹰）,代码已经封装好了</p>
+<p>chaojiying.PostPic(im,1902)返回的字典的第三个键值对的values为所需要的验证码值</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">chaojiying &#x3D; Chaojiying_Client(&#39;用户名&#39;, &#39;密码&#39;, &#39;912044&#39;)  # 用户中心&gt;&gt;软件ID 生成一个替换 96001</span><br><span class="line">im &#x3D; open(file_path, &#39;rb&#39;).read()  # 本地图片文件路径 来替换 a.jpg 有时WIN系统须要&#x2F;&#x2F;</span><br><span class="line">print(list((chaojiying.PostPic(im, 1902)).values())[3])  # 1902 验证码类型  </span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>ps：验证是否登录成功：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">response &#x3D; requests.post(url&#x3D;url,headers&#x3D;headers,data&#x3D;data)</span><br><span class="line">print(response.status_code)</span><br><span class="line">#如果打印200，证明登录成功</span><br></pre></td></tr></table></figure>
+<h2 id="cookie"><a href="#cookie" class="headerlink" title="cookie"></a>cookie</h2><ol>
+<li><p>来源：登录模拟的post请求后，有服务器端创建</p>
+</li>
+<li><p>session会话对象：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">作用：1.可以在请求的时候发送；2.如果请求过程产生了cookie会被自动存储到该session对象中</span><br><span class="line"></span><br><span class="line">exp：</span><br><span class="line">    session &#x3D; requests.Session()</span><br><span class="line"></span><br><span class="line">    user_url &#x3D; &#39;https:&#x2F;&#x2F;www.chaojiying.com&#x2F;user&#x2F;login&#x2F;&#39;</span><br><span class="line">    data &#x3D;&#123;</span><br><span class="line">        &#39;user&#39;: &#39;winsfox&#39;,</span><br><span class="line">        &#39;pass&#39;: &#39;510623zmh&#39;,</span><br><span class="line">        &#39;imgtxt&#39;:result,</span><br><span class="line">        &#39;act&#39;: &#39;1&#39;</span><br><span class="line">    &#125;</span><br><span class="line">    #（2）使用session进行post发送</span><br><span class="line">    response &#x3D; session.post(url&#x3D;user_url,headers&#x3D;headers,data&#x3D;data)</span><br><span class="line">    print(response.status_code)</span><br><span class="line">    detail_url &#x3D; &#39;https:&#x2F;&#x2F;www.chaojiying.com&#x2F;user&#x2F;&#39;</span><br><span class="line"></span><br><span class="line">    detail_page_text &#x3D; session.get(url&#x3D;detail_url,headers&#x3D;headers).text</span><br><span class="line">    with open(&#39;my chaojiying.html&#39;,&#39;w&#39;,encoding&#x3D;&#39;utf-8&#39;) as fp:</span><br><span class="line">        fp.write(detail_page_text)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="代理"><a href="#代理" class="headerlink" title="代理"></a>代理</h2></li>
+</ol>
+<p>破解封IP这种反爬机制</p>
+   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">——代理服务器。</span><br><span class="line">代理的作用：</span><br><span class="line">		———突破IP访问的限制</span><br><span class="line">		———隐藏自身真实IP</span><br><span class="line">代理相关网站：</span><br><span class="line">		———快代理</span><br><span class="line">		———西祠代理</span><br><span class="line">		———www.goubanjia.com</span><br><span class="line">代理IP的类型：</span><br><span class="line">		——https；http</span><br><span class="line">代理IP的匿名的：</span><br><span class="line">		——透明：服务器知道该次请求使用了代理；也知道真实的Ip</span><br><span class="line">		——匿名：知道使用了代理，但不知道真实的Ip</span><br><span class="line">		——高匿：不知道使用了代理更不知道本机的真实Ip（遇到封IP的反扒机制需要用这个）</span><br></pre></td></tr></table></figure>
+
+
+<p>ps:一个网站登录上后，再用爬虫爬的时候可能找不到验证码的位置</p>
+<h1 id="PS"><a href="#PS" class="headerlink" title="PS:"></a>PS:</h1><ol>
+<li>有时候拿到的src不全，需要进行字符串拼接</li>
+<li>div的class中有些无法获取，如：<img src="/2021/01/20/%E7%88%AC%E8%99%AB%E5%AD%A6%E4%B9%A0/image-20210122232346354.png" alt="image-20210122232346354"></li>
+<li>在使用etree.xpath()的时候需要删去，如</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a_list &#x3D; tree.xpath(&#39;&#x2F;&#x2F;div[@class&#x3D;&quot;box col3 ws_block&quot;]&#39;)</span><br></pre></td></tr></table></figure>
+<h1 id="第四章：高性能异步爬虫"><a href="#第四章：高性能异步爬虫" class="headerlink" title="第四章：高性能异步爬虫"></a>第四章：高性能异步爬虫</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">原因：发送请求会有延时，导致阻塞，后面的url请求</span><br><span class="line">	方式1：多线程（不建议使用，耗费cpu资源）</span><br><span class="line">	方式2：线程池（效率不明显，适当使用）</span><br><span class="line">	方法3：单线程+异步协程（推荐）</span><br></pre></td></tr></table></figure>
+<p>PS：在text中找不到元素就是通过ajax加载的，要用抓包工具找</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">requests.get()发起的请求是基于同步的，不能用在异步协程中，必须使用基于异步的网络请求的模块：aiohttp</span><br></pre></td></tr></table></figure>
+<h1 id="第五章：动态加载数据处理"><a href="#第五章：动态加载数据处理" class="headerlink" title="第五章：动态加载数据处理"></a>第五章：动态加载数据处理</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">selenium模块</span><br><span class="line">	-便捷的获取网站中的动态加载数据</span><br><span class="line">	-便捷的实现模拟登陆</span><br><span class="line">	-基于浏览器自动化的一个模块</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">步骤：</span><br><span class="line">	——pip install selenium</span><br><span class="line">	——下载对应浏览器版本的驱动程序</span><br><span class="line">	——实例化一个浏览器对象</span><br><span class="line">	——编写基于浏览器自动化的操作代码</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">相关函数：</span><br><span class="line">	bro.get(url)</span><br><span class="line">	search_input &#x3D; bro.find_element_by_id(&#39;q&#39;) # 根据id查找元素（其他的选择器也行）</span><br><span class="line">	bro.execute_script(&#39;widnow.scrollTo(0,document.body.scrollHeight)&#39;) #执行js程序</span><br><span class="line">	botton &#x3D; (找到的一个input元素)；botton.click()</span><br><span class="line">	bro.back() #回退上一个页面；forward</span><br><span class="line">	bro.quit()</span><br><span class="line">	send_keys(字符串) #标签交互</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">selenlium处理iframe:</span><br><span class="line">	如果定位的标签存在与iframe标签中，必须使用switch_to.frame(id)</span><br><span class="line">	动作链（拖动）：from selenium。webdriver import ActionChains</span><br><span class="line">		实例化一个动作链对象：action &#x3D; ActionChains（bro）</span><br><span class="line">		click_and_hold(div):长按且点击操作</span><br><span class="line">		move_by_offset(x,y)</span><br><span class="line">		perform()让动作链立即执行</span><br><span class="line">		action.release()释放动作链对象</span><br><span class="line">		</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -354,7 +682,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-01-19 21:13:47" itemprop="dateModified" datetime="2021-01-19T21:13:47+08:00">2021-01-19</time>
+        <time title="修改时间：2021-01-20 16:40:58" itemprop="dateModified" datetime="2021-01-20T16:40:58+08:00">2021-01-20</time>
       </span>
 
   
@@ -368,7 +696,12 @@
     
     <div class="post-body" itemprop="articleBody">
           <h1 id><a href="#" class="headerlink" title></a></h1><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h2</span> <span class="attr">v-text</span>=<span class="string">&quot;message&quot;</span>&gt;</span> //直接将整个标签变为message的内容</span><br><span class="line">    &#123;&#123;message + &quot;!!&quot;&#125;&#125;深圳 //只讲大括号内的内容变为message(允许字符串拼接)</span><br><span class="line"><span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h2</span> <span class="attr">v-html</span>=<span class="string">&quot;content&quot;</span>&gt;</span></span><br><span class="line">    </span><br><span class="line"><span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">srcpit</span> <span class="attr">src</span> = <span class="string">&quot;https://cdn.jsdelivr.net/npm/vue/dist/vue.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">srcpit</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">	<span class="keyword">var</span> app = <span class="keyword">new</span> Vue&#123;</span></span><br><span class="line"><span class="javascript">        el:<span class="string">&quot;#app&quot;</span>,</span></span><br><span class="line">        data:&#123;</span><br><span class="line"><span class="javascript">            message:<span class="string">&quot;黑马&quot;</span></span></span><br><span class="line"><span class="handlebars"><span class="xml">            content:&quot;<span class="tag">&lt;<span class="name">a</span> <span class="attr">herf</span>=<span class="string">&#x27;http://www.itheima.com&#x27;</span>&gt;</span>黑马程序员<span class="tag">&lt;/<span class="name">a</span>&gt;</span>&quot;</span></span></span><br><span class="line">        &#125;</span><br><span class="line">        method</span><br><span class="line">    &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">v-text;v-html;</span><br><span class="line">v-on:click(或者monseenter(或者dblclick))</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">v-text&#x3D;&quot;&quot;;v-html&#x3D;&quot;&quot;;</span><br><span class="line">v-on:click&#x3D;&quot;&quot;(或者monseenter(或者dblclick))</span><br><span class="line">v-show&#x3D;&quot;bool&quot;如果为真则显示(和input的button，@click连用，实现点击隐藏或者显示图片)</span><br><span class="line">v-if&#x3D;&quot;bool&quot;和v-show的区别是if直接操作dom元素，show操作display属性</span><br><span class="line">v-bind：src(伪属性)(可以用冒号简写)</span><br></pre></td></tr></table></figure>
+<p><img src="/2021/01/17/Vue/image-20210120102545219.png" alt="image-20210120102545219"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">v-for&#x3D;&quot;(item,index) in arr&quot;(先将标签数变为数组的个数，再往里面添加索引元素)</span><br></pre></td></tr></table></figure>
+<p><img src="/2021/01/17/Vue/image-20210120110759481.png" alt="image-20210120110759481"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">@keyup.enter&#x3D;&quot;sayHi&quot; 回车的时候做“sayHi”函数</span><br><span class="line"></span><br><span class="line">v-model&#x3D;&quot;message&quot; 双向同步更新</span><br><span class="line">this.arr.splice(index,lenth)删除数组中的元素</span><br></pre></td></tr></table></figure>
+<p><img src="/2021/01/17/Vue/image-20210120133209049.png" alt="image-20210120133209049"></p>
 
       
     </div>
@@ -501,7 +834,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-01-19 22:05:55" itemprop="dateModified" datetime="2021-01-19T22:05:55+08:00">2021-01-19</time>
+        <time title="修改时间：2021-01-20 21:18:42" itemprop="dateModified" datetime="2021-01-20T21:18:42+08:00">2021-01-20</time>
       </span>
 
   
@@ -539,7 +872,8 @@
 <h1 id="神经网络参数优化器"><a href="#神经网络参数优化器" class="headerlink" title="神经网络参数优化器"></a>神经网络参数优化器</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Sgd Sgdm Adagrad Rmsprop Adam</span><br></pre></td></tr></table></figure>
 <p>本质上就是不同的参数更新方式</p>
 <h1 id="六步法搭建网络八股"><a href="#六步法搭建网络八股" class="headerlink" title="六步法搭建网络八股"></a>六步法搭建网络八股</h1><p><img src="/2020/12/27/Tenserflow/image-20210119184157249.png" alt="image-20210119184157249"></p>
-<h2 id="model-tf-keras-models-Sequential-网络结构"><a href="#model-tf-keras-models-Sequential-网络结构" class="headerlink" title="model =  tf.keras.models.Sequential([网络结构])"></a>model =  tf.keras.models.Sequential([网络结构])</h2><h3 id="网络结构举例"><a href="#网络结构举例" class="headerlink" title="网络结构举例"></a>网络结构举例</h3><h4 id="拉直层：tf-keras-layers-Flatten"><a href="#拉直层：tf-keras-layers-Flatten" class="headerlink" title="拉直层：tf.keras.layers.Flatten()"></a>拉直层：tf.keras.layers.Flatten()</h4><h4 id="全连接层：tf-keras-layers-Dense-神经元个数，activation-“激活函数”-kernel-regularizer-哪儿种正则化"><a href="#全连接层：tf-keras-layers-Dense-神经元个数，activation-“激活函数”-kernel-regularizer-哪儿种正则化" class="headerlink" title="全连接层：tf.keras.layers.Dense(神经元个数，activation = “激活函数”,kernel_regularizer=哪儿种正则化)"></a>全连接层：tf.keras.layers.Dense(神经元个数，activation = “激活函数”,kernel_regularizer=哪儿种正则化)</h4>
+<h2 id="model-tf-keras-models-Sequential-网络结构"><a href="#model-tf-keras-models-Sequential-网络结构" class="headerlink" title="model =  tf.keras.models.Sequential([网络结构])"></a>model =  tf.keras.models.Sequential([网络结构])</h2><h3 id="网络结构举例"><a href="#网络结构举例" class="headerlink" title="网络结构举例"></a>网络结构举例</h3><h4 id="拉直层：tf-keras-layers-Flatten"><a href="#拉直层：tf-keras-layers-Flatten" class="headerlink" title="拉直层：tf.keras.layers.Flatten()"></a>拉直层：tf.keras.layers.Flatten()</h4><h4 id="全连接层：tf-keras-layers-Dense-神经元个数，activation-“激活函数”-kernel-regularizer-哪儿种正则化"><a href="#全连接层：tf-keras-layers-Dense-神经元个数，activation-“激活函数”-kernel-regularizer-哪儿种正则化" class="headerlink" title="全连接层：tf.keras.layers.Dense(神经元个数，activation = “激活函数”,kernel_regularizer=哪儿种正则化)"></a>全连接层：tf.keras.layers.Dense(神经元个数，activation = “激活函数”,kernel_regularizer=哪儿种正则化)</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">model.fit(训练集的输入特征，训练集的标签</span><br><span class="line">			batch_size&#x3D;,epochs&#x3D;,</span><br><span class="line">			validation_data&#x3D;(测试集的输入特征，测试集的标签)，</span><br><span class="line">			validation_split&#x3D;从训练集划分多少b比例给测试集，</span><br><span class="line">			validation_freq&#x3D;多少次epoch测试一次)</span><br><span class="line">model.summary() 打印出网络结构和参数统计</span><br></pre></td></tr></table></figure>
+
       
     </div>
 
