@@ -54,6 +54,14 @@
       </tags>
   </entry>
   <entry>
+    <title>TFnotexiaosha</title>
+    <url>/2021/02/26/TFnotexiaosha/</url>
+    <content><![CDATA[<h2 id="2-1基本图像分类"><a href="#2-1基本图像分类" class="headerlink" title="2.1基本图像分类"></a>2.1基本图像分类</h2><h2 id="2-1（ps）番外：残差网络"><a href="#2-1（ps）番外：残差网络" class="headerlink" title="2.1（ps）番外：残差网络"></a>2.1（ps）番外：残差网络</h2><h2 id="2-2TF-Hub进行文本分类"><a href="#2-2TF-Hub进行文本分类" class="headerlink" title="2.2TF Hub进行文本分类"></a>2.2TF Hub进行文本分类</h2><h2 id="2-3对预处理文本进行文本分类"><a href="#2-3对预处理文本进行文本分类" class="headerlink" title="2.3对预处理文本进行文本分类"></a>2.3对预处理文本进行文本分类</h2><h2 id="2-4回归"><a href="#2-4回归" class="headerlink" title="2.4回归"></a>2.4回归</h2><h2 id="2-5欠拟合和过拟合"><a href="#2-5欠拟合和过拟合" class="headerlink" title="2.5欠拟合和过拟合"></a>2.5欠拟合和过拟合</h2><h2 id="2-6模型的回复和保存"><a href="#2-6模型的回复和保存" class="headerlink" title="2.6模型的回复和保存"></a>2.6模型的回复和保存</h2>]]></content>
+      <tags>
+        <tag>Tensorflow</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>MyVue</title>
     <url>/2021/01/17/Vue/</url>
     <content><![CDATA[<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h2</span> <span class="attr">v-text</span>=<span class="string">&quot;message&quot;</span>&gt;</span> //直接将整个标签变为message的内容</span><br><span class="line">    &#123;&#123;message + &quot;!!&quot;&#125;&#125;深圳 //只讲大括号内的内容变为message(允许字符串拼接)</span><br><span class="line"><span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h2</span> <span class="attr">v-html</span>=<span class="string">&quot;content&quot;</span>&gt;</span></span><br><span class="line">    </span><br><span class="line"><span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">srcpit</span> <span class="attr">src</span> = <span class="string">&quot;https://cdn.jsdelivr.net/npm/vue/dist/vue.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">srcpit</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">	<span class="keyword">var</span> app = <span class="keyword">new</span> Vue&#123;</span></span><br><span class="line"><span class="javascript">        el:<span class="string">&quot;#app&quot;</span>,</span></span><br><span class="line">        data:&#123;</span><br><span class="line"><span class="javascript">            message:<span class="string">&quot;黑马&quot;</span></span></span><br><span class="line"><span class="handlebars"><span class="xml">            content:&quot;<span class="tag">&lt;<span class="name">a</span> <span class="attr">herf</span>=<span class="string">&#x27;http://www.itheima.com&#x27;</span>&gt;</span>黑马程序员<span class="tag">&lt;/<span class="name">a</span>&gt;</span>&quot;</span></span></span><br><span class="line">        &#125;</span><br><span class="line">        method</span><br><span class="line">    &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
@@ -238,6 +246,29 @@
 <li><p>启动测试</p>
 </li>
 </ol>
+<h2 id="4-3Servlet运行原理"><a href="#4-3Servlet运行原理" class="headerlink" title="4.3Servlet运行原理"></a>4.3Servlet运行原理</h2><p>Servlet是Web服务，web服务器再收到浏览器请求后，会：</p>
+<p><img src="/2021/02/19/javaweb/image-20210302204741421.png" alt="image-20210302204741421"></p>
+<h2 id="4-4Mapping问题"><a href="#4-4Mapping问题" class="headerlink" title="4.4Mapping问题"></a>4.4Mapping问题</h2><ol>
+<li><p>一个Servlet可以指定一个映射路径</p>
+</li>
+<li><p>一个Servlet可以指定多个映射路径</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>Hello<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/hello<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>Hello<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/hello1<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>Hello<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/hello2<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>Hello<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/hello3<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>Hello<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/hello4<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>Hello<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/hello5<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>Hello<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/hello6<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">servlet-mapping</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+<li><p>一个Servlet可以指定通用映射路径</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>Hello<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/hello/*<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">servlet-mapping</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+<li><p>默认请求路径</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>Hello<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/*<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">servlet-mapping</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+<li><p>指定一些后缀，前缀等等</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!--    可以自定义后缀实现请求映射</span></span><br><span class="line"><span class="comment">注意点，*前面不能加项目映射的路径</span></span><br><span class="line"><span class="comment"> 通过hello/sadjshdjahf.qingjiang可以访问--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>Hello<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>*.qingjiang<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">servlet-mapping</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ol>
+<ol start="6">
+<li><p>优先级问题</p>
+<p>指定的优先级更高，如果找不到就会走默认的处理请求</p>
+</li>
+<li></li>
+</ol>
 ]]></content>
   </entry>
   <entry>
@@ -265,6 +296,180 @@
 ]]></content>
       <tags>
         <tag>机器学习</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>操作系统</title>
+    <url>/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</url>
+    <content><![CDATA[<h1 id="概念（定义）"><a href="#概念（定义）" class="headerlink" title="概念（定义）"></a>概念（定义）</h1><p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210221162216072.png" alt="image-20210221162216072"></p>
+<p>联机命令接口 = 交互式命令接口；</p>
+<p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210221162605097.png" alt="image-20210221162605097"></p>
+<p>脱机命令接口 = sh；bat等命令文件</p>
+<p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210221162708922.png" alt="image-20210221162708922"></p>
+<p>程序接口：</p>
+<p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210221162815213.png" alt="image-20210221162815213"></p>
+<p>结构：</p>
+<p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210221162916300.png" alt="image-20210221162916300"></p>
+<h2 id="1-1四个特征："><a href="#1-1四个特征：" class="headerlink" title="1.1四个特征："></a>1.1四个特征：</h2><h3 id="1-1-1并发："><a href="#1-1-1并发：" class="headerlink" title="1.1.1并发："></a>1.1.1并发：</h3><p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210221163219138.png" alt="image-20210221163219138"></p>
+<h3 id="1-1-2共享："><a href="#1-1-2共享：" class="headerlink" title="1.1.2共享："></a>1.1.2共享：</h3><p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210221164538270.png" alt="image-20210221164538270"></p>
+<h3 id="1-1-3虚拟："><a href="#1-1-3虚拟：" class="headerlink" title="1.1.3虚拟："></a>1.1.3虚拟：</h3><p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210221164827695.png" alt="image-20210221164827695"></p>
+<p>空分复用技术：磁盘内存</p>
+<p>时分复用技术：虚拟处理器</p>
+<h3 id="1-1-4异步："><a href="#1-1-4异步：" class="headerlink" title="1.1.4异步："></a>1.1.4异步：</h3><p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210221165120845.png" alt="image-20210221165120845"></p>
+<h1 id="发展和分类："><a href="#发展和分类：" class="headerlink" title="发展和分类："></a>发展和分类：</h1><p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210221165312039.png" alt="image-20210221165312039"></p>
+<p>分时操作系统：每个用户享有平均的服务时间</p>
+<p>实时操作系统：能优先响应一些紧急任务，这些任务不需要时间片排队（及时性和可靠性，）</p>
+<p>分类：</p>
+<ol>
+<li>硬实时操作系统：必须严格在规定时间内完成（如导弹控制系统，自动驾驶系统）</li>
+<li>软实时操作系统：偶尔可以违反规定（如火车订票系统）</li>
+</ol>
+<h1 id="运行机制和体系结构："><a href="#运行机制和体系结构：" class="headerlink" title="运行机制和体系结构："></a>运行机制和体系结构：</h1><p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210221170950384.png" alt="image-20210221170950384"></p>
+<p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210221171207263.png" alt="image-20210221171207263"></p>
+<h2 id="2-1内核："><a href="#2-1内核：" class="headerlink" title="2.1内核："></a>2.1内核：</h2><p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210221172622695.png" alt="image-20210221172622695"></p>
+<p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210221172650050.png" alt="image-20210221172650050"></p>
+<h1 id="中断和异常"><a href="#中断和异常" class="headerlink" title="中断和异常"></a>中断和异常</h1><p><strong>用户态——&gt;核心态的唯一途径是中断</strong></p>
+<p>核心态-&gt;用户态：通过执行<strong>特权指令</strong>设置PSW状态字</p>
+<h2 id="3-1分类："><a href="#3-1分类：" class="headerlink" title="3.1分类："></a>3.1分类：</h2><p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210221174004292.png" alt="image-20210221174004292"></p>
+<p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210221173951671.png" alt="image-20210221173951671"></p>
+<h1 id="系统调用"><a href="#系统调用" class="headerlink" title="系统调用"></a>系统调用</h1><h2 id="4-1分类："><a href="#4-1分类：" class="headerlink" title="4.1分类："></a>4.1分类：</h2><p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210221174455871.png" alt="image-20210221174455871"></p>
+<h2 id="4-2系统调用和库函数的区别："><a href="#4-2系统调用和库函数的区别：" class="headerlink" title="4.2系统调用和库函数的区别："></a>4.2系统调用和库函数的区别：</h2><p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210221174648820.png" alt="image-20210221174648820"></p>
+<h2 id="4-3过程："><a href="#4-3过程：" class="headerlink" title="4.3过程："></a>4.3过程：</h2><p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210221175433942.png" alt="image-20210221175433942"></p>
+<h1 id="进程"><a href="#进程" class="headerlink" title="进程"></a>进程</h1><h2 id="5-1定义："><a href="#5-1定义：" class="headerlink" title="5.1定义："></a>5.1定义：</h2><p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210221224907638.png" alt="image-20210221224907638"></p>
+<p>一般来说，在题目中进程可以就是进程实体，但是如果专门考这两者是是不是等价的，就不是同一个东西</p>
+<h2 id="5-2组成："><a href="#5-2组成：" class="headerlink" title="5.2组成："></a>5.2组成：</h2><p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210222122755704.png" alt="image-20210222122755704"></p>
+<h2 id="5-3组织："><a href="#5-3组织：" class="headerlink" title="5.3组织："></a>5.3组织：</h2><p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210222125236990.png" alt="image-20210222125236990"></p>
+<h2 id="5-4特征："><a href="#5-4特征：" class="headerlink" title="5.4特征："></a>5.4特征：</h2><p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210222125459439.png" alt="image-20210222125459439"></p>
+<h2 id="5-5总结："><a href="#5-5总结：" class="headerlink" title="5.5总结："></a>5.5总结：</h2><p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210222125809006.png" alt="image-20210222125809006"></p>
+<h2 id="5-6状态（以及切换）："><a href="#5-6状态（以及切换）：" class="headerlink" title="5.6状态（以及切换）："></a>5.6状态（以及切换）：</h2><p>（类似java的线程）</p>
+<ol>
+<li><p>三种基本状态：</p>
+<p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210222170825547.png" alt="image-20210222170825547"></p>
+</li>
+<li><p>另外两种：</p>
+<p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210222171031820.png" alt="image-20210222171031820"></p>
+</li>
+</ol>
+<h3 id="5-6-1转换："><a href="#5-6-1转换：" class="headerlink" title="5.6.1转换："></a>5.6.1转换：</h3><p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210222171350415.png" alt="image-20210222171350415"></p>
+<h2 id="5-7进程控制："><a href="#5-7进程控制：" class="headerlink" title="5.7进程控制："></a>5.7进程控制：</h2><p>流程：</p>
+<p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210222173623395.png" alt="image-20210222173623395"></p>
+<p>原语：</p>
+<ol>
+<li><p>创建原语</p>
+<p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210222174933439.png" alt="image-20210222174933439"></p>
+</li>
+<li><p>撤销原语：</p>
+<p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210222174941470.png" alt="image-20210222174941470"></p>
+</li>
+<li><p>阻塞原语：</p>
+<p> <img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210222175334583.png" alt="image-20210222175334583"></p>
+</li>
+<li><p>唤醒原语：</p>
+</li>
+<li><p>切换原语：</p>
+<p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210222175518661.png" alt="image-20210222175518661"></p>
+</li>
+</ol>
+<h2 id="5-8进程通信"><a href="#5-8进程通信" class="headerlink" title="5.8进程通信"></a>5.8进程通信</h2><h3 id="5-8-1共享存储"><a href="#5-8-1共享存储" class="headerlink" title="5.8.1共享存储"></a>5.8.1共享存储</h3><p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210222175904385.png" alt="image-20210222175904385"></p>
+<h3 id="5-8-2管道通信"><a href="#5-8-2管道通信" class="headerlink" title="5.8.2管道通信"></a>5.8.2管道通信</h3><p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210222180305823.png" alt="image-20210222180305823"></p>
+<h3 id="5-8-3消息传递"><a href="#5-8-3消息传递" class="headerlink" title="5.8.3消息传递"></a>5.8.3消息传递</h3><p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210222180441410.png" alt="image-20210222180441410"></p>
+<h3 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h3><p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210222180553783.png" alt="image-20210222180553783"></p>
+<h1 id="线程"><a href="#线程" class="headerlink" title="线程"></a>线程</h1><p>线程优势：</p>
+<p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210222192306103.png" alt="image-20210222192306103"></p>
+<p>属性：</p>
+<p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210222221306565.png" alt="image-20210222221306565"></p>
+<h2 id="6-1实现方式"><a href="#6-1实现方式" class="headerlink" title="6.1实现方式"></a>6.1实现方式</h2><p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210222222409199.png" alt="image-20210222222409199"></p>
+<h3 id="6-1-1模型："><a href="#6-1-1模型：" class="headerlink" title="6.1.1模型："></a>6.1.1模型：</h3><ol>
+<li><p>多对一：</p>
+<p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210222222518738.png" alt="image-20210222222518738"></p>
+</li>
+<li><p>一对一：</p>
+<p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210222222810913.png" alt="image-20210222222810913"></p>
+</li>
+<li><p>多对多：</p>
+<p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210222223019193.png" alt="image-20210222223019193"></p>
+</li>
+</ol>
+<h2 id="总结：-1"><a href="#总结：-1" class="headerlink" title="总结："></a>总结：</h2><p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210222223059054.png" alt="image-20210222223059054"></p>
+<h2 id="处理机调度"><a href="#处理机调度" class="headerlink" title="处理机调度"></a>处理机调度</h2>]]></content>
+      <tags>
+        <tag>大二下</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>数据库</title>
+    <url>/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/</url>
+    <content><![CDATA[<h1 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h1><h2 id="1-1概念："><a href="#1-1概念：" class="headerlink" title="1.1概念："></a>1.1概念：</h2><ol>
+<li><p>数据：描述事物符号的记录</p>
+</li>
+<li><p>数据库：长期存储在计算机内的有组织的，可共享的大量数据的集合</p>
+</li>
+<li><p>数据库管理系统：位于用户与操作系统之间的一层管理软件，主要功能：</p>
+<ol>
+<li>DDL：数据定义语言</li>
+<li>DML：数据库操作语言（增删改查）</li>
+<li>数据库的运行管理</li>
+</ol>
+</li>
+<li><p>数据库系统：计算机中引用到数据库之后的系统。（包括：数据库，数据库管理系统（DBMS），数据库应用程序，数据库管理员（DBA）和用户）</p>
+</li>
+</ol>
+<h2 id="1-2数据模型："><a href="#1-2数据模型：" class="headerlink" title="1.2数据模型："></a>1.2数据模型：</h2><ol>
+<li>层次数据模型（树结构）</li>
+<li>网状数据模型（图结构）缺点：数据结构复杂，增加了数据查询和数据定位的困难</li>
+<li>关系数据模型（二维表结构）表之间通过具有相同属性列的数据值进行约束关联</li>
+<li>其他数据模型</li>
+</ol>
+<h2 id="1-3数据库应用程序："><a href="#1-3数据库应用程序：" class="headerlink" title="1.3数据库应用程序："></a>1.3数据库应用程序：</h2><p>是一种在DBMS支持下对数据库中数据进行访问处理的应用程序</p>
+<ol>
+<li>通过窗口输入框采集用户输入数据</li>
+<li>通过接口连接访问数据库</li>
+<li>执行用户数据查询</li>
+<li>通过表单列表输出结果数据</li>
+</ol>
+<h2 id="1-4数据库管理系统："><a href="#1-4数据库管理系统：" class="headerlink" title="1.4数据库管理系统："></a>1.4数据库管理系统：</h2><p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210302201606385.png" alt="image-20210302201606385"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210302201619611.png" alt="image-20210302201619611"></p>
+<h2 id="1-5数据库："><a href="#1-5数据库：" class="headerlink" title="1.5数据库："></a>1.5数据库：</h2><p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210302201713863.png" alt="image-20210302201713863"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210302201754678.png" alt="image-20210302201754678"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210302201903138.png" alt="image-20210302201903138"></p>
+<h1 id="数据库发展"><a href="#数据库发展" class="headerlink" title="数据库发展"></a>数据库发展</h1><h2 id="2-1数据管理技术发展阶段："><a href="#2-1数据管理技术发展阶段：" class="headerlink" title="2.1数据管理技术发展阶段："></a>2.1数据管理技术发展阶段：</h2><ol>
+<li><p>人工管理阶段</p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210302202110474.png" alt="image-20210302202110474"></p>
+<p>特点：</p>
+<ul>
+<li>程序员组织和管理数据</li>
+<li>应用程序依赖数据集</li>
+<li>应用之间无数据共享，数据冗余度大</li>
+<li>数据集无结构</li>
+</ul>
+</li>
+<li><p>文件系统管理阶段</p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210302202430454.png" alt="image-20210302202430454"></p>
+<p>特点：</p>
+<ul>
+<li>由文件组织与存储数据</li>
+<li>数据文件的数据记录具有简单的字段结构，但文件整体无结构</li>
+<li>应用程序依赖于数据文件，需自己维护数据文件</li>
+<li>数据独立性差，难以实现应用程序之间的数据共享访问</li>
+</ul>
+</li>
+<li><p>数据库系统管理阶段：</p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210302202748613.png" alt="image-20210302202748613"></p>
+<p>特点：</p>
+<ul>
+<li>数据集结构化，易于查询与统计处理</li>
+<li>不同应用程序可以实现数据共享访问</li>
+<li>数据独立性高，应用可扩展</li>
+<li>数据由DBMS统一管理和访问操作</li>
+</ul>
+</li>
+</ol>
+<h2 id="2-2数据库技术发展经历时代"><a href="#2-2数据库技术发展经历时代" class="headerlink" title="2.2数据库技术发展经历时代"></a>2.2数据库技术发展经历时代</h2><p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210302203059099.png" alt="image-20210302203059099"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210302203114058.png" alt="image-20210302203114058"></p>
+<h2 id="2-3数据库技术领域"><a href="#2-3数据库技术领域" class="headerlink" title="2.3数据库技术领域"></a>2.3数据库技术领域</h2><h2 id="2-4数据库技术发展趋势"><a href="#2-4数据库技术发展趋势" class="headerlink" title="2.4数据库技术发展趋势"></a>2.4数据库技术发展趋势</h2><p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210302203239204.png" alt="image-20210302203239204"></p>
+]]></content>
+      <tags>
+        <tag>大二下</tag>
       </tags>
   </entry>
   <entry>
@@ -349,51 +554,22 @@
       </tags>
   </entry>
   <entry>
-    <title>操作系统</title>
-    <url>/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</url>
-    <content><![CDATA[<h1 id="概念（定义）"><a href="#概念（定义）" class="headerlink" title="概念（定义）"></a>概念（定义）</h1><p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210221162216072.png" alt="image-20210221162216072"></p>
-<p>联机命令接口 = 交互式命令接口；</p>
-<p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210221162605097.png" alt="image-20210221162605097"></p>
-<p>脱机命令接口 = sh；bat等命令文件</p>
-<p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210221162708922.png" alt="image-20210221162708922"></p>
-<p>程序接口：</p>
-<p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210221162815213.png" alt="image-20210221162815213"></p>
-<p>结构：</p>
-<p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210221162916300.png" alt="image-20210221162916300"></p>
-<h2 id="1-1四个特征："><a href="#1-1四个特征：" class="headerlink" title="1.1四个特征："></a>1.1四个特征：</h2><h3 id="1-1-1并发："><a href="#1-1-1并发：" class="headerlink" title="1.1.1并发："></a>1.1.1并发：</h3><p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210221163219138.png" alt="image-20210221163219138"></p>
-<h3 id="1-1-2共享："><a href="#1-1-2共享：" class="headerlink" title="1.1.2共享："></a>1.1.2共享：</h3><p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210221164538270.png" alt="image-20210221164538270"></p>
-<h3 id="1-1-3虚拟："><a href="#1-1-3虚拟：" class="headerlink" title="1.1.3虚拟："></a>1.1.3虚拟：</h3><p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210221164827695.png" alt="image-20210221164827695"></p>
-<p>空分复用技术：磁盘内存</p>
-<p>时分复用技术：虚拟处理器</p>
-<h3 id="1-1-4异步："><a href="#1-1-4异步：" class="headerlink" title="1.1.4异步："></a>1.1.4异步：</h3><p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210221165120845.png" alt="image-20210221165120845"></p>
-<h1 id="发展和分类："><a href="#发展和分类：" class="headerlink" title="发展和分类："></a>发展和分类：</h1><p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210221165312039.png" alt="image-20210221165312039"></p>
-<p>分时操作系统：每个用户享有平均的服务时间</p>
-<p>实时操作系统：能优先响应一些紧急任务，这些任务不需要时间片排队（及时性和可靠性，）</p>
-<p>分类：</p>
-<ol>
-<li>硬实时操作系统：必须严格在规定时间内完成（如导弹控制系统，自动驾驶系统）</li>
-<li>软实时操作系统：偶尔可以违反规定（如火车订票系统）</li>
-</ol>
-<h1 id="运行机制和体系结构："><a href="#运行机制和体系结构：" class="headerlink" title="运行机制和体系结构："></a>运行机制和体系结构：</h1><p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210221170950384.png" alt="image-20210221170950384"></p>
-<p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210221171207263.png" alt="image-20210221171207263"></p>
-<h2 id="2-1内核："><a href="#2-1内核：" class="headerlink" title="2.1内核："></a>2.1内核：</h2><p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210221172622695.png" alt="image-20210221172622695"></p>
-<p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210221172650050.png" alt="image-20210221172650050"></p>
-<h1 id="中断和异常"><a href="#中断和异常" class="headerlink" title="中断和异常"></a>中断和异常</h1><p><strong>用户态——&gt;核心态的唯一途径是中断</strong></p>
-<p>核心态-&gt;用户态：通过执行<strong>特权指令</strong>设置PSW状态字</p>
-<h2 id="3-1分类："><a href="#3-1分类：" class="headerlink" title="3.1分类："></a>3.1分类：</h2><p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210221174004292.png" alt="image-20210221174004292"></p>
-<p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210221173951671.png" alt="image-20210221173951671"></p>
-<h1 id="系统调用"><a href="#系统调用" class="headerlink" title="系统调用"></a>系统调用</h1><h2 id="4-1分类："><a href="#4-1分类：" class="headerlink" title="4.1分类："></a>4.1分类：</h2><p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210221174455871.png" alt="image-20210221174455871"></p>
-<h2 id="4-2系统调用和库函数的区别："><a href="#4-2系统调用和库函数的区别：" class="headerlink" title="4.2系统调用和库函数的区别："></a>4.2系统调用和库函数的区别：</h2><p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210221174648820.png" alt="image-20210221174648820"></p>
-<h2 id="4-3过程："><a href="#4-3过程：" class="headerlink" title="4.3过程："></a>4.3过程：</h2><p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210221175433942.png" alt="image-20210221175433942"></p>
-<h1 id="进程"><a href="#进程" class="headerlink" title="进程"></a>进程</h1><h2 id="5-1定义："><a href="#5-1定义：" class="headerlink" title="5.1定义："></a>5.1定义：</h2><p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210221224907638.png" alt="image-20210221224907638"></p>
-<p>一般来说，在题目中进程可以就是进程实体，但是如果专门考这两者是是不是等价的，就不是同一个东西</p>
-<h2 id="5-2组成："><a href="#5-2组成：" class="headerlink" title="5.2组成："></a>5.2组成：</h2><p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210222122755704.png" alt="image-20210222122755704"></p>
-<h2 id="5-3组织："><a href="#5-3组织：" class="headerlink" title="5.3组织："></a>5.3组织：</h2><p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210222125236990.png" alt="image-20210222125236990"></p>
-<h2 id="5-4特征："><a href="#5-4特征：" class="headerlink" title="5.4特征："></a>5.4特征：</h2><p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210222125459439.png" alt="image-20210222125459439"></p>
-<h2 id="5-5总结："><a href="#5-5总结：" class="headerlink" title="5.5总结："></a>5.5总结：</h2><p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210222125809006.png" alt="image-20210222125809006"></p>
-<h2 id="5-6状态："><a href="#5-6状态：" class="headerlink" title="5.6状态："></a>5.6状态：</h2>]]></content>
+    <title>计算机网络</title>
+    <url>/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</url>
+    <content><![CDATA[<h1 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h1><h2 id="1-1总览"><a href="#1-1总览" class="headerlink" title="1.1总览"></a>1.1总览</h2><p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210302222454717.png" alt="image-20210302222454717"></p>
+<h3 id="计算机网络概念："><a href="#计算机网络概念：" class="headerlink" title="计算机网络概念："></a>计算机网络概念：</h3><p>互联，自治的计算机集合</p>
+<h3 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h3><p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210302221856169.png" alt="image-20210302221856169"></p>
+<h3 id="组成"><a href="#组成" class="headerlink" title="组成"></a>组成</h3><p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210302222044031.png" alt="image-20210302222044031"></p>
+<h3 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h3><p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210302222418313.png" alt="image-20210302222418313"></p>
+<h2 id="1-2标准化和相关组织"><a href="#1-2标准化和相关组织" class="headerlink" title="1.2标准化和相关组织"></a>1.2标准化和相关组织</h2><h3 id="标准化工作："><a href="#标准化工作：" class="headerlink" title="标准化工作："></a>标准化工作：</h3><p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210302222831758.png" alt="image-20210302222831758"></p>
+<h3 id="相关组织："><a href="#相关组织：" class="headerlink" title="相关组织："></a>相关组织：</h3><p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210302222934750.png" alt="image-20210302222934750"></p>
+<h2 id="1-3速率相关的性能指标"><a href="#1-3速率相关的性能指标" class="headerlink" title="1.3速率相关的性能指标"></a>1.3速率相关的性能指标</h2><p>速率</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210302223244450.png" alt="image-20210302223244450"></p>
+<p>带宽</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210302223813711.png" alt="image-20210302223813711"></p>
+]]></content>
       <tags>
-        <tag>学院基础课</tag>
+        <tag>大二下</tag>
       </tags>
   </entry>
   <entry>
@@ -736,7 +912,7 @@
 <h2 id="TF描述循环计算层："><a href="#TF描述循环计算层：" class="headerlink" title="TF描述循环计算层："></a>TF描述循环计算层：</h2><p><img src="/2020/12/27/Tenserflow/image-20210213221128124.png" alt="image-20210213221128124"></p>
 <h2 id="循环计算过程："><a href="#循环计算过程：" class="headerlink" title="循环计算过程："></a>循环计算过程：</h2><p><img src="/2020/12/27/Tenserflow/image-20210213221413301.png" alt="image-20210213221413301"></p>
 <p><img src="/2020/12/27/Tenserflow/image-20210213224442141.png" alt="image-20210213224442141"></p>
-<h2 id="Embedding编码："><a href="#Embedding编码：" class="headerlink" title="Embedding编码："></a>Embedding编码：</h2><p><img src="/2020/12/27/Tenserflow/image-20210213225104214.png" alt="image-20210213225104214"></p>
+<h2 id="Enbedding编码："><a href="#Enbedding编码：" class="headerlink" title="Enbedding编码："></a>Enbedding编码：</h2><p><img src="/2020/12/27/Tenserflow/image-20210213225104214.png" alt="image-20210213225104214"></p>
 <h2 id="实践："><a href="#实践：" class="headerlink" title="实践："></a>实践：</h2><h3 id="ABCDE字母预测："><a href="#ABCDE字母预测：" class="headerlink" title="ABCDE字母预测："></a>ABCDE字母预测：</h3><h3 id="股票预测："><a href="#股票预测：" class="headerlink" title="股票预测："></a>股票预测：</h3>]]></content>
       <tags>
         <tag>深度学习平台</tag>
