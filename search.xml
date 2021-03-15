@@ -89,20 +89,6 @@
       </tags>
   </entry>
   <entry>
-    <title>hexo学习</title>
-    <url>/2020/12/22/hexo/</url>
-    <content><![CDATA[<h3 id="问题一"><a href="#问题一" class="headerlink" title="问题一"></a>问题一</h3><p>​    域名必须和git账户名一样</p>
-<h3 id="问题二"><a href="#问题二" class="headerlink" title="问题二"></a>问题二</h3><p>​    title后面的：必须英文，新建的page名称必须和配置文件中的一样，和title中的一样</p>
-<h3 id="问题三"><a href="#问题三" class="headerlink" title="问题三"></a>问题三</h3><p>​    本地服务器不需要hexo s，只需要刷新。</p>
-]]></content>
-      <categories>
-        <category>其他</category>
-      </categories>
-      <tags>
-        <tag>技术学习</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hello World</title>
     <url>/2020/12/21/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
@@ -118,6 +104,20 @@
       <categories>
         <category>里程碑</category>
       </categories>
+  </entry>
+  <entry>
+    <title>hexo学习</title>
+    <url>/2020/12/22/hexo/</url>
+    <content><![CDATA[<h3 id="问题一"><a href="#问题一" class="headerlink" title="问题一"></a>问题一</h3><p>​    域名必须和git账户名一样</p>
+<h3 id="问题二"><a href="#问题二" class="headerlink" title="问题二"></a>问题二</h3><p>​    title后面的：必须英文，新建的page名称必须和配置文件中的一样，和title中的一样</p>
+<h3 id="问题三"><a href="#问题三" class="headerlink" title="问题三"></a>问题三</h3><p>​    本地服务器不需要hexo s，只需要刷新。</p>
+]]></content>
+      <categories>
+        <category>其他</category>
+      </categories>
+      <tags>
+        <tag>技术学习</tag>
+      </tags>
   </entry>
   <entry>
     <title>MyNumpy</title>
@@ -312,6 +312,8 @@
 <p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210312155334573.png" alt="image-20210312155334573"></p>
 </li>
 </ol>
+<h2 id="管程"><a href="#管程" class="headerlink" title="管程"></a>管程</h2><p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210315142302569.png" alt="image-20210315142302569"></p>
+<p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210315150815606.png" alt="image-20210315150815606"></p>
 ]]></content>
       <tags>
         <tag>大二下</tag>
@@ -470,6 +472,110 @@
       </tags>
   </entry>
   <entry>
+    <title>计算机网络</title>
+    <url>/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</url>
+    <content><![CDATA[<h1 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h1><h2 id="1-1总览"><a href="#1-1总览" class="headerlink" title="1.1总览"></a>1.1总览</h2><p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210302222454717.png" alt="image-20210302222454717"></p>
+<h3 id="计算机网络概念："><a href="#计算机网络概念：" class="headerlink" title="计算机网络概念："></a>计算机网络概念：</h3><p>互联，自治的计算机集合(<strong>特点：连通性，共享</strong>)</p>
+<h3 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h3><p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210302221856169.png" alt="image-20210302221856169"></p>
+<h3 id="组成"><a href="#组成" class="headerlink" title="组成"></a>组成</h3><p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210302222044031.png" alt="image-20210302222044031"></p>
+<h3 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h3><p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210302222418313.png" alt="image-20210302222418313"></p>
+<h2 id="1-2标准化和相关组织"><a href="#1-2标准化和相关组织" class="headerlink" title="1.2标准化和相关组织"></a>1.2标准化和相关组织</h2><h3 id="标准化工作："><a href="#标准化工作：" class="headerlink" title="标准化工作："></a>标准化工作：</h3><p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210302222831758.png" alt="image-20210302222831758"></p>
+<h3 id="相关组织："><a href="#相关组织：" class="headerlink" title="相关组织："></a>相关组织：</h3><p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210302222934750.png" alt="image-20210302222934750"></p>
+<h2 id="1-3速率相关的性能指标"><a href="#1-3速率相关的性能指标" class="headerlink" title="1.3速率相关的性能指标"></a>1.3速率相关的性能指标</h2><p>速率</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210302223244450.png" alt="image-20210302223244450"></p>
+<p>带宽</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210302223813711.png" alt="image-20210302223813711"></p>
+<p>吞吐量</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210302224211510.png" alt="image-20210302224211510"></p>
+<p>时延</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210302224659582.png" alt="image-20210302224659582"></p>
+<p>时延带宽积</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210302225019180.png" alt="image-20210302225019180"></p>
+<p>往返时延RTT</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210302225208226.png" alt="image-20210302225208226"></p>
+<p>利用率</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210302225346741.png" alt="image-20210302225346741"></p>
+<h1 id="多捞啊："><a href="#多捞啊：" class="headerlink" title="多捞啊："></a>多捞啊：</h1><p>—————————————————————————————–分割线——————————————————-</p>
+<h1 id="计算机网络和因特网"><a href="#计算机网络和因特网" class="headerlink" title="计算机网络和因特网"></a>计算机网络和因特网</h1><h2 id="1-1什么是因特网"><a href="#1-1什么是因特网" class="headerlink" title="1.1什么是因特网"></a>1.1什么是因特网</h2><h3 id="1-1-1构成和服务角度描述："><a href="#1-1-1构成和服务角度描述：" class="headerlink" title="1.1.1构成和服务角度描述："></a>1.1.1构成和服务角度描述：</h3><h3 id="1-1-2协议："><a href="#1-1-2协议：" class="headerlink" title="1.1.2协议："></a>1.1.2协议：</h3><p>三要素：语法；语义，同步</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210309205752831.png" alt="image-20210309205752831"></p>
+<h2 id="1-2网络边缘"><a href="#1-2网络边缘" class="headerlink" title="1.2网络边缘"></a>1.2网络边缘</h2><h3 id="1-2-1接入网和物理媒体"><a href="#1-2-1接入网和物理媒体" class="headerlink" title="1.2.1接入网和物理媒体"></a>1.2.1接入网和物理媒体</h3><p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210309205900016.png" alt="image-20210309205900016"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210309210249838.png" alt="image-20210309210249838"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210309210549751.png" alt="image-20210309210549751"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210309210701573.png" alt="image-20210309210701573"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210309210806825.png" alt="image-20210309210806825"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210309210857170.png" alt="image-20210309210857170"></p>
+<h3 id="1-2-2"><a href="#1-2-2" class="headerlink" title="1.2.2"></a>1.2.2</h3><p>家庭接入网络</p>
+<p>企业接入网络</p>
+<p>WiFi接入网络</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210309211244997.png" alt="image-20210309211244997"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210309211554300.png" alt="image-20210309211554300"></p>
+<ol>
+<li><p>双绞线；同轴电缆；光纤电缆</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210309211719789.png" alt="image-20210309211719789"></p>
+</li>
+<li><p>无线链路</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210309211820079.png" alt="image-20210309211820079"></p>
+</li>
+</ol>
+<h2 id="1-3网络核心"><a href="#1-3网络核心" class="headerlink" title="1.3网络核心"></a>1.3网络核心</h2><ol>
+<li><p>电路交换</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210309212129390.png" alt="image-20210309212129390"></p>
+</li>
+<li><p>分组交换</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210309212534019.png" alt="image-20210309212534019"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210309212547970.png" alt="image-20210309212547970"></p>
+</li>
+<li><p>比较</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210309212723813.png" alt="image-20210309212723813"></p>
+</li>
+<li><p>总结</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210309212816824.png" alt="image-20210309212816824"></p>
+</li>
+</ol>
+<h2 id="1-4分组交换网络中的延时，丢失，吞吐量"><a href="#1-4分组交换网络中的延时，丢失，吞吐量" class="headerlink" title="1.4分组交换网络中的延时，丢失，吞吐量"></a>1.4分组交换网络中的延时，丢失，吞吐量</h2><p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210309213520289.png" alt="image-20210309213520289"> </p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210309213853781.png" alt="image-20210309213853781"></p>
+<h2 id="1-5协议层次及服务模型"><a href="#1-5协议层次及服务模型" class="headerlink" title="1.5协议层次及服务模型"></a>1.5协议层次及服务模型</h2><p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210311181928691.png" alt="image-20210311181928691"></p>
+<h2 id="1-6网络安全概述"><a href="#1-6网络安全概述" class="headerlink" title="1.6网络安全概述"></a>1.6网络安全概述</h2><h2 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h2><p>无线信道传输媒体不包括：光纤（包括激光；微波；红外线）</p>
+<p>数据链路层传输的单位是：帧</p>
+<h1 id="应用层"><a href="#应用层" class="headerlink" title="应用层"></a>应用层</h1><h2 id="2-1应用层协议原理"><a href="#2-1应用层协议原理" class="headerlink" title="2.1应用层协议原理"></a>2.1应用层协议原理</h2><ol>
+<li><p>套接字</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210311192635163.png" alt="image-20210311192635163"></p>
+</li>
+<li><p>进程寻址</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210311193039727.png" alt="image-20210311193039727"></p>
+</li>
+<li><p>传输协议提出的服务</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210311194716869.png" alt="image-20210311194716869"></p>
+</li>
+</ol>
+<h2 id="2-2"><a href="#2-2" class="headerlink" title="2.2"></a>2.2</h2><h3 id="2-2-1-HTTP概述"><a href="#2-2-1-HTTP概述" class="headerlink" title="2.2.1 HTTP概述"></a>2.2.1 HTTP概述</h3><h3 id="2-2-2非持久连接和持久连接"><a href="#2-2-2非持久连接和持久连接" class="headerlink" title="2.2.2非持久连接和持久连接"></a>2.2.2非持久连接和持久连接</h3><p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210311202814371.png" alt="image-20210311202814371"></p>
+<h3 id="2-2-3-HTTP报文格式"><a href="#2-2-3-HTTP报文格式" class="headerlink" title="2.2.3 HTTP报文格式"></a>2.2.3 HTTP报文格式</h3><p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210311203152931.png" alt="image-20210311203152931"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210311203327115.png" alt="image-20210311203327115"></p>
+<p>响应状态码：</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210311203554547.png" alt="image-20210311203554547"></p>
+<h3 id="2-2-4用户和服务器的交互：Cookies"><a href="#2-2-4用户和服务器的交互：Cookies" class="headerlink" title="2.2.4用户和服务器的交互：Cookies"></a>2.2.4用户和服务器的交互：Cookies</h3><p>cookies是一个数字；不是记录信息的文件</p>
+<h3 id="2-2-5-Web缓存"><a href="#2-2-5-Web缓存" class="headerlink" title="2.2.5 Web缓存"></a>2.2.5 Web缓存</h3><p>条件GET方法：</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210311205329667.png" alt="image-20210311205329667"></p>
+<p>缓存先访问外部Server，Server发出是否文件修改的响应码；如果为304，则没修改，缓存直接将自己的文件发给客户端；否则，从Server处拿数据。</p>
+<h2 id="2-3文件传输协议（FTP）"><a href="#2-3文件传输协议（FTP）" class="headerlink" title="2.3文件传输协议（FTP）"></a>2.3文件传输协议（FTP）</h2><p>FTP允许双方互相操作</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210312161232574.png" alt="image-20210312161232574"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210312161431311.png" alt="image-20210312161431311"></p>
+<p>控制连接：21；数据连接：20</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210312162003063.png" alt="image-20210312162003063"></p>
+<h2 id="2-4"><a href="#2-4" class="headerlink" title="2.4"></a>2.4</h2><h3 id="2-4-1-SMTP"><a href="#2-4-1-SMTP" class="headerlink" title="2.4.1 SMTP"></a>2.4.1 SMTP</h3><p>邮件发送协议：SMTP</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210313140945842.png" alt="image-20210313140945842"></p>
+<p>简单邮件传输协议服务器的端口号是（25）</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210313145838119.png" alt="image-20210313145838119"></p>
+<p>写入数据：</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210313145937113.png" alt="image-20210313145937113"></p>
+<p>对比HTTP：</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210313150026290.png" alt="image-20210313150026290"></p>
+<h3 id="2-4-2邮件报文格式和MIME"><a href="#2-4-2邮件报文格式和MIME" class="headerlink" title="2.4.2邮件报文格式和MIME"></a>2.4.2邮件报文格式和MIME</h3><h2 id="题目：-1"><a href="#题目：-1" class="headerlink" title="题目："></a>题目：</h2>]]></content>
+      <tags>
+        <tag>大二下</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>My Web Crawlers</title>
     <url>/2021/01/20/%E7%88%AC%E8%99%AB%E5%AD%A6%E4%B9%A0/</url>
     <content><![CDATA[<h1 id="第一章：requests模块"><a href="#第一章：requests模块" class="headerlink" title="第一章：requests模块"></a>第一章：requests模块</h1><h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><ol>
@@ -548,108 +654,6 @@
 ]]></content>
       <tags>
         <tag>工具</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>计算机网络</title>
-    <url>/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</url>
-    <content><![CDATA[<h1 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h1><h2 id="1-1总览"><a href="#1-1总览" class="headerlink" title="1.1总览"></a>1.1总览</h2><p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210302222454717.png" alt="image-20210302222454717"></p>
-<h3 id="计算机网络概念："><a href="#计算机网络概念：" class="headerlink" title="计算机网络概念："></a>计算机网络概念：</h3><p>互联，自治的计算机集合(<strong>特点：连通性，共享</strong>)</p>
-<h3 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h3><p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210302221856169.png" alt="image-20210302221856169"></p>
-<h3 id="组成"><a href="#组成" class="headerlink" title="组成"></a>组成</h3><p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210302222044031.png" alt="image-20210302222044031"></p>
-<h3 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h3><p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210302222418313.png" alt="image-20210302222418313"></p>
-<h2 id="1-2标准化和相关组织"><a href="#1-2标准化和相关组织" class="headerlink" title="1.2标准化和相关组织"></a>1.2标准化和相关组织</h2><h3 id="标准化工作："><a href="#标准化工作：" class="headerlink" title="标准化工作："></a>标准化工作：</h3><p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210302222831758.png" alt="image-20210302222831758"></p>
-<h3 id="相关组织："><a href="#相关组织：" class="headerlink" title="相关组织："></a>相关组织：</h3><p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210302222934750.png" alt="image-20210302222934750"></p>
-<h2 id="1-3速率相关的性能指标"><a href="#1-3速率相关的性能指标" class="headerlink" title="1.3速率相关的性能指标"></a>1.3速率相关的性能指标</h2><p>速率</p>
-<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210302223244450.png" alt="image-20210302223244450"></p>
-<p>带宽</p>
-<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210302223813711.png" alt="image-20210302223813711"></p>
-<p>吞吐量</p>
-<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210302224211510.png" alt="image-20210302224211510"></p>
-<p>时延</p>
-<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210302224659582.png" alt="image-20210302224659582"></p>
-<p>时延带宽积</p>
-<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210302225019180.png" alt="image-20210302225019180"></p>
-<p>往返时延RTT</p>
-<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210302225208226.png" alt="image-20210302225208226"></p>
-<p>利用率</p>
-<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210302225346741.png" alt="image-20210302225346741"></p>
-<h1 id="多捞啊："><a href="#多捞啊：" class="headerlink" title="多捞啊："></a>多捞啊：</h1><p>—————————————————————————————–分割线——————————————————-</p>
-<h1 id="计算机网络和因特网"><a href="#计算机网络和因特网" class="headerlink" title="计算机网络和因特网"></a>计算机网络和因特网</h1><h2 id="1-1什么是因特网"><a href="#1-1什么是因特网" class="headerlink" title="1.1什么是因特网"></a>1.1什么是因特网</h2><h3 id="1-1-1构成和服务角度描述："><a href="#1-1-1构成和服务角度描述：" class="headerlink" title="1.1.1构成和服务角度描述："></a>1.1.1构成和服务角度描述：</h3><h3 id="1-1-2协议："><a href="#1-1-2协议：" class="headerlink" title="1.1.2协议："></a>1.1.2协议：</h3><p>三要素：语法；语义，同步</p>
-<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210309205752831.png" alt="image-20210309205752831"></p>
-<h2 id="1-2网络边缘"><a href="#1-2网络边缘" class="headerlink" title="1.2网络边缘"></a>1.2网络边缘</h2><h3 id="1-2-1接入网和物理媒体"><a href="#1-2-1接入网和物理媒体" class="headerlink" title="1.2.1接入网和物理媒体"></a>1.2.1接入网和物理媒体</h3><p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210309205900016.png" alt="image-20210309205900016"></p>
-<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210309210249838.png" alt="image-20210309210249838"></p>
-<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210309210549751.png" alt="image-20210309210549751"></p>
-<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210309210701573.png" alt="image-20210309210701573"></p>
-<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210309210806825.png" alt="image-20210309210806825"></p>
-<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210309210857170.png" alt="image-20210309210857170"></p>
-<h3 id="1-2-2"><a href="#1-2-2" class="headerlink" title="1.2.2"></a>1.2.2</h3><p>家庭接入网络</p>
-<p>企业接入网络</p>
-<p>WiFi接入网络</p>
-<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210309211244997.png" alt="image-20210309211244997"></p>
-<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210309211554300.png" alt="image-20210309211554300"></p>
-<ol>
-<li><p>双绞线；同轴电缆；光纤电缆</p>
-<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210309211719789.png" alt="image-20210309211719789"></p>
-</li>
-<li><p>无线链路</p>
-<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210309211820079.png" alt="image-20210309211820079"></p>
-</li>
-</ol>
-<h2 id="1-3网络核心"><a href="#1-3网络核心" class="headerlink" title="1.3网络核心"></a>1.3网络核心</h2><ol>
-<li><p>电路交换</p>
-<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210309212129390.png" alt="image-20210309212129390"></p>
-</li>
-<li><p>分组交换</p>
-<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210309212534019.png" alt="image-20210309212534019"></p>
-<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210309212547970.png" alt="image-20210309212547970"></p>
-</li>
-<li><p>比较</p>
-<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210309212723813.png" alt="image-20210309212723813"></p>
-</li>
-<li><p>总结</p>
-<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210309212816824.png" alt="image-20210309212816824"></p>
-</li>
-</ol>
-<h2 id="1-4分组交换网络中的延时，丢失，吞吐量"><a href="#1-4分组交换网络中的延时，丢失，吞吐量" class="headerlink" title="1.4分组交换网络中的延时，丢失，吞吐量"></a>1.4分组交换网络中的延时，丢失，吞吐量</h2><p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210309213520289.png" alt="image-20210309213520289"> </p>
-<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210309213853781.png" alt="image-20210309213853781"></p>
-<h2 id="1-5协议层次及服务模型"><a href="#1-5协议层次及服务模型" class="headerlink" title="1.5协议层次及服务模型"></a>1.5协议层次及服务模型</h2><p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210311181928691.png" alt="image-20210311181928691"></p>
-<h2 id="1-6网络安全概述"><a href="#1-6网络安全概述" class="headerlink" title="1.6网络安全概述"></a>1.6网络安全概述</h2><h1 id="应用层"><a href="#应用层" class="headerlink" title="应用层"></a>应用层</h1><h2 id="2-1应用层协议原理"><a href="#2-1应用层协议原理" class="headerlink" title="2.1应用层协议原理"></a>2.1应用层协议原理</h2><ol>
-<li><p>套接字</p>
-<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210311192635163.png" alt="image-20210311192635163"></p>
-</li>
-<li><p>进程寻址</p>
-<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210311193039727.png" alt="image-20210311193039727"></p>
-</li>
-<li><p>传输协议提出的服务</p>
-<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210311194716869.png" alt="image-20210311194716869"></p>
-</li>
-</ol>
-<h2 id="2-2"><a href="#2-2" class="headerlink" title="2.2"></a>2.2</h2><h3 id="2-2-1-HTTP概述"><a href="#2-2-1-HTTP概述" class="headerlink" title="2.2.1 HTTP概述"></a>2.2.1 HTTP概述</h3><h3 id="2-2-2非持久连接和持久连接"><a href="#2-2-2非持久连接和持久连接" class="headerlink" title="2.2.2非持久连接和持久连接"></a>2.2.2非持久连接和持久连接</h3><p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210311202814371.png" alt="image-20210311202814371"></p>
-<h3 id="2-2-3-HTTP报文格式"><a href="#2-2-3-HTTP报文格式" class="headerlink" title="2.2.3 HTTP报文格式"></a>2.2.3 HTTP报文格式</h3><p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210311203152931.png" alt="image-20210311203152931"></p>
-<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210311203327115.png" alt="image-20210311203327115"></p>
-<p>响应状态码：</p>
-<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210311203554547.png" alt="image-20210311203554547"></p>
-<h3 id="2-2-4用户和服务器的交互：Cookies"><a href="#2-2-4用户和服务器的交互：Cookies" class="headerlink" title="2.2.4用户和服务器的交互：Cookies"></a>2.2.4用户和服务器的交互：Cookies</h3><p>cookies是一个数字；不是记录信息的文件</p>
-<h3 id="2-2-5-Web缓存"><a href="#2-2-5-Web缓存" class="headerlink" title="2.2.5 Web缓存"></a>2.2.5 Web缓存</h3><p>条件GET方法：</p>
-<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210311205329667.png" alt="image-20210311205329667"></p>
-<p>缓存先访问外部Server，Server发出是否文件修改的响应码；如果为304，则没修改，缓存直接将自己的文件发给客户端；否则，从Server处拿数据。</p>
-<h2 id="2-3文件传输协议（FTP）"><a href="#2-3文件传输协议（FTP）" class="headerlink" title="2.3文件传输协议（FTP）"></a>2.3文件传输协议（FTP）</h2><p>FTP允许双方互相操作</p>
-<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210312161232574.png" alt="image-20210312161232574"></p>
-<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210312161431311.png" alt="image-20210312161431311"></p>
-<p>控制连接：21；数据连接：20</p>
-<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210312162003063.png" alt="image-20210312162003063"></p>
-<h2 id="2-4"><a href="#2-4" class="headerlink" title="2.4"></a>2.4</h2><h3 id="2-4-1-SMTP"><a href="#2-4-1-SMTP" class="headerlink" title="2.4.1 SMTP"></a>2.4.1 SMTP</h3><p>邮件发送协议：SMTP</p>
-<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210313140945842.png" alt="image-20210313140945842"></p>
-<p>简单邮件传输协议服务器的端口号是（25）</p>
-<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210313145838119.png" alt="image-20210313145838119"></p>
-<p>写入数据：</p>
-<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210313145937113.png" alt="image-20210313145937113"></p>
-<p>对比HTTP：</p>
-<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210313150026290.png" alt="image-20210313150026290"></p>
-<h3 id="2-4-2邮件报文格式和MIME"><a href="#2-4-2邮件报文格式和MIME" class="headerlink" title="2.4.2邮件报文格式和MIME"></a>2.4.2邮件报文格式和MIME</h3>]]></content>
-      <tags>
-        <tag>大二下</tag>
       </tags>
   </entry>
   <entry>
@@ -993,7 +997,40 @@
 <h2 id="循环计算过程："><a href="#循环计算过程：" class="headerlink" title="循环计算过程："></a>循环计算过程：</h2><p><img src="/2020/12/27/Tenserflow/image-20210213221413301.png" alt="image-20210213221413301"></p>
 <p><img src="/2020/12/27/Tenserflow/image-20210213224442141.png" alt="image-20210213224442141"></p>
 <h2 id="Enbedding编码："><a href="#Enbedding编码：" class="headerlink" title="Enbedding编码："></a>Enbedding编码：</h2><p><img src="/2020/12/27/Tenserflow/image-20210213225104214.png" alt="image-20210213225104214"></p>
-<h2 id="实践："><a href="#实践：" class="headerlink" title="实践："></a>实践：</h2><h3 id="ABCDE字母预测："><a href="#ABCDE字母预测：" class="headerlink" title="ABCDE字母预测："></a>ABCDE字母预测：</h3><h3 id="股票预测："><a href="#股票预测：" class="headerlink" title="股票预测："></a>股票预测：</h3>]]></content>
+<h2 id="实践："><a href="#实践：" class="headerlink" title="实践："></a>实践：</h2><h3 id="ABCDE字母预测："><a href="#ABCDE字母预测：" class="headerlink" title="ABCDE字母预测："></a>ABCDE字母预测：</h3><h3 id="股票预测："><a href="#股票预测：" class="headerlink" title="股票预测："></a>股票预测：</h3><h1 id="Tensorflow算法基础与项目实战"><a href="#Tensorflow算法基础与项目实战" class="headerlink" title="Tensorflow算法基础与项目实战"></a>Tensorflow算法基础与项目实战</h1><h2 id="Broadcasting"><a href="#Broadcasting" class="headerlink" title="Broadcasting"></a>Broadcasting</h2><p>没有复制数据，但是对进行了一次相应的运算，不占用显存</p>
+<p><img src="/2020/12/27/Tenserflow/image-20210314154942838.png" alt="image-20210314154942838"></p>
+<p><img src="/2020/12/27/Tenserflow/image-20210314155707530.png" alt="image-20210314155707530"></p>
+<p>屏蔽掉除了错误以外的无关信息：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line">os.environ[<span class="string">&#x27;TF_CPP_MIN_LOG_LEVEL&#x27;</span>] = <span class="string">&#x27;2&#x27;</span></span><br></pre></td></tr></table></figure>
+<p>打包：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">train_db = tf.data.Dataset.from_tensor_slices((x,y)).batch(<span class="number">128</span>)</span><br><span class="line">train_iter = <span class="built_in">iter</span>(train_db)</span><br><span class="line">sample = <span class="built_in">next</span>(train_iter)</span><br><span class="line">print(<span class="string">&#x27;batch:&#x27;</span>sample[<span class="number">0</span>].shape,sample.shape)</span><br></pre></td></tr></table></figure>
+<p><img src="/2020/12/27/Tenserflow/image-20210314162536639.png" alt="image-20210314162536639"></p>
+<p>独热码：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">y_onehot = tf.one_hot(y,depth=<span class="number">10</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="一些函数"><a href="#一些函数" class="headerlink" title="一些函数"></a>一些函数</h2><h3 id="合并与分割："><a href="#合并与分割：" class="headerlink" title="合并与分割："></a>合并与分割：</h3><p><img src="/2020/12/27/Tenserflow/image-20210314170010945.png" alt="image-20210314170010945"></p>
+<p>创建一个新维度：</p>
+<p><img src="/2020/12/27/Tenserflow/image-20210314171346425.png" alt="image-20210314171346425"></p>
+<p>没有变化的维度必须相等</p>
+<p><img src="/2020/12/27/Tenserflow/image-20210314171637649.png" alt="image-20210314171637649"></p>
+<p><img src="/2020/12/27/Tenserflow/image-20210314171721696.png" alt="image-20210314171721696"></p>
+<p>split返回的是一个列表</p>
+<h3 id="范数"><a href="#范数" class="headerlink" title="范数"></a>范数</h3><p><img src="/2020/12/27/Tenserflow/image-20210314193936982.png" alt="image-20210314193936982"></p>
+<p>最大值，最小值，指定了axis之后，会降一维</p>
+<p><img src="/2020/12/27/Tenserflow/image-20210314195544234.png" alt="image-20210314195544234"></p>
+<h3 id="求最大值最小值的位置："><a href="#求最大值最小值的位置：" class="headerlink" title="求最大值最小值的位置："></a>求最大值最小值的位置：</h3><p><img src="/2020/12/27/Tenserflow/image-20210314195515753.png" alt="image-20210314195515753"></p>
+<h3 id="判等"><a href="#判等" class="headerlink" title="判等"></a>判等</h3><p><img src="/2020/12/27/Tenserflow/image-20210314195834879.png" alt="image-20210314195834879"></p>
+<h3 id="求准确率"><a href="#求准确率" class="headerlink" title="求准确率"></a>求准确率</h3><p><img src="/2020/12/27/Tenserflow/image-20210314195946229.png" alt="image-20210314195946229"></p>
+<h3 id="取独：（gather的反函数）"><a href="#取独：（gather的反函数）" class="headerlink" title="取独：（gather的反函数）"></a>取独：（gather的反函数）</h3><p><img src="/2020/12/27/Tenserflow/image-20210314200201584.png" alt="image-20210314200201584"></p>
+<h3 id="Top-k"><a href="#Top-k" class="headerlink" title="Top-k"></a>Top-k</h3><p><img src="/2020/12/27/Tenserflow/image-20210315151314023.png" alt="image-20210315151314023"></p>
+<p><img src="/2020/12/27/Tenserflow/image-20210315152526457.png" alt="image-20210315152526457"></p>
+<h3 id="数据的填充与复制"><a href="#数据的填充与复制" class="headerlink" title="数据的填充与复制"></a>数据的填充与复制</h3><p>pad：</p>
+<p><img src="/2020/12/27/Tenserflow/image-20210315155716230.png" alt="image-20210315155716230"></p>
+<p>图片Padding的意义：先让A来padding一下，扩大到一个合适的大小的A1，A1经过某种变化的到的B和A是一样大小的，</p>
+<p><img src="/2020/12/27/Tenserflow/image-20210315160100606.png" alt="image-20210315160100606"></p>
+<p>tile（<strong>真实复制</strong>）：</p>
+<p><img src="/2020/12/27/Tenserflow/image-20210315160833682.png" alt="image-20210315160833682"></p>
+<p>对比broadcast_to:占用内存，后者更优。</p>
+]]></content>
       <tags>
         <tag>深度学习平台</tag>
       </tags>

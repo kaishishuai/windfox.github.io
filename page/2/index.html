@@ -442,7 +442,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-02-26 17:26:14" itemprop="dateModified" datetime="2021-02-26T17:26:14+08:00">2021-02-26</time>
+        <time title="修改时间：2021-03-15 16:10:29" itemprop="dateModified" datetime="2021-03-15T16:10:29+08:00">2021-03-15</time>
       </span>
 
   
@@ -509,7 +509,40 @@
 <h2 id="循环计算过程："><a href="#循环计算过程：" class="headerlink" title="循环计算过程："></a>循环计算过程：</h2><p><img src="/2020/12/27/Tenserflow/image-20210213221413301.png" alt="image-20210213221413301"></p>
 <p><img src="/2020/12/27/Tenserflow/image-20210213224442141.png" alt="image-20210213224442141"></p>
 <h2 id="Enbedding编码："><a href="#Enbedding编码：" class="headerlink" title="Enbedding编码："></a>Enbedding编码：</h2><p><img src="/2020/12/27/Tenserflow/image-20210213225104214.png" alt="image-20210213225104214"></p>
-<h2 id="实践："><a href="#实践：" class="headerlink" title="实践："></a>实践：</h2><h3 id="ABCDE字母预测："><a href="#ABCDE字母预测：" class="headerlink" title="ABCDE字母预测："></a>ABCDE字母预测：</h3><h3 id="股票预测："><a href="#股票预测：" class="headerlink" title="股票预测："></a>股票预测：</h3>
+<h2 id="实践："><a href="#实践：" class="headerlink" title="实践："></a>实践：</h2><h3 id="ABCDE字母预测："><a href="#ABCDE字母预测：" class="headerlink" title="ABCDE字母预测："></a>ABCDE字母预测：</h3><h3 id="股票预测："><a href="#股票预测：" class="headerlink" title="股票预测："></a>股票预测：</h3><h1 id="Tensorflow算法基础与项目实战"><a href="#Tensorflow算法基础与项目实战" class="headerlink" title="Tensorflow算法基础与项目实战"></a>Tensorflow算法基础与项目实战</h1><h2 id="Broadcasting"><a href="#Broadcasting" class="headerlink" title="Broadcasting"></a>Broadcasting</h2><p>没有复制数据，但是对进行了一次相应的运算，不占用显存</p>
+<p><img src="/2020/12/27/Tenserflow/image-20210314154942838.png" alt="image-20210314154942838"></p>
+<p><img src="/2020/12/27/Tenserflow/image-20210314155707530.png" alt="image-20210314155707530"></p>
+<p>屏蔽掉除了错误以外的无关信息：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line">os.environ[<span class="string">&#x27;TF_CPP_MIN_LOG_LEVEL&#x27;</span>] = <span class="string">&#x27;2&#x27;</span></span><br></pre></td></tr></table></figure>
+<p>打包：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">train_db = tf.data.Dataset.from_tensor_slices((x,y)).batch(<span class="number">128</span>)</span><br><span class="line">train_iter = <span class="built_in">iter</span>(train_db)</span><br><span class="line">sample = <span class="built_in">next</span>(train_iter)</span><br><span class="line">print(<span class="string">&#x27;batch:&#x27;</span>sample[<span class="number">0</span>].shape,sample.shape)</span><br></pre></td></tr></table></figure>
+<p><img src="/2020/12/27/Tenserflow/image-20210314162536639.png" alt="image-20210314162536639"></p>
+<p>独热码：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">y_onehot = tf.one_hot(y,depth=<span class="number">10</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="一些函数"><a href="#一些函数" class="headerlink" title="一些函数"></a>一些函数</h2><h3 id="合并与分割："><a href="#合并与分割：" class="headerlink" title="合并与分割："></a>合并与分割：</h3><p><img src="/2020/12/27/Tenserflow/image-20210314170010945.png" alt="image-20210314170010945"></p>
+<p>创建一个新维度：</p>
+<p><img src="/2020/12/27/Tenserflow/image-20210314171346425.png" alt="image-20210314171346425"></p>
+<p>没有变化的维度必须相等</p>
+<p><img src="/2020/12/27/Tenserflow/image-20210314171637649.png" alt="image-20210314171637649"></p>
+<p><img src="/2020/12/27/Tenserflow/image-20210314171721696.png" alt="image-20210314171721696"></p>
+<p>split返回的是一个列表</p>
+<h3 id="范数"><a href="#范数" class="headerlink" title="范数"></a>范数</h3><p><img src="/2020/12/27/Tenserflow/image-20210314193936982.png" alt="image-20210314193936982"></p>
+<p>最大值，最小值，指定了axis之后，会降一维</p>
+<p><img src="/2020/12/27/Tenserflow/image-20210314195544234.png" alt="image-20210314195544234"></p>
+<h3 id="求最大值最小值的位置："><a href="#求最大值最小值的位置：" class="headerlink" title="求最大值最小值的位置："></a>求最大值最小值的位置：</h3><p><img src="/2020/12/27/Tenserflow/image-20210314195515753.png" alt="image-20210314195515753"></p>
+<h3 id="判等"><a href="#判等" class="headerlink" title="判等"></a>判等</h3><p><img src="/2020/12/27/Tenserflow/image-20210314195834879.png" alt="image-20210314195834879"></p>
+<h3 id="求准确率"><a href="#求准确率" class="headerlink" title="求准确率"></a>求准确率</h3><p><img src="/2020/12/27/Tenserflow/image-20210314195946229.png" alt="image-20210314195946229"></p>
+<h3 id="取独：（gather的反函数）"><a href="#取独：（gather的反函数）" class="headerlink" title="取独：（gather的反函数）"></a>取独：（gather的反函数）</h3><p><img src="/2020/12/27/Tenserflow/image-20210314200201584.png" alt="image-20210314200201584"></p>
+<h3 id="Top-k"><a href="#Top-k" class="headerlink" title="Top-k"></a>Top-k</h3><p><img src="/2020/12/27/Tenserflow/image-20210315151314023.png" alt="image-20210315151314023"></p>
+<p><img src="/2020/12/27/Tenserflow/image-20210315152526457.png" alt="image-20210315152526457"></p>
+<h3 id="数据的填充与复制"><a href="#数据的填充与复制" class="headerlink" title="数据的填充与复制"></a>数据的填充与复制</h3><p>pad：</p>
+<p><img src="/2020/12/27/Tenserflow/image-20210315155716230.png" alt="image-20210315155716230"></p>
+<p>图片Padding的意义：先让A来padding一下，扩大到一个合适的大小的A1，A1经过某种变化的到的B和A是一样大小的，</p>
+<p><img src="/2020/12/27/Tenserflow/image-20210315160100606.png" alt="image-20210315160100606"></p>
+<p>tile（<strong>真实复制</strong>）：</p>
+<p><img src="/2020/12/27/Tenserflow/image-20210315160833682.png" alt="image-20210315160833682"></p>
+<p>对比broadcast_to:占用内存，后者更优。</p>
+
       
     </div>
 
