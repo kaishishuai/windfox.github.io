@@ -62,21 +62,6 @@
       </tags>
   </entry>
   <entry>
-    <title>MyVue</title>
-    <url>/2021/01/17/Vue/</url>
-    <content><![CDATA[<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h2</span> <span class="attr">v-text</span>=<span class="string">&quot;message&quot;</span>&gt;</span> //直接将整个标签变为message的内容</span><br><span class="line">    &#123;&#123;message + &quot;!!&quot;&#125;&#125;深圳 //只讲大括号内的内容变为message(允许字符串拼接)</span><br><span class="line"><span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h2</span> <span class="attr">v-html</span>=<span class="string">&quot;content&quot;</span>&gt;</span></span><br><span class="line">    </span><br><span class="line"><span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">srcpit</span> <span class="attr">src</span> = <span class="string">&quot;https://cdn.jsdelivr.net/npm/vue/dist/vue.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">srcpit</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">	<span class="keyword">var</span> app = <span class="keyword">new</span> Vue&#123;</span></span><br><span class="line"><span class="javascript">        el:<span class="string">&quot;#app&quot;</span>,</span></span><br><span class="line">        data:&#123;</span><br><span class="line"><span class="javascript">            message:<span class="string">&quot;黑马&quot;</span></span></span><br><span class="line"><span class="handlebars"><span class="xml">            content:&quot;<span class="tag">&lt;<span class="name">a</span> <span class="attr">herf</span>=<span class="string">&#x27;http://www.itheima.com&#x27;</span>&gt;</span>黑马程序员<span class="tag">&lt;/<span class="name">a</span>&gt;</span>&quot;</span></span></span><br><span class="line">        &#125;</span><br><span class="line">        method</span><br><span class="line">    &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">v-text&#x3D;&quot;&quot;;v-html&#x3D;&quot;&quot;;</span><br><span class="line">v-on:click&#x3D;&quot;&quot;(或者monseenter(或者dblclick))</span><br><span class="line">v-show&#x3D;&quot;bool&quot;如果为真则显示(和input的button，@click连用，实现点击隐藏或者显示图片)</span><br><span class="line">v-if&#x3D;&quot;bool&quot;和v-show的区别是if直接操作dom元素，show操作display属性</span><br><span class="line">v-bind：src(伪属性)(可以用冒号简写)</span><br></pre></td></tr></table></figure>
-<p><img src="/2021/01/17/Vue/image-20210120102545219.png" alt="image-20210120102545219"></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">v-for&#x3D;&quot;(item,index) in arr&quot;(先将标签数变为数组的个数，再往里面添加索引元素)</span><br></pre></td></tr></table></figure>
-<p><img src="/2021/01/17/Vue/image-20210120110759481.png" alt="image-20210120110759481"></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">@keyup.enter&#x3D;&quot;sayHi&quot; 回车的时候做“sayHi”函数</span><br><span class="line"></span><br><span class="line">v-model&#x3D;&quot;message&quot; 双向同步更新</span><br><span class="line">this.arr.splice(index,lenth)删除数组中的元素</span><br></pre></td></tr></table></figure>
-<p><img src="/2021/01/17/Vue/image-20210120133209049.png" alt="image-20210120133209049"></p>
-]]></content>
-      <tags>
-        <tag>前端</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hello World</title>
     <url>/2020/12/21/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
@@ -94,15 +79,18 @@
       </categories>
   </entry>
   <entry>
-    <title>debug</title>
-    <url>/2021/01/22/debug/</url>
-    <content><![CDATA[<p>步出和回退的区别：</p>
- <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">步出：将一个方法体剩下的所有的代码走完，回到调用它的层级的下一条语句</span><br><span class="line">回退：回退到一个函数调用的时候的语句</span><br><span class="line">区别，一个是往前走完一个函数，一个是退出一个函数（没走）</span><br></pre></td></tr></table></figure>
-<p>条件断点：右键断点，当需要条件符合的时候程序才会停止</p>
-<p>多线程调试：右键断点：将all改成Thread，挂起调试，这样多个线程到该断点都会停下来</p>
+    <title>MyVue</title>
+    <url>/2021/01/17/Vue/</url>
+    <content><![CDATA[<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h2</span> <span class="attr">v-text</span>=<span class="string">&quot;message&quot;</span>&gt;</span> //直接将整个标签变为message的内容</span><br><span class="line">    &#123;&#123;message + &quot;!!&quot;&#125;&#125;深圳 //只讲大括号内的内容变为message(允许字符串拼接)</span><br><span class="line"><span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h2</span> <span class="attr">v-html</span>=<span class="string">&quot;content&quot;</span>&gt;</span></span><br><span class="line">    </span><br><span class="line"><span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">srcpit</span> <span class="attr">src</span> = <span class="string">&quot;https://cdn.jsdelivr.net/npm/vue/dist/vue.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">srcpit</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">	<span class="keyword">var</span> app = <span class="keyword">new</span> Vue&#123;</span></span><br><span class="line"><span class="javascript">        el:<span class="string">&quot;#app&quot;</span>,</span></span><br><span class="line">        data:&#123;</span><br><span class="line"><span class="javascript">            message:<span class="string">&quot;黑马&quot;</span></span></span><br><span class="line"><span class="handlebars"><span class="xml">            content:&quot;<span class="tag">&lt;<span class="name">a</span> <span class="attr">herf</span>=<span class="string">&#x27;http://www.itheima.com&#x27;</span>&gt;</span>黑马程序员<span class="tag">&lt;/<span class="name">a</span>&gt;</span>&quot;</span></span></span><br><span class="line">        &#125;</span><br><span class="line">        method</span><br><span class="line">    &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">v-text&#x3D;&quot;&quot;;v-html&#x3D;&quot;&quot;;</span><br><span class="line">v-on:click&#x3D;&quot;&quot;(或者monseenter(或者dblclick))</span><br><span class="line">v-show&#x3D;&quot;bool&quot;如果为真则显示(和input的button，@click连用，实现点击隐藏或者显示图片)</span><br><span class="line">v-if&#x3D;&quot;bool&quot;和v-show的区别是if直接操作dom元素，show操作display属性</span><br><span class="line">v-bind：src(伪属性)(可以用冒号简写)</span><br></pre></td></tr></table></figure>
+<p><img src="/2021/01/17/Vue/image-20210120102545219.png" alt="image-20210120102545219"></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">v-for&#x3D;&quot;(item,index) in arr&quot;(先将标签数变为数组的个数，再往里面添加索引元素)</span><br></pre></td></tr></table></figure>
+<p><img src="/2021/01/17/Vue/image-20210120110759481.png" alt="image-20210120110759481"></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">@keyup.enter&#x3D;&quot;sayHi&quot; 回车的时候做“sayHi”函数</span><br><span class="line"></span><br><span class="line">v-model&#x3D;&quot;message&quot; 双向同步更新</span><br><span class="line">this.arr.splice(index,lenth)删除数组中的元素</span><br></pre></td></tr></table></figure>
+<p><img src="/2021/01/17/Vue/image-20210120133209049.png" alt="image-20210120133209049"></p>
 ]]></content>
       <tags>
-        <tag>工具</tag>
+        <tag>前端</tag>
       </tags>
   </entry>
   <entry>
@@ -117,6 +105,18 @@
       </categories>
       <tags>
         <tag>技术学习</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>debug</title>
+    <url>/2021/01/22/debug/</url>
+    <content><![CDATA[<p>步出和回退的区别：</p>
+ <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">步出：将一个方法体剩下的所有的代码走完，回到调用它的层级的下一条语句</span><br><span class="line">回退：回退到一个函数调用的时候的语句</span><br><span class="line">区别，一个是往前走完一个函数，一个是退出一个函数（没走）</span><br></pre></td></tr></table></figure>
+<p>条件断点：右键断点，当需要条件符合的时候程序才会停止</p>
+<p>多线程调试：右键断点：将all改成Thread，挂起调试，这样多个线程到该断点都会停下来</p>
+]]></content>
+      <tags>
+        <tag>工具</tag>
       </tags>
   </entry>
   <entry>
@@ -283,8 +283,11 @@
 <h2 id="优先级调度算法"><a href="#优先级调度算法" class="headerlink" title="优先级调度算法"></a>优先级调度算法</h2><p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210306230030070.png" alt="image-20210306230030070"></p>
 <p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210306230327875.png" alt="image-20210306230327875"></p>
 <p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210306230406627.png" alt="image-20210306230406627"></p>
+<p><strong>这里的就绪队列并没什么用，只是一个用来存放就绪程序的地方，并不指后面的要让前面的先执行</strong></p>
+<p>HRRN属于一种动态优先级算法，SJB算法属于一种静态优先级算法（还是说类似？）</p>
 <h2 id="多级反馈队列调度算法"><a href="#多级反馈队列调度算法" class="headerlink" title="多级反馈队列调度算法"></a>多级反馈队列调度算法</h2><p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210306230803323.png" alt="image-20210306230803323"></p>
 <p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210306230941713.png" alt="image-20210306230941713"></p>
+<p><strong>抢占式的被抢占进程会被放入队尾，如果之后再次上处理机，还是可以运行当前队列的整个时间片（不用管之前用没用一点时间片）</strong></p>
 <h3 id="对比-1"><a href="#对比-1" class="headerlink" title="对比"></a>对比</h3><p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210306231046978.png" alt="image-20210306231046978"></p>
 <h2 id="信号量机制"><a href="#信号量机制" class="headerlink" title="信号量机制"></a>信号量机制</h2><p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210311205736975.png" alt="image-20210311205736975"></p>
 <p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210311210058623.png" alt="image-20210311210058623"></p>
@@ -314,6 +317,35 @@
 </ol>
 <h2 id="管程"><a href="#管程" class="headerlink" title="管程"></a>管程</h2><p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210315142302569.png" alt="image-20210315142302569"></p>
 <p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210315150815606.png" alt="image-20210315150815606"></p>
+<h2 id="死锁"><a href="#死锁" class="headerlink" title="死锁"></a>死锁</h2><p>预防死锁</p>
+<ol>
+<li><p>破坏互斥条件</p>
+<p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210321150507620.png" alt="image-20210321150507620"></p>
+</li>
+<li><p>破坏不可剥夺条件</p>
+<p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210321150806923.png" alt="image-20210321150806923"></p>
+</li>
+<li><p>破坏请求和保持条件</p>
+<p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210321150931832.png" alt="image-20210321150931832"></p>
+</li>
+<li><p>破坏循环等待条件</p>
+<p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210321151154011.png" alt="image-20210321151154011">                 </p>
+</li>
+</ol>
+<h3 id="银行家算法"><a href="#银行家算法" class="headerlink" title="银行家算法"></a>银行家算法</h3><p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210321152429280.png" alt="image-20210321152429280"></p>
+<p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210321152855129.png" alt="image-20210321152855129"></p>
+<p>不安全装态未必死锁，死锁一定是不安全状态</p>
+<h1 id="内存管理"><a href="#内存管理" class="headerlink" title="内存管理"></a>内存管理</h1><h2 id="连续分配管理方式"><a href="#连续分配管理方式" class="headerlink" title="连续分配管理方式"></a>连续分配管理方式</h2><h3 id="动态分区分配算法"><a href="#动态分区分配算法" class="headerlink" title="动态分区分配算法"></a>动态分区分配算法</h3><ol>
+<li>首次适应算法</li>
+<li><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210330170541427.png" alt="image-20210330170541427"></li>
+<li>最佳适应算法</li>
+<li>最坏适应算法</li>
+<li>邻近适应算法</li>
+<li><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210330180254121.png" alt="image-20210330180254121"></li>
+<li></li>
+</ol>
+<h3 id="分页存储管理"><a href="#分页存储管理" class="headerlink" title="分页存储管理"></a>分页存储管理</h3><p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210330182859708.png" alt="image-20210330182859708"></p>
+<p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210330182423547.png" alt="image-20210330182423547"></p>
 ]]></content>
       <tags>
         <tag>大二下</tag>
@@ -322,7 +354,7 @@
   <entry>
     <title>数据库</title>
     <url>/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/</url>
-    <content><![CDATA[<h1 id="数据库系统概论"><a href="#数据库系统概论" class="headerlink" title="数据库系统概论"></a>数据库系统概论</h1><h2 id="数据库及系统概念"><a href="#数据库及系统概念" class="headerlink" title="数据库及系统概念"></a>数据库及系统概念</h2><h3 id="1-1概念："><a href="#1-1概念：" class="headerlink" title="1.1概念："></a>1.1概念：</h3><ol>
+    <content><![CDATA[<h1 id="数据库系统概论"><a href="#数据库系统概论" class="headerlink" title="数据库系统概论"></a>数据库系统概论</h1><h2 id="1-1数据库及系统概念"><a href="#1-1数据库及系统概念" class="headerlink" title="1.1数据库及系统概念"></a>1.1数据库及系统概念</h2><h3 id="1-1-1概念："><a href="#1-1-1概念：" class="headerlink" title="1.1.1概念："></a>1.1.1概念：</h3><ol>
 <li><p>数据：描述事物符号的记录</p>
 </li>
 <li><p>数据库：长期存储在计算机内的有组织的，可共享的大量数据的集合</p>
@@ -337,25 +369,25 @@
 <li><p>数据库系统：计算机中引用到数据库之后的系统。（包括：数据库，数据库管理系统（DBMS），数据库应用程序，数据库管理员（DBA）和用户）</p>
 </li>
 </ol>
-<h3 id="1-2数据模型："><a href="#1-2数据模型：" class="headerlink" title="1.2数据模型："></a>1.2数据模型：</h3><ol>
+<h3 id="1-1-2数据模型："><a href="#1-1-2数据模型：" class="headerlink" title="1.1.2数据模型："></a>1.1.2数据模型：</h3><ol>
 <li>层次数据模型（树结构）</li>
 <li>网状数据模型（图结构）缺点：数据结构复杂，增加了数据查询和数据定位的困难</li>
 <li>关系数据模型（二维表结构）表之间通过具有相同属性列的数据值进行约束关联</li>
 <li>其他数据模型</li>
 </ol>
-<h3 id="1-3数据库应用程序："><a href="#1-3数据库应用程序：" class="headerlink" title="1.3数据库应用程序："></a>1.3数据库应用程序：</h3><p>是一种在DBMS支持下对数据库中数据进行访问处理的应用程序</p>
+<h3 id="1-1-3数据库应用程序："><a href="#1-1-3数据库应用程序：" class="headerlink" title="1.1.3数据库应用程序："></a>1.1.3数据库应用程序：</h3><p>是一种在DBMS支持下对数据库中数据进行访问处理的应用程序</p>
 <ol>
 <li>通过窗口输入框采集用户输入数据</li>
 <li>通过接口连接访问数据库</li>
 <li>执行用户数据查询  </li>
 <li>通过表单列表输出结果数据</li>
 </ol>
-<h3 id="1-4数据库管理系统："><a href="#1-4数据库管理系统：" class="headerlink" title="1.4数据库管理系统："></a>1.4数据库管理系统：</h3><p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210302201606385.png" alt="image-20210302201606385"></p>
+<h3 id="1-1-4数据库管理系统："><a href="#1-1-4数据库管理系统：" class="headerlink" title="1.1.4数据库管理系统："></a>1.1.4数据库管理系统：</h3><p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210302201606385.png" alt="image-20210302201606385"></p>
 <p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210302201619611.png" alt="image-20210302201619611"></p>
-<h3 id="1-5数据库："><a href="#1-5数据库：" class="headerlink" title="1.5数据库："></a>1.5数据库：</h3><p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210302201713863.png" alt="image-20210302201713863"></p>
+<h3 id="1-1-5数据库："><a href="#1-1-5数据库：" class="headerlink" title="1.1.5数据库："></a>1.1.5数据库：</h3><p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210302201713863.png" alt="image-20210302201713863"></p>
 <p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210302201754678.png" alt="image-20210302201754678"></p>
 <p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210302201903138.png" alt="image-20210302201903138"></p>
-<h2 id="数据库发展"><a href="#数据库发展" class="headerlink" title="数据库发展"></a>数据库发展</h2><h3 id="2-1数据管理技术发展阶段："><a href="#2-1数据管理技术发展阶段：" class="headerlink" title="2.1数据管理技术发展阶段："></a>2.1数据管理技术发展阶段：</h3><ol>
+<h2 id="1-2数据库发展"><a href="#1-2数据库发展" class="headerlink" title="1.2数据库发展"></a>1.2数据库发展</h2><h3 id="1-2-1数据管理技术发展阶段："><a href="#1-2-1数据管理技术发展阶段：" class="headerlink" title="1.2.1数据管理技术发展阶段："></a>1.2.1数据管理技术发展阶段：</h3><ol>
 <li><p>人工管理阶段</p>
 <p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210302202110474.png" alt="image-20210302202110474"></p>
 <p>特点：</p>
@@ -387,28 +419,28 @@
 </ul>
 </li>
 </ol>
-<h3 id="2-2数据库技术发展经历时代"><a href="#2-2数据库技术发展经历时代" class="headerlink" title="2.2数据库技术发展经历时代"></a>2.2数据库技术发展经历时代</h3><p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210302203059099.png" alt="image-20210302203059099"></p>
+<h3 id="1-2-2数据库技术发展经历时代"><a href="#1-2-2数据库技术发展经历时代" class="headerlink" title="1.2.2数据库技术发展经历时代"></a>1.2.2数据库技术发展经历时代</h3><p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210302203059099.png" alt="image-20210302203059099"></p>
 <p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210302203114058.png" alt="image-20210302203114058"></p>
-<h3 id="2-3数据库技术领域"><a href="#2-3数据库技术领域" class="headerlink" title="2.3数据库技术领域"></a>2.3数据库技术领域</h3><h3 id="2-4数据库技术发展趋势"><a href="#2-4数据库技术发展趋势" class="headerlink" title="2.4数据库技术发展趋势"></a>2.4数据库技术发展趋势</h3><p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210302203239204.png" alt="image-20210302203239204"></p>
-<h2 id="数据库应用系统"><a href="#数据库应用系统" class="headerlink" title="数据库应用系统"></a>数据库应用系统</h2><h3 id="3-1类型"><a href="#3-1类型" class="headerlink" title="3.1类型"></a>3.1类型</h3><ol>
+<h3 id="1-2-3数据库技术领域"><a href="#1-2-3数据库技术领域" class="headerlink" title="1.2.3数据库技术领域"></a>1.2.3数据库技术领域</h3><h3 id="1-2-4数据库技术发展趋势"><a href="#1-2-4数据库技术发展趋势" class="headerlink" title="1.2.4数据库技术发展趋势"></a>1.2.4数据库技术发展趋势</h3><p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210302203239204.png" alt="image-20210302203239204"></p>
+<h2 id="1-3数据库应用系统"><a href="#1-3数据库应用系统" class="headerlink" title="1.3数据库应用系统"></a>1.3数据库应用系统</h2><h3 id="1-3-1类型"><a href="#1-3-1类型" class="headerlink" title="1.3.1类型"></a>1.3.1类型</h3><ol>
 <li>业务处理系统</li>
 <li>管理信息系统</li>
 <li>决策支持系统</li>
 </ol>
-<h3 id="3-2应用结构"><a href="#3-2应用结构" class="headerlink" title="3.2应用结构"></a>3.2应用结构</h3><ol>
+<h3 id="1-3-2应用结构"><a href="#1-3-2应用结构" class="headerlink" title="1.3.2应用结构"></a>1.3.2应用结构</h3><ol>
 <li>单机用户结构</li>
 <li>集中式结构</li>
 <li>客户/服务器结构</li>
 <li>分布式结构</li>
 </ol>
-<h3 id="3-3生命周期"><a href="#3-3生命周期" class="headerlink" title="3.3生命周期"></a>3.3生命周期</h3><ol>
+<h3 id="1-3-3生命周期"><a href="#1-3-3生命周期" class="headerlink" title="1.3.3生命周期"></a>1.3.3生命周期</h3><ol>
 <li>需求分析</li>
 <li>系统设计</li>
 <li>系统实现</li>
 <li>系统测试</li>
 <li>系统运行与维护</li>
 </ol>
-<h2 id="典型数据库管理系统"><a href="#典型数据库管理系统" class="headerlink" title="典型数据库管理系统"></a>典型数据库管理系统</h2><p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210303204333298.png" alt="image-20210303204333298"></p>
+<h2 id="1-4典型数据库管理系统"><a href="#1-4典型数据库管理系统" class="headerlink" title="1.4典型数据库管理系统"></a>1.4典型数据库管理系统</h2><p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210303204333298.png" alt="image-20210303204333298"></p>
 <p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210303204428056.png" alt="image-20210303204428056"></p>
 <p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210303204557607.png" alt="image-20210303204557607"></p>
 <p>PS：记得看学堂在线的题目（继承表也可以叫对象表）</p>
@@ -421,7 +453,7 @@
 <p>PostgreSQL中<strong>不</strong>包括<strong>存储过程</strong>的数据库对象</p>
 <p>PostgreSQL不包括<strong>索引表</strong>（有关系，对象，外部三种表）</p>
 <p>MySQL数据库系统<strong>不是</strong>一种企业级DBMS。</p>
-<h1 id="数据库关系模型"><a href="#数据库关系模型" class="headerlink" title="数据库关系模型"></a>数据库关系模型</h1><h2 id="关系及相关概念"><a href="#关系及相关概念" class="headerlink" title="关系及相关概念"></a>关系及相关概念</h2><ol>
+<h1 id="数据库关系模型"><a href="#数据库关系模型" class="headerlink" title="数据库关系模型"></a>数据库关系模型</h1><h2 id="2-1关系及相关概念"><a href="#2-1关系及相关概念" class="headerlink" title="2.1关系及相关概念"></a>2.1关系及相关概念</h2><ol>
 <li><p>关系键：唯一标识元组的属性列，称为键</p>
 </li>
 <li><p>复和键：使用两列或者多列来做唯一标识</p>
@@ -435,7 +467,7 @@
 <ol start="5">
 <li>代理键：DBMS自动生成的序列作为主键</li>
 </ol>
-<h2 id="关系模型原理"><a href="#关系模型原理" class="headerlink" title="关系模型原理"></a>关系模型原理</h2><ol>
+<h2 id="2-2关系模型原理"><a href="#2-2关系模型原理" class="headerlink" title="2.2关系模型原理"></a>2.2关系模型原理</h2><ol>
 <li><p>数据结构：</p>
 <p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210307180530282.png" alt="image-20210307180530282"></p>
 </li>
@@ -452,7 +484,7 @@
 <p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210307180642660.png" alt="image-20210307180642660"></p>
 </li>
 </ol>
-<h3 id="完整性约束"><a href="#完整性约束" class="headerlink" title="完整性约束"></a>完整性约束</h3><ol>
+<h3 id="2-2-1完整性约束"><a href="#2-2-1完整性约束" class="headerlink" title="2.2.1完整性约束"></a>2.2.1完整性约束</h3><ol>
 <li><p>关系模型完整性</p>
 <p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210307181116879.png" alt="image-20210307181116879"></p>
 </li>
@@ -466,7 +498,107 @@
 <p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210307182124541.png" alt="image-20210307182124541"></p>
 </li>
 </ol>
-<h2 id="PostgreSQL数据库关系操作实践"><a href="#PostgreSQL数据库关系操作实践" class="headerlink" title="PostgreSQL数据库关系操作实践"></a>PostgreSQL数据库关系操作实践</h2>]]></content>
+<h2 id="2-3-PostgreSQL数据库关系操作实践"><a href="#2-3-PostgreSQL数据库关系操作实践" class="headerlink" title="2.3 PostgreSQL数据库关系操作实践"></a>2.3 PostgreSQL数据库关系操作实践</h2><h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>常用的关系查询操作包括（选择、投影、连接、并、交）等；<strong>集合操作也算关系操作</strong></p>
+<p>自然连接是一种<strong>特殊的等值连接</strong></p>
+<p>在参照完整性中，可以定义<strong>级联操作</strong>。（级联操作【CASCADE】，修改主表中的属性值的时候必须参照别的字表中的元）</p>
+<p><strong>内连接</strong>是要求两个组合关系的匹配元组而形成的查询结果集</p>
+<h1 id="数据库操作语言SQL"><a href="#数据库操作语言SQL" class="headerlink" title="数据库操作语言SQL"></a>数据库操作语言SQL</h1><h2 id="概述："><a href="#概述：" class="headerlink" title="概述："></a>概述：</h2><ol>
+<li>DDL</li>
+<li><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210323142227124.png" alt="image-20210323142227124"></li>
+<li>DML</li>
+<li><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210323142252805.png" alt="image-20210323142252805"></li>
+<li>DQL和DCL</li>
+<li><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210323142323885.png" alt="image-20210323142323885"></li>
+<li>TPL</li>
+<li><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210323142359509.png" alt="image-20210323142359509"></li>
+<li>CCL</li>
+<li><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210323142427342.png" alt="image-20210323142427342"></li>
+</ol>
+<h2 id="SQL语句"><a href="#SQL语句" class="headerlink" title="SQL语句"></a>SQL语句</h2><p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210323143444543.png" alt="image-20210323143444543"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210323143519663.png" alt="image-20210323143519663"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210323143619728.png" alt="image-20210323143619728"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210323143639497.png" alt="image-20210323143639497"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210323143845414.png" alt="image-20210323143845414"></p>
+<p>代理键定义同上</p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210323144408847.png" alt="image-20210323144408847"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210323144443473.png" alt="image-20210323144443473"></p>
+<h2 id="题目-1"><a href="#题目-1" class="headerlink" title="题目"></a>题目</h2><p>视图可以创建视图</p>
+<p>主键可以为不同属性</p>
+<h1 id="数据库设计与实现"><a href="#数据库设计与实现" class="headerlink" title="数据库设计与实现"></a>数据库设计与实现</h1><h2 id="4-1数据库设计概述"><a href="#4-1数据库设计概述" class="headerlink" title="4.1数据库设计概述"></a>4.1数据库设计概述</h2><p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210401220244200.png" alt="image-20210401220244200"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210401220316000.png" alt="image-20210401220316000"></p>
+<ol>
+<li>数据需求分析阶段</li>
+<li>数据库设计阶段</li>
+<li><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210401220422981.png" alt="image-20210401220422981"></li>
+<li>数据库实现阶段</li>
+<li>数据库测试阶段</li>
+<li><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210401220437483.png" alt="image-20210401220437483"></li>
+</ol>
+<h3 id="设计策略"><a href="#设计策略" class="headerlink" title="设计策略"></a>设计策略</h3><ol>
+<li>自顶向下</li>
+<li>自底向上</li>
+<li>自内向外</li>
+<li>混合策略设计</li>
+</ol>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210401220705747.png" alt="image-20210401220705747"></p>
+<h2 id="4-2-ER模型方法"><a href="#4-2-ER模型方法" class="headerlink" title="4.2 ER模型方法"></a>4.2 ER模型方法</h2><p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210402153812876.png" alt="image-20210402153812876"></p>
+<ul>
+<li><p>属性</p>
+</li>
+<li><p>标识符（逻辑概念；区别于主键的物理概念）</p>
+</li>
+<li><p>联系（连着多少物体就有多少联系）</p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210402154153428.png" alt="image-20210402154153428"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210402154235843.png" alt="image-20210402154235843"></p>
+</li>
+</ul>
+<h3 id="实体继承联系"><a href="#实体继承联系" class="headerlink" title="实体继承联系"></a>实体继承联系</h3><ol>
+<li>互斥性继承联系（个人账户和公司账户都继承于银行账户）</li>
+<li>非互斥性继承联系（教师和干部都继承于职工）</li>
+</ol>
+<h4 id="强弱实体联系"><a href="#强弱实体联系" class="headerlink" title="强弱实体联系"></a>强弱实体联系</h4><p>弱实体依赖于强实体而存在</p>
+<ol>
+<li>标识符（ID）依赖弱实体（自身的标识符来自于自己依赖的对象）</li>
+<li>非标识符依赖弱实体（自己本身具有标识符）</li>
+</ol>
+<h2 id="4-3数据库建模设计"><a href="#4-3数据库建模设计" class="headerlink" title="4.3数据库建模设计"></a>4.3数据库建模设计</h2><p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210402160153250.png" alt="image-20210402160153250"></p>
+<p>非标识符弱实体转换成关系表的时候需要增加一个所依赖表的标识符作为的外键</p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210402160601747.png" alt="image-20210402160601747"></p>
+<p>标识符依赖弱实体就需要将所依赖表的主键作为自己的主键和外键</p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210402162340318.png" alt="image-20210402162340318"></p>
+<ol>
+<li><p>一对一实体属性（拥有外键的表适合查询）</p>
+</li>
+<li><p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210402162716906.png" alt="image-20210402162716906"></p>
+</li>
+<li><p>一对N转换表示（N表中放外键）</p>
+</li>
+<li><p>M对N实体联系</p>
+</li>
+<li><p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210402162922456.png" alt="image-20210402162922456"></p>
+</li>
+</ol>
+<p>概念模型</p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210402163330703.png" alt="image-20210402163330703"></p>
+<p>逻辑模型</p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210402163343473.png" alt="image-20210402163343473"></p>
+<p>物理模型</p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210402163400076.png" alt="image-20210402163400076"></p>
+<h2 id="4-4数据库规范化设计"><a href="#4-4数据库规范化设计" class="headerlink" title="4.4数据库规范化设计"></a>4.4数据库规范化设计</h2><h3 id="函数依赖"><a href="#函数依赖" class="headerlink" title="函数依赖"></a>函数依赖</h3><p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210402163633196.png" alt="image-20210402163633196"></p>
+<ol>
+<li>函数依赖类型</li>
+<li><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210402163655301.png" alt="image-20210402163655301"></li>
+<li></li>
+</ol>
+<h3 id="规范化范式"><a href="#规范化范式" class="headerlink" title="规范化范式"></a>规范化范式</h3><ol>
+<li>第一范式：若关系表中的属性不可再分，则满足第一范式</li>
+<li>第二范式：消除了部分属性的函数依赖（若有复合键，则所有的其他键一定对两个主键都要依赖）</li>
+<li>第三范式：切断了函数传递依赖</li>
+<li><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210402164700103.png" alt="image-20210402164700103"></li>
+<li><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210402165208888.png" alt="image-20210402165208888"></li>
+</ol>
+<h3 id="逆规范化处理"><a href="#逆规范化处理" class="headerlink" title="逆规范化处理"></a>逆规范化处理</h3><p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210402165542372.png" alt="image-20210402165542372"></p>
+]]></content>
       <tags>
         <tag>大二下</tag>
       </tags>
@@ -661,7 +793,51 @@
 <p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210313145937113.png" alt="image-20210313145937113"></p>
 <p>对比HTTP：</p>
 <p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210313150026290.png" alt="image-20210313150026290"></p>
-<h3 id="2-4-2邮件报文格式和MIME"><a href="#2-4-2邮件报文格式和MIME" class="headerlink" title="2.4.2邮件报文格式和MIME"></a>2.4.2邮件报文格式和MIME</h3><h2 id="题目：-1"><a href="#题目：-1" class="headerlink" title="题目："></a>题目：</h2>]]></content>
+<h3 id="2-4-2邮件报文格式和MIME"><a href="#2-4-2邮件报文格式和MIME" class="headerlink" title="2.4.2邮件报文格式和MIME"></a>2.4.2邮件报文格式和MIME</h3><p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210319160801418.png" alt="image-20210319160801418"></p>
+<p>头部是邮件内容的组成部分；</p>
+<h3 id="2-4-3邮件访问协议"><a href="#2-4-3邮件访问协议" class="headerlink" title="2.4.3邮件访问协议"></a>2.4.3邮件访问协议</h3><p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210319162032504.png" alt="image-20210319162032504"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210319162137199.png" alt="image-20210319162137199"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210319162253509.png" alt="image-20210319162253509"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210319162630326.png" alt="image-20210319162630326"></p>
+<h2 id="2-5-DNS体系介绍和工作原理"><a href="#2-5-DNS体系介绍和工作原理" class="headerlink" title="2.5 DNS体系介绍和工作原理"></a>2.5 DNS体系介绍和工作原理</h2><p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210328202942257.png" alt="image-20210328202942257"></p>
+<p>用途域名和国家域名</p>
+<h2 id="2-6-p2p应用"><a href="#2-6-p2p应用" class="headerlink" title="2.6 p2p应用"></a>2.6 p2p应用</h2><p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210403145314768.png" alt="image-20210403145314768"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210328213601005.png" alt="image-20210328213601005"></p>
+<h3 id="2-7-TCP和UDP套接字编程"><a href="#2-7-TCP和UDP套接字编程" class="headerlink" title="2.7 TCP和UDP套接字编程"></a>2.7 TCP和UDP套接字编程</h3><p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210403150249891.png" alt="image-20210403150249891"></p>
+<p>可靠：数据报；不可靠：字节流</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210403150506890.png" alt="image-20210403150506890"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210403151339309.png" alt="image-20210403151339309"></p>
+<h2 id="题目：-1"><a href="#题目：-1" class="headerlink" title="题目："></a>题目：</h2><p>FTP默认服务端口号是21</p>
+<p>无连接服务适合短文本传输</p>
+<p>无连接服务在数据传输的过程中动态分配带宽</p>
+<p>面向连接服务适用于数据量大，实时性要求高的场合</p>
+<p>面向连接的服务的信道利用率低</p>
+<p>网络按通信方式可分为<strong>点对点传输</strong>和<strong>广播式传输</strong></p>
+<p>在DNS服务中，本地DNS服务器在向权威服务器发送查询的时候，有递归查询和迭代查询（轮次查询（意义不明））</p>
+<h1 id="运输层"><a href="#运输层" class="headerlink" title="运输层"></a>运输层</h1><h2 id="3-1概数和运输服务层"><a href="#3-1概数和运输服务层" class="headerlink" title="3.1概数和运输服务层"></a>3.1概数和运输服务层</h2><p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210403152159188.png" alt="image-20210403152159188"></p>
+<h2 id="3-2多路复用和多路分解"><a href="#3-2多路复用和多路分解" class="headerlink" title="3.2多路复用和多路分解"></a>3.2多路复用和多路分解</h2><p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210403152743764.png" alt="image-20210403152743764"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210403153018310.png" alt="image-20210403153018310"></p>
+<h2 id="3-3无连接运输UDP"><a href="#3-3无连接运输UDP" class="headerlink" title="3.3无连接运输UDP"></a>3.3无连接运输UDP</h2><p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210406144358303.png" alt="image-20210406144358303"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210406144949504.png" alt="image-20210406144949504"></p>
+<p>首部的每个单位占两个字节，源端口号在不希望对方回信的时候全部置为0；长度最小为首部长度（8）;检验和用于检查是否正确</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210406145409824.png" alt="image-20210406145409824"></p>
+<h2 id="3-4构造可靠数据传输协议"><a href="#3-4构造可靠数据传输协议" class="headerlink" title="3.4构造可靠数据传输协议"></a>3.4构造可靠数据传输协议</h2><p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210406152903474.png" alt="image-20210406152903474"></p>
+<p>停等协议</p>
+<p>rdt2.1的发送方</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210406153637666.png" alt="image-20210406153637666"></p>
+<p>接收方</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210406153829292.png" alt="image-20210406153829292"></p>
+<p>rdt2.2（无NAK）</p>
+<p>接收方通过发送前一个数据报的ACKs来代替NAK（都表示发送出错了）</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210406154935177.png" alt="image-20210406154935177"></p>
+<p>rdt3.0</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210406155808766.png" alt="image-20210406155808766"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210406160014785.png" alt="image-20210406160014785"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210406160024878.png" alt="image-20210406160024878"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210406160454554.png" alt="image-20210406160454554"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210406160503071.png" alt="image-20210406160503071"></p>
+<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>TCP和UDP都是面向报文的（错）UDP是面向报文的传输协议，TCP是面向数据报的传输协议</p>
+]]></content>
       <tags>
         <tag>大二下</tag>
       </tags>
