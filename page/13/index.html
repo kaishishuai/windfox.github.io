@@ -25,14 +25,14 @@
   </script>
 <meta property="og:type" content="website">
 <meta property="og:title" content="windsfoxの博客">
-<meta property="og:url" content="http://windsfox.github.io/page/5/index.html">
+<meta property="og:url" content="http://windsfox.github.io/page/13/index.html">
 <meta property="og:site_name" content="windsfoxの博客">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:author" content="windsfox">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="http://windsfox.github.io/page/5/">
+<link rel="canonical" href="http://windsfox.github.io/page/13/">
 
 
 <script class="page-configurations">
@@ -256,7 +256,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://windsfox.github.io/2021/05/02/weixin/">
+    <link itemprop="mainEntityOfPage" href="http://windsfox.github.io/2021/01/22/debug/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/kong.jpg">
@@ -269,7 +269,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/05/02/weixin/" class="post-title-link" itemprop="url">weixin</a>
+          <a href="/2021/01/22/debug/" class="post-title-link" itemprop="url">debug</a>
         </h2>
 
         <div class="post-meta-container">
@@ -280,14 +280,14 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2021-05-02 08:50:31" itemprop="dateCreated datePublished" datetime="2021-05-02T08:50:31+08:00">2021-05-02</time>
+      <time title="创建时间：2021-01-22 16:09:01" itemprop="dateCreated datePublished" datetime="2021-01-22T16:09:01+08:00">2021-01-22</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-05-08 23:35:20" itemprop="dateModified" datetime="2021-05-08T23:35:20+08:00">2021-05-08</time>
+        <time title="修改时间：2021-02-19 10:35:40" itemprop="dateModified" datetime="2021-02-19T10:35:40+08:00">2021-02-19</time>
       </span>
 
   
@@ -300,100 +300,10 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p><img src="/2021/05/02/weixin/image-20210508232628923.png" alt="image-20210508232628923"></p>
-<p><img src="/2021/05/02/weixin/image-20210502085112265.png" alt="image-20210502085112265"></p>
-<p><img src="/2021/05/02/weixin/image-20210502093749943.png" alt="image-20210502093749943"></p>
-<p>将请求返回响应输出到页面上：</p>
-<p><img src="/2021/05/02/weixin/image-20210504151456044.png" alt="image-20210504151456044"></p>
-<p><img src="/2021/05/02/weixin/image-20210504151636006.png" alt="image-20210504151636006"></p>
-<h1 id="云函数连接数据库："><a href="#云函数连接数据库：" class="headerlink" title="云函数连接数据库："></a>云函数连接数据库：</h1><p>数据库连接一次只能请求二十条数据</p>
-<p>云函数连接可以请求二十条以上的连接：</p>
-<ol>
-<li><p>编写云函数：</p>
-<p><img src="/2021/05/02/weixin/image-20210504152953865.png" alt="image-20210504152953865"></p>
-</li>
-<li><p>编写yun.wxml：</p>
-</li>
-<li><p><img src="/2021/05/02/weixin/image-20210504153013494.png" alt="image-20210504153013494"></p>
-</li>
-<li><p>编写yun.js函数：</p>
-</li>
-<li><p><img src="/2021/05/02/weixin/image-20210504153456630.png" alt="image-20210504153456630"></p>
-</li>
-</ol>
-<h1 id="分页请求数据"><a href="#分页请求数据" class="headerlink" title="分页请求数据"></a>分页请求数据</h1><p>创建模板：</p>
-<p><img src="/2021/05/02/weixin/image-20210504155449585.png" alt="image-20210504155449585"></p>
-<p><img src="/2021/05/02/weixin/image-20210504155811865.png" alt="image-20210504155811865"></p>
-<p>创建wxml文件进行显示</p>
-<p><img src="/2021/05/02/weixin/image-20210504155845098.png" alt="image-20210504155845098"></p>
-<p>开始分页：</p>
-<p><img src="/2021/05/02/weixin/image-20210504160125803.png" alt="image-20210504160125803"></p>
-<p>skip开始；limit分页数量</p>
-<ol>
-<li>编写加载数据的函数:</li>
-<li><img src="/2021/05/02/weixin/image-20210504161026935.png" alt="image-20210504161026935"></li>
-<li>第一次加载函数</li>
-<li><img src="/2021/05/02/weixin/image-20210504161152625.png" alt="image-20210504161152625"></li>
-<li>滑到底部的加载函数：</li>
-<li><img src="/2021/05/02/weixin/image-20210504161253681.png" alt="image-20210504161253681"></li>
-</ol>
-<p>提示信息的加载：</p>
-<p><img src="/2021/05/02/weixin/image-20210504161905254.png" alt="image-20210504161905254"></p>
-<p>打印数据总条数：</p>
-<p><img src="/2021/05/02/weixin/image-20210504162223130.png" alt="image-20210504162223130"></p>
-<p>每次运行前先将数据总数赋值给totalnum：</p>
-<p><img src="/2021/05/02/weixin/image-20210504162341534.png" alt="image-20210504162341534"></p>
-<p>判断当前加载的长度和数据总数是否相等，相等说明加载完了</p>
-<p><img src="/2021/05/02/weixin/image-20210504162727386.png" alt="image-20210504162727386"></p>
-<h1 id="收藏功能点赞"><a href="#收藏功能点赞" class="headerlink" title="收藏功能点赞"></a>收藏功能点赞</h1><p><img src="/2021/05/02/weixin/image-20210504163403790.png" alt="image-20210504163403790"></p>
-<p>三目运算符实现收藏点赞：</p>
-<p><img src="/2021/05/02/weixin/image-20210504163625135.png" alt="image-20210504163625135"></p>
-<h2 id="详情页的跳转："><a href="#详情页的跳转：" class="headerlink" title="详情页的跳转："></a>详情页的跳转：</h2><p>主页：</p>
-<p><img src="/2021/05/02/weixin/image-20210504170150987.png" alt="image-20210504170150987"></p>
-<p>详情页：</p>
-<p><img src="/2021/05/02/weixin/image-20210504170209492.png" alt="image-20210504170209492"></p>
-<p>将homelist中的detail取出来存放在当前页面定义的detail中：</p>
-<p><img src="/2021/05/02/weixin/image-20210504171857199.png" alt="image-20210504171857199"></p>
-<p>展示：</p>
-<p><img src="/2021/05/02/weixin/image-20210504172013535.png" alt="image-20210504172013535"></p>
-<h1 id="点赞和收藏等存储到服务器："><a href="#点赞和收藏等存储到服务器：" class="headerlink" title="点赞和收藏等存储到服务器："></a>点赞和收藏等存储到服务器：</h1><p>传统方法：（无权限，不能update）</p>
-<p><img src="/2021/05/02/weixin/image-20210504174026101.png" alt="image-20210504174026101"></p>
-<p>云函数方法：</p>
-<p>云函数：</p>
-<p><img src="/2021/05/02/weixin/image-20210504174452818.png" alt="image-20210504174452818"></p>
-<p>详情页js</p>
-<p><img src="/2021/05/02/weixin/image-20210504174403676.png" alt="image-20210504174403676"></p>
-<p>将多个动作做到一个云函数中：</p>
-<p><img src="/2021/05/02/weixin/image-20210504174854412.png" alt="image-20210504174854412"></p>
-<p>添加点赞函数到来调用云函数：</p>
-<p><img src="/2021/05/02/weixin/image-20210504175112004.png" alt="image-20210504175112004"></p>
-<h1 id="添加评论功能"><a href="#添加评论功能" class="headerlink" title="添加评论功能"></a>添加评论功能</h1><p><img src="/2021/05/02/weixin/image-20210504190622976.png" alt="image-20210504190622976"></p>
-<p><img src="/2021/05/02/weixin/image-20210504190658611.png" alt="image-20210504190658611"></p>
-<p>部署云函数：</p>
-<p><img src="/2021/05/02/weixin/image-20210504191628457.png" alt="image-20210504191628457"></p>
-<p>编写js：</p>
-<p><img src="/2021/05/02/weixin/image-20210504191919603.png" alt="image-20210504191919603"></p>
-<p><img src="/2021/05/02/weixin/image-20210504192317067.png" alt="image-20210504192317067"></p>
-<h1 id="短信验证码的发送："><a href="#短信验证码的发送：" class="headerlink" title="短信验证码的发送："></a>短信验证码的发送：</h1><p>结构的搭建：</p>
-<p><img src="/2021/05/02/weixin/image-20210504200028945.png" alt="image-20210504200028945"></p>
-<p>生成验证码：</p>
-<p><img src="/2021/05/02/weixin/image-20210504200651418.png" alt="image-20210504200651418"></p>
-<p><img src="/2021/05/02/weixin/image-20210504200704771.png" alt="image-20210504200704771"></p>
-<p>小程序云函数示例代码：</p>
-<p><img src="/2021/05/02/weixin/image-20210504200857528.png" alt="image-20210504200857528"></p>
-<p>修改：</p>
-<p><img src="/2021/05/02/weixin/image-20210504201028073.png" alt="image-20210504201028073"></p>
-<p>在登录页动作文件中调用云函数：</p>
-<p><img src="/2021/05/02/weixin/image-20210504201441671.png" alt="image-20210504201441671"></p>
-<p>登录函数：</p>
-<p><img src="/2021/05/02/weixin/image-20210504201726929.png" alt="image-20210504201726929"></p>
-<p>code提升为全局变量（ps）</p>
-<p>将返回箭头删除：</p>
-<p><img src="/2021/05/02/weixin/image-20210504202118916.png" alt="image-20210504202118916"></p>
-<h1 id="群发消息"><a href="#群发消息" class="headerlink" title="群发消息"></a>群发消息</h1><p>剔除回车键和切割字符串：</p>
-<p><img src="/2021/05/02/weixin/image-20210504203831351.png" alt="image-20210504203831351"></p>
-<p>群发云函数代码：</p>
-<p><img src="/2021/05/02/weixin/image-20210504204152569.png" alt="image-20210504204152569"></p>
+          <p>步出和回退的区别：</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">步出：将一个方法体剩下的所有的代码走完，回到调用它的层级的下一条语句</span><br><span class="line">回退：回退到一个函数调用的时候的语句</span><br><span class="line">区别，一个是往前走完一个函数，一个是退出一个函数（没走）</span><br></pre></td></tr></table></figure>
+<p>条件断点：右键断点，当需要条件符合的时候程序才会停止</p>
+<p>多线程调试：右键断点：将all改成Thread，挂起调试，这样多个线程到该断点都会停下来</p>
 
       
     </div>
@@ -413,7 +323,7 @@
 
 
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/21/">21</a><a class="extend next" rel="next" href="/page/6/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/page/12/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><span class="page-number current">13</span><a class="page-number" href="/page/14/">14</a><span class="space">&hellip;</span><a class="page-number" href="/page/21/">21</a><a class="extend next" rel="next" href="/page/14/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 

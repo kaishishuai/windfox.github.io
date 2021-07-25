@@ -256,7 +256,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://windsfox.github.io/2021/01/22/debug/">
+    <link itemprop="mainEntityOfPage" href="http://windsfox.github.io/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/kong.jpg">
@@ -269,7 +269,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/01/22/debug/" class="post-title-link" itemprop="url">debug</a>
+          <a href="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" class="post-title-link" itemprop="url">计算机网络</a>
         </h2>
 
         <div class="post-meta-container">
@@ -280,14 +280,14 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2021-01-22 16:09:01" itemprop="dateCreated datePublished" datetime="2021-01-22T16:09:01+08:00">2021-01-22</time>
+      <time title="创建时间：2021-03-01 13:01:24" itemprop="dateCreated datePublished" datetime="2021-03-01T13:01:24+08:00">2021-03-01</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-02-19 10:35:40" itemprop="dateModified" datetime="2021-02-19T10:35:40+08:00">2021-02-19</time>
+        <time title="修改时间：2021-06-29 15:00:18" itemprop="dateModified" datetime="2021-06-29T15:00:18+08:00">2021-06-29</time>
       </span>
 
   
@@ -300,153 +300,368 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>步出和回退的区别：</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">步出：将一个方法体剩下的所有的代码走完，回到调用它的层级的下一条语句</span><br><span class="line">回退：回退到一个函数调用的时候的语句</span><br><span class="line">区别，一个是往前走完一个函数，一个是退出一个函数（没走）</span><br></pre></td></tr></table></figure>
-<p>条件断点：右键断点，当需要条件符合的时候程序才会停止</p>
-<p>多线程调试：右键断点：将all改成Thread，挂起调试，这样多个线程到该断点都会停下来</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://windsfox.github.io/2021/01/20/%E7%88%AC%E8%99%AB%E5%AD%A6%E4%B9%A0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/kong.jpg">
-      <meta itemprop="name" content="windsfox">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="windsfoxの博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/01/20/%E7%88%AC%E8%99%AB%E5%AD%A6%E4%B9%A0/" class="post-title-link" itemprop="url">My Web Crawlers</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2021-01-20 21:19:32" itemprop="dateCreated datePublished" datetime="2021-01-20T21:19:32+08:00">2021-01-20</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-02-11 17:21:43" itemprop="dateModified" datetime="2021-02-11T17:21:43+08:00">2021-02-11</time>
-      </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="第一章：requests模块"><a href="#第一章：requests模块" class="headerlink" title="第一章：requests模块"></a>第一章：requests模块</h1><h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><ol>
-<li>导入requests模块</li>
-<li>指定url</li>
-<li>UA伪装</li>
-<li>参数params</li>
-<li>response获取爬取结果</li>
-<li>持久化存储（list_data = response.text(json之类的)）</li>
-</ol>
-<p>ps：response.text和response.json()一个有括号一个没有括号</p>
-<h1 id="第二章：数据解析"><a href="#第二章：数据解析" class="headerlink" title="第二章：数据解析"></a>第二章：数据解析</h1><h2 id="聚焦爬虫："><a href="#聚焦爬虫：" class="headerlink" title="聚焦爬虫："></a>聚焦爬虫：</h2><p>爬取页面中指定的内容。</p>
-<p>编码流程：</p>
+          <h1 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h1><h2 id="1-1总览"><a href="#1-1总览" class="headerlink" title="1.1总览"></a>1.1总览</h2><p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210302222454717.png" alt="image-20210302222454717"></p>
+<h3 id="计算机网络概念："><a href="#计算机网络概念：" class="headerlink" title="计算机网络概念："></a>计算机网络概念：</h3><p>互联，自治的计算机集合(<strong>特点：连通性，共享</strong>)</p>
+<h3 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h3><p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210302221856169.png" alt="image-20210302221856169"></p>
+<h3 id="组成"><a href="#组成" class="headerlink" title="组成"></a>组成</h3><p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210302222044031.png" alt="image-20210302222044031"></p>
+<h3 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h3><p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210302222418313.png" alt="image-20210302222418313"></p>
+<h2 id="1-2标准化和相关组织"><a href="#1-2标准化和相关组织" class="headerlink" title="1.2标准化和相关组织"></a>1.2标准化和相关组织</h2><h3 id="标准化工作："><a href="#标准化工作：" class="headerlink" title="标准化工作："></a>标准化工作：</h3><p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210302222831758.png" alt="image-20210302222831758"></p>
+<h3 id="相关组织："><a href="#相关组织：" class="headerlink" title="相关组织："></a>相关组织：</h3><p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210302222934750.png" alt="image-20210302222934750"></p>
+<h2 id="1-3速率相关的性能指标"><a href="#1-3速率相关的性能指标" class="headerlink" title="1.3速率相关的性能指标"></a>1.3速率相关的性能指标</h2><p>速率</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210302223244450.png" alt="image-20210302223244450"></p>
+<p>带宽</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210302223813711.png" alt="image-20210302223813711"></p>
+<p>吞吐量</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210302224211510.png" alt="image-20210302224211510"></p>
+<p>时延</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210302224659582.png" alt="image-20210302224659582"></p>
+<p>时延带宽积</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210302225019180.png" alt="image-20210302225019180"></p>
+<p>往返时延RTT</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210302225208226.png" alt="image-20210302225208226"></p>
+<p>利用率</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210302225346741.png" alt="image-20210302225346741"></p>
+<h1 id="多捞啊："><a href="#多捞啊：" class="headerlink" title="多捞啊："></a>多捞啊：</h1><p>—————————————————————————————–分割线——————————————————-</p>
+<h1 id="计算机网络和因特网"><a href="#计算机网络和因特网" class="headerlink" title="计算机网络和因特网"></a>计算机网络和因特网</h1><h2 id="1-1什么是因特网"><a href="#1-1什么是因特网" class="headerlink" title="1.1什么是因特网"></a>1.1什么是因特网</h2><h3 id="1-1-1构成和服务角度描述："><a href="#1-1-1构成和服务角度描述：" class="headerlink" title="1.1.1构成和服务角度描述："></a>1.1.1构成和服务角度描述：</h3><h3 id="1-1-2协议："><a href="#1-1-2协议：" class="headerlink" title="1.1.2协议："></a>1.1.2协议：</h3><p>三要素：语法；语义，同步</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210309205752831.png" alt="image-20210309205752831"></p>
+<h2 id="1-2网络边缘"><a href="#1-2网络边缘" class="headerlink" title="1.2网络边缘"></a>1.2网络边缘</h2><h3 id="1-2-1接入网和物理媒体"><a href="#1-2-1接入网和物理媒体" class="headerlink" title="1.2.1接入网和物理媒体"></a>1.2.1接入网和物理媒体</h3><p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210309205900016.png" alt="image-20210309205900016"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210309210249838.png" alt="image-20210309210249838"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210309210549751.png" alt="image-20210309210549751"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210309210701573.png" alt="image-20210309210701573"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210309210806825.png" alt="image-20210309210806825"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210309210857170.png" alt="image-20210309210857170"></p>
+<h3 id="1-2-2"><a href="#1-2-2" class="headerlink" title="1.2.2"></a>1.2.2</h3><p>家庭接入网络</p>
+<p>企业接入网络</p>
+<p>WiFi接入网络</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210309211244997.png" alt="image-20210309211244997"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210309211554300.png" alt="image-20210309211554300"></p>
 <ol>
-<li>指定url</li>
-<li>发起请求</li>
-<li>获取相应数据</li>
-<li>数据解析</li>
-<li>持久化存储</li>
-</ol>
-<h2 id="数据解析分类"><a href="#数据解析分类" class="headerlink" title="数据解析分类"></a>数据解析分类</h2><ol>
-<li><p>正则：ex =(填div中的对应内容，使用（.<em>?）获取想得到的标签，或者标签里的属性，多余的数据用.</em>?省略)</p>
+<li><p>双绞线；同轴电缆；光纤电缆</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210309211719789.png" alt="image-20210309211719789"></p>
 </li>
-<li><p>bx4：实例化BeautifulSoup：(from bs4 import BeautifulSoup)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">#将本地的html文档的数据加载到该对象中</span><br><span class="line">fp &#x3D; open(&#39;.&#x2F;test.html&#39;,&#39;r&#39;,encoding &#x3D;&#39;utf-8&#39;)</span><br><span class="line">soup &#x3D; BeautifulSoup(fp,&#39;lxml&#39;)</span><br><span class="line">print(soup)</span><br><span class="line">#网页中的html对象</span><br><span class="line">page_text &#x3D; response.text</span><br><span class="line">soup &#x3D; BeautifulSoup(page_text,&#39;lxml&#39;)</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">soup.tagname  #返回该标签名第一次出现的那个标签</span><br><span class="line">soup.find(&#39;div&#39;，class_&#x3D; &#39;song&#39;) #返回该属性的div</span><br><span class="line">soup.find_all(&#39;a&#39;)</span><br><span class="line"></span><br><span class="line">select(&#39;某种选择器（id,class,标签。。。。选择器))，返回的是一个列表</span><br><span class="line">soup.select(&#39;.tang&gt;ul&gt;li&gt;a&#39;)[0] #拿到a标签列表中的第一个a标签</span><br><span class="line">soup.select(&#39;.tang&gt;ul&gt; a&#39;)[0] #空格表示多个层级</span><br><span class="line">soup.a.text&#x2F;get_text&#x2F;string #string只能获取该标签下的直系文本内容，text获取全部文本内容</span><br><span class="line">soup.a[&#39;href&#39;] # 获取标签中的属性值</span><br></pre></td></tr></table></figure>
-
-
+<li><p>无线链路</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210309211820079.png" alt="image-20210309211820079"></p>
 </li>
 </ol>
-<ol start="3">
-<li><p>xpath（重点，通用性强）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">1.实例化一个etree对象，并且需要将被解析的页面源码数据加载到该对象中</span><br><span class="line">2.调用etree对象中的xpath种方法结合xpath表达式实现标签的定位和内容的捕获</span><br><span class="line">3.实例化对象：etree.parse(filepath)(本地)；etree.HTML（page_text）（网页）</span><br><span class="line">4.xpath（&#39;xpath表达式&#39;）：</span><br><span class="line">	r &#x3D; tree.xpath(&#39;&#x2F;html&#x2F;body&#x2F;div&#39;) #返回一个列表</span><br><span class="line">	r &#x3D; tree.xpath(&#39;&#x2F;html&#x2F;&#x2F;div&#39;) #两个斜杠表示多个层级</span><br><span class="line">	r &#x3D; tree.xpath(&#39;&#x2F;&#x2F;div[@class&#x3D;&#39;song&#39;]&#x2F;p[3]&#39;) # 取出来p标签列表中的第四个元素</span><br><span class="line">	r &#x3D; tree.xpath(&#39;&#x2F;&#x2F;div&#x2F;[@class&#x3D;&quot;tang&quot;]&#x2F;&#x2F;li[5]&#x2F;a&#x2F;text()&#39;)[0] #取出来一个标签返回的也是列表，所以加上索引0，表示第一个元素</span><br><span class="line">	&#x2F;@attrName（&#x2F;@src） #取属性值</span><br></pre></td></tr></table></figure>
-
-
+<h2 id="1-3网络核心"><a href="#1-3网络核心" class="headerlink" title="1.3网络核心"></a>1.3网络核心</h2><ol>
+<li><p>电路交换</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210309212129390.png" alt="image-20210309212129390"></p>
+</li>
+<li><p>分组交换</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210309212534019.png" alt="image-20210309212534019"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210309212547970.png" alt="image-20210309212547970"></p>
+</li>
+<li><p>比较</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210309212723813.png" alt="image-20210309212723813"></p>
+</li>
+<li><p>总结</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210309212816824.png" alt="image-20210309212816824"></p>
 </li>
 </ol>
-<h2 id="数据解析原理"><a href="#数据解析原理" class="headerlink" title="数据解析原理"></a>数据解析原理</h2><ol>
-<li>解析的局部文本内容都会在标签纸剑或者标签对应的属性中进行存储</li>
-<li>进行指定标签的定位</li>
-<li>标签或者标签对应的属性中所存储的数据值进行提取（解析）</li>
-</ol>
-<h1 id="第三章：反爬机制"><a href="#第三章：反爬机制" class="headerlink" title="第三章：反爬机制"></a>第三章：反爬机制</h1><h2 id="验证码"><a href="#验证码" class="headerlink" title="验证码"></a>验证码</h2><p>使用第三方识别验证码平台（超级鹰）,代码已经封装好了</p>
-<p>chaojiying.PostPic(im,1902)返回的字典的第三个键值对的values为所需要的验证码值</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">chaojiying &#x3D; Chaojiying_Client(&#39;用户名&#39;, &#39;密码&#39;, &#39;912044&#39;)  # 用户中心&gt;&gt;软件ID 生成一个替换 96001</span><br><span class="line">im &#x3D; open(file_path, &#39;rb&#39;).read()  # 本地图片文件路径 来替换 a.jpg 有时WIN系统须要&#x2F;&#x2F;</span><br><span class="line">print(list((chaojiying.PostPic(im, 1902)).values())[3])  # 1902 验证码类型  </span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>ps：验证是否登录成功：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">response &#x3D; requests.post(url&#x3D;url,headers&#x3D;headers,data&#x3D;data)</span><br><span class="line">print(response.status_code)</span><br><span class="line">#如果打印200，证明登录成功</span><br></pre></td></tr></table></figure>
-<h2 id="cookie"><a href="#cookie" class="headerlink" title="cookie"></a>cookie</h2><ol>
-<li><p>来源：登录模拟的post请求后，有服务器端创建</p>
+<h2 id="1-4分组交换网络中的延时，丢失，吞吐量"><a href="#1-4分组交换网络中的延时，丢失，吞吐量" class="headerlink" title="1.4分组交换网络中的延时，丢失，吞吐量"></a>1.4分组交换网络中的延时，丢失，吞吐量</h2><p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210309213520289.png" alt="image-20210309213520289"> </p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210309213853781.png" alt="image-20210309213853781"></p>
+<h3 id="排队时延"><a href="#排队时延" class="headerlink" title="排队时延"></a>排队时延</h3><p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210318155634719.png" alt="image-20210318155634719"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210318155705359.png" alt="image-20210318155705359"></p>
+<h3 id="传播时延"><a href="#传播时延" class="headerlink" title="传播时延"></a>传播时延</h3><p>L/R</p>
+<h2 id="1-5协议层次及服务模型"><a href="#1-5协议层次及服务模型" class="headerlink" title="1.5协议层次及服务模型"></a>1.5协议层次及服务模型</h2><p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210311181928691.png" alt="image-20210311181928691"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210318160011520.png" alt="image-20210318160011520"></p>
+<h2 id="1-6网络安全概述"><a href="#1-6网络安全概述" class="headerlink" title="1.6网络安全概述"></a>1.6网络安全概述</h2><h2 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h2><p>无线信道传输媒体不包括：光纤（包括激光；微波；红外线）</p>
+<p>数据链路层传输的单位是：<strong>帧</strong></p>
+<p>主机或端系统通过<strong>ISP</strong>接入网络</p>
+<p>接入网，是指将端系统连接到<strong>边缘路由器</strong>的物理链路</p>
+<p>用户常以<strong>100Mbps</strong>的速率接入以太网交换机</p>
+<p>在网络协议1栈中，（<strong>运输层</strong>）扶着端到端的<strong>数据报文</strong>的发送与接收</p>
+<p>虚电路网络一定是面向连接的</p>
+<p>路径选择功能是在OSI模型的（<strong>网络层</strong>）上完成的</p>
+<h1 id="应用层"><a href="#应用层" class="headerlink" title="应用层"></a>应用层</h1><h2 id="2-1应用层协议原理"><a href="#2-1应用层协议原理" class="headerlink" title="2.1应用层协议原理"></a>2.1应用层协议原理</h2><ol>
+<li><p>套接字</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210311192635163.png" alt="image-20210311192635163"></p>
 </li>
-<li><p>session会话对象：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">作用：1.可以在请求的时候发送；2.如果请求过程产生了cookie会被自动存储到该session对象中</span><br><span class="line"></span><br><span class="line">exp：</span><br><span class="line">    session &#x3D; requests.Session()</span><br><span class="line"></span><br><span class="line">    user_url &#x3D; &#39;https:&#x2F;&#x2F;www.chaojiying.com&#x2F;user&#x2F;login&#x2F;&#39;</span><br><span class="line">    data &#x3D;&#123;</span><br><span class="line">        &#39;user&#39;: &#39;winsfox&#39;,</span><br><span class="line">        &#39;pass&#39;: &#39;510623zmh&#39;,</span><br><span class="line">        &#39;imgtxt&#39;:result,</span><br><span class="line">        &#39;act&#39;: &#39;1&#39;</span><br><span class="line">    &#125;</span><br><span class="line">    #（2）使用session进行post发送</span><br><span class="line">    response &#x3D; session.post(url&#x3D;user_url,headers&#x3D;headers,data&#x3D;data)</span><br><span class="line">    print(response.status_code)</span><br><span class="line">    detail_url &#x3D; &#39;https:&#x2F;&#x2F;www.chaojiying.com&#x2F;user&#x2F;&#39;</span><br><span class="line"></span><br><span class="line">    detail_page_text &#x3D; session.get(url&#x3D;detail_url,headers&#x3D;headers).text</span><br><span class="line">    with open(&#39;my chaojiying.html&#39;,&#39;w&#39;,encoding&#x3D;&#39;utf-8&#39;) as fp:</span><br><span class="line">        fp.write(detail_page_text)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h2 id="代理"><a href="#代理" class="headerlink" title="代理"></a>代理</h2></li>
+<li><p>进程寻址</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210311193039727.png" alt="image-20210311193039727"></p>
+</li>
+<li><p>传输协议提出的服务</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210311194716869.png" alt="image-20210311194716869"></p>
+</li>
 </ol>
-<p>破解封IP这种反爬机制</p>
-   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">——代理服务器。</span><br><span class="line">代理的作用：</span><br><span class="line">		———突破IP访问的限制</span><br><span class="line">		———隐藏自身真实IP</span><br><span class="line">代理相关网站：</span><br><span class="line">		———快代理</span><br><span class="line">		———西祠代理</span><br><span class="line">		———www.goubanjia.com</span><br><span class="line">代理IP的类型：</span><br><span class="line">		——https；http</span><br><span class="line">代理IP的匿名的：</span><br><span class="line">		——透明：服务器知道该次请求使用了代理；也知道真实的Ip</span><br><span class="line">		——匿名：知道使用了代理，但不知道真实的Ip</span><br><span class="line">		——高匿：不知道使用了代理更不知道本机的真实Ip（遇到封IP的反扒机制需要用这个）</span><br></pre></td></tr></table></figure>
-
-
-<p>ps:一个网站登录上后，再用爬虫爬的时候可能找不到验证码的位置</p>
-<h1 id="PS"><a href="#PS" class="headerlink" title="PS:"></a>PS:</h1><ol>
-<li>有时候拿到的src不全，需要进行字符串拼接</li>
-<li>div的class中有些无法获取，如：<img src="/2021/01/20/%E7%88%AC%E8%99%AB%E5%AD%A6%E4%B9%A0/image-20210122232346354.png" alt="image-20210122232346354"></li>
-<li>在使用etree.xpath()的时候需要删去，如</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a_list &#x3D; tree.xpath(&#39;&#x2F;&#x2F;div[@class&#x3D;&quot;box col3 ws_block&quot;]&#39;)</span><br></pre></td></tr></table></figure>
-<h1 id="第四章：高性能异步爬虫"><a href="#第四章：高性能异步爬虫" class="headerlink" title="第四章：高性能异步爬虫"></a>第四章：高性能异步爬虫</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">原因：发送请求会有延时，导致阻塞，后面的url请求</span><br><span class="line">	方式1：多线程（不建议使用，耗费cpu资源）</span><br><span class="line">	方式2：线程池（效率不明显，适当使用）</span><br><span class="line">	方法3：单线程+异步协程（推荐）</span><br></pre></td></tr></table></figure>
-<p>PS：在text中找不到元素就是通过ajax加载的，要用抓包工具找</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">requests.get()发起的请求是基于同步的，不能用在异步协程中，必须使用基于异步的网络请求的模块：aiohttp</span><br></pre></td></tr></table></figure>
-<h1 id="第五章：动态加载数据处理"><a href="#第五章：动态加载数据处理" class="headerlink" title="第五章：动态加载数据处理"></a>第五章：动态加载数据处理</h1><h2 id="模拟浏览器操作：selenium"><a href="#模拟浏览器操作：selenium" class="headerlink" title="模拟浏览器操作：selenium"></a>模拟浏览器操作：selenium</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">selenium模块</span><br><span class="line">	-便捷的获取网站中的动态加载数据</span><br><span class="line">	-便捷的实现模拟登陆</span><br><span class="line">	-基于浏览器自动化的一个模块</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">步骤：</span><br><span class="line">	——pip install selenium</span><br><span class="line">	——下载对应浏览器版本的驱动程序</span><br><span class="line">	——实例化一个浏览器对象</span><br><span class="line">	——编写基于浏览器自动化的操作代码</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">相关函数：</span><br><span class="line">	bro.get(url)</span><br><span class="line">	search_input &#x3D; bro.find_element_by_id(&#39;q&#39;) # 根据id查找元素（其他的选择器也行）</span><br><span class="line">	bro.execute_script(&#39;widnow.scrollTo(0,document.body.scrollHeight)&#39;) #执行js程序</span><br><span class="line">	botton &#x3D; (找到的一个input元素)；botton.click()</span><br><span class="line">	bro.back() #回退上一个页面；forward</span><br><span class="line">	bro.quit()</span><br><span class="line">	send_keys(字符串) #标签交互</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">selenlium处理iframe:</span><br><span class="line">	如果定位的标签存在与iframe标签中，必须使用switch_to.frame(id)</span><br><span class="line">	动作链（拖动）：from selenium。webdriver import ActionChains</span><br><span class="line">		实例化一个动作链对象：action &#x3D; ActionChains（bro）</span><br><span class="line">		click_and_hold(div):长按且点击操作</span><br><span class="line">		move_by_offset(x,y)</span><br><span class="line">		perform()让动作链立即执行</span><br><span class="line">		action.release()释放动作链对象</span><br></pre></td></tr></table></figure>
-<h3 id="无头浏览器-反检测："><a href="#无头浏览器-反检测：" class="headerlink" title="无头浏览器-反检测："></a>无头浏览器-反检测：</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line"><span class="keyword">from</span> time <span class="keyword">import</span> sleep</span><br><span class="line"><span class="comment">#实现无可视化界面的操作</span></span><br><span class="line"><span class="keyword">from</span> selenium.webdriver.chrome.options <span class="keyword">import</span> Options</span><br><span class="line"><span class="comment">#实现规避操作</span></span><br><span class="line"><span class="keyword">from</span> selenium.webdriver <span class="keyword">import</span> ChromeOptions</span><br><span class="line"></span><br><span class="line"><span class="comment">#实现无可视化界面</span></span><br><span class="line">chrome_options = Options()</span><br><span class="line">chrome_options.add_argument(<span class="string">&#x27;--headless&#x27;</span>)</span><br><span class="line">chrome_options.add_argument(<span class="string">&#x27;--disable-gpu&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#实现检测规避</span></span><br><span class="line">option = ChromeOptions()</span><br><span class="line">option.add_experimental_option(<span class="string">&#x27;excludeSwitches&#x27;</span>,[<span class="string">&#x27;enable-automation&#x27;</span>])</span><br><span class="line"></span><br><span class="line">bro = webdriver.Chrome(executable_path=<span class="string">&#x27;./chromedriver.exe&#x27;</span>,chrome_options=chrome_options,options=option)</span><br><span class="line"></span><br><span class="line"><span class="comment">#无可视化界面</span></span><br><span class="line">bro.get(<span class="string">&#x27;https://www.baidu.com&#x27;</span>)</span><br><span class="line">print(bro.page_source)</span><br><span class="line">sleep(<span class="number">2</span>)</span><br><span class="line">bro.quit()</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">其中使用的是bro.page_source返回页面详情数据</span><br></pre></td></tr></table></figure>
-<h3 id="点击式验证码："><a href="#点击式验证码：" class="headerlink" title="点击式验证码："></a>点击式验证码：</h3><p>参看源码-&gt;自制-&gt;pachong-&gt;第五章：动态加载数据处理-&gt;识别验证码(完成).py</p>
+<h2 id="2-2"><a href="#2-2" class="headerlink" title="2.2"></a>2.2</h2><h3 id="2-2-1-HTTP概述"><a href="#2-2-1-HTTP概述" class="headerlink" title="2.2.1 HTTP概述"></a>2.2.1 HTTP概述</h3><h3 id="2-2-2非持久连接和持久连接"><a href="#2-2-2非持久连接和持久连接" class="headerlink" title="2.2.2非持久连接和持久连接"></a>2.2.2非持久连接和持久连接</h3><p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210311202814371.png" alt="image-20210311202814371"></p>
+<h3 id="2-2-3-HTTP报文格式"><a href="#2-2-3-HTTP报文格式" class="headerlink" title="2.2.3 HTTP报文格式"></a>2.2.3 HTTP报文格式</h3><p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210311203152931.png" alt="image-20210311203152931"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210311203327115.png" alt="image-20210311203327115"></p>
+<p>响应状态码：</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210311203554547.png" alt="image-20210311203554547"></p>
+<h3 id="2-2-4用户和服务器的交互：Cookies"><a href="#2-2-4用户和服务器的交互：Cookies" class="headerlink" title="2.2.4用户和服务器的交互：Cookies"></a>2.2.4用户和服务器的交互：Cookies</h3><p>cookies是一个数字；不是记录信息的文件</p>
+<h3 id="2-2-5-Web缓存"><a href="#2-2-5-Web缓存" class="headerlink" title="2.2.5 Web缓存"></a>2.2.5 Web缓存</h3><p>条件GET方法：</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210311205329667.png" alt="image-20210311205329667"></p>
+<p>缓存先访问外部Server，Server发出是否文件修改的响应码；如果为304，则没修改，缓存直接将自己的文件发给客户端；否则，从Server处拿数据。</p>
+<h2 id="2-3文件传输协议（FTP）"><a href="#2-3文件传输协议（FTP）" class="headerlink" title="2.3文件传输协议（FTP）"></a>2.3文件传输协议（FTP）</h2><p>FTP允许双方互相操作</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210312161232574.png" alt="image-20210312161232574"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210312161431311.png" alt="image-20210312161431311"></p>
+<p>控制连接：21；数据连接：20</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210312162003063.png" alt="image-20210312162003063"></p>
+<h2 id="2-4"><a href="#2-4" class="headerlink" title="2.4"></a>2.4</h2><h3 id="2-4-1-SMTP"><a href="#2-4-1-SMTP" class="headerlink" title="2.4.1 SMTP"></a>2.4.1 SMTP</h3><p>邮件发送协议：SMTP</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210313140945842.png" alt="image-20210313140945842"></p>
+<p>简单邮件传输协议服务器的端口号是（25）</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210313145838119.png" alt="image-20210313145838119"></p>
+<p>写入数据：</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210313145937113.png" alt="image-20210313145937113"></p>
+<p>对比HTTP：</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210313150026290.png" alt="image-20210313150026290"></p>
+<h3 id="2-4-2邮件报文格式和MIME"><a href="#2-4-2邮件报文格式和MIME" class="headerlink" title="2.4.2邮件报文格式和MIME"></a>2.4.2邮件报文格式和MIME</h3><p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210319160801418.png" alt="image-20210319160801418"></p>
+<p>头部是邮件内容的组成部分；</p>
+<h3 id="2-4-3邮件访问协议"><a href="#2-4-3邮件访问协议" class="headerlink" title="2.4.3邮件访问协议"></a>2.4.3邮件访问协议</h3><p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210319162032504.png" alt="image-20210319162032504"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210319162137199.png" alt="image-20210319162137199"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210319162253509.png" alt="image-20210319162253509"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210319162630326.png" alt="image-20210319162630326"></p>
+<h2 id="2-5-DNS体系介绍和工作原理"><a href="#2-5-DNS体系介绍和工作原理" class="headerlink" title="2.5 DNS体系介绍和工作原理"></a>2.5 DNS体系介绍和工作原理</h2><p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210328202942257.png" alt="image-20210328202942257"></p>
+<p>用途域名和国家域名</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210613182917566.png" alt="image-20210613182917566"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210613182936593.png" alt="image-20210613182936593"></p>
+<p>迭代查询和递归查询</p>
+<h2 id="2-6-p2p应用"><a href="#2-6-p2p应用" class="headerlink" title="2.6 p2p应用"></a>2.6 p2p应用</h2><p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210403145314768.png" alt="image-20210403145314768"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210328213601005.png" alt="image-20210328213601005"></p>
+<h2 id="2-7-TCP和UDP套接字编程"><a href="#2-7-TCP和UDP套接字编程" class="headerlink" title="2.7 TCP和UDP套接字编程"></a>2.7 TCP和UDP套接字编程</h2><p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210403150249891.png" alt="image-20210403150249891"></p>
+<p>可靠：数据报；不可靠：字节流</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210403150506890.png" alt="image-20210403150506890"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210403151339309.png" alt="image-20210403151339309"></p>
+<h2 id="题目：-1"><a href="#题目：-1" class="headerlink" title="题目："></a>题目：</h2><p>FTP默认服务端口号是21</p>
+<p>无连接服务适合短文本传输</p>
+<p>无连接服务在数据传输的过程中动态分配带宽</p>
+<p>面向连接服务适用于数据量大，实时性要求高的场合</p>
+<p>面向连接的服务的信道利用率低</p>
+<p>网络按通信方式可分为<strong>点对点传输</strong>和<strong>广播式传输</strong></p>
+<p>在DNS服务中，本地DNS服务器在向权威服务器发送查询的时候，有递归查询和迭代查询（轮次查询（意义不明））</p>
+<h1 id="运输层（传输层）"><a href="#运输层（传输层）" class="headerlink" title="运输层（传输层）"></a>运输层（传输层）</h1><h2 id="3-1概数和运输服务层"><a href="#3-1概数和运输服务层" class="headerlink" title="3.1概数和运输服务层"></a>3.1概数和运输服务层</h2><p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210403152159188.png" alt="image-20210403152159188"></p>
+<h2 id="3-2多路复用和多路分解"><a href="#3-2多路复用和多路分解" class="headerlink" title="3.2多路复用和多路分解"></a>3.2多路复用和多路分解</h2><p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210403152743764.png" alt="image-20210403152743764"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210403153018310.png" alt="image-20210403153018310"></p>
+<h2 id="3-3无连接运输UDP"><a href="#3-3无连接运输UDP" class="headerlink" title="3.3无连接运输UDP"></a>3.3无连接运输UDP</h2><p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210406144358303.png" alt="image-20210406144358303"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210406144949504.png" alt="image-20210406144949504"></p>
+<p>首部的每个单位占两个字节，源端口号在不希望对方回信的时候全部置为0；长度最小为首部长度（8）;检验和用于检查是否正确</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210406145409824.png" alt="image-20210406145409824"></p>
+<h2 id="3-4"><a href="#3-4" class="headerlink" title="3.4"></a>3.4</h2><h3 id="3-4-1构造可靠数据传输协议"><a href="#3-4-1构造可靠数据传输协议" class="headerlink" title="3.4.1构造可靠数据传输协议"></a>3.4.1构造可靠数据传输协议</h3><p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210406152903474.png" alt="image-20210406152903474"></p>
+<p>停等协议 </p>
+<p>rdt2.1的发送方</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210406153637666.png" alt="image-20210406153637666"></p>
+<p>接收方</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210406153829292.png" alt="image-20210406153829292"></p>
+<p>rdt2.2（无NAK）</p>
+<p>接收方通过发送前一个数据报的ACKs来代替NAK（都表示发送出错了）</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210406154935177.png" alt="image-20210406154935177"></p>
+<p>rdt3.0</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210406155808766.png" alt="image-20210406155808766"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210406160014785.png" alt="image-20210406160014785"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210406160024878.png" alt="image-20210406160024878"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210406160454554.png" alt="image-20210406160454554"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210406160503071.png" alt="image-20210406160503071"></p>
+<h3 id="3-4-2流水线可靠数据传输协议"><a href="#3-4-2流水线可靠数据传输协议" class="headerlink" title="3.4.2流水线可靠数据传输协议"></a>3.4.2流水线可靠数据传输协议</h3><p>滑动窗口协议</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210406202823268.png" alt="image-20210406202823268"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210406203112728.png" alt="image-20210406203112728"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210406203544397.png" alt="image-20210406203544397"></p>
+<p>选着性重传（SR）</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210406203819142.png" alt="image-20210406203819142"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210406204219690.png" alt="image-20210406204219690"></p>
+<p>窗口大小，应该小于或者等于序号大小的一半，否则就会出现不知道是第一次的数据报，还是第二次的数据报的情况</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210406204400100.png" alt="image-20210406204400100"></p>
+<h2 id="3-5-1TCP概述"><a href="#3-5-1TCP概述" class="headerlink" title="3.5.1TCP概述"></a>3.5.1TCP概述</h2><p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210406205238869.png" alt="image-20210406205238869"></p>
+<p>应用层自己处理边界问题</p>
+<p>格式</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210406205435960.png" alt="image-20210406205435960"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210614152310792.png" alt="image-20210614152310792"></p>
+<p>接收端收到psh为1的数据，应当立刻将数据上传到上层</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210425210919444.png" alt="image-20210425210919444"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210406210010902.png" alt="image-20210406210010902"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210425212739582.png" alt="image-20210425212739582"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210425213923485.png" alt="image-20210425213923485"></p>
+<h2 id="3-5-2TCP流量控制与连接管理"><a href="#3-5-2TCP流量控制与连接管理" class="headerlink" title="3.5.2TCP流量控制与连接管理"></a>3.5.2TCP流量控制与连接管理</h2><p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210418105150279.png" alt="image-20210418105150279"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210418105352787.png" alt="image-20210418105352787"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210425220641643.png" alt="image-20210425220641643"></p>
+<p>流量控制是针对缓冲区溢出的</p>
+<h2 id="3-6拥塞控制原理"><a href="#3-6拥塞控制原理" class="headerlink" title="3.6拥塞控制原理"></a>3.6拥塞控制原理</h2><p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210418111220356.png" alt="image-20210418111220356"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210418111232848.png" alt="image-20210418111232848"></p>
+<p>congwin/RTT：网络带宽</p>
+<p>每对主机分享相同的带宽：（原因）</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210425230719004.png" alt="image-20210425230719004"></p>
+<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>TCP和UDP都是面向报文的（错）UDP是用户数据报的传输协议，TCP是面向（数据流）的传输协议</p>
+<p>在G-B-N中，滑动窗口不是固定的</p>
+<p>若一个TCP报文段的序号字段值是401， 而携带的数据共有100字节，则下一个报文段的序号值应该是______501___。</p>
+<p>超时后，拥塞窗口慢增长的极限变为为超时时拥塞窗口的一半，后面一个增加一个的线性增长（不超过接受窗口）</p>
+<h1 id="网络层"><a href="#网络层" class="headerlink" title="网络层"></a>网络层</h1><h2 id="导论："><a href="#导论：" class="headerlink" title="导论："></a>导论：</h2><p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210427231640984.png" alt="image-20210427231640984"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210427231747674.png" alt="image-20210427231747674"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210427232432726.png" alt="image-20210427232432726"></p>
+<h2 id="路由器的组成："><a href="#路由器的组成：" class="headerlink" title="路由器的组成："></a>路由器的组成：</h2><p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210427233009047.png" alt="image-20210427233009047"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210427233310610.png" alt="image-20210427233310610"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210427233327912.png" alt="image-20210427233327912"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210427233412498.png" alt="image-20210427233412498"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210427233521287.png" alt="image-20210427233521287"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210427233641812.png" alt="image-20210427233641812"></p>
+<h2 id="IP-Internet-Protocol"><a href="#IP-Internet-Protocol" class="headerlink" title="IP Internet Protocol:"></a>IP Internet Protocol:</h2><p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210428203019457.png" alt="image-20210428203019457"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210428210504523.png" alt="image-20210428210504523"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210428211451529.png" alt="image-20210428211451529"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210428212257135.png" alt="image-20210428212257135"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210428212455573.png" alt="image-20210428212455573"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210428213050545.png" alt="image-20210428213050545"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210428213133783.png" alt="image-20210428213133783"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210429183807657.png" alt="image-20210429183807657"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210429184549191.png" alt="image-20210429184549191"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210429184644247.png" alt="image-20210429184644247"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210429184737028.png" alt="image-20210429184737028"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210429184924414.png" alt="image-20210429184924414"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210429185051661.png" alt="image-20210429185051661"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210429185325841.png" alt="image-20210429185325841"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210429190256127.png" alt="image-20210429190256127"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210429215838233.png" alt="image-20210429215838233"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210429220130286.png" alt="image-20210429220130286"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210429220215941.png" alt="image-20210429220215941"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210429220226373.png" alt="image-20210429220226373"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210429224156363.png" alt="image-20210429224156363"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210429224224666.png" alt="image-20210429224224666"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210429224429897.png" alt="image-20210429224429897"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210429224655957.png" alt="image-20210429224655957"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210429225020632.png" alt="image-20210429225020632"></p>
+<h2 id="4-4通用转发和SDN："><a href="#4-4通用转发和SDN：" class="headerlink" title="4.4通用转发和SDN："></a>4.4通用转发和SDN：</h2><p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210429225147743.png" alt="image-20210429225147743"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210429225236690.png" alt="image-20210429225236690"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210429225352417.png" alt="image-20210429225352417"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210429225836503.png" alt="image-20210429225836503"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210429230834316.png" alt="image-20210429230834316"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210429231019557.png" alt="image-20210429231019557"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210429231123822.png" alt="image-20210429231123822"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210505200249660.png" alt="image-20210505200249660"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210429231235385.png" alt="image-20210429231235385"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210505200453374.png" alt="image-20210505200453374"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210429231438835.png" alt="image-20210429231438835"></p>
+<h1 id="MOOC的网络层"><a href="#MOOC的网络层" class="headerlink" title="MOOC的网络层"></a>MOOC的网络层</h1><h2 id="4-1概述："><a href="#4-1概述：" class="headerlink" title="4.1概述："></a>4.1概述：</h2><p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210520150503638.png" alt="image-20210520150503638"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210520150825542.png" alt="image-20210520150825542"></p>
+<h2 id="4-2虚电路和数据报网络"><a href="#4-2虚电路和数据报网络" class="headerlink" title="4.2虚电路和数据报网络"></a>4.2虚电路和数据报网络</h2><p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210520151034168.png" alt="image-20210520151034168"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210520151355689.png" alt="image-20210520151355689"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210520152607112.png" alt="image-20210520152607112"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210520152644526.png" alt="image-20210520152644526"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210520152812909.png" alt="image-20210520152812909"></p>
+<h2 id="4-3路由器工作原理"><a href="#4-3路由器工作原理" class="headerlink" title="4.3路由器工作原理"></a>4.3路由器工作原理</h2><p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210520152940429.png" alt="image-20210520152940429"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210520153622381.png" alt="image-20210520153622381"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210520153633903.png" alt="image-20210520153633903"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210520153727349.png" alt="image-20210520153727349"></p>
+<p>内存式：早期路由器；总线，纵横式：现在路由器</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210520153912467.png" alt="image-20210520153912467"></p>
+<p>速率受总线带宽限制</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210520153946852.png" alt="image-20210520153946852"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210520154024335.png" alt="image-20210520154024335"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210520154246624.png" alt="image-20210520154246624"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210520154322937.png" alt="image-20210520154322937"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210520154407952.png" alt="image-20210520154407952"></p>
+<p>绿色分组经历HOL阻塞（线头阻塞）</p>
+<h2 id="4-4-1网际协议-报文格式和分片"><a href="#4-4-1网际协议-报文格式和分片" class="headerlink" title="4.4.1网际协议-报文格式和分片"></a>4.4.1网际协议-报文格式和分片</h2><p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210520160913983.png" alt="image-20210520160913983"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210520161057252.png" alt="image-20210520161057252"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210520161321479.png" alt="image-20210520161321479"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210520161410428.png" alt="image-20210520161410428"></p>
+<h2 id="4-4-2网际协议-IPV4编址"><a href="#4-4-2网际协议-IPV4编址" class="headerlink" title="4.4.2网际协议-IPV4编址"></a>4.4.2网际协议-IPV4编址</h2><p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521102452522.png" alt="image-20210521102452522"></p>
+<p>子网：</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521103149571.png" alt="image-20210521103149571"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521103230813.png" alt="image-20210521103230813"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521103631040.png" alt="image-20210521103631040"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521103723780.png" alt="image-20210521103723780"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521103758961.png" alt="image-20210521103758961"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521103950383.png" alt="image-20210521103950383"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521104406622.png" alt="image-20210521104406622"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521104642036.png" alt="image-20210521104642036"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521104742084.png" alt="image-20210521104742084"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521104843692.png" alt="image-20210521104843692"></p>
+<h2 id="4-5-1链路状态路由算法："><a href="#4-5-1链路状态路由算法：" class="headerlink" title="4.5.1链路状态路由算法："></a>4.5.1链路状态路由算法：</h2><p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521110957384.png" alt="image-20210521110957384"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210505201944386.png" alt="image-20210505201944386"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210505202021275.png" alt="image-20210505202021275"></p>
+<p>链路状态算法是一种全局路由算法</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210505202409190.png" alt="image-20210505202409190"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210505202242441.png" alt="image-20210505202242441"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210505210804615.png" alt="image-20210505210804615"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210505210904917.png" alt="image-20210505210904917"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521115813577.png" alt="image-20210521115813577"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521115901442.png" alt="image-20210521115901442"></p>
+<h2 id="4-5-2距离向量路由算法："><a href="#4-5-2距离向量路由算法：" class="headerlink" title="4.5.2距离向量路由算法："></a>4.5.2距离向量路由算法：</h2><p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521115935435.png" alt="image-20210521115935435"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521120036026.png" alt="image-20210521120036026"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521120333354.png" alt="image-20210521120333354"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521121044950.png" alt="image-20210521121044950"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521121445423.png" alt="image-20210521121445423"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521140517477.png" alt="image-20210521140517477"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521141141667.png" alt="image-20210521141141667"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521141412507.png" alt="image-20210521141412507"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521141557914.png" alt="image-20210521141557914"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521141620218.png" alt="image-20210521141620218"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521141718099.png" alt="image-20210521141718099"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521141731014.png" alt="image-20210521141731014"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521140631723.png" alt="image-20210521140631723"></p>
+<h2 id="题目：-2"><a href="#题目：-2" class="headerlink" title="题目："></a>题目：</h2><p>收发主机：运行完整的网络轮次；而路由器只需要网络层协议（所以都要运行网络层协议）</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210520150246925.png" alt="image-20210520150246925"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210520161119585.png" alt="image-20210520161119585"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521104215466.png" alt="image-20210521104215466"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521110634400.png" alt="image-20210521110634400"></p>
+<p>链路状态算法属于<strong>全局路由算法</strong>，必须知道每条链路的费用</p>
+<p>分布式的只需要知道和自己相连的链路的费用。</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521120143137.png" alt="image-20210521120143137"></p>
+<h1 id="MOOC链路层"><a href="#MOOC链路层" class="headerlink" title="MOOC链路层"></a>MOOC链路层</h1><h2 id="5-1链路层概述："><a href="#5-1链路层概述：" class="headerlink" title="5.1链路层概述："></a>5.1链路层概述：</h2><p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521151026546.png" alt="image-20210521151026546"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521151124784.png" alt="image-20210521151124784"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521151228739.png" alt="image-20210521151228739"></p>
+<h2 id="5-2差错检测和纠错技术"><a href="#5-2差错检测和纠错技术" class="headerlink" title="5.2差错检测和纠错技术"></a>5.2差错检测和纠错技术</h2><p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521151837265.png" alt="image-20210521151837265"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521151920568.png" alt="image-20210521151920568"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521152119440.png" alt="image-20210521152119440"></p>
+<p>奇偶校验：</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521152155766.png" alt="image-20210521152155766"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521152312499.png" alt="image-20210521152312499"></p>
+<p>检查和方法：</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521152401516.png" alt="image-20210521152401516"></p>
+<p>循环冗余检测方法：（以太网中实际采用的差错检测方法）</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521153058396.png" alt="image-20210521153058396"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521153122772.png" alt="image-20210521153122772"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521153654410.png" alt="image-20210521153654410"></p>
+<p>发送方：</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521154030198.png" alt="image-20210521154030198"></p>
+<p>生成多项式G始终要比R多一位</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521154120731.png" alt="image-20210521154120731"></p>
+<h2 id="5-3多路访问链路和协议"><a href="#5-3多路访问链路和协议" class="headerlink" title="5.3多路访问链路和协议"></a>5.3多路访问链路和协议</h2><p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521154400500.png" alt="image-20210521154400500"></p>
+<p>多路访问协议：</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521154924047.png" alt="image-20210521154924047"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521154932065.png" alt="image-20210521154932065"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521154949481.png" alt="image-20210521154949481"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521155121496.png" alt="image-20210521155121496"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521155139122.png" alt="image-20210521155139122"></p>
+<p>冲突检测协议：（现在主要使用的协议）</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521155245546.png" alt="image-20210521155245546"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521201236757.png" alt="image-20210521201236757"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521201315462.png" alt="image-20210521201315462"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521201345300.png" alt="image-20210521201345300"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521201750065.png" alt="image-20210521201750065"></p>
+<p>CSMA:</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521201836478.png" alt="image-20210521201836478"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521202229172.png" alt="image-20210521202229172"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521202246589.png" alt="image-20210521202246589"></p>
+<p>CSMA/CD</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521202319176.png" alt="image-20210521202319176"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521202334185.png" alt="image-20210521202334185"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521202346701.png" alt="image-20210521202346701"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521202456286.png" alt="image-20210521202456286"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521202512984.png" alt="image-20210521202512984"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521202708025.png" alt="image-20210521202708025"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521202748544.png" alt="image-20210521202748544"></p>
+<h2 id="5-4-1链路层寻址和ARP"><a href="#5-4-1链路层寻址和ARP" class="headerlink" title="5.4.1链路层寻址和ARP"></a>5.4.1链路层寻址和ARP</h2><p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521202839098.png" alt="image-20210521202839098"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521203314770.png" alt="image-20210521203314770"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521203757955.png" alt="image-20210521203757955"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521204008026.png" alt="image-20210521204008026"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521204123464.png" alt="image-20210521204123464"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521204139888.png" alt="image-20210521204139888"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521204300283.png" alt="image-20210521204300283"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521204408383.png" alt="image-20210521204408383"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521204532820.png" alt="image-20210521204532820"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521204615996.png" alt="image-20210521204615996"></p>
+<h2 id="5-4-2以太网"><a href="#5-4-2以太网" class="headerlink" title="5.4.2以太网"></a>5.4.2以太网</h2><p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521204815293.png" alt="image-20210521204815293"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521204842183.png" alt="image-20210521204842183"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521204850188.png" alt="image-20210521204850188"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521204910599.png" alt="image-20210521204910599"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521204916630.png" alt="image-20210521204916630"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521205152076.png" alt="image-20210521205152076"></p>
+<h2 id="5-4-3链路层交换机"><a href="#5-4-3链路层交换机" class="headerlink" title="5.4.3链路层交换机"></a>5.4.3链路层交换机</h2><p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521205233180.png" alt="image-20210521205233180"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521205323838.png" alt="image-20210521205323838"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521205347634.png" alt="image-20210521205347634"></p>
+<h2 id="题目：-3"><a href="#题目：-3" class="headerlink" title="题目："></a>题目：</h2><p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521151702047.png" alt="image-20210521151702047"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521153742717.png" alt="image-20210521153742717"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521204217485.png" alt="image-20210521204217485"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521204939626.png" alt="image-20210521204939626"></p>
 
       
     </div>
@@ -466,7 +681,7 @@
 
 
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/6/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/8/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/page/6/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/page/21/">21</a><a class="extend next" rel="next" href="/page/8/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 

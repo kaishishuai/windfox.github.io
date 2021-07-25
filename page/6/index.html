@@ -256,7 +256,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://windsfox.github.io/2021/02/09/MyPython/">
+    <link itemprop="mainEntityOfPage" href="http://windsfox.github.io/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/kong.jpg">
@@ -269,7 +269,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/02/09/MyPython/" class="post-title-link" itemprop="url">MyPython</a>
+          <a href="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="post-title-link" itemprop="url">数据库</a>
         </h2>
 
         <div class="post-meta-container">
@@ -280,14 +280,14 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2021-02-09 11:06:25" itemprop="dateCreated datePublished" datetime="2021-02-09T11:06:25+08:00">2021-02-09</time>
+      <time title="创建时间：2021-03-01 13:20:35" itemprop="dateCreated datePublished" datetime="2021-03-01T13:20:35+08:00">2021-03-01</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-02-11 17:25:22" itemprop="dateModified" datetime="2021-02-11T17:25:22+08:00">2021-02-11</time>
+        <time title="修改时间：2021-05-19 23:12:58" itemprop="dateModified" datetime="2021-05-19T23:12:58+08:00">2021-05-19</time>
       </span>
 
   
@@ -300,358 +300,389 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="基础："><a href="#基础：" class="headerlink" title="基础："></a>基础：</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">列表：</span><br><span class="line">c&#x3D;[1,2,3,4,5,6,7] </span><br><span class="line">切片：</span><br><span class="line">c[-1:3:-1]</span><br><span class="line">&gt;&gt;&gt; [7,6,5] ## 包括起点不包括终点，一定是从第一个数开始出发，步长可以为负数</span><br><span class="line">插入：</span><br><span class="line">c.insert(3,38) </span><br><span class="line">&gt;&gt;&gt; [1,2,3,38,4,5,6,7]##在第四个元素前插入38</span><br><span class="line">删除：</span><br><span class="line">del c[3] </span><br><span class="line">&gt;&gt;&gt; [1,2,3,4,5,6,7]##删除38</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">元组：誓言，一旦定义不能改变</span><br><span class="line">f&#x3D;(1,2,3)</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">字典：</span><br><span class="line">dic&#x3D;&#123;</span><br><span class="line">	1:&quot;123&quot;,</span><br><span class="line">	&quot;name&quot;:&quot;zhangsan&quot;,</span><br><span class="line">	&quot;height&quot;:180</span><br><span class="line">&#125;</span><br><span class="line">dic[&quot;name&quot;] ##表示取出name对应的value：“zhangsan”</span><br><span class="line">del dic[&quot;name&quot;] #删除这个键值对</span><br><span class="line">dic[&quot;city&quot;]&#x3D;&quot;北京&quot; #插入新键值对</span><br></pre></td></tr></table></figure>
-<h3 id="ps：print不支持需要将其他类型转换的字符串拼接，只能字符串拼接-只能直接使用逗号隔开。"><a href="#ps：print不支持需要将其他类型转换的字符串拼接，只能字符串拼接-只能直接使用逗号隔开。" class="headerlink" title="ps：print不支持需要将其他类型转换的字符串拼接，只能字符串拼接,只能直接使用逗号隔开。"></a>ps：print不支持需要将其他类型转换的字符串拼接，只能字符串拼接,只能直接使用逗号隔开。</h3><h2 id="文件操作："><a href="#文件操作：" class="headerlink" title="文件操作："></a>文件操作：</h2><h4 id="写文件"><a href="#写文件" class="headerlink" title="写文件"></a>写文件</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">文件变量 &#x3D; open(&quot;文件路径名&quot;，&quot;wb&quot;)</span><br><span class="line">pickle.dump(待写入的变量，文件变量)</span><br><span class="line">文件变量.close()</span><br></pre></td></tr></table></figure>
-<h4 id="读文件"><a href="#读文件" class="headerlink" title="读文件"></a>读文件</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">文件变量&#x3D;open(&quot;文件路径文件名&quot;，&quot;wb&quot;)</span><br><span class="line">放内容的变量&#x3D;pickle.load(文件变量)</span><br><span class="line">文件变量.close()</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://windsfox.github.io/2021/01/25/MyLinux/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/kong.jpg">
-      <meta itemprop="name" content="windsfox">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="windsfoxの博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/01/25/MyLinux/" class="post-title-link" itemprop="url">MyLinux</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2021-01-25 10:21:09" itemprop="dateCreated datePublished" datetime="2021-01-25T10:21:09+08:00">2021-01-25</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-02-08 22:37:09" itemprop="dateModified" datetime="2021-02-08T22:37:09+08:00">2021-02-08</time>
-      </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="第一章：基础篇"><a href="#第一章：基础篇" class="headerlink" title="第一章：基础篇"></a>第一章：基础篇</h1><h2 id="1-网络连接的三种模式："><a href="#1-网络连接的三种模式：" class="headerlink" title="1.网络连接的三种模式："></a>1.网络连接的三种模式：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">-桥接模式：虚拟系统可以和外部系统通信，但容易照成IP冲突</span><br><span class="line">-NAT模式（网络地址转换模式）：不照成IP冲突</span><br><span class="line">-主机模式：独立的系统</span><br></pre></td></tr></table></figure>
-<h2 id="2-克隆"><a href="#2-克隆" class="headerlink" title="2.克隆"></a>2.克隆</h2><ol>
-<li>关闭挂起或者正在运行的虚拟机。</li>
-<li>右键虚拟机-》管理-》克隆——–》创建完整克隆</li>
-</ol>
-<h2 id="3-快照"><a href="#3-快照" class="headerlink" title="3.快照"></a>3.快照</h2><p>右键虚拟机-》快照-》拍摄快照</p>
-<p><img src="/2021/01/25/MyLinux/image-20210126131605999.png" alt="image-20210126131605999"></p>
-<p>右键虚拟机-》快照-》快照管理</p>
-<h2 id="4-vmtools"><a href="#4-vmtools" class="headerlink" title="4.vmtools"></a>4.vmtools</h2><p>可以和主机系统共享文件夹</p>
-<p>右键虚拟系统-》设置-》选项-》共享文件夹-》总是启用-》添加</p>
-<p>ps：一般工作中共享文件是使用远程方式完成的</p>
-<h2 id="5-目录结构"><a href="#5-目录结构" class="headerlink" title="5.目录结构"></a>5.目录结构</h2><p>在linux里一切皆为文件，硬件也映射为一个文件</p>
-<p>根目录下的一些子目录：</p>
+          <h1 id="数据库系统概论"><a href="#数据库系统概论" class="headerlink" title="数据库系统概论"></a>数据库系统概论</h1><h2 id="1-1数据库及系统概念"><a href="#1-1数据库及系统概念" class="headerlink" title="1.1数据库及系统概念"></a>1.1数据库及系统概念</h2><h3 id="1-1-1概念："><a href="#1-1-1概念：" class="headerlink" title="1.1.1概念："></a>1.1.1概念：</h3><ol>
+<li><p>数据：描述事物符号的记录</p>
+</li>
+<li><p>数据库：长期存储在计算机内的有组织的，可共享的大量数据的集合</p>
+</li>
+<li><p>数据库管理系统：位于用户与操作系统之间的一层管理软件，主要功能：</p>
 <ol>
-<li>bin【常用】：存放常用的命令</li>
-<li>sbin：存放系统管理员使用的系统管理程序</li>
-<li>home：存放普通用户的主目录，在Linux中每个用户都有一个自己的子目录</li>
-<li>root：管理员目录：只能管理员进入</li>
-<li>lib：开机所需要最基本的动态链接库，起作用类似于win里的dll文件，所有的应用程序都需要用到这些共享库</li>
-<li>lost+found：这个目录一般情况下是空的，当系统非法关机后，这里就存放了一些文件（隐藏了，需要在终端打开）</li>
-<li>usr【常用】：用于存放很多应用程序和重要文件，类似于win下的program files</li>
-<li>etc【常用】：系统管理所需要的配置文件和子目录，比如安装mysql数据库 my.conf</li>
-<li>boot【常用】：启动linux的一些核心文件，包括一些链接文件和镜像文件</li>
-<li>proc【别动】：虚拟的目录，是系统内存的映射，放稳这个目录获取系统信息</li>
-<li>srv【别动】：service的缩写，存放一些服务启动后需要提取的数据</li>
-<li>sys【别动】：Linux2.6内核的一个很大变化，安装2.6内核中新出现的一个文件系统sysfs=》【】</li>
-<li>tmp：存放一些临时文件</li>
-<li>dev：类似于win的设备管理器，所有硬件用文件形式存储</li>
-<li>media【常用】：linux系统自动识别设备，并把识别到的设备挂载到这个目录下</li>
-<li>mnt【常用】：让用户可以临时<strong>挂载</strong>别的文件系统，例如：myshare</li>
-<li>opt ：给主机额外<strong>安装软件</strong>所摆放的目录，利于oracle数据库就可放在该目录下，默认为空</li>
+<li>DDL：数据定义语言</li>
+<li>DML：数据库操作语言（增删改查）</li>
+<li>数据库的运行管理</li>
 </ol>
-<h2 id="6-远程登录"><a href="#6-远程登录" class="headerlink" title="6.远程登录"></a>6.远程登录</h2><p>客户端：Xshell和Xftp</p>
-<p>先找到linux系统在公网上的ip地址：（在终端使用命令：ifconfig）</p>
-<p><img src="/2021/01/25/MyLinux/image-20210126213436827.png" alt="image-20210126213436827"></p>
-<p>甚至reboot指令也能生效，重启linux系统</p>
-<p><img src="/2021/01/25/MyLinux/image-20210126213248577.png" alt="image-20210126213248577"></p>
-<h2 id="7-vi和vim"><a href="#7-vi和vim" class="headerlink" title="7.vi和vim"></a>7.vi和vim</h2><h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><p>vi：linux自带的一种文本编辑器</p>
+</li>
+<li><p>数据库系统：计算机中引用到数据库之后的系统。（包括：数据库，数据库管理系统（DBMS），数据库应用程序，数据库管理员（DBA）和用户）</p>
+</li>
+</ol>
+<h3 id="1-1-2数据模型："><a href="#1-1-2数据模型：" class="headerlink" title="1.1.2数据模型："></a>1.1.2数据模型：</h3><ol>
+<li>层次数据模型（树结构）</li>
+<li>网状数据模型（图结构）缺点：数据结构复杂，增加了数据查询和数据定位的困难</li>
+<li>关系数据模型（二维表结构）表之间通过具有相同属性列的数据值进行约束关联</li>
+<li>其他数据模型</li>
+</ol>
+<h3 id="1-1-3数据库应用程序："><a href="#1-1-3数据库应用程序：" class="headerlink" title="1.1.3数据库应用程序："></a>1.1.3数据库应用程序：</h3><p>是一种在DBMS支持下对数据库中数据进行访问处理的应用程序</p>
 <ol>
-<li><p>vim Hello.java（命令）</p>
+<li>通过窗口输入框采集用户输入数据</li>
+<li>通过接口连接访问数据库</li>
+<li>执行用户数据查询  </li>
+<li>通过表单列表输出结果数据</li>
+</ol>
+<h3 id="1-1-4数据库管理系统："><a href="#1-1-4数据库管理系统：" class="headerlink" title="1.1.4数据库管理系统："></a>1.1.4数据库管理系统：</h3><p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210302201606385.png" alt="image-20210302201606385"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210302201619611.png" alt="image-20210302201619611"></p>
+<h3 id="1-1-5数据库："><a href="#1-1-5数据库：" class="headerlink" title="1.1.5数据库："></a>1.1.5数据库：</h3><p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210302201713863.png" alt="image-20210302201713863"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210302201754678.png" alt="image-20210302201754678"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210302201903138.png" alt="image-20210302201903138"></p>
+<h2 id="1-2数据库发展"><a href="#1-2数据库发展" class="headerlink" title="1.2数据库发展"></a>1.2数据库发展</h2><h3 id="1-2-1数据管理技术发展阶段："><a href="#1-2-1数据管理技术发展阶段：" class="headerlink" title="1.2.1数据管理技术发展阶段："></a>1.2.1数据管理技术发展阶段：</h3><ol>
+<li><p>人工管理阶段</p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210302202110474.png" alt="image-20210302202110474"></p>
+<p>特点：</p>
+<ul>
+<li>程序员组织和管理数据</li>
+<li>应用程序依赖数据集</li>
+<li>应用之间无数据共享，数据冗余度大</li>
+<li>数据集无结构</li>
+</ul>
 </li>
-<li><p>进入文件后输入i，I,o,O,a,A,r,R中的任何一个字母才会进入编辑模式</p>
-<p><img src="/2021/01/25/MyLinux/image-20210126214359934.png" alt="image-20210126214359934"></p>
+<li><p>文件系统管理阶段</p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210302202430454.png" alt="image-20210302202430454"></p>
+<p>特点：</p>
+<ul>
+<li>由文件组织与存储数据</li>
+<li>数据文件的数据记录具有简单的字段结构，但文件整体无结构</li>
+<li>应用程序依赖于数据文件，需自己维护数据文件</li>
+<li>数据独立性差，难以实现应用程序之间的数据共享访问</li>
+</ul>
 </li>
-<li><p>切换到命令行：esc：wq（回车）##，esc是切换出编辑模式；wq是保存</p>
+<li><p>数据库系统管理阶段：</p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210302202748613.png" alt="image-20210302202748613"></p>
+<p>特点：</p>
+<ul>
+<li>数据集结构化，易于查询与统计处理</li>
+<li>不同应用程序可以实现数据共享访问</li>
+<li>数据独立性高，应用可扩展</li>
+<li>数据由DBMS统一管理和访问操作</li>
+</ul>
 </li>
 </ol>
-<h3 id="各种模式的切换"><a href="#各种模式的切换" class="headerlink" title="各种模式的切换"></a>各种模式的切换</h3><p><img src="/2021/01/25/MyLinux/image-20210126214614149.png" alt="image-20210126214614149"></p>
-<p><img src="/2021/01/25/MyLinux/image-20210126214854026.png" alt="image-20210126214854026"></p>
-<h2 id="8-Linux基础命令"><a href="#8-Linux基础命令" class="headerlink" title="8.Linux基础命令"></a>8.Linux基础命令</h2><p><img src="/2021/01/25/MyLinux/image-20210126215402555.png" alt="image-20210126215402555"></p>
-<h1 id="第二章：用户管理"><a href="#第二章：用户管理" class="headerlink" title="第二章：用户管理"></a>第二章：用户管理</h1><h2 id="添加用户"><a href="#添加用户" class="headerlink" title="添加用户"></a>添加用户</h2><p><img src="/2021/01/25/MyLinux/image-20210127184718673.png" alt="image-20210127184718673"></p>
-<p>密码：<img src="/2021/01/25/MyLinux/image-20210127184754290.png" alt="image-20210127184754290"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">用户删除：</span><br><span class="line">pwd (显示当前在哪个目录下)</span><br><span class="line">userdel 用户名 ## 删掉用户，保留家目录</span><br><span class="line">userdel -r 用户名 ## 删掉用户，删掉家目录（一般不用）</span><br></pre></td></tr></table></figure>
-<h2 id="查询用户信息"><a href="#查询用户信息" class="headerlink" title="查询用户信息"></a>查询用户信息</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">id 用户名 （查询当前用户id信息）</span><br><span class="line">who am i ##当前用户登录信息（ps：显示第一次登录到的用户信息，不是层级登录的用户信息）</span><br></pre></td></tr></table></figure>
-<p><img src="/2021/01/25/MyLinux/image-20210127185149574.png" alt="image-20210127185149574"></p>
-<h2 id="用户组"><a href="#用户组" class="headerlink" title="用户组"></a>用户组</h2><p><img src="/2021/01/25/MyLinux/image-20210127185409004.png" alt="image-20210127185409004"></p>
-<p><img src="/2021/01/25/MyLinux/image-20210127185539073.png" alt="image-20210127185539073"></p>
-<h1 id="第三章：实用指令"><a href="#第三章：实用指令" class="headerlink" title="第三章：实用指令"></a>第三章：实用指令</h1><p><img src="/2021/01/25/MyLinux/image-20210127185738883.png" alt="image-20210127185738883"></p>
-<p><img src="/2021/01/25/MyLinux/image-20210127185802987.png" alt="image-20210127185802987"></p>
-<h2 id="找回root密码"><a href="#找回root密码" class="headerlink" title="找回root密码"></a>找回root密码</h2><p>网上查文档</p>
-<p><img src="/2021/01/25/MyLinux/image-20210127190604348.png" alt="image-20210127190604348"></p>
-<h2 id="其他实用的命令"><a href="#其他实用的命令" class="headerlink" title="其他实用的命令"></a>其他实用的命令</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">cd &#x2F;root #回到root的绝对路径</span><br><span class="line">cd ~ #同上</span><br><span class="line">mkdir -p &#x2F;home&#x2F;animal&#x2F;tiger（-p表示创建多级目录）</span><br><span class="line">rmdir -rf 要删除目录 # （-rf代表递归删除所有目录，一定要谨慎）</span><br><span class="line">rm -rf 文件名 ## 删除文件（-r表示进入目录，f表示强制）</span><br><span class="line">touch 文件名（带后缀） #创建一个空文件</span><br><span class="line">cp -r &#x2F;home&#x2F;bbb&#x2F; &#x2F;opt&#x2F; #从home&#x2F;bbb下拷贝所有文件到&#x2F;opt&#x2F;下（-r代表递归）</span><br><span class="line">实用\cp（代表强制覆盖）</span><br></pre></td></tr></table></figure>
-<p><img src="/2021/01/25/MyLinux/image-20210127215051243.png" alt="image-20210127215051243"></p>
-<p>mv指令：</p>
-<p><img src="/2021/01/25/MyLinux/image-20210128112123095.png" alt="image-20210128112123095"></p>
-<p>cat指令：</p>
-<p><img src="/2021/01/25/MyLinux/image-20210128112651023.png" alt="image-20210128112651023"></p>
-<p>more指令：</p>
-<p><img src="/2021/01/25/MyLinux/image-20210128112909079.png" alt="image-20210128112909079"></p>
-<p>less指令：</p>
-<p><img src="/2021/01/25/MyLinux/image-20210128112935551.png" alt="image-20210128112935551"></p>
-<p>echo，head指令</p>
-<p><img src="/2021/01/25/MyLinux/image-20210128113311127.png" alt="image-20210128113311127"></p>
-<p>tail指令：</p>
-<p><img src="/2021/01/25/MyLinux/image-20210128113526263.png" alt="image-20210128113526263"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;hello&quot; &gt; &#x2F;home&#x2F;hello.txt #覆盖写入内容</span><br><span class="line">echo &quot;hello&quot; &gt;&gt; &#x2F;home&#x2F;hello.txt #追加内容</span><br><span class="line"></span><br><span class="line">ls -l &#x2F;home&#x2F;</span><br></pre></td></tr></table></figure>
-<p><img src="/2021/01/25/MyLinux/image-20210128114146003.png" alt="image-20210128114146003"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cal &gt;&gt; &#x2F;home&#x2F;mycal ##将日历信息记录到该文件中</span><br><span class="line"></span><br><span class="line">cat &#x2F;etc&#x2F;profile &gt; &#x2F;home&#x2F;myprofile ## 复制，覆盖写入</span><br></pre></td></tr></table></figure>
-<p>软连接：cd myroot (相当于打开了源文件) # 本质上是一种共享</p>
-<p><img src="/2021/01/25/MyLinux/image-20210128114831273.png" alt="image-20210128114831273"></p>
-<p>history指令：</p>
-<p><img src="/2021/01/25/MyLinux/image-20210128115308576.png" alt="image-20210128115308576"></p>
-<p>date指令：</p>
-<p><img src="/2021/01/25/MyLinux/image-20210128115747776.png" alt="image-20210128115747776"></p>
-<p>find指令：</p>
-<p><img src="/2021/01/25/MyLinux/image-20210128120003779.png" alt="image-20210128120003779"></p>
-<p><img src="/2021/01/25/MyLinux/image-20210128121607877.png" alt="image-20210128121607877"></p>
-<p>locate指令：</p>
-<p><img src="/2021/01/25/MyLinux/image-20210128121817396.png" alt="image-20210128121817396"></p>
-<p>grep指令：</p>
-<p><img src="/2021/01/25/MyLinux/image-20210128132257826.png" alt="image-20210128132257826"></p>
-<p><img src="/2021/01/25/MyLinux/image-20210128133131582.png" alt="image-20210128133131582"></p>
-<p>gzip和gunzip指令：压缩文件和解压文件</p>
-<p><img src="/2021/01/25/MyLinux/image-20210128133318905.png" alt="image-20210128133318905"></p>
-<p><img src="/2021/01/25/MyLinux/image-20210128133848730.png" alt="image-20210128133848730"></p>
-<p><img src="/2021/01/25/MyLinux/image-20210128205729527.png" alt="image-20210128205729527"></p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">tar -zcvf pc.tar.gz &#x2F;home&#x2F;pig.txt &#x2F;home&#x2F;cat.txt</span><br><span class="line">#将两个文件压成pc.tar.gz</span><br><span class="line">tar -zcvf myhome.tar.gz &#x2F;home&#x2F;</span><br><span class="line"># 压缩home文件夹</span><br><span class="line">tar -zxvf pc.tar.gz</span><br><span class="line">#解压该文件</span><br><span class="line">tar -zxvf &#x2F;home&#x2F;myhome.tar.gz -C &#x2F;opt&#x2F;tmp2</span><br><span class="line">#将前一个文件解压到后面的目录中</span><br></pre></td></tr></table></figure>
-<h1 id="第四章：实操篇：组管理和权限管理"><a href="#第四章：实操篇：组管理和权限管理" class="headerlink" title="第四章：实操篇：组管理和权限管理"></a>第四章：实操篇：组管理和权限管理</h1><h3 id="文件所有者"><a href="#文件所有者" class="headerlink" title="文件所有者"></a>文件所有者</h3><p><img src="/2021/01/25/MyLinux/image-20210128213433138.png" alt="image-20210128213433138"></p>
-<p><img src="/2021/01/25/MyLinux/image-20210128213337825.png" alt="image-20210128213337825"></p>
-<p>组管理：<img src="/2021/01/25/MyLinux/image-20210128213616574.png" alt="image-20210128213616574"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls -ahl 查看详情信息，可查看在哪个组</span><br></pre></td></tr></table></figure>
-<p><img src="/2021/01/25/MyLinux/image-20210128214405554.png" alt="image-20210128214405554"></p>
-<p>其他组和改变用户所在组：</p>
-<p><img src="/2021/01/25/MyLinux/image-20210128214836132.png" alt="image-20210128214836132"></p>
-<h3 id="权限："><a href="#权限：" class="headerlink" title="权限："></a>权限：</h3><p><img src="/2021/01/25/MyLinux/image-20210128215336637.png" alt="image-20210128215336637"></p>
-<p>修改权限：chmod：</p>
-<p><img src="/2021/01/25/MyLinux/image-20210129093159500.png" alt="image-20210129093159500"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">案例：</span><br><span class="line">1. chmod u&#x3D;rwx,g&#x3D;rx,o&#x3D;rx abc</span><br><span class="line">2. chmod u-x,g+w abc</span><br><span class="line">3. chmod a+r abc</span><br></pre></td></tr></table></figure>
-<p><img src="/2021/01/25/MyLinux/image-20210129190544454.png" alt="image-20210129190544454"></p>
-<p>chown指令：</p>
-<p><img src="/2021/01/25/MyLinux/image-20210129190813886.png" alt="image-20210129190813886"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">chown tom &#x2F;home&#x2F;abc.txt</span><br><span class="line">chown -R tom &#x2F;home&#x2F;kkk</span><br></pre></td></tr></table></figure>
-<p>chgrp:</p>
-<p><img src="/2021/01/25/MyLinux/image-20210129191151214.png" alt="image-20210129191151214"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">chgrp shaolin &#x2F;home&#x2F;abc.txt</span><br><span class="line">chgrp -R shaolin &#x2F;home&#x2F;kkk</span><br></pre></td></tr></table></figure>
-<h3 id="小案例："><a href="#小案例：" class="headerlink" title="小案例："></a>小案例：</h3><p><img src="/2021/01/25/MyLinux/image-20210129194952405.png" alt="image-20210129194952405"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"># 创建组</span><br><span class="line">groupadd police </span><br><span class="line">groupadd bandit</span><br><span class="line"># 创建用户</span><br><span class="line">useradd -g police jack </span><br><span class="line">useradd -g police jerry</span><br><span class="line">useradd -g bandit xh</span><br><span class="line">useradd -g bandit xq</span><br><span class="line"># 创建文件以及权限设置</span><br><span class="line">vim jack.txt</span><br><span class="line">chomd 640 jack.txt</span><br><span class="line">chmod o&#x3D;r,g&#x3D;rw jack.txt</span><br><span class="line"># 将小红加到警察组</span><br><span class="line">usermod -g police xh</span><br><span class="line">## 但是小红还是不能修改jack文件夹内的jack.txt,因为小红根本连进入jack的权限都没有</span><br></pre></td></tr></table></figure>
-<h3 id="目录的权限的意思："><a href="#目录的权限的意思：" class="headerlink" title="目录的权限的意思："></a>目录的权限的意思：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">x表示可以进入该文件夹，但是不能列出来（相当于读权限）（ps:如果里面有当前用户可以修改或者读的文件，则改用户可以进入修改或读）</span><br><span class="line">r表示可以列出该目录的权限</span><br><span class="line">w表示对目录里的内容进行删除或者创建的权限</span><br></pre></td></tr></table></figure>
-<h1 id="定时任务调度"><a href="#定时任务调度" class="headerlink" title="定时任务调度"></a>定时任务调度</h1><h2 id="crond任务调度："><a href="#crond任务调度：" class="headerlink" title="crond任务调度："></a>crond任务调度：</h2><p><img src="/2021/01/25/MyLinux/image-20210129212607905.png" alt="image-20210129212607905"></p>
-<p>功能图：</p>
-<p><img src="/2021/01/25/MyLinux/image-20210129212943682.png" alt="image-20210129212943682"></p>
-<p><img src="/2021/01/25/MyLinux/image-20210129213221525.png" alt="image-20210129213221525"></p>
-<p><img src="/2021/01/25/MyLinux/image-20210130122355007.png" alt="image-20210130122355007"></p>
-<p>定时调用sh程序</p>
-<p><img src="/2021/01/25/MyLinux/image-20210130125541599.png" alt="image-20210130125541599"></p>
-<p>案例：</p>
-<p><img src="/2021/01/25/MyLinux/image-20210130130208902.png" alt="image-20210130130208902"></p>
-<h2 id="at定时"><a href="#at定时" class="headerlink" title="at定时:"></a>at定时:</h2><p><img src="/2021/01/25/MyLinux/image-20210130130415621.png" alt="image-20210130130415621"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">（ps：ctrl+d要输入两次）</span><br><span class="line">ps -ef | grep atd ## （检测当前所有正在运行的程序有哪儿些）|（过滤）</span><br></pre></td></tr></table></figure>
-<p><img src="/2021/01/25/MyLinux/image-20210130132123977.png" alt="image-20210130132123977"></p>
-<p>案例：</p>
-<p><img src="/2021/01/25/MyLinux/image-20210130133556292.png" alt="image-20210130133556292"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">atrm count #删除数字对应指定任务</span><br><span class="line">atq #显示当前任务</span><br></pre></td></tr></table></figure>
-<h1 id="Linux磁盘分区，挂载"><a href="#Linux磁盘分区，挂载" class="headerlink" title="Linux磁盘分区，挂载"></a>Linux磁盘分区，挂载</h1><p><img src="/2021/01/25/MyLinux/image-20210130192647888.png" alt="image-20210130192647888"></p>
-<p>UUID：格式化后得到一个四十位的唯一数字串</p>
-<p><img src="/2021/01/25/MyLinux/image-20210130192629905.png" alt="image-20210130192629905"></p>
-<h2 id="案例：挂载一个新磁盘"><a href="#案例：挂载一个新磁盘" class="headerlink" title="案例：挂载一个新磁盘"></a>案例：挂载一个新磁盘</h2><p><img src="/2021/01/25/MyLinux/image-20210130193411762.png" alt="image-20210130193411762"></p>
-<p>临时挂载：reboot后会断开</p>
-<p><img src="/2021/01/25/MyLinux/image-20210130193640713.png" alt="image-20210130193640713"></p>
-<p>永久挂载：</p>
-<p><img src="/2021/01/25/MyLinux/image-20210130194147351.png" alt="image-20210130194147351"></p>
-<p><img src="/2021/01/25/MyLinux/image-20210130194415127.png" alt="image-20210130194415127"></p>
-<h2 id="磁盘情况查询"><a href="#磁盘情况查询" class="headerlink" title="磁盘情况查询"></a>磁盘情况查询</h2><p><img src="/2021/01/25/MyLinux/image-20210130194614632.png" alt="image-20210130194614632"></p>
-<p><img src="/2021/01/25/MyLinux/image-20210130195029749.png" alt="image-20210130195029749"></p>
-<p><img src="/2021/01/25/MyLinux/image-20210131215007685.png" alt="image-20210131215007685"></p>
-<h2 id="工作实用指令："><a href="#工作实用指令：" class="headerlink" title="工作实用指令："></a>工作实用指令：</h2><p><img src="/2021/01/25/MyLinux/image-20210131215439026.png" alt="image-20210131215439026"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tree &#x2F;opt (如果没有tree则使用yum install tree指令安装)</span><br></pre></td></tr></table></figure>
-<h1 id="Linux网络配置："><a href="#Linux网络配置：" class="headerlink" title="Linux网络配置："></a>Linux网络配置：</h1><h2 id="VM原理："><a href="#VM原理：" class="headerlink" title="VM原理："></a>VM原理：</h2><p><img src="/2021/01/25/MyLinux/image-20210131215645136.png" alt="image-20210131215645136"></p>
-<h2 id="查看网络IP和网关："><a href="#查看网络IP和网关：" class="headerlink" title="查看网络IP和网关："></a>查看网络IP和网关：</h2><p>选中虚拟机-》编辑-》虚拟网络编辑器-》NAT模式</p>
-<h2 id="Linux网络配置方案："><a href="#Linux网络配置方案：" class="headerlink" title="Linux网络配置方案："></a>Linux网络配置方案：</h2><p>程序员手动设定IP地址：</p>
-<p><img src="/2021/01/25/MyLinux/image-20210131220431433.png" alt="image-20210131220431433"></p>
-<p>保存后，找到上面NAT模式下的子网IP，将其修改为对应IP</p>
-<p><img src="/2021/01/25/MyLinux/image-20210131221258632.png" alt="image-20210131221258632"></p>
-<p>然后reboot或者service network restart</p>
-<h2 id="设置主机名和hosts映射："><a href="#设置主机名和hosts映射：" class="headerlink" title="设置主机名和hosts映射："></a>设置主机名和hosts映射：</h2><p><img src="/2021/01/25/MyLinux/image-20210131222450196.png" alt="image-20210131222450196"></p>
-<h2 id="DNS"><a href="#DNS" class="headerlink" title="DNS"></a>DNS</h2><p><img src="/2021/01/25/MyLinux/image-20210131223032788.png" alt="image-20210131223032788"></p>
-<h1 id="Linux进程管理："><a href="#Linux进程管理：" class="headerlink" title="Linux进程管理："></a>Linux进程管理：</h1><p>每个进程都有前台和后台</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ps ## (查看系统正在运行的进程)</span><br></pre></td></tr></table></figure>
-<p><img src="/2021/01/25/MyLinux/image-20210201222458545.png" alt="image-20210201222458545"></p>
-<p><img src="/2021/01/25/MyLinux/image-20210201222623104.png" alt="image-20210201222623104"></p>
-<p>父进程：</p>
-<p><img src="/2021/01/25/MyLinux/image-20210201222855954.png" alt="image-20210201222855954"></p>
-<p>终止进程：</p>
-<p><img src="/2021/01/25/MyLinux/image-20210201223220706.png" alt="image-20210201223220706"></p>
-<p>案例一：</p>
-<p><img src="/2021/01/25/MyLinux/image-20210201223819812.png" alt="image-20210201223819812"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kill 进程号（kill 11421）</span><br></pre></td></tr></table></figure>
-<p>案例二：</p>
-<p><img src="/2021/01/25/MyLinux/image-20210201224019912.png" alt="image-20210201224019912"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">kill ssh对应的进程号 （kill 10748）</span><br><span class="line">## 重启sshd.service</span><br><span class="line">&#x2F;bin&#x2F;systemctl start sshd.service</span><br><span class="line">## 进程号会改变</span><br></pre></td></tr></table></figure>
-<p>案例三：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">killall gedit</span><br></pre></td></tr></table></figure>
-<p>案例四：</p>
-<p><img src="/2021/01/25/MyLinux/image-20210201224751851.png" alt="image-20210201224751851"></p>
-<h2 id="查看进程树："><a href="#查看进程树：" class="headerlink" title="查看进程树："></a>查看进程树：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pstree</span><br></pre></td></tr></table></figure>
-<p><img src="/2021/01/25/MyLinux/image-20210202114920389.png" alt="image-20210202114920389"></p>
-<h2 id="service管理"><a href="#service管理" class="headerlink" title="service管理"></a>service管理</h2><p><img src="/2021/01/25/MyLinux/image-20210202115202945.png" alt="image-20210202115202945"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ls -l &#x2F;etc&#x2F;init.d #查看部分服务</span><br><span class="line">setup ## 查看所有系统服务</span><br></pre></td></tr></table></figure>
-<h3 id="运行级别（runlevel）"><a href="#运行级别（runlevel）" class="headerlink" title="运行级别（runlevel）"></a>运行级别（runlevel）</h3><p><img src="/2021/01/25/MyLinux/image-20210202120747844.png" alt="image-20210202120747844"></p>
-<p><img src="/2021/01/25/MyLinux/image-20210202120935772.png" alt="image-20210202120935772"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chkconfig ##给各个服务在不同级别下设置不同的自启动（开&#x2F;关）</span><br></pre></td></tr></table></figure>
-<p><img src="/2021/01/25/MyLinux/image-20210202121015968.png" alt="image-20210202121015968"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">案例：</span><br><span class="line">	chkconfig --level 3 network on</span><br><span class="line">	chkconfig --level 3 network off</span><br></pre></td></tr></table></figure>
-<p>systemctl管理指令：</p>
-<p><img src="/2021/01/25/MyLinux/image-20210202212536841.png" alt="image-20210202212536841"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">管理的服务可</span><br><span class="line">	ls -l &#x2F;user&#x2F;lib&#x2F;systemd&#x2F;system</span><br><span class="line">查看</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">案例：</span><br><span class="line">systemctl status firewalld</span><br><span class="line">systemctl stop&#x2F;start firewalld ##status还是显示enable，下一次开机防火墙还是会打开，如果不想下次还打开，就使用（systemctl disable firewalld）</span><br><span class="line"></span><br><span class="line">systemctl list-unit-files | grep firewalld</span><br><span class="line">systemctl is-enable firewalld</span><br></pre></td></tr></table></figure>
-<p><img src="/2021/01/25/MyLinux/image-20210202222615290.png" alt="image-20210202222615290"></p>
-<p>原理图：</p>
-<p><img src="/2021/01/25/MyLinux/image-20210202222724749.png" alt="image-20210202222724749"></p>
-<h3 id="动态监控进程："><a href="#动态监控进程：" class="headerlink" title="动态监控进程："></a>动态监控进程：</h3><p>top指令：</p>
-<p><img src="/2021/01/25/MyLinux/image-20210204220854678.png" alt="image-20210204220854678"></p>
-<p><img src="/2021/01/25/MyLinux/image-20210204222808758.png" alt="image-20210204222808758"></p>
-<p>交互：</p>
-<p><img src="/2021/01/25/MyLinux/image-20210205182626980.png" alt="image-20210205182626980"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">案例三：</span><br><span class="line">top -d 10</span><br></pre></td></tr></table></figure>
-<h3 id="监控网络状态："><a href="#监控网络状态：" class="headerlink" title="监控网络状态："></a>监控网络状态：</h3><p><img src="/2021/01/25/MyLinux/image-20210205184132277.png" alt="image-20210205184132277"></p>
-<p>原理图：</p>
-<p><img src="/2021/01/25/MyLinux/image-20210205184934836.png" alt="image-20210205184934836"></p>
-<h1 id="RPM和YUM管理："><a href="#RPM和YUM管理：" class="headerlink" title="RPM和YUM管理："></a>RPM和YUM管理：</h1><h2 id="rpm："><a href="#rpm：" class="headerlink" title="rpm："></a>rpm：</h2><p><img src="/2021/01/25/MyLinux/image-20210205194901468.png" alt="image-20210205194901468"></p>
-<p><img src="/2021/01/25/MyLinux/image-20210205221528717.png" alt="image-20210205221528717"></p>
-<p>删除：<img src="/2021/01/25/MyLinux/image-20210206181640994.png" alt="image-20210206181640994"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rpm -e firefox # 不需要全部包名</span><br></pre></td></tr></table></figure>
-<p>安装：</p>
-<p><img src="/2021/01/25/MyLinux/image-20210206182122816.png" alt="image-20210206182122816"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">案例：</span><br><span class="line">	rpm -e firefox ## 删除</span><br><span class="line">	rpm -q firefox ##可以查看到已经删除</span><br><span class="line">	rpm -ivh &#x2F;opt&#x2F;firefox ##先将rpm文件夹复制到&#x2F;opt&#x2F;目录下，再执行此操作，rpm文件到光驱中寻找</span><br></pre></td></tr></table></figure>
-<h2 id="yum："><a href="#yum：" class="headerlink" title="yum："></a>yum：</h2><p><img src="/2021/01/25/MyLinux/image-20210206183058787.png" alt="image-20210206183058787"></p>
-<p>自动处理依赖关系：如果安装a需要b，那在安装a的时候自动会安装b</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">案例：</span><br><span class="line">	rpm -e firefox </span><br><span class="line">	yum list | grep firefox </span><br><span class="line">	yum install firefox</span><br></pre></td></tr></table></figure>
-<h1 id="搭建JavaEE环境："><a href="#搭建JavaEE环境：" class="headerlink" title="搭建JavaEE环境："></a>搭建JavaEE环境：</h1><p>jdk安装步骤：</p>
-<p><img src="/2021/01/25/MyLinux/image-20210206183905339.png" alt="image-20210206183905339"></p>
-<p>tomcat安装：</p>
-<p><img src="/2021/01/25/MyLinux/image-20210206212919679.png" alt="image-20210206212919679"></p>
-<p>mysql安装：</p>
-<p><img src="/2021/01/25/MyLinux/image-20210207123821952.png" alt="image-20210207123821952"></p>
-<h1 id="Linux大数据定制篇：Shell编程"><a href="#Linux大数据定制篇：Shell编程" class="headerlink" title="Linux大数据定制篇：Shell编程"></a>Linux大数据定制篇：Shell编程</h1><h2 id="Shell脚本："><a href="#Shell脚本：" class="headerlink" title="Shell脚本："></a>Shell脚本：</h2><p><img src="/2021/01/25/MyLinux/image-20210207165239724.png" alt="image-20210207165239724"></p>
-<p>shell脚本写完后没有执行权限，用chmod来增加权限</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">方法一：</span><br><span class="line">vim hello.sh</span><br><span class="line">	##以下是内容：</span><br><span class="line">	#!&#x2F;bin&#x2F;bash</span><br><span class="line">	echo &quot;helloword!!&quot;</span><br><span class="line">chmod u+x hello.sh </span><br><span class="line">.&#x2F;hello.sh ##或者使用绝对路径 &#x2F;root&#x2F;shcode&#x2F;hello.sh</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">方法二：</span><br><span class="line">sh hello.sh ##不需要执行权限</span><br></pre></td></tr></table></figure>
-<h2 id="Shell变量"><a href="#Shell变量" class="headerlink" title="Shell变量"></a>Shell变量</h2><p><img src="/2021/01/25/MyLinux/image-20210207170245036.png" alt="image-20210207170245036"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">有无双引号对语句无影响</span><br></pre></td></tr></table></figure>
-<p>案例：</p>
-<p><img src="/2021/01/25/MyLinux/image-20210207171430812.png" alt="image-20210207171430812"></p>
-<p>结果：</p>
-<p><img src="/2021/01/25/MyLinux/image-20210207171456622.png" alt="image-20210207171456622"></p>
-<h3 id="变量定义规则："><a href="#变量定义规则：" class="headerlink" title="变量定义规则："></a>变量定义规则：</h3><p><img src="/2021/01/25/MyLinux/image-20210207171627349.png" alt="image-20210207171627349"></p>
-<h3 id="设置环境变量："><a href="#设置环境变量：" class="headerlink" title="设置环境变量："></a>设置环境变量：</h3><p><img src="/2021/01/25/MyLinux/image-20210207171944780.png" alt="image-20210207171944780"></p>
-<h3 id="位置参数变量："><a href="#位置参数变量：" class="headerlink" title="位置参数变量："></a>位置参数变量：</h3><p><img src="/2021/01/25/MyLinux/image-20210207173729196.png" alt="image-20210207173729196"></p>
-<p>相当于在sh脚本中使用外部传进来的参数</p>
-<h3 id="预定义变量："><a href="#预定义变量：" class="headerlink" title="预定义变量："></a>预定义变量：</h3><p><img src="/2021/01/25/MyLinux/image-20210207181927372.png" alt="image-20210207181927372"></p>
-<h3 id="运算符："><a href="#运算符：" class="headerlink" title="运算符："></a>运算符：</h3><p><img src="/2021/01/25/MyLinux/image-20210207182843202.png" alt="image-20210207182843202"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">A&#x3D;&#96;date&#96;  ## &#96;&#96;的作用是将date的值赋给A</span><br></pre></td></tr></table></figure>
-<p><img src="/2021/01/25/MyLinux/image-20210207214916502.png" alt="image-20210207214916502"></p>
-<p>结果：</p>
-<p><img src="/2021/01/25/MyLinux/image-20210207215029972.png" alt="image-20210207215029972"></p>
-<h3 id="条件判断："><a href="#条件判断：" class="headerlink" title="条件判断："></a>条件判断：</h3><p><img src="/2021/01/25/MyLinux/image-20210207215156542.png" alt="image-20210207215156542"></p>
-<p><img src="/2021/01/25/MyLinux/image-20210207215340025.png" alt="image-20210207215340025"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">案例一：</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>代码：</p>
-<p><img src="/2021/01/25/MyLinux/image-20210207220416957.png" alt="image-20210207220416957"></p>
-<p>结果：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">equal</span><br><span class="line">大于</span><br><span class="line">存在</span><br></pre></td></tr></table></figure>
-<h3 id="流程控制："><a href="#流程控制：" class="headerlink" title="流程控制："></a>流程控制：</h3><h4 id="if："><a href="#if：" class="headerlink" title="if："></a>if：</h4><p><img src="/2021/01/25/MyLinux/image-20210207220619899.png" alt="image-20210207220619899"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">案例：</span><br><span class="line">#!&#x2F;bin&#x2F;bash</span><br><span class="line"># 案例一：请编写一个shell程序，如果输入的参数，大于等于60，则输出“及格了”，小于60，输出“不及格”</span><br><span class="line">if [ $1 -ge 60 ]</span><br><span class="line">then</span><br><span class="line">        echo &quot;及格了&quot;</span><br><span class="line">elif [ $1 -lt 60 ]</span><br><span class="line">then</span><br><span class="line">        echo &quot;不及格&quot;</span><br><span class="line">fi      </span><br></pre></td></tr></table></figure>
-<p>结果：</p>
-<p><img src="/2021/01/25/MyLinux/image-20210207221448168.png" alt="image-20210207221448168"></p>
-<h4 id="case："><a href="#case：" class="headerlink" title="case："></a>case：</h4><p><img src="/2021/01/25/MyLinux/image-20210207221540412.png" alt="image-20210207221540412"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">案例：</span><br><span class="line">#!&#x2F;bin&#x2F;bash</span><br><span class="line">case $1 in</span><br><span class="line">&quot;1&quot;)</span><br><span class="line">echo &quot;周一&quot;</span><br><span class="line">;;</span><br><span class="line">&quot;2&quot;)</span><br><span class="line">echo &quot;周二&quot;</span><br><span class="line">;;</span><br><span class="line">*)</span><br><span class="line">echo &quot;other...&quot;</span><br><span class="line">;;</span><br><span class="line">esac</span><br></pre></td></tr></table></figure>
-<p>结果：</p>
-<p><img src="/2021/01/25/MyLinux/image-20210207222044646.png" alt="image-20210207222044646"></p>
-<h4 id="for："><a href="#for：" class="headerlink" title="for："></a>for：</h4><p><img src="/2021/01/25/MyLinux/image-20210207222150734.png" alt="image-20210207222150734"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">案例1：</span><br><span class="line">#!&#x2F;bin&#x2F;bash</span><br><span class="line"># 注意“$*”是把输入的参数当做一个整体，所以只会输出一句话</span><br><span class="line"></span><br><span class="line">for i in &quot;$*&quot;</span><br><span class="line">do</span><br><span class="line">        echo &quot;num is $i&quot;</span><br><span class="line">done</span><br><span class="line"># 使用“$@”来获取出入的参数，注意，这时是分别对待，所以有几个参数就输出几句</span><br><span class="line">echo &quot;------------------------------&quot;</span><br><span class="line">for j in &quot;$@&quot;</span><br><span class="line">do</span><br><span class="line">        echo &quot;num is $j&quot;</span><br><span class="line">done</span><br></pre></td></tr></table></figure>
-<p>结果：</p>
-<p><img src="/2021/01/25/MyLinux/image-20210207223438384.png" alt="image-20210207223438384"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">案例二：</span><br><span class="line">#!&#x2F;bin&#x2F;bash</span><br><span class="line">SUM&#x3D;0</span><br><span class="line">for(( i&#x3D;0; i&lt;&#x3D;100; i++))</span><br><span class="line">do</span><br><span class="line">        SUM&#x3D;$[$SUM+$i]</span><br><span class="line">done</span><br><span class="line">echo &quot;总和&#x3D;$SUM&quot;</span><br></pre></td></tr></table></figure>
-<p>结果：</p>
-<p><img src="/2021/01/25/MyLinux/image-20210207224221806.png" alt="image-20210207224221806"></p>
-<h4 id="while"><a href="#while" class="headerlink" title="while:"></a>while:</h4><p><img src="/2021/01/25/MyLinux/image-20210208100151624.png" alt="image-20210208100151624"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">案例：</span><br><span class="line">#!&#x2F;bin&#x2F;bash</span><br><span class="line">SUM&#x3D;0</span><br><span class="line">i&#x3D;0</span><br><span class="line">while [ $i -le $1 ]</span><br><span class="line">do</span><br><span class="line">        SUM&#x3D;$[$SUM+$i]</span><br><span class="line">        i&#x3D;$[$i+1]</span><br><span class="line">done</span><br><span class="line">echo &quot;结果是：$SUM&quot;</span><br></pre></td></tr></table></figure>
-<p>结果：</p>
-<p><img src="/2021/01/25/MyLinux/image-20210208102355230.png" alt="image-20210208102355230"></p>
-<h4 id="read："><a href="#read：" class="headerlink" title="read："></a>read：</h4><p><img src="/2021/01/25/MyLinux/image-20210208102451605.png" alt="image-20210208102451605"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">案例：</span><br><span class="line">#!&#x2F;bin&#x2F;bash</span><br><span class="line"></span><br><span class="line">read -p &quot;请输入一个数：&quot; NUM1</span><br><span class="line">echo &quot;你输入的数字是：$NUM1&quot;</span><br><span class="line"></span><br><span class="line">read -t 10 -p &quot;请输入一个数字：&quot; NUM2</span><br><span class="line">echo &quot;你输入的数字是：$NUM2&quot;</span><br></pre></td></tr></table></figure>
-<p>结果：</p>
-<p><img src="/2021/01/25/MyLinux/image-20210208103106359.png" alt="image-20210208103106359"></p>
-<h4 id="函数："><a href="#函数：" class="headerlink" title="函数："></a>函数：</h4><h5 id="系统函数："><a href="#系统函数：" class="headerlink" title="系统函数："></a>系统函数：</h5><p><img src="/2021/01/25/MyLinux/image-20210208103307169.png" alt="image-20210208103307169"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">常用系统函数：</span><br><span class="line">basename [pathname] [suffix] #返回文件名部分</span><br><span class="line">dirname #返回文件路径部分</span><br></pre></td></tr></table></figure>
-<h5 id="自定义函数："><a href="#自定义函数：" class="headerlink" title="自定义函数："></a>自定义函数：</h5><p><img src="/2021/01/25/MyLinux/image-20210208151527748.png" alt="image-20210208151527748"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">案例：</span><br><span class="line">#!&#x2F;bin&#x2F;bash</span><br><span class="line"></span><br><span class="line">function getSum()&#123;</span><br><span class="line"></span><br><span class="line">        SUM&#x3D;$[$n1+$n2]</span><br><span class="line">        echo &quot;和是：$SUM&quot;</span><br><span class="line">&#125;</span><br><span class="line">read -p &quot;请输入一个数n1：&quot; n1</span><br><span class="line">read -p &quot;请输入一个数n2: &quot; n2</span><br><span class="line">getSum $n1 $n2</span><br></pre></td></tr></table></figure>
-<p>结果：</p>
-<p><img src="/2021/01/25/MyLinux/image-20210208152544857.png" alt="image-20210208152544857"></p>
-<h2 id="Shell编程综合案例："><a href="#Shell编程综合案例：" class="headerlink" title="Shell编程综合案例："></a>Shell编程综合案例：</h2><p><img src="/2021/01/25/MyLinux/image-20210208152648318.png" alt="image-20210208152648318"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">案例：</span><br><span class="line">#备份目录</span><br><span class="line">BACKUP&#x3D;&#x2F;data&#x2F;backup&#x2F;db</span><br><span class="line">#当前时间</span><br><span class="line">DATETIME&#x3D;$(date +%Y-%m-%d_%H%M%S)</span><br><span class="line">echo &quot;$DATETIME&quot;</span><br><span class="line">#数据库地址</span><br><span class="line">HOST&#x3D;localhost</span><br><span class="line">#数据库的用户名：</span><br><span class="line">DB_USER&#x3D;root</span><br><span class="line">#数据库密码</span><br><span class="line">DB_PW&#x3D;510623zmh</span><br><span class="line">#备份的数据库名：</span><br><span class="line">DATABASE&#x3D;zmhedu</span><br><span class="line"></span><br><span class="line">#创建备份目录，如果不存在就创建</span><br><span class="line">[ ! -d &quot;$&#123;BACKUP&#125;&#x2F;$&#123;DATETIME&#125;&quot; ] &amp;&amp; mkdir -p &quot;$&#123;BACKUP&#125;&#x2F;$&#123;DATETIME&#125;&quot;</span><br><span class="line"></span><br><span class="line">#备份数据库</span><br><span class="line">mysqldump -u$[DB_USER] -p$&#123;DB_PW&#125; --host&#x3D;$&#123;HOST&#125; -q -R --databases $&#123;DATABASE&#125; | gzip &gt; $&#123;BACKUP&#125;&#x2F;$&#123;DATETIME&#125;&#x2F;$DATETIME.sql.gz</span><br><span class="line"></span><br><span class="line">#将文件处理成tar.gz</span><br><span class="line">cd $&#123;BACKUP&#125;</span><br><span class="line">tar -zcvf $DATETIME.tar.gz $&#123;DATETIME&#125;</span><br><span class="line">#删除对应备份目录</span><br><span class="line">rm -rf $&#123;BACKUP&#125;&#x2F;$&#123;DATETIME&#125;</span><br><span class="line"></span><br><span class="line">#删除十天前的备份文件</span><br><span class="line">find $&#123;BACKUP&#125; -atime +10 -name &quot;*.tar.gz&quot; -exec rm -rf &#123;&#125; \;</span><br></pre></td></tr></table></figure>
-<p>结果：</p>
-<p><img src="/2021/01/25/MyLinux/image-20210208221332042.png" alt="image-20210208221332042"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">crontab -e ##添加crontd任务</span><br><span class="line">	30 2 * * * &#x2F;usr&#x2F;sbin&#x2F;mysql_db_backup.sh</span><br><span class="line">crontab -l ##查询crontd任务</span><br></pre></td></tr></table></figure>
-<h1 id="Ubuntu："><a href="#Ubuntu：" class="headerlink" title="Ubuntu："></a>Ubuntu：</h1>
+<h3 id="1-2-2数据库技术发展经历时代"><a href="#1-2-2数据库技术发展经历时代" class="headerlink" title="1.2.2数据库技术发展经历时代"></a>1.2.2数据库技术发展经历时代</h3><p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210302203059099.png" alt="image-20210302203059099"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210302203114058.png" alt="image-20210302203114058"></p>
+<h3 id="1-2-3数据库技术领域"><a href="#1-2-3数据库技术领域" class="headerlink" title="1.2.3数据库技术领域"></a>1.2.3数据库技术领域</h3><h3 id="1-2-4数据库技术发展趋势"><a href="#1-2-4数据库技术发展趋势" class="headerlink" title="1.2.4数据库技术发展趋势"></a>1.2.4数据库技术发展趋势</h3><p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210302203239204.png" alt="image-20210302203239204"></p>
+<h2 id="1-3数据库应用系统"><a href="#1-3数据库应用系统" class="headerlink" title="1.3数据库应用系统"></a>1.3数据库应用系统</h2><h3 id="1-3-1类型"><a href="#1-3-1类型" class="headerlink" title="1.3.1类型"></a>1.3.1类型</h3><ol>
+<li>业务处理系统</li>
+<li>管理信息系统</li>
+<li>决策支持系统</li>
+</ol>
+<h3 id="1-3-2应用结构"><a href="#1-3-2应用结构" class="headerlink" title="1.3.2应用结构"></a>1.3.2应用结构</h3><ol>
+<li>单机用户结构</li>
+<li>集中式结构</li>
+<li>客户/服务器结构</li>
+<li>分布式结构</li>
+</ol>
+<h3 id="1-3-3生命周期"><a href="#1-3-3生命周期" class="headerlink" title="1.3.3生命周期"></a>1.3.3生命周期</h3><ol>
+<li>需求分析</li>
+<li>系统设计</li>
+<li>系统实现</li>
+<li>系统测试</li>
+<li>系统运行与维护</li>
+</ol>
+<h2 id="1-4典型数据库管理系统"><a href="#1-4典型数据库管理系统" class="headerlink" title="1.4典型数据库管理系统"></a>1.4典型数据库管理系统</h2><p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210303204333298.png" alt="image-20210303204333298"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210303204428056.png" alt="image-20210303204428056"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210303204557607.png" alt="image-20210303204557607"></p>
+<p>PS：记得看学堂在线的题目（继承表也可以叫对象表）</p>
+<h2 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h2><p>在数据库管理阶段才实现了数据共享</p>
+<p>SQL Server是关系数据库</p>
+<p><strong>数据存储</strong>负责对数据库的访问操作</p>
+<p><strong>数据仓库技术</strong>实现了数据集成</p>
+<p><strong>分布式结构</strong>适合做银行业务系统</p>
+<p>PostgreSQL是<strong>对象-关系数据库</strong></p>
+<p>PostgreSQL中<strong>不</strong>包括<strong>存储过程</strong>的数据库对象</p>
+<p>PostgreSQL不包括<strong>索引表</strong>（有关系，对象，外部三种表）</p>
+<p>MySQL数据库系统<strong>不是</strong>一种企业级DBMS。</p>
+<h1 id="数据库关系模型"><a href="#数据库关系模型" class="headerlink" title="数据库关系模型"></a>数据库关系模型</h1><h2 id="2-1关系及相关概念"><a href="#2-1关系及相关概念" class="headerlink" title="2.1关系及相关概念"></a>2.1关系及相关概念</h2><ol>
+<li><p>关系键：唯一标识元组的属性列，称为键</p>
+</li>
+<li><p>复和键：使用两列或者多列来做唯一标识</p>
+</li>
+<li><p>候选键：多个列可以做唯一标识</p>
+</li>
+<li><p>主键：最具有代表性的主键</p>
+</li>
+</ol>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210304223100537.png" alt="image-20210304223100537"></p>
+<ol start="5">
+<li>代理键：DBMS自动生成的序列作为主键</li>
+</ol>
+<h2 id="2-2关系模型原理"><a href="#2-2关系模型原理" class="headerlink" title="2.2关系模型原理"></a>2.2关系模型原理</h2><ol>
+<li><p>数据结构：</p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210307180530282.png" alt="image-20210307180530282"></p>
+</li>
+<li><p>数据操作</p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210307180549201.png" alt="image-20210307180549201"></p>
+<ul>
+<li>并运算操作</li>
+<li>关系差运算</li>
+<li>交运算操作</li>
+<li>笛卡尔积</li>
+</ul>
+</li>
+<li><p>数据关系约束</p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210307180642660.png" alt="image-20210307180642660"></p>
+</li>
+</ol>
+<h3 id="2-2-1完整性约束"><a href="#2-2-1完整性约束" class="headerlink" title="2.2.1完整性约束"></a>2.2.1完整性约束</h3><ol>
+<li><p>关系模型完整性</p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210307181116879.png" alt="image-20210307181116879"></p>
+</li>
+<li><p>实体关系完整性</p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210307181142060.png" alt="image-20210307181142060"></p>
+</li>
+<li><p>参照完整性</p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210307181351348.png" alt="image-20210307181351348"></p>
+</li>
+<li><p>用户自定义完整性</p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210307182124541.png" alt="image-20210307182124541"></p>
+</li>
+</ol>
+<h2 id="2-3-PostgreSQL数据库关系操作实践"><a href="#2-3-PostgreSQL数据库关系操作实践" class="headerlink" title="2.3 PostgreSQL数据库关系操作实践"></a>2.3 PostgreSQL数据库关系操作实践</h2><h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>常用的关系查询操作包括（选择、投影、连接、并、交）等；<strong>集合操作也算关系操作</strong></p>
+<p>自然连接是一种<strong>特殊的等值连接</strong></p>
+<p>在参照完整性中，可以定义<strong>级联操作</strong>。（级联操作【CASCADE】，修改主表中的属性值的时候必须参照别的字表中的元）</p>
+<p><strong>内连接</strong>是要求两个组合关系的匹配元组而形成的查询结果集</p>
+<h1 id="数据库操作语言SQL"><a href="#数据库操作语言SQL" class="headerlink" title="数据库操作语言SQL"></a>数据库操作语言SQL</h1><h2 id="概述："><a href="#概述：" class="headerlink" title="概述："></a>概述：</h2><ol>
+<li>DDL</li>
+<li><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210323142227124.png" alt="image-20210323142227124"></li>
+<li>DML</li>
+<li><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210323142252805.png" alt="image-20210323142252805"></li>
+<li>DQL和DCL</li>
+<li><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210323142323885.png" alt="image-20210323142323885"></li>
+<li>TPL</li>
+<li><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210323142359509.png" alt="image-20210323142359509"></li>
+<li>CCL</li>
+<li><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210323142427342.png" alt="image-20210323142427342"></li>
+</ol>
+<h2 id="SQL语句"><a href="#SQL语句" class="headerlink" title="SQL语句"></a>SQL语句</h2><p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210323143444543.png" alt="image-20210323143444543"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210323143519663.png" alt="image-20210323143519663"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210323143619728.png" alt="image-20210323143619728"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210323143639497.png" alt="image-20210323143639497"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210323143845414.png" alt="image-20210323143845414"></p>
+<p>代理键定义同上</p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210323144408847.png" alt="image-20210323144408847"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210323144443473.png" alt="image-20210323144443473"></p>
+<h2 id="题目-1"><a href="#题目-1" class="headerlink" title="题目"></a>题目</h2><p>视图可以创建视图</p>
+<p>主键可以为不同属性</p>
+<h1 id="数据库设计与实现"><a href="#数据库设计与实现" class="headerlink" title="数据库设计与实现"></a>数据库设计与实现</h1><h2 id="4-1数据库设计概述"><a href="#4-1数据库设计概述" class="headerlink" title="4.1数据库设计概述"></a>4.1数据库设计概述</h2><p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210401220244200.png" alt="image-20210401220244200"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210401220316000.png" alt="image-20210401220316000"></p>
+<ol>
+<li>数据需求分析阶段</li>
+<li>数据库设计阶段</li>
+<li><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210401220422981.png" alt="image-20210401220422981"></li>
+<li>数据库实现阶段</li>
+<li>数据库测试阶段</li>
+<li><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210401220437483.png" alt="image-20210401220437483"></li>
+</ol>
+<h3 id="设计策略"><a href="#设计策略" class="headerlink" title="设计策略"></a>设计策略</h3><ol>
+<li>自顶向下</li>
+<li>自底向上</li>
+<li>自内向外</li>
+<li>混合策略设计</li>
+</ol>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210401220705747.png" alt="image-20210401220705747"></p>
+<h2 id="4-2-ER模型方法"><a href="#4-2-ER模型方法" class="headerlink" title="4.2 ER模型方法"></a>4.2 ER模型方法</h2><p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210402153812876.png" alt="image-20210402153812876"></p>
+<ul>
+<li><p>属性</p>
+</li>
+<li><p>标识符（逻辑概念；区别于主键的物理概念）</p>
+</li>
+<li><p>联系（连着多少物体就有多少联系）</p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210402154153428.png" alt="image-20210402154153428"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210402154235843.png" alt="image-20210402154235843"></p>
+</li>
+</ul>
+<h3 id="实体继承联系"><a href="#实体继承联系" class="headerlink" title="实体继承联系"></a>实体继承联系</h3><ol>
+<li>互斥性继承联系（个人账户和公司账户都继承于银行账户）</li>
+<li>非互斥性继承联系（教师和干部都继承于职工）</li>
+</ol>
+<h4 id="强弱实体联系"><a href="#强弱实体联系" class="headerlink" title="强弱实体联系"></a>强弱实体联系</h4><p>弱实体依赖于强实体而存在</p>
+<ol>
+<li>标识符（ID）依赖弱实体（自身的标识符来自于自己依赖的对象）</li>
+<li>非标识符依赖弱实体（自己本身具有标识符）</li>
+</ol>
+<h2 id="4-3数据库建模设计"><a href="#4-3数据库建模设计" class="headerlink" title="4.3数据库建模设计"></a>4.3数据库建模设计</h2><p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210402160153250.png" alt="image-20210402160153250"></p>
+<p>非标识符弱实体转换成关系表的时候需要增加一个所依赖表的标识符作为的外键</p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210402160601747.png" alt="image-20210402160601747"></p>
+<p>标识符依赖弱实体就需要将所依赖表的主键作为自己的主键和外键</p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210402162340318.png" alt="image-20210402162340318"></p>
+<ol>
+<li><p>一对一实体属性（拥有外键的表适合查询）</p>
+</li>
+<li><p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210402162716906.png" alt="image-20210402162716906"></p>
+</li>
+<li><p>一对N转换表示（N表中放外键）</p>
+</li>
+<li><p>M对N实体联系</p>
+</li>
+<li><p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210402162922456.png" alt="image-20210402162922456"></p>
+</li>
+</ol>
+<p>概念模型</p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210402163330703.png" alt="image-20210402163330703"></p>
+<p>逻辑模型</p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210402163343473.png" alt="image-20210402163343473"></p>
+<p>物理模型</p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210402163400076.png" alt="image-20210402163400076"></p>
+<h2 id="4-4数据库规范化设计"><a href="#4-4数据库规范化设计" class="headerlink" title="4.4数据库规范化设计"></a>4.4数据库规范化设计</h2><h3 id="函数依赖"><a href="#函数依赖" class="headerlink" title="函数依赖"></a>函数依赖</h3><p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210402163633196.png" alt="image-20210402163633196"></p>
+<ol>
+<li>函数依赖类型</li>
+<li><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210402163655301.png" alt="image-20210402163655301"></li>
+<li></li>
+</ol>
+<h3 id="规范化范式"><a href="#规范化范式" class="headerlink" title="规范化范式"></a>规范化范式</h3><ol>
+<li>第一范式：若关系表中的属性不可再分，则满足第一范式</li>
+<li>第二范式：消除了部分属性的函数依赖（若有复合键，则所有的其他键一定对两个主键都要依赖）</li>
+<li>第三范式：切断了函数传递依赖</li>
+<li><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210402164700103.png" alt="image-20210402164700103"></li>
+<li><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210402165208888.png" alt="image-20210402165208888"></li>
+</ol>
+<h3 id="逆规范化处理"><a href="#逆规范化处理" class="headerlink" title="逆规范化处理"></a>逆规范化处理</h3><p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210402165542372.png" alt="image-20210402165542372"></p>
+<h2 id="4-5数据库设计模型的SQL实现"><a href="#4-5数据库设计模型的SQL实现" class="headerlink" title="4.5数据库设计模型的SQL实现"></a>4.5数据库设计模型的SQL实现</h2><h2 id="题目-2"><a href="#题目-2" class="headerlink" title="题目"></a>题目</h2><p>在E_R模型中，一个实体的其他关联实体数量称为<strong>联系度数</strong></p>
+<p>在<strong>物理模型</strong>中设计系统<strong>存储要素</strong></p>
+<p>在逻辑模型转换为关系模型中<strong>标识转换为主键</strong>不一定正确</p>
+<p><strong>物理模型</strong>可设计系统中的数据库索引要素</p>
+<p>E-R模型中一个实体可以既不是强实体也不是弱实体，定义一个实体的时候可以不指定标识符</p>
+<p>在进行关系数据库设计时，关系表的规范化程度越高，数据库性能就越好（错）</p>
+<p>在将数据库设计模型转换为数据库实现时，需要先将其转换为SQL程序（对）</p>
+<p>数据库建模设计的目的是为数据库实现提供方案（对）</p>
+<p>考虑数据库创建：系统实现</p>
+<p>关系表不是E_R基本元素</p>
+<h1 id="数据库管理"><a href="#数据库管理" class="headerlink" title="数据库管理"></a>数据库管理</h1><h2 id="5-1概述"><a href="#5-1概述" class="headerlink" title="5.1概述"></a>5.1概述</h2><p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210424161650504.png" alt="image-20210424161650504"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210424161726432.png" alt="image-20210424161726432"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210424161740226.png" alt="image-20210424161740226"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210424161856575.png" alt="image-20210424161856575"></p>
+<h2 id="5-2-事务管理"><a href="#5-2-事务管理" class="headerlink" title="5.2 事务管理"></a>5.2 事务管理</h2><p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210424161948058.png" alt="image-20210424161948058"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210424162114870.png" alt="image-20210424162114870"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210424162205992.png" alt="image-20210424162205992"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210424162217299.png" alt="image-20210424162217299"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210424162237628.png" alt="image-20210424162237628"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210424162253296.png" alt="image-20210424162253296"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210424162339159.png" alt="image-20210424162339159"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210424162355114.png" alt="image-20210424162355114"></p>
+<h2 id="5-3并发控制"><a href="#5-3并发控制" class="headerlink" title="5.3并发控制"></a>5.3并发控制</h2><p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210424164033796.png" alt="image-20210424164033796"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210424163952247.png" alt="image-20210424163952247"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210424164521637.png" alt="image-20210424164521637"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210424164534268.png" alt="image-20210424164534268"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210424164719068.png" alt="image-20210424164719068"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210424164704403.png" alt="image-20210424164704403"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210424165342747.png" alt="image-20210424165342747"></p>
+<p>一级：“丢失更新”；二级：”脏读“；三级：“不可重负读取”</p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210424165647374.png" alt="image-20210424165647374"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210424165716147.png" alt="image-20210424165716147"></p>
+<h2 id="5-4安全管理"><a href="#5-4安全管理" class="headerlink" title="5.4安全管理"></a>5.4安全管理</h2><p>权限</p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210424171246211.png" alt="image-20210424171246211"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210424171354366.png" alt="image-20210424171354366"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210424171414517.png" alt="image-20210424171414517"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210424183726319.png" alt="image-20210424183726319"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210424183827066.png" alt="image-20210424183827066"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210424184138061.png" alt="image-20210424184138061"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210424184159071.png" alt="image-20210424184159071"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210424184236231.png" alt="image-20210424184236231"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210424184254179.png" alt="image-20210424184254179"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210424184446944.png" alt="image-20210424184446944"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210424184600367.png" alt="image-20210424184600367"></p>
+<h2 id="5-5数据局备份与恢复"><a href="#5-5数据局备份与恢复" class="headerlink" title="5.5数据局备份与恢复"></a>5.5数据局备份与恢复</h2><p>备份方法</p>
+<ol>
+<li>完全数据库备份</li>
+<li>差异数据库备份</li>
+<li>事务数据库备份</li>
+<li>文件备份</li>
+</ol>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210424185601587.png" alt="image-20210424185601587"></p>
+<h2 id="题目：-1"><a href="#题目：-1" class="headerlink" title="题目："></a>题目：</h2><p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210427160206645.png" alt="image-20210427160206645"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210427160328272.png" alt="image-20210427160328272"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210427160443703.png" alt="image-20210427160443703"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210427200627414.png" alt="image-20210427200627414"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210427200705600.png" alt="image-20210427200705600"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210427200731448.png" alt="image-20210427200731448"></p>
+<h1 id="数据库的应用编程"><a href="#数据库的应用编程" class="headerlink" title="数据库的应用编程"></a>数据库的应用编程</h1><h2 id="6-1数据库连接技术"><a href="#6-1数据库连接技术" class="headerlink" title="6.1数据库连接技术"></a>6.1数据库连接技术</h2><h3 id="ODBC："><a href="#ODBC：" class="headerlink" title="ODBC："></a>ODBC：</h3><p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210426164025990.png" alt="image-20210426164025990"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210426164553783.png" alt="image-20210426164553783"></p>
+<p>ODBC应用程序接口：一种使用应用程序与数据库互联的标准接口</p>
+<p>ODBC驱动程序管理器：管理系统当中的各种驱动程序</p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210426164916992.png" alt="image-20210426164916992"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210426164952193.png" alt="image-20210426164952193"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210426165030082.png" alt="image-20210426165030082"></p>
+<p>不同厂商的数据库：用于存储数据库对象，数据</p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210426163858108.png" alt="image-20210426163858108"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210428223157938.png" alt="image-20210428223157938"></p>
+<h3 id="JDBC："><a href="#JDBC：" class="headerlink" title="JDBC："></a>JDBC：</h3><p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210426165527581.png" alt="image-20210426165527581"></p>
+<p>步骤：</p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210426165621469.png" alt="image-20210426165621469"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210426165754205.png" alt="image-20210426165754205"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210426170522169.png" alt="image-20210426170522169"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210426170731148.png" alt="image-20210426170731148"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210426170815362.png" alt="image-20210426170815362"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210426170926934.png" alt="image-20210426170926934"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210426171326095.png" alt="image-20210426171326095"></p>
+<p>完整例子：</p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210426171343410.png" alt="image-20210426171343410"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210426171504182.png" alt="image-20210426171504182"></p>
+<h2 id="6-2数据库存储过程"><a href="#6-2数据库存储过程" class="headerlink" title="6.2数据库存储过程"></a>6.2数据库存储过程</h2><p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210428230927771.png" alt="image-20210428230927771"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210428231007105.png" alt="image-20210428231007105"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210428231200332.png" alt="image-20210428231200332"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210428231229850.png" alt="image-20210428231229850"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210428231343542.png" alt="image-20210428231343542"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210428231415381.png" alt="image-20210428231415381"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210428231608580.png" alt="image-20210428231608580"></p>
+<p>删除存储过程testExee()</p>
+<p>drop function if exist testExee()</p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210428231836342.png" alt="image-20210428231836342"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210428231950904.png" alt="image-20210428231950904"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210428232235085.png" alt="image-20210428232235085"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210428233422695.png" alt="image-20210428233422695"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210428233949243.png" alt="image-20210428233949243"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210428234006830.png" alt="image-20210428234006830"></p>
+<h2 id="6-3数据库触发器"><a href="#6-3数据库触发器" class="headerlink" title="6.3数据库触发器"></a>6.3数据库触发器</h2><p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210429231629669.png" alt="image-20210429231629669"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210429231700218.png" alt="image-20210429231700218"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210429232931603.png" alt="image-20210429232931603"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210512203308943.png" alt="image-20210512203308943"></p>
+<p>创建触发器示例：</p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210512203434481.png" alt="image-20210512203434481"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210512203531534.png" alt="image-20210512203531534"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210512203542983.png" alt="image-20210512203542983"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210512204851716.png" alt="image-20210512204851716"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210429233222900.png" alt="image-20210429233222900"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210429233237079.png" alt="image-20210429233237079"></p>
+<h2 id="6-2数据库游标"><a href="#6-2数据库游标" class="headerlink" title="6.2数据库游标"></a>6.2数据库游标</h2><p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210518203310982.png" alt="image-20210518203310982"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210518203331434.png" alt="image-20210518203331434"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210518203401206.png" alt="image-20210518203401206"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210518203420044.png" alt="image-20210518203420044"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210518203504416.png" alt="image-20210518203504416"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210518203540341.png" alt="image-20210518203540341"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210518205359791.png" alt="image-20210518205359791"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210518205434787.png" alt="image-20210518205434787"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210518205453241.png" alt="image-20210518205453241"></p>
+<h2 id="6-6嵌入式sql编程"><a href="#6-6嵌入式sql编程" class="headerlink" title="6.6嵌入式sql编程"></a>6.6嵌入式sql编程</h2><p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210518205603096.png" alt="image-20210518205603096"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210518205702845.png" alt="image-20210518205702845"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210518205755342.png" alt="image-20210518205755342"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210518205839994.png" alt="image-20210518205839994"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210518205913834.png" alt="image-20210518205913834"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210518205942298.png" alt="image-20210518205942298"></p>
+<h2 id="题目：-2"><a href="#题目：-2" class="headerlink" title="题目："></a>题目：</h2><p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210518210036324.png" alt="image-20210518210036324"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210518210048115.png" alt="image-20210518210048115"></p>
+<p>c和Pascal使用“；”结尾。</p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210518210132734.png" alt="image-20210518210132734"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210518212353926.png" alt="image-20210518212353926"></p>
+<p>创建存储过程应该为A，只不过postgre的存储过程和函数是同一个东西！！！</p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210518212450220.png" alt="image-20210518212450220"></p>
+<p>触发器不能带参数！！！</p>
+<h1 id="NoSQL数据库"><a href="#NoSQL数据库" class="headerlink" title="NoSQL数据库"></a>NoSQL数据库</h1><h2 id="7-1NoSQL数据库概述"><a href="#7-1NoSQL数据库概述" class="headerlink" title="7.1NoSQL数据库概述"></a>7.1NoSQL数据库概述</h2><p>ACID：事务的一致性，原子性，隔离性，持久性。</p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210518215845715.png" alt="image-20210518215845715"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210518220201689.png" alt="image-20210518220201689"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210518220226611.png" alt="image-20210518220226611"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210518220428137.png" alt="image-20210518220428137"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210518220456420.png" alt="image-20210518220456420"></p>
+<h1 id="tips："><a href="#tips：" class="headerlink" title="tips："></a>tips：</h1><h2 id="多表查询连接："><a href="#多表查询连接：" class="headerlink" title="多表查询连接："></a>多表查询连接：</h2><p>join in（内连接）相当于where（条件）；条件两边都存在才会返回对应的row</p>
+<p>left   join in (左外连接)；条件左边存在便会返回相应的row</p>
+<p>full join in （全外连接）；只要有一边存在便会返回相应的row</p>
+
       
     </div>
 
@@ -670,7 +701,7 @@
 
 
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/5/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/7/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/page/5/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/21/">21</a><a class="extend next" rel="next" href="/page/7/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 

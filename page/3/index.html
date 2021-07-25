@@ -256,7 +256,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://windsfox.github.io/2021/05/02/weixin/">
+    <link itemprop="mainEntityOfPage" href="http://windsfox.github.io/2021/07/18/MyMybaits/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/kong.jpg">
@@ -269,7 +269,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/05/02/weixin/" class="post-title-link" itemprop="url">weixin</a>
+          <a href="/2021/07/18/MyMybaits/" class="post-title-link" itemprop="url">MyMybaits</a>
         </h2>
 
         <div class="post-meta-container">
@@ -280,14 +280,14 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2021-05-02 08:50:31" itemprop="dateCreated datePublished" datetime="2021-05-02T08:50:31+08:00">2021-05-02</time>
+      <time title="创建时间：2021-07-18 11:59:51" itemprop="dateCreated datePublished" datetime="2021-07-18T11:59:51+08:00">2021-07-18</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-05-08 23:35:20" itemprop="dateModified" datetime="2021-05-08T23:35:20+08:00">2021-05-08</time>
+        <time title="修改时间：2021-07-21 16:25:41" itemprop="dateModified" datetime="2021-07-21T16:25:41+08:00">2021-07-21</time>
       </span>
 
   
@@ -300,553 +300,171 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p><img src="/2021/05/02/weixin/image-20210508232628923.png" alt="image-20210508232628923"></p>
-<p><img src="/2021/05/02/weixin/image-20210502085112265.png" alt="image-20210502085112265"></p>
-<p><img src="/2021/05/02/weixin/image-20210502093749943.png" alt="image-20210502093749943"></p>
-<p>将请求返回响应输出到页面上：</p>
-<p><img src="/2021/05/02/weixin/image-20210504151456044.png" alt="image-20210504151456044"></p>
-<p><img src="/2021/05/02/weixin/image-20210504151636006.png" alt="image-20210504151636006"></p>
-<h1 id="云函数连接数据库："><a href="#云函数连接数据库：" class="headerlink" title="云函数连接数据库："></a>云函数连接数据库：</h1><p>数据库连接一次只能请求二十条数据</p>
-<p>云函数连接可以请求二十条以上的连接：</p>
-<ol>
-<li><p>编写云函数：</p>
-<p><img src="/2021/05/02/weixin/image-20210504152953865.png" alt="image-20210504152953865"></p>
+          <h1 id="1-简介："><a href="#1-简介：" class="headerlink" title="1.简介："></a>1.简介：</h1><p>一个持久层框架（Dao）</p>
+<p>官网：<a target="_blank" rel="noopener" href="https://mybatis.org/mybatis-3/">https://mybatis.org/mybatis-3/</a></p>
+<p>github：<a target="_blank" rel="noopener" href="https://github.com/mybatis/mybatis-3">https://github.com/mybatis/mybatis-3</a></p>
+<p>maven厂库：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- https://mvnrepository.com/artifact/org.mybatis/mybatis --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.mybatis<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mybatis<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>3.4.6<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h1 id="2-Mybatis程序："><a href="#2-Mybatis程序：" class="headerlink" title="2.Mybatis程序："></a>2.Mybatis程序：</h1><h2 id="2-1搭建环境"><a href="#2-1搭建环境" class="headerlink" title="2.1搭建环境"></a>2.1搭建环境</h2><ol>
+<li><p>新建一个maven项目，删除src</p>
 </li>
-<li><p>编写yun.wxml：</p>
-</li>
-<li><p><img src="/2021/05/02/weixin/image-20210504153013494.png" alt="image-20210504153013494"></p>
-</li>
-<li><p>编写yun.js函数：</p>
-</li>
-<li><p><img src="/2021/05/02/weixin/image-20210504153456630.png" alt="image-20210504153456630"></p>
-</li>
+<li><p>导入需要的包（mysql，mybatis，Junit）</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>junit<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>junit<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>4.11<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">scope</span>&gt;</span>test<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!--    mysql驱动--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>mysql<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mysql-connector-java<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>8.0.23<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!--   mybatis --&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- https://mvnrepository.com/artifact/org.mybatis/mybatis --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.mybatis<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mybatis<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>3.5.6<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="2-2创建一个模块"><a href="#2-2创建一个模块" class="headerlink" title="2.2创建一个模块"></a>2.2创建一个模块</h2></li>
 </ol>
-<h1 id="分页请求数据"><a href="#分页请求数据" class="headerlink" title="分页请求数据"></a>分页请求数据</h1><p>创建模板：</p>
-<p><img src="/2021/05/02/weixin/image-20210504155449585.png" alt="image-20210504155449585"></p>
-<p><img src="/2021/05/02/weixin/image-20210504155811865.png" alt="image-20210504155811865"></p>
-<p>创建wxml文件进行显示</p>
-<p><img src="/2021/05/02/weixin/image-20210504155845098.png" alt="image-20210504155845098"></p>
-<p>开始分页：</p>
-<p><img src="/2021/05/02/weixin/image-20210504160125803.png" alt="image-20210504160125803"></p>
-<p>skip开始；limit分页数量</p>
-<ol>
-<li>编写加载数据的函数:</li>
-<li><img src="/2021/05/02/weixin/image-20210504161026935.png" alt="image-20210504161026935"></li>
-<li>第一次加载函数</li>
-<li><img src="/2021/05/02/weixin/image-20210504161152625.png" alt="image-20210504161152625"></li>
-<li>滑到底部的加载函数：</li>
-<li><img src="/2021/05/02/weixin/image-20210504161253681.png" alt="image-20210504161253681"></li>
-</ol>
-<p>提示信息的加载：</p>
-<p><img src="/2021/05/02/weixin/image-20210504161905254.png" alt="image-20210504161905254"></p>
-<p>打印数据总条数：</p>
-<p><img src="/2021/05/02/weixin/image-20210504162223130.png" alt="image-20210504162223130"></p>
-<p>每次运行前先将数据总数赋值给totalnum：</p>
-<p><img src="/2021/05/02/weixin/image-20210504162341534.png" alt="image-20210504162341534"></p>
-<p>判断当前加载的长度和数据总数是否相等，相等说明加载完了</p>
-<p><img src="/2021/05/02/weixin/image-20210504162727386.png" alt="image-20210504162727386"></p>
-<h1 id="收藏功能点赞"><a href="#收藏功能点赞" class="headerlink" title="收藏功能点赞"></a>收藏功能点赞</h1><p><img src="/2021/05/02/weixin/image-20210504163403790.png" alt="image-20210504163403790"></p>
-<p>三目运算符实现收藏点赞：</p>
-<p><img src="/2021/05/02/weixin/image-20210504163625135.png" alt="image-20210504163625135"></p>
-<h2 id="详情页的跳转："><a href="#详情页的跳转：" class="headerlink" title="详情页的跳转："></a>详情页的跳转：</h2><p>主页：</p>
-<p><img src="/2021/05/02/weixin/image-20210504170150987.png" alt="image-20210504170150987"></p>
-<p>详情页：</p>
-<p><img src="/2021/05/02/weixin/image-20210504170209492.png" alt="image-20210504170209492"></p>
-<p>将homelist中的detail取出来存放在当前页面定义的detail中：</p>
-<p><img src="/2021/05/02/weixin/image-20210504171857199.png" alt="image-20210504171857199"></p>
-<p>展示：</p>
-<p><img src="/2021/05/02/weixin/image-20210504172013535.png" alt="image-20210504172013535"></p>
-<h1 id="点赞和收藏等存储到服务器："><a href="#点赞和收藏等存储到服务器：" class="headerlink" title="点赞和收藏等存储到服务器："></a>点赞和收藏等存储到服务器：</h1><p>传统方法：（无权限，不能update）</p>
-<p><img src="/2021/05/02/weixin/image-20210504174026101.png" alt="image-20210504174026101"></p>
-<p>云函数方法：</p>
-<p>云函数：</p>
-<p><img src="/2021/05/02/weixin/image-20210504174452818.png" alt="image-20210504174452818"></p>
-<p>详情页js</p>
-<p><img src="/2021/05/02/weixin/image-20210504174403676.png" alt="image-20210504174403676"></p>
-<p>将多个动作做到一个云函数中：</p>
-<p><img src="/2021/05/02/weixin/image-20210504174854412.png" alt="image-20210504174854412"></p>
-<p>添加点赞函数到来调用云函数：</p>
-<p><img src="/2021/05/02/weixin/image-20210504175112004.png" alt="image-20210504175112004"></p>
-<h1 id="添加评论功能"><a href="#添加评论功能" class="headerlink" title="添加评论功能"></a>添加评论功能</h1><p><img src="/2021/05/02/weixin/image-20210504190622976.png" alt="image-20210504190622976"></p>
-<p><img src="/2021/05/02/weixin/image-20210504190658611.png" alt="image-20210504190658611"></p>
-<p>部署云函数：</p>
-<p><img src="/2021/05/02/weixin/image-20210504191628457.png" alt="image-20210504191628457"></p>
-<p>编写js：</p>
-<p><img src="/2021/05/02/weixin/image-20210504191919603.png" alt="image-20210504191919603"></p>
-<p><img src="/2021/05/02/weixin/image-20210504192317067.png" alt="image-20210504192317067"></p>
-<h1 id="短信验证码的发送："><a href="#短信验证码的发送：" class="headerlink" title="短信验证码的发送："></a>短信验证码的发送：</h1><p>结构的搭建：</p>
-<p><img src="/2021/05/02/weixin/image-20210504200028945.png" alt="image-20210504200028945"></p>
-<p>生成验证码：</p>
-<p><img src="/2021/05/02/weixin/image-20210504200651418.png" alt="image-20210504200651418"></p>
-<p><img src="/2021/05/02/weixin/image-20210504200704771.png" alt="image-20210504200704771"></p>
-<p>小程序云函数示例代码：</p>
-<p><img src="/2021/05/02/weixin/image-20210504200857528.png" alt="image-20210504200857528"></p>
-<p>修改：</p>
-<p><img src="/2021/05/02/weixin/image-20210504201028073.png" alt="image-20210504201028073"></p>
-<p>在登录页动作文件中调用云函数：</p>
-<p><img src="/2021/05/02/weixin/image-20210504201441671.png" alt="image-20210504201441671"></p>
-<p>登录函数：</p>
-<p><img src="/2021/05/02/weixin/image-20210504201726929.png" alt="image-20210504201726929"></p>
-<p>code提升为全局变量（ps）</p>
-<p>将返回箭头删除：</p>
-<p><img src="/2021/05/02/weixin/image-20210504202118916.png" alt="image-20210504202118916"></p>
-<h1 id="群发消息"><a href="#群发消息" class="headerlink" title="群发消息"></a>群发消息</h1><p>剔除回车键和切割字符串：</p>
-<p><img src="/2021/05/02/weixin/image-20210504203831351.png" alt="image-20210504203831351"></p>
-<p>群发云函数代码：</p>
-<p><img src="/2021/05/02/weixin/image-20210504204152569.png" alt="image-20210504204152569"></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://windsfox.github.io/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/kong.jpg">
-      <meta itemprop="name" content="windsfox">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="windsfoxの博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="post-title-link" itemprop="url">数据库</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2021-03-01 13:20:35" itemprop="dateCreated datePublished" datetime="2021-03-01T13:20:35+08:00">2021-03-01</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-05-19 23:12:58" itemprop="dateModified" datetime="2021-05-19T23:12:58+08:00">2021-05-19</time>
-      </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="数据库系统概论"><a href="#数据库系统概论" class="headerlink" title="数据库系统概论"></a>数据库系统概论</h1><h2 id="1-1数据库及系统概念"><a href="#1-1数据库及系统概念" class="headerlink" title="1.1数据库及系统概念"></a>1.1数据库及系统概念</h2><h3 id="1-1-1概念："><a href="#1-1-1概念：" class="headerlink" title="1.1.1概念："></a>1.1.1概念：</h3><ol>
-<li><p>数据：描述事物符号的记录</p>
-</li>
-<li><p>数据库：长期存储在计算机内的有组织的，可共享的大量数据的集合</p>
-</li>
-<li><p>数据库管理系统：位于用户与操作系统之间的一层管理软件，主要功能：</p>
-<ol>
-<li>DDL：数据定义语言</li>
-<li>DML：数据库操作语言（增删改查）</li>
-<li>数据库的运行管理</li>
-</ol>
-</li>
-<li><p>数据库系统：计算机中引用到数据库之后的系统。（包括：数据库，数据库管理系统（DBMS），数据库应用程序，数据库管理员（DBA）和用户）</p>
-</li>
-</ol>
-<h3 id="1-1-2数据模型："><a href="#1-1-2数据模型：" class="headerlink" title="1.1.2数据模型："></a>1.1.2数据模型：</h3><ol>
-<li>层次数据模型（树结构）</li>
-<li>网状数据模型（图结构）缺点：数据结构复杂，增加了数据查询和数据定位的困难</li>
-<li>关系数据模型（二维表结构）表之间通过具有相同属性列的数据值进行约束关联</li>
-<li>其他数据模型</li>
-</ol>
-<h3 id="1-1-3数据库应用程序："><a href="#1-1-3数据库应用程序：" class="headerlink" title="1.1.3数据库应用程序："></a>1.1.3数据库应用程序：</h3><p>是一种在DBMS支持下对数据库中数据进行访问处理的应用程序</p>
-<ol>
-<li>通过窗口输入框采集用户输入数据</li>
-<li>通过接口连接访问数据库</li>
-<li>执行用户数据查询  </li>
-<li>通过表单列表输出结果数据</li>
-</ol>
-<h3 id="1-1-4数据库管理系统："><a href="#1-1-4数据库管理系统：" class="headerlink" title="1.1.4数据库管理系统："></a>1.1.4数据库管理系统：</h3><p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210302201606385.png" alt="image-20210302201606385"></p>
-<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210302201619611.png" alt="image-20210302201619611"></p>
-<h3 id="1-1-5数据库："><a href="#1-1-5数据库：" class="headerlink" title="1.1.5数据库："></a>1.1.5数据库：</h3><p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210302201713863.png" alt="image-20210302201713863"></p>
-<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210302201754678.png" alt="image-20210302201754678"></p>
-<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210302201903138.png" alt="image-20210302201903138"></p>
-<h2 id="1-2数据库发展"><a href="#1-2数据库发展" class="headerlink" title="1.2数据库发展"></a>1.2数据库发展</h2><h3 id="1-2-1数据管理技术发展阶段："><a href="#1-2-1数据管理技术发展阶段：" class="headerlink" title="1.2.1数据管理技术发展阶段："></a>1.2.1数据管理技术发展阶段：</h3><ol>
-<li><p>人工管理阶段</p>
-<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210302202110474.png" alt="image-20210302202110474"></p>
-<p>特点：</p>
 <ul>
-<li>程序员组织和管理数据</li>
-<li>应用程序依赖数据集</li>
-<li>应用之间无数据共享，数据冗余度大</li>
-<li>数据集无结构</li>
+<li><p>编写mybatis的核心配置文件(resource目录下)</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;</span></span><br><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">configuration</span></span></span><br><span class="line"><span class="meta">        <span class="meta-keyword">PUBLIC</span> <span class="meta-string">&quot;-//mybatis.org//DTD Config 3.0//EN&quot;</span></span></span><br><span class="line"><span class="meta">        <span class="meta-string">&quot;http://mybatis.org/dtd/mybatis-3-config.dtd&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">environments</span> <span class="attr">default</span>=<span class="string">&quot;development&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">environment</span> <span class="attr">id</span>=<span class="string">&quot;development&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">transactionManager</span> <span class="attr">type</span>=<span class="string">&quot;JDBC&quot;</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">dataSource</span> <span class="attr">type</span>=<span class="string">&quot;POOLED&quot;</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;driver&quot;</span> <span class="attr">value</span>=<span class="string">&quot;com.mysql.jdbc.Driver&quot;</span>/&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;url&quot;</span> <span class="attr">value</span>=<span class="string">&quot;jdbc:mysql://localhost:3306/mybatis?useSSL=true<span class="symbol">&amp;amp;</span>useUnicode=true<span class="symbol">&amp;amp;</span>characterEncoding=UTF-8&quot;</span>/&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;username&quot;</span> <span class="attr">value</span>=<span class="string">&quot;root&quot;</span>/&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;password&quot;</span> <span class="attr">value</span>=<span class="string">&quot;12345&quot;</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">dataSource</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">environment</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">environments</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">mappers</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">mapper</span> <span class="attr">resource</span>=<span class="string">&quot;com/kuang/mybatis/dao/UserMapper.xml&quot;</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">mappers</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+<li><p>编写核心工具类（util下的mybatisUtil)</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//sqlSessionFactory</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MybatisUtils</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> SqlSessionFactory sqlSessionFactory=<span class="keyword">null</span>;</span><br><span class="line">    <span class="keyword">static</span> &#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="comment">//获取SqlSessionFactory对象</span></span><br><span class="line">            String resource = <span class="string">&quot;mybatis-config.xml&quot;</span>;</span><br><span class="line">            InputStream inputStream = <span class="keyword">null</span>;</span><br><span class="line">            inputStream = Resources.getResourceAsStream(resource);</span><br><span class="line">            sqlSessionFactory = <span class="keyword">new</span> SqlSessionFactoryBuilder().build(inputStream);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//    获取SqlSession</span></span><br><span class="line">    <span class="comment">//SqlSession 完全包含了面向数据库执行sql命令所需的所有方法</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> SqlSession <span class="title">getSqlSession</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> sqlSessionFactory.openSession();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="2-3编写java代码："><a href="#2-3编写java代码：" class="headerlink" title="2.3编写java代码："></a>2.3编写java代码：</h2></li>
+<li><p>Dao接口</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">UserDao</span> </span>&#123;</span><br><span class="line">    <span class="function">List&lt;User&gt; <span class="title">getUserlist</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>实现类(由原来的impl转换为一个Mapper.xml文件)</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;</span></span><br><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">mapper</span></span></span><br><span class="line"><span class="meta">        <span class="meta-keyword">PUBLIC</span> <span class="meta-string">&quot;-//mybatis.org//DTD Mapper 3.0//EN&quot;</span></span></span><br><span class="line"><span class="meta">        <span class="meta-string">&quot;http://mybatis.org/dtd/mybatis-3-mapper.dtd&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">mapper</span> <span class="attr">namespace</span>=<span class="string">&quot;com.kuang.mybatis.dao.UserDao&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">&quot;getUserlist&quot;</span> <span class="attr">resultType</span>=<span class="string">&quot;com.kuang.mybatis.pojo.User&quot;</span>&gt;</span></span><br><span class="line">        select * from mybatis.user where id = #&#123;id&#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">mapper</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="2-4测试"><a href="#2-4测试" class="headerlink" title="2.4测试"></a>2.4测试</h2></li>
 </ul>
+<p>java：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MapperTest</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="comment">//第一部：获得sqlsession对象</span></span><br><span class="line">        SqlSession sqlSession = MybatisUtils.getSqlSession();</span><br><span class="line"></span><br><span class="line"><span class="comment">//        方式一：getMapper</span></span><br><span class="line">        UserDao userDao = sqlSession.getMapper(UserDao.class);</span><br><span class="line">        List&lt;User&gt; userList = UserDao.getUserlist();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (User user : userList) &#123;</span><br><span class="line">            System.out.println(user);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//关闭SqlSession</span></span><br><span class="line">        sqlSession.close();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="3-CRUD"><a href="#3-CRUD" class="headerlink" title="3.CRUD"></a>3.CRUD</h1><h2 id="3-1-namespace"><a href="#3-1-namespace" class="headerlink" title="3.1 namespace"></a>3.1 namespace</h2><p>namespace中的包名要和dao/mapper一致</p>
+<h2 id="3-2-select，insert-update-delete"><a href="#3-2-select，insert-update-delete" class="headerlink" title="3.2 select，insert,update, delete"></a>3.2 select，insert,update, delete</h2><ol>
+<li>id：要和namespace中的方法名一致</li>
+<li>resultType:返回值类型</li>
+<li>parameterType：参数类型</li>
+</ol>
+<p>检验时，对应java应该写在test文件夹下，且和dao的interface同样的包名</p>
+<p>ps：</p>
+<ol>
+<li><p>模糊查询：java查询的时候通配符（如：%李%）</p>
 </li>
-<li><p>文件系统管理阶段</p>
-<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210302202430454.png" alt="image-20210302202430454"></p>
-<p>特点：</p>
-<ul>
-<li>由文件组织与存储数据</li>
-<li>数据文件的数据记录具有简单的字段结构，但文件整体无结构</li>
-<li>应用程序依赖于数据文件，需自己维护数据文件</li>
-<li>数据独立性差，难以实现应用程序之间的数据共享访问</li>
-</ul>
+<li><p>用户查询的时候需要拼接的字符串在内部写死，否者会出现以下情况（用户使用一些非法字符串）</p>
+<p><img src="/2021/07/18/MyMybaits/image-20210719171232874.png" alt="image-20210719171232874"></p>
 </li>
-<li><p>数据库系统管理阶段：</p>
-<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210302202748613.png" alt="image-20210302202748613"></p>
-<p>特点：</p>
-<ul>
-<li>数据集结构化，易于查询与统计处理</li>
-<li>不同应用程序可以实现数据共享访问</li>
-<li>数据独立性高，应用可扩展</li>
-<li>数据由DBMS统一管理和访问操作</li>
+</ol>
+<h1 id="4-配置解析（注意顺序）"><a href="#4-配置解析（注意顺序）" class="headerlink" title="4.配置解析（注意顺序）"></a>4.配置解析（注意顺序）</h1><h2 id="1-mybatis-config-xml"><a href="#1-mybatis-config-xml" class="headerlink" title="1.mybatis-config.xml"></a>1.mybatis-config.xml</h2><p><img src="/2021/07/18/MyMybaits/image-20210719171840889.png" alt="image-20210719171840889"></p>
+<h2 id="2-environment"><a href="#2-environment" class="headerlink" title="2.environment"></a>2.environment</h2><p>Mybatis可以配置多种适应环境</p>
+<p>一个SqlSessionFactory示例只能选用其中一种环境</p>
+<p>学会使用多套运行环境</p>
+<p>Mybatis默认事务管理器就是JDBC，连接池：POOLED</p>
+<h2 id="3-属性（properties）"><a href="#3-属性（properties）" class="headerlink" title="3.属性（properties）"></a>3.属性（properties）</h2><p>我们可以通过properties属性实行引用配置文件</p>
+<p>这些属性都是课外部配置且动态替换的，既可以在典型的java属性文件中配置，亦可通过properties的子元素来传递</p>
+<p>编写数据库配置文件</p>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">driver</span>=<span class="string">com.mysql.jdbc.Driver</span></span><br><span class="line"><span class="attr">url</span>=<span class="string">jdbc:mysql://localhost:3306/mybatis?useSSL=true&amp;useUnicode=true&amp;characterEncoding=UTF-8</span></span><br><span class="line"><span class="attr">username</span>=<span class="string">root</span></span><br><span class="line"><span class="attr">password</span>=<span class="string">123456</span></span><br></pre></td></tr></table></figure>
+<p>引入properties标签的时候：所有的标签都有顺序，不然报错</p>
+<p><img src="/2021/07/18/MyMybaits/image-20210719175056691.png" alt="image-20210719175056691"></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">properties</span> <span class="attr">resource</span>=<span class="string">&quot;db.properties&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;password&quot;</span> <span class="attr">value</span>=<span class="string">&quot;11111&quot;</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">properties</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>如果有内部嵌入的标签优先级比配置文件中的低</p>
+<h2 id="4-类型别名"><a href="#4-类型别名" class="headerlink" title="4.类型别名   ()"></a>4.类型别名   ()</h2><p>映射xml里的User可使用alias的值作为参数</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">typeAliases</span> &gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">typeAlias</span> <span class="attr">type</span>=<span class="string">&quot;com.kuang.pojo.User&quot;</span> <span class="attr">alias</span>=<span class="string">&quot;user&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">typeAlias</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">package</span> <span class="attr">name</span>=<span class="string">&quot;com.kuang.pojo&quot;</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">typeAliases</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>包名和alias映射都可以</p>
+<h2 id="5-设置"><a href="#5-设置" class="headerlink" title="5.设置"></a>5.设置</h2><p><img src="/2021/07/18/MyMybaits/image-20210720085503043.png" alt="image-20210720085503043"></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">settings</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">setting</span> <span class="attr">name</span>=<span class="string">&quot;cacheEnabled&quot;</span> <span class="attr">value</span>=<span class="string">&quot;true&quot;</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">setting</span> <span class="attr">name</span>=<span class="string">&quot;lazyLoadingEnabled&quot;</span> <span class="attr">value</span>=<span class="string">&quot;true&quot;</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">setting</span> <span class="attr">name</span>=<span class="string">&quot;multipleResultSetsEnabled&quot;</span> <span class="attr">value</span>=<span class="string">&quot;true&quot;</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">setting</span> <span class="attr">name</span>=<span class="string">&quot;useColumnLabel&quot;</span> <span class="attr">value</span>=<span class="string">&quot;true&quot;</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">setting</span> <span class="attr">name</span>=<span class="string">&quot;useGeneratedKeys&quot;</span> <span class="attr">value</span>=<span class="string">&quot;false&quot;</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">setting</span> <span class="attr">name</span>=<span class="string">&quot;autoMappingBehavior&quot;</span> <span class="attr">value</span>=<span class="string">&quot;PARTIAL&quot;</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">setting</span> <span class="attr">name</span>=<span class="string">&quot;autoMappingUnknownColumnBehavior&quot;</span> <span class="attr">value</span>=<span class="string">&quot;WARNING&quot;</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">setting</span> <span class="attr">name</span>=<span class="string">&quot;defaultExecutorType&quot;</span> <span class="attr">value</span>=<span class="string">&quot;SIMPLE&quot;</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">setting</span> <span class="attr">name</span>=<span class="string">&quot;defaultStatementTimeout&quot;</span> <span class="attr">value</span>=<span class="string">&quot;25&quot;</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">setting</span> <span class="attr">name</span>=<span class="string">&quot;defaultFetchSize&quot;</span> <span class="attr">value</span>=<span class="string">&quot;100&quot;</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">setting</span> <span class="attr">name</span>=<span class="string">&quot;safeRowBoundsEnabled&quot;</span> <span class="attr">value</span>=<span class="string">&quot;false&quot;</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">setting</span> <span class="attr">name</span>=<span class="string">&quot;mapUnderscoreToCamelCase&quot;</span> <span class="attr">value</span>=<span class="string">&quot;false&quot;</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">setting</span> <span class="attr">name</span>=<span class="string">&quot;localCacheScope&quot;</span> <span class="attr">value</span>=<span class="string">&quot;SESSION&quot;</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">setting</span> <span class="attr">name</span>=<span class="string">&quot;jdbcTypeForNull&quot;</span> <span class="attr">value</span>=<span class="string">&quot;OTHER&quot;</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">setting</span> <span class="attr">name</span>=<span class="string">&quot;lazyLoadTriggerMethods&quot;</span> <span class="attr">value</span>=<span class="string">&quot;equals,clone,hashCode,toString&quot;</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">settings</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><img src="/2021/07/18/MyMybaits/image-20210720085646078.png" alt="image-20210720085646078"></p>
+<h2 id="6-其他配置"><a href="#6-其他配置" class="headerlink" title="6.其他配置"></a>6.其他配置</h2><ol>
+<li>typeHandler（类型处理器）</li>
+<li>objectFactory(对象工厂)</li>
+<li>plugins插件<ul>
+<li>mybatis-generator-core</li>
+<li>mybatis-plus</li>
+<li>通用mapper</li>
 </ul>
 </li>
 </ol>
-<h3 id="1-2-2数据库技术发展经历时代"><a href="#1-2-2数据库技术发展经历时代" class="headerlink" title="1.2.2数据库技术发展经历时代"></a>1.2.2数据库技术发展经历时代</h3><p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210302203059099.png" alt="image-20210302203059099"></p>
-<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210302203114058.png" alt="image-20210302203114058"></p>
-<h3 id="1-2-3数据库技术领域"><a href="#1-2-3数据库技术领域" class="headerlink" title="1.2.3数据库技术领域"></a>1.2.3数据库技术领域</h3><h3 id="1-2-4数据库技术发展趋势"><a href="#1-2-4数据库技术发展趋势" class="headerlink" title="1.2.4数据库技术发展趋势"></a>1.2.4数据库技术发展趋势</h3><p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210302203239204.png" alt="image-20210302203239204"></p>
-<h2 id="1-3数据库应用系统"><a href="#1-3数据库应用系统" class="headerlink" title="1.3数据库应用系统"></a>1.3数据库应用系统</h2><h3 id="1-3-1类型"><a href="#1-3-1类型" class="headerlink" title="1.3.1类型"></a>1.3.1类型</h3><ol>
-<li>业务处理系统</li>
-<li>管理信息系统</li>
-<li>决策支持系统</li>
-</ol>
-<h3 id="1-3-2应用结构"><a href="#1-3-2应用结构" class="headerlink" title="1.3.2应用结构"></a>1.3.2应用结构</h3><ol>
-<li>单机用户结构</li>
-<li>集中式结构</li>
-<li>客户/服务器结构</li>
-<li>分布式结构</li>
-</ol>
-<h3 id="1-3-3生命周期"><a href="#1-3-3生命周期" class="headerlink" title="1.3.3生命周期"></a>1.3.3生命周期</h3><ol>
-<li>需求分析</li>
-<li>系统设计</li>
-<li>系统实现</li>
-<li>系统测试</li>
-<li>系统运行与维护</li>
-</ol>
-<h2 id="1-4典型数据库管理系统"><a href="#1-4典型数据库管理系统" class="headerlink" title="1.4典型数据库管理系统"></a>1.4典型数据库管理系统</h2><p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210303204333298.png" alt="image-20210303204333298"></p>
-<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210303204428056.png" alt="image-20210303204428056"></p>
-<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210303204557607.png" alt="image-20210303204557607"></p>
-<p>PS：记得看学堂在线的题目（继承表也可以叫对象表）</p>
-<h2 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h2><p>在数据库管理阶段才实现了数据共享</p>
-<p>SQL Server是关系数据库</p>
-<p><strong>数据存储</strong>负责对数据库的访问操作</p>
-<p><strong>数据仓库技术</strong>实现了数据集成</p>
-<p><strong>分布式结构</strong>适合做银行业务系统</p>
-<p>PostgreSQL是<strong>对象-关系数据库</strong></p>
-<p>PostgreSQL中<strong>不</strong>包括<strong>存储过程</strong>的数据库对象</p>
-<p>PostgreSQL不包括<strong>索引表</strong>（有关系，对象，外部三种表）</p>
-<p>MySQL数据库系统<strong>不是</strong>一种企业级DBMS。</p>
-<h1 id="数据库关系模型"><a href="#数据库关系模型" class="headerlink" title="数据库关系模型"></a>数据库关系模型</h1><h2 id="2-1关系及相关概念"><a href="#2-1关系及相关概念" class="headerlink" title="2.1关系及相关概念"></a>2.1关系及相关概念</h2><ol>
-<li><p>关系键：唯一标识元组的属性列，称为键</p>
-</li>
-<li><p>复和键：使用两列或者多列来做唯一标识</p>
-</li>
-<li><p>候选键：多个列可以做唯一标识</p>
-</li>
-<li><p>主键：最具有代表性的主键</p>
+<h2 id="7-映射器"><a href="#7-映射器" class="headerlink" title="7.映射器"></a>7.映射器</h2><p><img src="/2021/07/18/MyMybaits/image-20210720090529891.png" alt="image-20210720090529891"></p>
+<p>方法三：包名注册（注意点和上面的一样）</p>
+<h1 id="5-解决属性名和字段名不一致的问题"><a href="#5-解决属性名和字段名不一致的问题" class="headerlink" title="5.解决属性名和字段名不一致的问题"></a>5.解决属性名和字段名不一致的问题</h1><h2 id="1-情况："><a href="#1-情况：" class="headerlink" title="1.情况："></a>1.情况：</h2><p>当java实体类中的属性名为password，数据库中的字段名为pwd的时候</p>
+<p>用之前的查询会出现password=null的情况</p>
+<h2 id="2-resultMap"><a href="#2-resultMap" class="headerlink" title="2.resultMap"></a>2.resultMap</h2><p><img src="/2021/07/18/MyMybaits/image-20210720092050730.png" alt="image-20210720092050730"></p>
+<h1 id="6-日志工厂"><a href="#6-日志工厂" class="headerlink" title="6.日志工厂"></a>6.日志工厂</h1><p><img src="/2021/07/18/MyMybaits/image-20210720093237739.png" alt="image-20210720093237739"></p>
+<h3 id="log4j"><a href="#log4j" class="headerlink" title="log4j"></a>log4j</h3><ol>
+<li><p>导入依赖</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>log4j<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>log4j<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.2.12<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+<li><p>创建配置文件</p>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># priority  :debug&lt;info&lt;warn&lt;error</span></span><br><span class="line"><span class="comment">#you cannot specify every priority with different file for log4j</span></span><br><span class="line"><span class="meta">log4j.rootLogger</span>=<span class="string">debug,stdout,info,debug,warn,error </span></span><br><span class="line"></span><br><span class="line"><span class="comment">#console</span></span><br><span class="line"><span class="meta">log4j.appender.stdout</span>=<span class="string">org.apache.log4j.ConsoleAppender </span></span><br><span class="line"><span class="meta">log4j.appender.stdout.layout</span>=<span class="string">org.apache.log4j.PatternLayout </span></span><br><span class="line"><span class="meta">log4j.appender.stdout.layout.ConversionPattern</span>= <span class="string">[%d&#123;yyyy-MM-dd HH:mm:ss a&#125;]:%p %l%m%n</span></span><br><span class="line"><span class="comment">#info log</span></span><br><span class="line"><span class="meta">log4j.logger.info</span>=<span class="string">info</span></span><br><span class="line"><span class="meta">log4j.appender.info</span>=<span class="string">org.apache.log4j.DailyRollingFileAppender </span></span><br><span class="line"><span class="meta">log4j.appender.info.DatePattern</span>=<span class="string">&#x27;_&#x27;yyyy-MM-dd&#x27;.log&#x27;</span></span><br><span class="line"><span class="meta">log4j.appender.info.File</span>=<span class="string">./src/com/hp/log/info.log</span></span><br><span class="line"><span class="meta">log4j.appender.info.Append</span>=<span class="string">true</span></span><br><span class="line"><span class="meta">log4j.appender.info.Threshold</span>=<span class="string">INFO</span></span><br><span class="line"><span class="meta">log4j.appender.info.layout</span>=<span class="string">org.apache.log4j.PatternLayout </span></span><br><span class="line"><span class="meta">log4j.appender.info.layout.ConversionPattern</span>=<span class="string">%d&#123;yyyy-MM-dd HH:mm:ss a&#125; [Thread: %t][ Class:%c &gt;&gt; Method: %l ]%n%p:%m%n</span></span><br><span class="line"><span class="comment">#debug log</span></span><br><span class="line"><span class="meta">log4j.logger.debug</span>=<span class="string">debug</span></span><br><span class="line"><span class="meta">log4j.appender.debug</span>=<span class="string">org.apache.log4j.DailyRollingFileAppender </span></span><br><span class="line"><span class="meta">log4j.appender.debug.DatePattern</span>=<span class="string">&#x27;_&#x27;yyyy-MM-dd&#x27;.log&#x27;</span></span><br><span class="line"><span class="meta">log4j.appender.debug.File</span>=<span class="string">./src/com/hp/log/debug.log</span></span><br><span class="line"><span class="meta">log4j.appender.debug.Append</span>=<span class="string">true</span></span><br><span class="line"><span class="meta">log4j.appender.debug.Threshold</span>=<span class="string">DEBUG</span></span><br><span class="line"><span class="meta">log4j.appender.debug.layout</span>=<span class="string">org.apache.log4j.PatternLayout </span></span><br><span class="line"><span class="meta">log4j.appender.debug.layout.ConversionPattern</span>=<span class="string">%d&#123;yyyy-MM-dd HH:mm:ss a&#125; [Thread: %t][ Class:%c &gt;&gt; Method: %l ]%n%p:%m%n</span></span><br><span class="line"><span class="comment">#warn log</span></span><br><span class="line"><span class="meta">log4j.logger.warn</span>=<span class="string">warn</span></span><br><span class="line"><span class="meta">log4j.appender.warn</span>=<span class="string">org.apache.log4j.DailyRollingFileAppender </span></span><br><span class="line"><span class="meta">log4j.appender.warn.DatePattern</span>=<span class="string">&#x27;_&#x27;yyyy-MM-dd&#x27;.log&#x27;</span></span><br><span class="line"><span class="meta">log4j.appender.warn.File</span>=<span class="string">./src/com/hp/log/warn.log</span></span><br><span class="line"><span class="meta">log4j.appender.warn.Append</span>=<span class="string">true</span></span><br><span class="line"><span class="meta">log4j.appender.warn.Threshold</span>=<span class="string">WARN</span></span><br><span class="line"><span class="meta">log4j.appender.warn.layout</span>=<span class="string">org.apache.log4j.PatternLayout </span></span><br><span class="line"><span class="meta">log4j.appender.warn.layout.ConversionPattern</span>=<span class="string">%d&#123;yyyy-MM-dd HH:mm:ss a&#125; [Thread: %t][ Class:%c &gt;&gt; Method: %l ]%n%p:%m%n</span></span><br><span class="line"><span class="comment">#error</span></span><br><span class="line"><span class="meta">log4j.logger.error</span>=<span class="string">error</span></span><br><span class="line"><span class="meta">log4j.appender.error</span> = <span class="string">org.apache.log4j.DailyRollingFileAppender</span></span><br><span class="line"><span class="meta">log4j.appender.error.DatePattern</span>=<span class="string">&#x27;_&#x27;yyyy-MM-dd&#x27;.log&#x27;</span></span><br><span class="line"><span class="meta">log4j.appender.error.File</span> = <span class="string">./src/com/hp/log/error.log </span></span><br><span class="line"><span class="meta">log4j.appender.error.Append</span> = <span class="string">true</span></span><br><span class="line"><span class="meta">log4j.appender.error.Threshold</span> = <span class="string">ERROR </span></span><br><span class="line"><span class="meta">log4j.appender.error.layout</span> = <span class="string">org.apache.log4j.PatternLayout</span></span><br><span class="line"><span class="meta">log4j.appender.error.layout.ConversionPattern</span> = <span class="string">%d&#123;yyyy-MM-dd HH:mm:ss a&#125; [Thread: %t][ Class:%c &gt;&gt; Method: %l ]%n%p:%m%n</span></span><br></pre></td></tr></table></figure></li>
+<li><p>在mybatis-config.xml中配置</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">settings</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">setting</span> <span class="attr">name</span>=<span class="string">&quot;logImpl&quot;</span> <span class="attr">value</span>=<span class="string">&quot;LOG4J&quot;</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">settings</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+<li><p>在要使用log4j的类中导入类包</p>
+<p><img src="/2021/07/18/MyMybaits/image-20210720110300320.png" alt="image-20210720110300320"></p>
 </li>
 </ol>
-<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210304223100537.png" alt="image-20210304223100537"></p>
-<ol start="5">
-<li>代理键：DBMS自动生成的序列作为主键</li>
+<h3 id="stdout-logging"><a href="#stdout-logging" class="headerlink" title="stdout_logging"></a>stdout_logging</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">settings</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">setting</span> <span class="attr">name</span>=<span class="string">&quot;logImpl&quot;</span> <span class="attr">value</span>=<span class="string">&quot;STDOUT_LOGGING&quot;</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">settings</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><img src="/2021/07/18/MyMybaits/image-20210720093507513.png" alt="image-20210720093507513"></p>
+<h1 id="7-分页"><a href="#7-分页" class="headerlink" title="7.分页"></a>7.分页</h1><h3 id="test类："><a href="#test类：" class="headerlink" title="test类："></a>test类：</h3><p><img src="/2021/07/18/MyMybaits/image-20210720114259587.png" alt="image-20210720114259587"></p>
+<p>UserMapper.xml</p>
+<p><img src="/2021/07/18/MyMybaits/image-20210720114417190.png" alt="image-20210720114417190"></p>
+<p>UserMapper(interface)</p>
+<p><img src="/2021/07/18/MyMybaits/image-20210720114438959.png" alt="image-20210720114438959"></p>
+<h3 id="分页2RowBounds"><a href="#分页2RowBounds" class="headerlink" title="分页2RowBounds"></a>分页2RowBounds</h3><p><img src="/2021/07/18/MyMybaits/image-20210720114855563.png" alt="image-20210720114855563"></p>
+<p><img src="/2021/07/18/MyMybaits/image-20210720114938697.png" alt="image-20210720114938697"></p>
+<p><img src="/2021/07/18/MyMybaits/image-20210720114955599.png" alt="image-20210720114955599"></p>
+<h1 id="8注解开发"><a href="#8注解开发" class="headerlink" title="8注解开发"></a>8注解开发</h1><ol>
+<li>UserMapper（I）</li>
 </ol>
-<h2 id="2-2关系模型原理"><a href="#2-2关系模型原理" class="headerlink" title="2.2关系模型原理"></a>2.2关系模型原理</h2><ol>
-<li><p>数据结构：</p>
-<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210307180530282.png" alt="image-20210307180530282"></p>
-</li>
-<li><p>数据操作</p>
-<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210307180549201.png" alt="image-20210307180549201"></p>
-<ul>
-<li>并运算操作</li>
-<li>关系差运算</li>
-<li>交运算操作</li>
-<li>笛卡尔积</li>
-</ul>
-</li>
-<li><p>数据关系约束</p>
-<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210307180642660.png" alt="image-20210307180642660"></p>
+<p><img src="/2021/07/18/MyMybaits/image-20210720120112935.png" alt="image-20210720120112935"></p>
+<ol start="2">
+<li><p>在核心配置文件中绑定借口</p>
+<p><img src="/2021/07/18/MyMybaits/image-20210720120209379.png" alt="image-20210720120209379"></p>
 </li>
 </ol>
-<h3 id="2-2-1完整性约束"><a href="#2-2-1完整性约束" class="headerlink" title="2.2.1完整性约束"></a>2.2.1完整性约束</h3><ol>
-<li><p>关系模型完整性</p>
-<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210307181116879.png" alt="image-20210307181116879"></p>
-</li>
-<li><p>实体关系完整性</p>
-<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210307181142060.png" alt="image-20210307181142060"></p>
-</li>
-<li><p>参照完整性</p>
-<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210307181351348.png" alt="image-20210307181351348"></p>
-</li>
-<li><p>用户自定义完整性</p>
-<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210307182124541.png" alt="image-20210307182124541"></p>
-</li>
+<ol start="3">
+<li>测试</li>
 </ol>
-<h2 id="2-3-PostgreSQL数据库关系操作实践"><a href="#2-3-PostgreSQL数据库关系操作实践" class="headerlink" title="2.3 PostgreSQL数据库关系操作实践"></a>2.3 PostgreSQL数据库关系操作实践</h2><h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>常用的关系查询操作包括（选择、投影、连接、并、交）等；<strong>集合操作也算关系操作</strong></p>
-<p>自然连接是一种<strong>特殊的等值连接</strong></p>
-<p>在参照完整性中，可以定义<strong>级联操作</strong>。（级联操作【CASCADE】，修改主表中的属性值的时候必须参照别的字表中的元）</p>
-<p><strong>内连接</strong>是要求两个组合关系的匹配元组而形成的查询结果集</p>
-<h1 id="数据库操作语言SQL"><a href="#数据库操作语言SQL" class="headerlink" title="数据库操作语言SQL"></a>数据库操作语言SQL</h1><h2 id="概述："><a href="#概述：" class="headerlink" title="概述："></a>概述：</h2><ol>
-<li>DDL</li>
-<li><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210323142227124.png" alt="image-20210323142227124"></li>
-<li>DML</li>
-<li><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210323142252805.png" alt="image-20210323142252805"></li>
-<li>DQL和DCL</li>
-<li><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210323142323885.png" alt="image-20210323142323885"></li>
-<li>TPL</li>
-<li><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210323142359509.png" alt="image-20210323142359509"></li>
-<li>CCL</li>
-<li><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210323142427342.png" alt="image-20210323142427342"></li>
-</ol>
-<h2 id="SQL语句"><a href="#SQL语句" class="headerlink" title="SQL语句"></a>SQL语句</h2><p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210323143444543.png" alt="image-20210323143444543"></p>
-<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210323143519663.png" alt="image-20210323143519663"></p>
-<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210323143619728.png" alt="image-20210323143619728"></p>
-<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210323143639497.png" alt="image-20210323143639497"></p>
-<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210323143845414.png" alt="image-20210323143845414"></p>
-<p>代理键定义同上</p>
-<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210323144408847.png" alt="image-20210323144408847"></p>
-<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210323144443473.png" alt="image-20210323144443473"></p>
-<h2 id="题目-1"><a href="#题目-1" class="headerlink" title="题目"></a>题目</h2><p>视图可以创建视图</p>
-<p>主键可以为不同属性</p>
-<h1 id="数据库设计与实现"><a href="#数据库设计与实现" class="headerlink" title="数据库设计与实现"></a>数据库设计与实现</h1><h2 id="4-1数据库设计概述"><a href="#4-1数据库设计概述" class="headerlink" title="4.1数据库设计概述"></a>4.1数据库设计概述</h2><p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210401220244200.png" alt="image-20210401220244200"></p>
-<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210401220316000.png" alt="image-20210401220316000"></p>
+<p>本质：反射</p>
+<p>底层：动态代理</p>
+<h1 id="9-Lombok"><a href="#9-Lombok" class="headerlink" title="9.Lombok"></a>9.Lombok</h1><p>使用此插件能减少代码</p>
 <ol>
-<li>数据需求分析阶段</li>
-<li>数据库设计阶段</li>
-<li><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210401220422981.png" alt="image-20210401220422981"></li>
-<li>数据库实现阶段</li>
-<li>数据库测试阶段</li>
-<li><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210401220437483.png" alt="image-20210401220437483"></li>
-</ol>
-<h3 id="设计策略"><a href="#设计策略" class="headerlink" title="设计策略"></a>设计策略</h3><ol>
-<li>自顶向下</li>
-<li>自底向上</li>
-<li>自内向外</li>
-<li>混合策略设计</li>
-</ol>
-<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210401220705747.png" alt="image-20210401220705747"></p>
-<h2 id="4-2-ER模型方法"><a href="#4-2-ER模型方法" class="headerlink" title="4.2 ER模型方法"></a>4.2 ER模型方法</h2><p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210402153812876.png" alt="image-20210402153812876"></p>
-<ul>
-<li><p>属性</p>
+<li><p>下载在setting的插件中下载</p>
 </li>
-<li><p>标识符（逻辑概念；区别于主键的物理概念）</p>
-</li>
-<li><p>联系（连着多少物体就有多少联系）</p>
-<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210402154153428.png" alt="image-20210402154153428"></p>
-<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210402154235843.png" alt="image-20210402154235843"></p>
-</li>
-</ul>
-<h3 id="实体继承联系"><a href="#实体继承联系" class="headerlink" title="实体继承联系"></a>实体继承联系</h3><ol>
-<li>互斥性继承联系（个人账户和公司账户都继承于银行账户）</li>
-<li>非互斥性继承联系（教师和干部都继承于职工）</li>
-</ol>
-<h4 id="强弱实体联系"><a href="#强弱实体联系" class="headerlink" title="强弱实体联系"></a>强弱实体联系</h4><p>弱实体依赖于强实体而存在</p>
-<ol>
-<li>标识符（ID）依赖弱实体（自身的标识符来自于自己依赖的对象）</li>
-<li>非标识符依赖弱实体（自己本身具有标识符）</li>
-</ol>
-<h2 id="4-3数据库建模设计"><a href="#4-3数据库建模设计" class="headerlink" title="4.3数据库建模设计"></a>4.3数据库建模设计</h2><p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210402160153250.png" alt="image-20210402160153250"></p>
-<p>非标识符弱实体转换成关系表的时候需要增加一个所依赖表的标识符作为的外键</p>
-<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210402160601747.png" alt="image-20210402160601747"></p>
-<p>标识符依赖弱实体就需要将所依赖表的主键作为自己的主键和外键</p>
-<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210402162340318.png" alt="image-20210402162340318"></p>
-<ol>
-<li><p>一对一实体属性（拥有外键的表适合查询）</p>
-</li>
-<li><p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210402162716906.png" alt="image-20210402162716906"></p>
-</li>
-<li><p>一对N转换表示（N表中放外键）</p>
-</li>
-<li><p>M对N实体联系</p>
-</li>
-<li><p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210402162922456.png" alt="image-20210402162922456"></p>
-</li>
-</ol>
-<p>概念模型</p>
-<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210402163330703.png" alt="image-20210402163330703"></p>
-<p>逻辑模型</p>
-<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210402163343473.png" alt="image-20210402163343473"></p>
-<p>物理模型</p>
-<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210402163400076.png" alt="image-20210402163400076"></p>
-<h2 id="4-4数据库规范化设计"><a href="#4-4数据库规范化设计" class="headerlink" title="4.4数据库规范化设计"></a>4.4数据库规范化设计</h2><h3 id="函数依赖"><a href="#函数依赖" class="headerlink" title="函数依赖"></a>函数依赖</h3><p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210402163633196.png" alt="image-20210402163633196"></p>
-<ol>
-<li>函数依赖类型</li>
-<li><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210402163655301.png" alt="image-20210402163655301"></li>
-<li></li>
-</ol>
-<h3 id="规范化范式"><a href="#规范化范式" class="headerlink" title="规范化范式"></a>规范化范式</h3><ol>
-<li>第一范式：若关系表中的属性不可再分，则满足第一范式</li>
-<li>第二范式：消除了部分属性的函数依赖（若有复合键，则所有的其他键一定对两个主键都要依赖）</li>
-<li>第三范式：切断了函数传递依赖</li>
-<li><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210402164700103.png" alt="image-20210402164700103"></li>
-<li><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210402165208888.png" alt="image-20210402165208888"></li>
-</ol>
-<h3 id="逆规范化处理"><a href="#逆规范化处理" class="headerlink" title="逆规范化处理"></a>逆规范化处理</h3><p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210402165542372.png" alt="image-20210402165542372"></p>
-<h2 id="4-5数据库设计模型的SQL实现"><a href="#4-5数据库设计模型的SQL实现" class="headerlink" title="4.5数据库设计模型的SQL实现"></a>4.5数据库设计模型的SQL实现</h2><h2 id="题目-2"><a href="#题目-2" class="headerlink" title="题目"></a>题目</h2><p>在E_R模型中，一个实体的其他关联实体数量称为<strong>联系度数</strong></p>
-<p>在<strong>物理模型</strong>中设计系统<strong>存储要素</strong></p>
-<p>在逻辑模型转换为关系模型中<strong>标识转换为主键</strong>不一定正确</p>
-<p><strong>物理模型</strong>可设计系统中的数据库索引要素</p>
-<p>E-R模型中一个实体可以既不是强实体也不是弱实体，定义一个实体的时候可以不指定标识符</p>
-<p>在进行关系数据库设计时，关系表的规范化程度越高，数据库性能就越好（错）</p>
-<p>在将数据库设计模型转换为数据库实现时，需要先将其转换为SQL程序（对）</p>
-<p>数据库建模设计的目的是为数据库实现提供方案（对）</p>
-<p>考虑数据库创建：系统实现</p>
-<p>关系表不是E_R基本元素</p>
-<h1 id="数据库管理"><a href="#数据库管理" class="headerlink" title="数据库管理"></a>数据库管理</h1><h2 id="5-1概述"><a href="#5-1概述" class="headerlink" title="5.1概述"></a>5.1概述</h2><p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210424161650504.png" alt="image-20210424161650504"></p>
-<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210424161726432.png" alt="image-20210424161726432"></p>
-<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210424161740226.png" alt="image-20210424161740226"></p>
-<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210424161856575.png" alt="image-20210424161856575"></p>
-<h2 id="5-2-事务管理"><a href="#5-2-事务管理" class="headerlink" title="5.2 事务管理"></a>5.2 事务管理</h2><p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210424161948058.png" alt="image-20210424161948058"></p>
-<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210424162114870.png" alt="image-20210424162114870"></p>
-<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210424162205992.png" alt="image-20210424162205992"></p>
-<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210424162217299.png" alt="image-20210424162217299"></p>
-<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210424162237628.png" alt="image-20210424162237628"></p>
-<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210424162253296.png" alt="image-20210424162253296"></p>
-<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210424162339159.png" alt="image-20210424162339159"></p>
-<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210424162355114.png" alt="image-20210424162355114"></p>
-<h2 id="5-3并发控制"><a href="#5-3并发控制" class="headerlink" title="5.3并发控制"></a>5.3并发控制</h2><p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210424164033796.png" alt="image-20210424164033796"></p>
-<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210424163952247.png" alt="image-20210424163952247"></p>
-<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210424164521637.png" alt="image-20210424164521637"></p>
-<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210424164534268.png" alt="image-20210424164534268"></p>
-<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210424164719068.png" alt="image-20210424164719068"></p>
-<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210424164704403.png" alt="image-20210424164704403"></p>
-<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210424165342747.png" alt="image-20210424165342747"></p>
-<p>一级：“丢失更新”；二级：”脏读“；三级：“不可重负读取”</p>
-<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210424165647374.png" alt="image-20210424165647374"></p>
-<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210424165716147.png" alt="image-20210424165716147"></p>
-<h2 id="5-4安全管理"><a href="#5-4安全管理" class="headerlink" title="5.4安全管理"></a>5.4安全管理</h2><p>权限</p>
-<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210424171246211.png" alt="image-20210424171246211"></p>
-<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210424171354366.png" alt="image-20210424171354366"></p>
-<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210424171414517.png" alt="image-20210424171414517"></p>
-<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210424183726319.png" alt="image-20210424183726319"></p>
-<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210424183827066.png" alt="image-20210424183827066"></p>
-<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210424184138061.png" alt="image-20210424184138061"></p>
-<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210424184159071.png" alt="image-20210424184159071"></p>
-<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210424184236231.png" alt="image-20210424184236231"></p>
-<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210424184254179.png" alt="image-20210424184254179"></p>
-<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210424184446944.png" alt="image-20210424184446944"></p>
-<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210424184600367.png" alt="image-20210424184600367"></p>
-<h2 id="5-5数据局备份与恢复"><a href="#5-5数据局备份与恢复" class="headerlink" title="5.5数据局备份与恢复"></a>5.5数据局备份与恢复</h2><p>备份方法</p>
-<ol>
-<li>完全数据库备份</li>
-<li>差异数据库备份</li>
-<li>事务数据库备份</li>
-<li>文件备份</li>
-</ol>
-<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210424185601587.png" alt="image-20210424185601587"></p>
-<h2 id="题目：-1"><a href="#题目：-1" class="headerlink" title="题目："></a>题目：</h2><p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210427160206645.png" alt="image-20210427160206645"></p>
-<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210427160328272.png" alt="image-20210427160328272"></p>
-<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210427160443703.png" alt="image-20210427160443703"></p>
-<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210427200627414.png" alt="image-20210427200627414"></p>
-<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210427200705600.png" alt="image-20210427200705600"></p>
-<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210427200731448.png" alt="image-20210427200731448"></p>
-<h1 id="数据库的应用编程"><a href="#数据库的应用编程" class="headerlink" title="数据库的应用编程"></a>数据库的应用编程</h1><h2 id="6-1数据库连接技术"><a href="#6-1数据库连接技术" class="headerlink" title="6.1数据库连接技术"></a>6.1数据库连接技术</h2><h3 id="ODBC："><a href="#ODBC：" class="headerlink" title="ODBC："></a>ODBC：</h3><p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210426164025990.png" alt="image-20210426164025990"></p>
-<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210426164553783.png" alt="image-20210426164553783"></p>
-<p>ODBC应用程序接口：一种使用应用程序与数据库互联的标准接口</p>
-<p>ODBC驱动程序管理器：管理系统当中的各种驱动程序</p>
-<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210426164916992.png" alt="image-20210426164916992"></p>
-<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210426164952193.png" alt="image-20210426164952193"></p>
-<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210426165030082.png" alt="image-20210426165030082"></p>
-<p>不同厂商的数据库：用于存储数据库对象，数据</p>
-<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210426163858108.png" alt="image-20210426163858108"></p>
-<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210428223157938.png" alt="image-20210428223157938"></p>
-<h3 id="JDBC："><a href="#JDBC：" class="headerlink" title="JDBC："></a>JDBC：</h3><p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210426165527581.png" alt="image-20210426165527581"></p>
-<p>步骤：</p>
-<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210426165621469.png" alt="image-20210426165621469"></p>
-<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210426165754205.png" alt="image-20210426165754205"></p>
-<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210426170522169.png" alt="image-20210426170522169"></p>
-<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210426170731148.png" alt="image-20210426170731148"></p>
-<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210426170815362.png" alt="image-20210426170815362"></p>
-<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210426170926934.png" alt="image-20210426170926934"></p>
-<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210426171326095.png" alt="image-20210426171326095"></p>
-<p>完整例子：</p>
-<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210426171343410.png" alt="image-20210426171343410"></p>
-<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210426171504182.png" alt="image-20210426171504182"></p>
-<h2 id="6-2数据库存储过程"><a href="#6-2数据库存储过程" class="headerlink" title="6.2数据库存储过程"></a>6.2数据库存储过程</h2><p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210428230927771.png" alt="image-20210428230927771"></p>
-<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210428231007105.png" alt="image-20210428231007105"></p>
-<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210428231200332.png" alt="image-20210428231200332"></p>
-<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210428231229850.png" alt="image-20210428231229850"></p>
-<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210428231343542.png" alt="image-20210428231343542"></p>
-<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210428231415381.png" alt="image-20210428231415381"></p>
-<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210428231608580.png" alt="image-20210428231608580"></p>
-<p>删除存储过程testExee()</p>
-<p>drop function if exist testExee()</p>
-<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210428231836342.png" alt="image-20210428231836342"></p>
-<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210428231950904.png" alt="image-20210428231950904"></p>
-<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210428232235085.png" alt="image-20210428232235085"></p>
-<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210428233422695.png" alt="image-20210428233422695"></p>
-<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210428233949243.png" alt="image-20210428233949243"></p>
-<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210428234006830.png" alt="image-20210428234006830"></p>
-<h2 id="6-3数据库触发器"><a href="#6-3数据库触发器" class="headerlink" title="6.3数据库触发器"></a>6.3数据库触发器</h2><p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210429231629669.png" alt="image-20210429231629669"></p>
-<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210429231700218.png" alt="image-20210429231700218"></p>
-<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210429232931603.png" alt="image-20210429232931603"></p>
-<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210512203308943.png" alt="image-20210512203308943"></p>
-<p>创建触发器示例：</p>
-<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210512203434481.png" alt="image-20210512203434481"></p>
-<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210512203531534.png" alt="image-20210512203531534"></p>
-<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210512203542983.png" alt="image-20210512203542983"></p>
-<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210512204851716.png" alt="image-20210512204851716"></p>
-<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210429233222900.png" alt="image-20210429233222900"></p>
-<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210429233237079.png" alt="image-20210429233237079"></p>
-<h2 id="6-2数据库游标"><a href="#6-2数据库游标" class="headerlink" title="6.2数据库游标"></a>6.2数据库游标</h2><p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210518203310982.png" alt="image-20210518203310982"></p>
-<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210518203331434.png" alt="image-20210518203331434"></p>
-<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210518203401206.png" alt="image-20210518203401206"></p>
-<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210518203420044.png" alt="image-20210518203420044"></p>
-<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210518203504416.png" alt="image-20210518203504416"></p>
-<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210518203540341.png" alt="image-20210518203540341"></p>
-<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210518205359791.png" alt="image-20210518205359791"></p>
-<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210518205434787.png" alt="image-20210518205434787"></p>
-<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210518205453241.png" alt="image-20210518205453241"></p>
-<h2 id="6-6嵌入式sql编程"><a href="#6-6嵌入式sql编程" class="headerlink" title="6.6嵌入式sql编程"></a>6.6嵌入式sql编程</h2><p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210518205603096.png" alt="image-20210518205603096"></p>
-<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210518205702845.png" alt="image-20210518205702845"></p>
-<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210518205755342.png" alt="image-20210518205755342"></p>
-<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210518205839994.png" alt="image-20210518205839994"></p>
-<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210518205913834.png" alt="image-20210518205913834"></p>
-<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210518205942298.png" alt="image-20210518205942298"></p>
-<h2 id="题目：-2"><a href="#题目：-2" class="headerlink" title="题目："></a>题目：</h2><p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210518210036324.png" alt="image-20210518210036324"></p>
-<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210518210048115.png" alt="image-20210518210048115"></p>
-<p>c和Pascal使用“；”结尾。</p>
-<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210518210132734.png" alt="image-20210518210132734"></p>
-<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210518212353926.png" alt="image-20210518212353926"></p>
-<p>创建存储过程应该为A，只不过postgre的存储过程和函数是同一个东西！！！</p>
-<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210518212450220.png" alt="image-20210518212450220"></p>
-<p>触发器不能带参数！！！</p>
-<h1 id="NoSQL数据库"><a href="#NoSQL数据库" class="headerlink" title="NoSQL数据库"></a>NoSQL数据库</h1><h2 id="7-1NoSQL数据库概述"><a href="#7-1NoSQL数据库概述" class="headerlink" title="7.1NoSQL数据库概述"></a>7.1NoSQL数据库概述</h2><p>ACID：事务的一致性，原子性，隔离性，持久性。</p>
-<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210518215845715.png" alt="image-20210518215845715"></p>
-<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210518220201689.png" alt="image-20210518220201689"></p>
-<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210518220226611.png" alt="image-20210518220226611"></p>
-<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210518220428137.png" alt="image-20210518220428137"></p>
-<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210518220456420.png" alt="image-20210518220456420"></p>
-<h1 id="tips："><a href="#tips：" class="headerlink" title="tips："></a>tips：</h1><h2 id="多表查询连接："><a href="#多表查询连接：" class="headerlink" title="多表查询连接："></a>多表查询连接：</h2><p>join in（内连接）相当于where（条件）；条件两边都存在才会返回对应的row</p>
-<p>left   join in (左外连接)；条件左边存在便会返回相应的row</p>
-<p>full join in （全外连接）；只要有一边存在便会返回相应的row</p>
+<li><p>导入依赖</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- https://mvnrepository.com/artifact/org.projectlombok/lombok --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.projectlombok<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>lombok<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.18.20<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">scope</span>&gt;</span>provided<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+<li><p>使用注解</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">@Getter and @Setter</span><br><span class="line">@FieldNameConstants</span><br><span class="line">@ToString</span><br><span class="line">@EqualsAndHashCode</span><br><span class="line">@AllArgsConstructor, @RequiredArgsConstructor and @NoArgsConstructor</span><br><span class="line">@Log, @Log4j, @Log4j2, @Slf4j, @XSlf4j, @CommonsLog, @JBossLog, @Flogger, @CustomLog</span><br><span class="line">@Data</span><br><span class="line">@Builder</span><br><span class="line">@SuperBuilder</span><br><span class="line">@Singular</span><br><span class="line">@Delegate</span><br><span class="line">@Value</span><br><span class="line">@Accessors</span><br><span class="line">@Wither</span><br><span class="line">@With</span><br><span class="line">@SneakyThrows</span><br><span class="line">@val</span><br><span class="line">@var</span><br><span class="line">experimental @var</span><br><span class="line">@UtilityClass</span><br></pre></td></tr></table></figure>
+<p>要掌握的</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">@Data</span><br><span class="line">@AllArgsConstructor;@NoArgsConstructor(有参无参构造)</span><br><span class="line">@EqualsAndHashCode</span><br><span class="line">@ToString</span><br><span class="line">@Getter and @Setter</span><br></pre></td></tr></table></figure>
 
+
+
+</li>
+</ol>
+<h1 id="10-联表查询（）"><a href="#10-联表查询（）" class="headerlink" title="10.联表查询（）"></a>10.联表查询（）</h1><h2 id="10-1多对一"><a href="#10-1多对一" class="headerlink" title="10.1多对一"></a>10.1多对一</h2><p>student表中有一个私有属性Teacher</p>
+<h3 id="1-子查询："><a href="#1-子查询：" class="headerlink" title="1.子查询："></a>1.子查询：</h3><p><img src="/2021/07/18/MyMybaits/image-20210720205108957.png" alt="image-20210720205108957"></p>
+<h3 id="2-联表查询"><a href="#2-联表查询" class="headerlink" title="2.联表查询"></a>2.联表查询</h3><p><img src="/2021/07/18/MyMybaits/image-20210720205519514.png" alt="image-20210720205519514"></p>
+<h2 id="10-2一对多"><a href="#10-2一对多" class="headerlink" title="10.2一对多"></a>10.2一对多</h2><p>老师对应的学生是list对象</p>
+<h3 id="1-联表查询"><a href="#1-联表查询" class="headerlink" title="1.联表查询"></a>1.联表查询</h3><p><img src="/2021/07/18/MyMybaits/image-20210720211653999.png" alt="image-20210720211653999"></p>
+<p><img src="/2021/07/18/MyMybaits/image-20210720211447289.png" alt="image-20210720211447289"></p>
+<p>区别：一个resultmap中使用的是association和javaType；一个使用的是collection和ofType</p>
+<h3 id="2-子查询"><a href="#2-子查询" class="headerlink" title="2.子查询"></a>2.子查询</h3><p><img src="/2021/07/18/MyMybaits/image-20210720212025266.png" alt="image-20210720212025266"></p>
+<h1 id="11-动态sql"><a href="#11-动态sql" class="headerlink" title="11.动态sql"></a>11.动态sql</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">if</span><br><span class="line">choose (when, otherwise)</span><br><span class="line">trim (where, set)</span><br><span class="line">foreach</span><br></pre></td></tr></table></figure>
+<h2 id="11-1搭建环境"><a href="#11-1搭建环境" class="headerlink" title="11.1搭建环境"></a>11.1搭建环境</h2><p><img src="/2021/07/18/MyMybaits/image-20210721090927082.png" alt="image-20210721090927082"></p>
+<p><img src="/2021/07/18/MyMybaits/image-20210721093225751.png" alt="image-20210721093225751"></p>
+<p><img src="/2021/07/18/MyMybaits/image-20210721090952357.png" alt="image-20210721090952357"></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">settings</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">setting</span> <span class="attr">name</span>=<span class="string">&quot;logImpl&quot;</span> <span class="attr">value</span>=<span class="string">&quot;LOG4J&quot;</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">setting</span> <span class="attr">name</span>=<span class="string">&quot;mapUnderscoreCamelCase&quot;</span> <span class="attr">value</span>=<span class="string">&quot;true&quot;</span>/&gt;</span> //开启驼峰命名装换</span><br><span class="line"><span class="tag">&lt;/<span class="name">settings</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="11-2使用"><a href="#11-2使用" class="headerlink" title="11.2使用"></a>11.2使用</h2><h3 id="1-if"><a href="#1-if" class="headerlink" title="1.if"></a>1.if</h3><p><img src="/2021/07/18/MyMybaits/image-20210721120618208.png" alt="image-20210721120618208"></p>
+<p><img src="/2021/07/18/MyMybaits/image-20210721120714916.png" alt="image-20210721120714916"></p>
+<p><img src="/2021/07/18/MyMybaits/image-20210721120803135.png" alt="image-20210721120803135"></p>
+<h3 id="2-choose（when-otherwise）"><a href="#2-choose（when-otherwise）" class="headerlink" title="2.choose（when, otherwise）"></a>2.choose（when, otherwise）</h3><p><img src="/2021/07/18/MyMybaits/image-20210721121039864.png" alt="image-20210721121039864"></p>
+<p><img src="/2021/07/18/MyMybaits/image-20210721121308430.png" alt="image-20210721121308430"></p>
+<p><img src="/2021/07/18/MyMybaits/image-20210721122014917.png" alt="image-20210721122014917"></p>
+<p>choose相当于java中的switch</p>
+<p><img src="/2021/07/18/MyMybaits/image-20210721122301601.png" alt="image-20210721122301601"></p>
+<p>都满足，只走第一个</p>
+<p>必须满足最后一个otherwise，否者无法运行</p>
+<h3 id="3-trim（when-set）"><a href="#3-trim（when-set）" class="headerlink" title="3.trim（when, set）"></a>3.trim（when, set）</h3><p><img src="/2021/07/18/MyMybaits/image-20210721122504391.png" alt="image-20210721122504391"></p>
+<p><img src="/2021/07/18/MyMybaits/image-20210721122837748.png" alt="image-20210721122837748"></p>
+<p>set会自动删除逗号</p>
+<h2 id="11-3-sql片段"><a href="#11-3-sql片段" class="headerlink" title="11.3 sql片段"></a>11.3 sql片段</h2><p><img src="/2021/07/18/MyMybaits/image-20210721151012544.png" alt="image-20210721151012544"></p>
+<h2 id="11-4-foreach"><a href="#11-4-foreach" class="headerlink" title="11.4 foreach"></a>11.4 foreach</h2><p><img src="/2021/07/18/MyMybaits/image-20210721151548878.png" alt="image-20210721151548878"></p>
+<p><img src="/2021/07/18/MyMybaits/image-20210721151857662.png" alt="image-20210721151857662"></p>
+<p><img src="/2021/07/18/MyMybaits/image-20210721152046830.png" alt="image-20210721152046830"></p>
+<h1 id="12-缓存"><a href="#12-缓存" class="headerlink" title="12.缓存"></a>12.缓存</h1><h2 id="12-1-一级缓存"><a href="#12-1-一级缓存" class="headerlink" title="12.1 一级缓存"></a>12.1 一级缓存</h2><p>sqlsession级别的缓存—————-一级缓存</p>
+<p>到sqlsession.close结束</p>
+<p>增删改都会刷新缓存（所有）</p>
+<p><img src="/2021/07/18/MyMybaits/image-20210721155157868.png" alt="image-20210721155157868"></p>
+<h2 id="12-2-二级缓存"><a href="#12-2-二级缓存" class="headerlink" title="12.2 二级缓存"></a>12.2 二级缓存</h2><p>基于namespace的缓存</p>
+<p><img src="/2021/07/18/MyMybaits/image-20210721155701053.png" alt="image-20210721155701053"></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">cache</span> /&gt;</span> //就能打开二级缓存</span><br></pre></td></tr></table></figure>
+<h2 id="缓存原理"><a href="#缓存原理" class="headerlink" title="缓存原理"></a>缓存原理</h2><p><img src="/2021/07/18/MyMybaits/image-20210721160912007.png" alt="image-20210721160912007"></p>
+<h2 id="12-4自定义缓存-Ecache"><a href="#12-4自定义缓存-Ecache" class="headerlink" title="12.4自定义缓存-Ecache"></a>12.4自定义缓存-Ecache</h2>
       
     </div>
 
@@ -865,7 +483,7 @@
 
 
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/21/">21</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
