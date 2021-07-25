@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.3.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/dide.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/dide.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.1/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css">
+
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"windsfox.github.io","root":"/","images":"/images","scheme":"Pisces","version":"8.1.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":true}};
+  </script>
+<meta property="og:type" content="website">
+<meta property="og:title" content="windsfoxの博客">
+<meta property="og:url" content="http://windsfox.github.io/page/4/index.html">
+<meta property="og:site_name" content="windsfoxの博客">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="windsfox">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://windsfox.github.io/page/4/">
+
+
+<script class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : true,
+    isPost : false,
+    lang   : 'zh-CN'
+  };
+</script>
+<title>windsfoxの博客</title>
+  
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="windsfoxの博客" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">windsfoxの博客</h1>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+        <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <section class="post-toc-wrap sidebar-panel">
+        </section>
+        <!--/noindex-->
+
+        <section class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="windsfox"
+      src="/images/kong.jpg">
+  <p class="site-author-name" itemprop="name">windsfox</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">21</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/windsfox" title="MyGitHub → https:&#x2F;&#x2F;github.com&#x2F;windsfox" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>MyGitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://blog.csdn.net/last_god_zuo" title="CSDN → https:&#x2F;&#x2F;blog.csdn.net&#x2F;last_god_zuo" rel="noopener" target="_blank"><i class="fa fa-crosshairs fa-fw"></i>CSDN</a>
+      </span>
+  </div>
+
+
+
+        </section>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://windsfox.github.io/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/kong.jpg">
+      <meta itemprop="name" content="windsfox">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="windsfoxの博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" class="post-title-link" itemprop="url">计算机网络</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-03-01 13:01:24" itemprop="dateCreated datePublished" datetime="2021-03-01T13:01:24+08:00">2021-03-01</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-06-29 15:00:18" itemprop="dateModified" datetime="2021-06-29T15:00:18+08:00">2021-06-29</time>
+      </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h1><h2 id="1-1总览"><a href="#1-1总览" class="headerlink" title="1.1总览"></a>1.1总览</h2><p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210302222454717.png" alt="image-20210302222454717"></p>
+<h3 id="计算机网络概念："><a href="#计算机网络概念：" class="headerlink" title="计算机网络概念："></a>计算机网络概念：</h3><p>互联，自治的计算机集合(<strong>特点：连通性，共享</strong>)</p>
+<h3 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h3><p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210302221856169.png" alt="image-20210302221856169"></p>
+<h3 id="组成"><a href="#组成" class="headerlink" title="组成"></a>组成</h3><p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210302222044031.png" alt="image-20210302222044031"></p>
+<h3 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h3><p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210302222418313.png" alt="image-20210302222418313"></p>
+<h2 id="1-2标准化和相关组织"><a href="#1-2标准化和相关组织" class="headerlink" title="1.2标准化和相关组织"></a>1.2标准化和相关组织</h2><h3 id="标准化工作："><a href="#标准化工作：" class="headerlink" title="标准化工作："></a>标准化工作：</h3><p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210302222831758.png" alt="image-20210302222831758"></p>
+<h3 id="相关组织："><a href="#相关组织：" class="headerlink" title="相关组织："></a>相关组织：</h3><p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210302222934750.png" alt="image-20210302222934750"></p>
+<h2 id="1-3速率相关的性能指标"><a href="#1-3速率相关的性能指标" class="headerlink" title="1.3速率相关的性能指标"></a>1.3速率相关的性能指标</h2><p>速率</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210302223244450.png" alt="image-20210302223244450"></p>
+<p>带宽</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210302223813711.png" alt="image-20210302223813711"></p>
+<p>吞吐量</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210302224211510.png" alt="image-20210302224211510"></p>
+<p>时延</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210302224659582.png" alt="image-20210302224659582"></p>
+<p>时延带宽积</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210302225019180.png" alt="image-20210302225019180"></p>
+<p>往返时延RTT</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210302225208226.png" alt="image-20210302225208226"></p>
+<p>利用率</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210302225346741.png" alt="image-20210302225346741"></p>
+<h1 id="多捞啊："><a href="#多捞啊：" class="headerlink" title="多捞啊："></a>多捞啊：</h1><p>—————————————————————————————–分割线——————————————————-</p>
+<h1 id="计算机网络和因特网"><a href="#计算机网络和因特网" class="headerlink" title="计算机网络和因特网"></a>计算机网络和因特网</h1><h2 id="1-1什么是因特网"><a href="#1-1什么是因特网" class="headerlink" title="1.1什么是因特网"></a>1.1什么是因特网</h2><h3 id="1-1-1构成和服务角度描述："><a href="#1-1-1构成和服务角度描述：" class="headerlink" title="1.1.1构成和服务角度描述："></a>1.1.1构成和服务角度描述：</h3><h3 id="1-1-2协议："><a href="#1-1-2协议：" class="headerlink" title="1.1.2协议："></a>1.1.2协议：</h3><p>三要素：语法；语义，同步</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210309205752831.png" alt="image-20210309205752831"></p>
+<h2 id="1-2网络边缘"><a href="#1-2网络边缘" class="headerlink" title="1.2网络边缘"></a>1.2网络边缘</h2><h3 id="1-2-1接入网和物理媒体"><a href="#1-2-1接入网和物理媒体" class="headerlink" title="1.2.1接入网和物理媒体"></a>1.2.1接入网和物理媒体</h3><p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210309205900016.png" alt="image-20210309205900016"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210309210249838.png" alt="image-20210309210249838"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210309210549751.png" alt="image-20210309210549751"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210309210701573.png" alt="image-20210309210701573"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210309210806825.png" alt="image-20210309210806825"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210309210857170.png" alt="image-20210309210857170"></p>
+<h3 id="1-2-2"><a href="#1-2-2" class="headerlink" title="1.2.2"></a>1.2.2</h3><p>家庭接入网络</p>
+<p>企业接入网络</p>
+<p>WiFi接入网络</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210309211244997.png" alt="image-20210309211244997"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210309211554300.png" alt="image-20210309211554300"></p>
+<ol>
+<li><p>双绞线；同轴电缆；光纤电缆</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210309211719789.png" alt="image-20210309211719789"></p>
+</li>
+<li><p>无线链路</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210309211820079.png" alt="image-20210309211820079"></p>
+</li>
+</ol>
+<h2 id="1-3网络核心"><a href="#1-3网络核心" class="headerlink" title="1.3网络核心"></a>1.3网络核心</h2><ol>
+<li><p>电路交换</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210309212129390.png" alt="image-20210309212129390"></p>
+</li>
+<li><p>分组交换</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210309212534019.png" alt="image-20210309212534019"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210309212547970.png" alt="image-20210309212547970"></p>
+</li>
+<li><p>比较</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210309212723813.png" alt="image-20210309212723813"></p>
+</li>
+<li><p>总结</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210309212816824.png" alt="image-20210309212816824"></p>
+</li>
+</ol>
+<h2 id="1-4分组交换网络中的延时，丢失，吞吐量"><a href="#1-4分组交换网络中的延时，丢失，吞吐量" class="headerlink" title="1.4分组交换网络中的延时，丢失，吞吐量"></a>1.4分组交换网络中的延时，丢失，吞吐量</h2><p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210309213520289.png" alt="image-20210309213520289"> </p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210309213853781.png" alt="image-20210309213853781"></p>
+<h3 id="排队时延"><a href="#排队时延" class="headerlink" title="排队时延"></a>排队时延</h3><p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210318155634719.png" alt="image-20210318155634719"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210318155705359.png" alt="image-20210318155705359"></p>
+<h3 id="传播时延"><a href="#传播时延" class="headerlink" title="传播时延"></a>传播时延</h3><p>L/R</p>
+<h2 id="1-5协议层次及服务模型"><a href="#1-5协议层次及服务模型" class="headerlink" title="1.5协议层次及服务模型"></a>1.5协议层次及服务模型</h2><p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210311181928691.png" alt="image-20210311181928691"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210318160011520.png" alt="image-20210318160011520"></p>
+<h2 id="1-6网络安全概述"><a href="#1-6网络安全概述" class="headerlink" title="1.6网络安全概述"></a>1.6网络安全概述</h2><h2 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h2><p>无线信道传输媒体不包括：光纤（包括激光；微波；红外线）</p>
+<p>数据链路层传输的单位是：<strong>帧</strong></p>
+<p>主机或端系统通过<strong>ISP</strong>接入网络</p>
+<p>接入网，是指将端系统连接到<strong>边缘路由器</strong>的物理链路</p>
+<p>用户常以<strong>100Mbps</strong>的速率接入以太网交换机</p>
+<p>在网络协议1栈中，（<strong>运输层</strong>）扶着端到端的<strong>数据报文</strong>的发送与接收</p>
+<p>虚电路网络一定是面向连接的</p>
+<p>路径选择功能是在OSI模型的（<strong>网络层</strong>）上完成的</p>
+<h1 id="应用层"><a href="#应用层" class="headerlink" title="应用层"></a>应用层</h1><h2 id="2-1应用层协议原理"><a href="#2-1应用层协议原理" class="headerlink" title="2.1应用层协议原理"></a>2.1应用层协议原理</h2><ol>
+<li><p>套接字</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210311192635163.png" alt="image-20210311192635163"></p>
+</li>
+<li><p>进程寻址</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210311193039727.png" alt="image-20210311193039727"></p>
+</li>
+<li><p>传输协议提出的服务</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210311194716869.png" alt="image-20210311194716869"></p>
+</li>
+</ol>
+<h2 id="2-2"><a href="#2-2" class="headerlink" title="2.2"></a>2.2</h2><h3 id="2-2-1-HTTP概述"><a href="#2-2-1-HTTP概述" class="headerlink" title="2.2.1 HTTP概述"></a>2.2.1 HTTP概述</h3><h3 id="2-2-2非持久连接和持久连接"><a href="#2-2-2非持久连接和持久连接" class="headerlink" title="2.2.2非持久连接和持久连接"></a>2.2.2非持久连接和持久连接</h3><p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210311202814371.png" alt="image-20210311202814371"></p>
+<h3 id="2-2-3-HTTP报文格式"><a href="#2-2-3-HTTP报文格式" class="headerlink" title="2.2.3 HTTP报文格式"></a>2.2.3 HTTP报文格式</h3><p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210311203152931.png" alt="image-20210311203152931"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210311203327115.png" alt="image-20210311203327115"></p>
+<p>响应状态码：</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210311203554547.png" alt="image-20210311203554547"></p>
+<h3 id="2-2-4用户和服务器的交互：Cookies"><a href="#2-2-4用户和服务器的交互：Cookies" class="headerlink" title="2.2.4用户和服务器的交互：Cookies"></a>2.2.4用户和服务器的交互：Cookies</h3><p>cookies是一个数字；不是记录信息的文件</p>
+<h3 id="2-2-5-Web缓存"><a href="#2-2-5-Web缓存" class="headerlink" title="2.2.5 Web缓存"></a>2.2.5 Web缓存</h3><p>条件GET方法：</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210311205329667.png" alt="image-20210311205329667"></p>
+<p>缓存先访问外部Server，Server发出是否文件修改的响应码；如果为304，则没修改，缓存直接将自己的文件发给客户端；否则，从Server处拿数据。</p>
+<h2 id="2-3文件传输协议（FTP）"><a href="#2-3文件传输协议（FTP）" class="headerlink" title="2.3文件传输协议（FTP）"></a>2.3文件传输协议（FTP）</h2><p>FTP允许双方互相操作</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210312161232574.png" alt="image-20210312161232574"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210312161431311.png" alt="image-20210312161431311"></p>
+<p>控制连接：21；数据连接：20</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210312162003063.png" alt="image-20210312162003063"></p>
+<h2 id="2-4"><a href="#2-4" class="headerlink" title="2.4"></a>2.4</h2><h3 id="2-4-1-SMTP"><a href="#2-4-1-SMTP" class="headerlink" title="2.4.1 SMTP"></a>2.4.1 SMTP</h3><p>邮件发送协议：SMTP</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210313140945842.png" alt="image-20210313140945842"></p>
+<p>简单邮件传输协议服务器的端口号是（25）</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210313145838119.png" alt="image-20210313145838119"></p>
+<p>写入数据：</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210313145937113.png" alt="image-20210313145937113"></p>
+<p>对比HTTP：</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210313150026290.png" alt="image-20210313150026290"></p>
+<h3 id="2-4-2邮件报文格式和MIME"><a href="#2-4-2邮件报文格式和MIME" class="headerlink" title="2.4.2邮件报文格式和MIME"></a>2.4.2邮件报文格式和MIME</h3><p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210319160801418.png" alt="image-20210319160801418"></p>
+<p>头部是邮件内容的组成部分；</p>
+<h3 id="2-4-3邮件访问协议"><a href="#2-4-3邮件访问协议" class="headerlink" title="2.4.3邮件访问协议"></a>2.4.3邮件访问协议</h3><p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210319162032504.png" alt="image-20210319162032504"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210319162137199.png" alt="image-20210319162137199"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210319162253509.png" alt="image-20210319162253509"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210319162630326.png" alt="image-20210319162630326"></p>
+<h2 id="2-5-DNS体系介绍和工作原理"><a href="#2-5-DNS体系介绍和工作原理" class="headerlink" title="2.5 DNS体系介绍和工作原理"></a>2.5 DNS体系介绍和工作原理</h2><p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210328202942257.png" alt="image-20210328202942257"></p>
+<p>用途域名和国家域名</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210613182917566.png" alt="image-20210613182917566"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210613182936593.png" alt="image-20210613182936593"></p>
+<p>迭代查询和递归查询</p>
+<h2 id="2-6-p2p应用"><a href="#2-6-p2p应用" class="headerlink" title="2.6 p2p应用"></a>2.6 p2p应用</h2><p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210403145314768.png" alt="image-20210403145314768"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210328213601005.png" alt="image-20210328213601005"></p>
+<h2 id="2-7-TCP和UDP套接字编程"><a href="#2-7-TCP和UDP套接字编程" class="headerlink" title="2.7 TCP和UDP套接字编程"></a>2.7 TCP和UDP套接字编程</h2><p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210403150249891.png" alt="image-20210403150249891"></p>
+<p>可靠：数据报；不可靠：字节流</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210403150506890.png" alt="image-20210403150506890"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210403151339309.png" alt="image-20210403151339309"></p>
+<h2 id="题目：-1"><a href="#题目：-1" class="headerlink" title="题目："></a>题目：</h2><p>FTP默认服务端口号是21</p>
+<p>无连接服务适合短文本传输</p>
+<p>无连接服务在数据传输的过程中动态分配带宽</p>
+<p>面向连接服务适用于数据量大，实时性要求高的场合</p>
+<p>面向连接的服务的信道利用率低</p>
+<p>网络按通信方式可分为<strong>点对点传输</strong>和<strong>广播式传输</strong></p>
+<p>在DNS服务中，本地DNS服务器在向权威服务器发送查询的时候，有递归查询和迭代查询（轮次查询（意义不明））</p>
+<h1 id="运输层（传输层）"><a href="#运输层（传输层）" class="headerlink" title="运输层（传输层）"></a>运输层（传输层）</h1><h2 id="3-1概数和运输服务层"><a href="#3-1概数和运输服务层" class="headerlink" title="3.1概数和运输服务层"></a>3.1概数和运输服务层</h2><p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210403152159188.png" alt="image-20210403152159188"></p>
+<h2 id="3-2多路复用和多路分解"><a href="#3-2多路复用和多路分解" class="headerlink" title="3.2多路复用和多路分解"></a>3.2多路复用和多路分解</h2><p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210403152743764.png" alt="image-20210403152743764"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210403153018310.png" alt="image-20210403153018310"></p>
+<h2 id="3-3无连接运输UDP"><a href="#3-3无连接运输UDP" class="headerlink" title="3.3无连接运输UDP"></a>3.3无连接运输UDP</h2><p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210406144358303.png" alt="image-20210406144358303"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210406144949504.png" alt="image-20210406144949504"></p>
+<p>首部的每个单位占两个字节，源端口号在不希望对方回信的时候全部置为0；长度最小为首部长度（8）;检验和用于检查是否正确</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210406145409824.png" alt="image-20210406145409824"></p>
+<h2 id="3-4"><a href="#3-4" class="headerlink" title="3.4"></a>3.4</h2><h3 id="3-4-1构造可靠数据传输协议"><a href="#3-4-1构造可靠数据传输协议" class="headerlink" title="3.4.1构造可靠数据传输协议"></a>3.4.1构造可靠数据传输协议</h3><p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210406152903474.png" alt="image-20210406152903474"></p>
+<p>停等协议 </p>
+<p>rdt2.1的发送方</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210406153637666.png" alt="image-20210406153637666"></p>
+<p>接收方</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210406153829292.png" alt="image-20210406153829292"></p>
+<p>rdt2.2（无NAK）</p>
+<p>接收方通过发送前一个数据报的ACKs来代替NAK（都表示发送出错了）</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210406154935177.png" alt="image-20210406154935177"></p>
+<p>rdt3.0</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210406155808766.png" alt="image-20210406155808766"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210406160014785.png" alt="image-20210406160014785"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210406160024878.png" alt="image-20210406160024878"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210406160454554.png" alt="image-20210406160454554"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210406160503071.png" alt="image-20210406160503071"></p>
+<h3 id="3-4-2流水线可靠数据传输协议"><a href="#3-4-2流水线可靠数据传输协议" class="headerlink" title="3.4.2流水线可靠数据传输协议"></a>3.4.2流水线可靠数据传输协议</h3><p>滑动窗口协议</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210406202823268.png" alt="image-20210406202823268"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210406203112728.png" alt="image-20210406203112728"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210406203544397.png" alt="image-20210406203544397"></p>
+<p>选着性重传（SR）</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210406203819142.png" alt="image-20210406203819142"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210406204219690.png" alt="image-20210406204219690"></p>
+<p>窗口大小，应该小于或者等于序号大小的一半，否则就会出现不知道是第一次的数据报，还是第二次的数据报的情况</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210406204400100.png" alt="image-20210406204400100"></p>
+<h2 id="3-5-1TCP概述"><a href="#3-5-1TCP概述" class="headerlink" title="3.5.1TCP概述"></a>3.5.1TCP概述</h2><p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210406205238869.png" alt="image-20210406205238869"></p>
+<p>应用层自己处理边界问题</p>
+<p>格式</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210406205435960.png" alt="image-20210406205435960"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210614152310792.png" alt="image-20210614152310792"></p>
+<p>接收端收到psh为1的数据，应当立刻将数据上传到上层</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210425210919444.png" alt="image-20210425210919444"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210406210010902.png" alt="image-20210406210010902"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210425212739582.png" alt="image-20210425212739582"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210425213923485.png" alt="image-20210425213923485"></p>
+<h2 id="3-5-2TCP流量控制与连接管理"><a href="#3-5-2TCP流量控制与连接管理" class="headerlink" title="3.5.2TCP流量控制与连接管理"></a>3.5.2TCP流量控制与连接管理</h2><p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210418105150279.png" alt="image-20210418105150279"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210418105352787.png" alt="image-20210418105352787"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210425220641643.png" alt="image-20210425220641643"></p>
+<p>流量控制是针对缓冲区溢出的</p>
+<h2 id="3-6拥塞控制原理"><a href="#3-6拥塞控制原理" class="headerlink" title="3.6拥塞控制原理"></a>3.6拥塞控制原理</h2><p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210418111220356.png" alt="image-20210418111220356"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210418111232848.png" alt="image-20210418111232848"></p>
+<p>congwin/RTT：网络带宽</p>
+<p>每对主机分享相同的带宽：（原因）</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210425230719004.png" alt="image-20210425230719004"></p>
+<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>TCP和UDP都是面向报文的（错）UDP是用户数据报的传输协议，TCP是面向（数据流）的传输协议</p>
+<p>在G-B-N中，滑动窗口不是固定的</p>
+<p>若一个TCP报文段的序号字段值是401， 而携带的数据共有100字节，则下一个报文段的序号值应该是______501___。</p>
+<p>超时后，拥塞窗口慢增长的极限变为为超时时拥塞窗口的一半，后面一个增加一个的线性增长（不超过接受窗口）</p>
+<h1 id="网络层"><a href="#网络层" class="headerlink" title="网络层"></a>网络层</h1><h2 id="导论："><a href="#导论：" class="headerlink" title="导论："></a>导论：</h2><p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210427231640984.png" alt="image-20210427231640984"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210427231747674.png" alt="image-20210427231747674"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210427232432726.png" alt="image-20210427232432726"></p>
+<h2 id="路由器的组成："><a href="#路由器的组成：" class="headerlink" title="路由器的组成："></a>路由器的组成：</h2><p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210427233009047.png" alt="image-20210427233009047"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210427233310610.png" alt="image-20210427233310610"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210427233327912.png" alt="image-20210427233327912"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210427233412498.png" alt="image-20210427233412498"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210427233521287.png" alt="image-20210427233521287"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210427233641812.png" alt="image-20210427233641812"></p>
+<h2 id="IP-Internet-Protocol"><a href="#IP-Internet-Protocol" class="headerlink" title="IP Internet Protocol:"></a>IP Internet Protocol:</h2><p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210428203019457.png" alt="image-20210428203019457"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210428210504523.png" alt="image-20210428210504523"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210428211451529.png" alt="image-20210428211451529"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210428212257135.png" alt="image-20210428212257135"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210428212455573.png" alt="image-20210428212455573"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210428213050545.png" alt="image-20210428213050545"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210428213133783.png" alt="image-20210428213133783"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210429183807657.png" alt="image-20210429183807657"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210429184549191.png" alt="image-20210429184549191"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210429184644247.png" alt="image-20210429184644247"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210429184737028.png" alt="image-20210429184737028"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210429184924414.png" alt="image-20210429184924414"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210429185051661.png" alt="image-20210429185051661"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210429185325841.png" alt="image-20210429185325841"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210429190256127.png" alt="image-20210429190256127"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210429215838233.png" alt="image-20210429215838233"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210429220130286.png" alt="image-20210429220130286"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210429220215941.png" alt="image-20210429220215941"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210429220226373.png" alt="image-20210429220226373"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210429224156363.png" alt="image-20210429224156363"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210429224224666.png" alt="image-20210429224224666"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210429224429897.png" alt="image-20210429224429897"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210429224655957.png" alt="image-20210429224655957"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210429225020632.png" alt="image-20210429225020632"></p>
+<h2 id="4-4通用转发和SDN："><a href="#4-4通用转发和SDN：" class="headerlink" title="4.4通用转发和SDN："></a>4.4通用转发和SDN：</h2><p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210429225147743.png" alt="image-20210429225147743"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210429225236690.png" alt="image-20210429225236690"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210429225352417.png" alt="image-20210429225352417"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210429225836503.png" alt="image-20210429225836503"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210429230834316.png" alt="image-20210429230834316"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210429231019557.png" alt="image-20210429231019557"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210429231123822.png" alt="image-20210429231123822"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210505200249660.png" alt="image-20210505200249660"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210429231235385.png" alt="image-20210429231235385"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210505200453374.png" alt="image-20210505200453374"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210429231438835.png" alt="image-20210429231438835"></p>
+<h1 id="MOOC的网络层"><a href="#MOOC的网络层" class="headerlink" title="MOOC的网络层"></a>MOOC的网络层</h1><h2 id="4-1概述："><a href="#4-1概述：" class="headerlink" title="4.1概述："></a>4.1概述：</h2><p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210520150503638.png" alt="image-20210520150503638"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210520150825542.png" alt="image-20210520150825542"></p>
+<h2 id="4-2虚电路和数据报网络"><a href="#4-2虚电路和数据报网络" class="headerlink" title="4.2虚电路和数据报网络"></a>4.2虚电路和数据报网络</h2><p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210520151034168.png" alt="image-20210520151034168"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210520151355689.png" alt="image-20210520151355689"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210520152607112.png" alt="image-20210520152607112"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210520152644526.png" alt="image-20210520152644526"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210520152812909.png" alt="image-20210520152812909"></p>
+<h2 id="4-3路由器工作原理"><a href="#4-3路由器工作原理" class="headerlink" title="4.3路由器工作原理"></a>4.3路由器工作原理</h2><p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210520152940429.png" alt="image-20210520152940429"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210520153622381.png" alt="image-20210520153622381"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210520153633903.png" alt="image-20210520153633903"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210520153727349.png" alt="image-20210520153727349"></p>
+<p>内存式：早期路由器；总线，纵横式：现在路由器</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210520153912467.png" alt="image-20210520153912467"></p>
+<p>速率受总线带宽限制</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210520153946852.png" alt="image-20210520153946852"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210520154024335.png" alt="image-20210520154024335"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210520154246624.png" alt="image-20210520154246624"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210520154322937.png" alt="image-20210520154322937"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210520154407952.png" alt="image-20210520154407952"></p>
+<p>绿色分组经历HOL阻塞（线头阻塞）</p>
+<h2 id="4-4-1网际协议-报文格式和分片"><a href="#4-4-1网际协议-报文格式和分片" class="headerlink" title="4.4.1网际协议-报文格式和分片"></a>4.4.1网际协议-报文格式和分片</h2><p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210520160913983.png" alt="image-20210520160913983"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210520161057252.png" alt="image-20210520161057252"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210520161321479.png" alt="image-20210520161321479"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210520161410428.png" alt="image-20210520161410428"></p>
+<h2 id="4-4-2网际协议-IPV4编址"><a href="#4-4-2网际协议-IPV4编址" class="headerlink" title="4.4.2网际协议-IPV4编址"></a>4.4.2网际协议-IPV4编址</h2><p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521102452522.png" alt="image-20210521102452522"></p>
+<p>子网：</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521103149571.png" alt="image-20210521103149571"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521103230813.png" alt="image-20210521103230813"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521103631040.png" alt="image-20210521103631040"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521103723780.png" alt="image-20210521103723780"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521103758961.png" alt="image-20210521103758961"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521103950383.png" alt="image-20210521103950383"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521104406622.png" alt="image-20210521104406622"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521104642036.png" alt="image-20210521104642036"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521104742084.png" alt="image-20210521104742084"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521104843692.png" alt="image-20210521104843692"></p>
+<h2 id="4-5-1链路状态路由算法："><a href="#4-5-1链路状态路由算法：" class="headerlink" title="4.5.1链路状态路由算法："></a>4.5.1链路状态路由算法：</h2><p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521110957384.png" alt="image-20210521110957384"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210505201944386.png" alt="image-20210505201944386"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210505202021275.png" alt="image-20210505202021275"></p>
+<p>链路状态算法是一种全局路由算法</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210505202409190.png" alt="image-20210505202409190"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210505202242441.png" alt="image-20210505202242441"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210505210804615.png" alt="image-20210505210804615"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210505210904917.png" alt="image-20210505210904917"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521115813577.png" alt="image-20210521115813577"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521115901442.png" alt="image-20210521115901442"></p>
+<h2 id="4-5-2距离向量路由算法："><a href="#4-5-2距离向量路由算法：" class="headerlink" title="4.5.2距离向量路由算法："></a>4.5.2距离向量路由算法：</h2><p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521115935435.png" alt="image-20210521115935435"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521120036026.png" alt="image-20210521120036026"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521120333354.png" alt="image-20210521120333354"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521121044950.png" alt="image-20210521121044950"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521121445423.png" alt="image-20210521121445423"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521140517477.png" alt="image-20210521140517477"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521141141667.png" alt="image-20210521141141667"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521141412507.png" alt="image-20210521141412507"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521141557914.png" alt="image-20210521141557914"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521141620218.png" alt="image-20210521141620218"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521141718099.png" alt="image-20210521141718099"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521141731014.png" alt="image-20210521141731014"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521140631723.png" alt="image-20210521140631723"></p>
+<h2 id="题目：-2"><a href="#题目：-2" class="headerlink" title="题目："></a>题目：</h2><p>收发主机：运行完整的网络轮次；而路由器只需要网络层协议（所以都要运行网络层协议）</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210520150246925.png" alt="image-20210520150246925"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210520161119585.png" alt="image-20210520161119585"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521104215466.png" alt="image-20210521104215466"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521110634400.png" alt="image-20210521110634400"></p>
+<p>链路状态算法属于<strong>全局路由算法</strong>，必须知道每条链路的费用</p>
+<p>分布式的只需要知道和自己相连的链路的费用。</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521120143137.png" alt="image-20210521120143137"></p>
+<h1 id="MOOC链路层"><a href="#MOOC链路层" class="headerlink" title="MOOC链路层"></a>MOOC链路层</h1><h2 id="5-1链路层概述："><a href="#5-1链路层概述：" class="headerlink" title="5.1链路层概述："></a>5.1链路层概述：</h2><p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521151026546.png" alt="image-20210521151026546"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521151124784.png" alt="image-20210521151124784"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521151228739.png" alt="image-20210521151228739"></p>
+<h2 id="5-2差错检测和纠错技术"><a href="#5-2差错检测和纠错技术" class="headerlink" title="5.2差错检测和纠错技术"></a>5.2差错检测和纠错技术</h2><p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521151837265.png" alt="image-20210521151837265"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521151920568.png" alt="image-20210521151920568"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521152119440.png" alt="image-20210521152119440"></p>
+<p>奇偶校验：</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521152155766.png" alt="image-20210521152155766"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521152312499.png" alt="image-20210521152312499"></p>
+<p>检查和方法：</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521152401516.png" alt="image-20210521152401516"></p>
+<p>循环冗余检测方法：（以太网中实际采用的差错检测方法）</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521153058396.png" alt="image-20210521153058396"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521153122772.png" alt="image-20210521153122772"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521153654410.png" alt="image-20210521153654410"></p>
+<p>发送方：</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521154030198.png" alt="image-20210521154030198"></p>
+<p>生成多项式G始终要比R多一位</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521154120731.png" alt="image-20210521154120731"></p>
+<h2 id="5-3多路访问链路和协议"><a href="#5-3多路访问链路和协议" class="headerlink" title="5.3多路访问链路和协议"></a>5.3多路访问链路和协议</h2><p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521154400500.png" alt="image-20210521154400500"></p>
+<p>多路访问协议：</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521154924047.png" alt="image-20210521154924047"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521154932065.png" alt="image-20210521154932065"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521154949481.png" alt="image-20210521154949481"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521155121496.png" alt="image-20210521155121496"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521155139122.png" alt="image-20210521155139122"></p>
+<p>冲突检测协议：（现在主要使用的协议）</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521155245546.png" alt="image-20210521155245546"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521201236757.png" alt="image-20210521201236757"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521201315462.png" alt="image-20210521201315462"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521201345300.png" alt="image-20210521201345300"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521201750065.png" alt="image-20210521201750065"></p>
+<p>CSMA:</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521201836478.png" alt="image-20210521201836478"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521202229172.png" alt="image-20210521202229172"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521202246589.png" alt="image-20210521202246589"></p>
+<p>CSMA/CD</p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521202319176.png" alt="image-20210521202319176"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521202334185.png" alt="image-20210521202334185"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521202346701.png" alt="image-20210521202346701"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521202456286.png" alt="image-20210521202456286"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521202512984.png" alt="image-20210521202512984"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521202708025.png" alt="image-20210521202708025"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521202748544.png" alt="image-20210521202748544"></p>
+<h2 id="5-4-1链路层寻址和ARP"><a href="#5-4-1链路层寻址和ARP" class="headerlink" title="5.4.1链路层寻址和ARP"></a>5.4.1链路层寻址和ARP</h2><p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521202839098.png" alt="image-20210521202839098"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521203314770.png" alt="image-20210521203314770"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521203757955.png" alt="image-20210521203757955"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521204008026.png" alt="image-20210521204008026"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521204123464.png" alt="image-20210521204123464"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521204139888.png" alt="image-20210521204139888"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521204300283.png" alt="image-20210521204300283"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521204408383.png" alt="image-20210521204408383"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521204532820.png" alt="image-20210521204532820"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521204615996.png" alt="image-20210521204615996"></p>
+<h2 id="5-4-2以太网"><a href="#5-4-2以太网" class="headerlink" title="5.4.2以太网"></a>5.4.2以太网</h2><p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521204815293.png" alt="image-20210521204815293"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521204842183.png" alt="image-20210521204842183"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521204850188.png" alt="image-20210521204850188"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521204910599.png" alt="image-20210521204910599"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521204916630.png" alt="image-20210521204916630"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521205152076.png" alt="image-20210521205152076"></p>
+<h2 id="5-4-3链路层交换机"><a href="#5-4-3链路层交换机" class="headerlink" title="5.4.3链路层交换机"></a>5.4.3链路层交换机</h2><p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521205233180.png" alt="image-20210521205233180"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521205323838.png" alt="image-20210521205323838"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521205347634.png" alt="image-20210521205347634"></p>
+<h2 id="题目：-3"><a href="#题目：-3" class="headerlink" title="题目："></a>题目：</h2><p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521151702047.png" alt="image-20210521151702047"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521153742717.png" alt="image-20210521153742717"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521204217485.png" alt="image-20210521204217485"></p>
+<p><img src="/2021/03/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20210521204939626.png" alt="image-20210521204939626"></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://windsfox.github.io/2021/02/26/TFnotexiaosha/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/kong.jpg">
+      <meta itemprop="name" content="windsfox">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="windsfoxの博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/02/26/TFnotexiaosha/" class="post-title-link" itemprop="url">TFnotexiaosha</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2021-02-26 17:30:08 / 修改时间：17:40:19" itemprop="dateCreated datePublished" datetime="2021-02-26T17:30:08+08:00">2021-02-26</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="2-1基本图像分类"><a href="#2-1基本图像分类" class="headerlink" title="2.1基本图像分类"></a>2.1基本图像分类</h2><h2 id="2-1（ps）番外：残差网络"><a href="#2-1（ps）番外：残差网络" class="headerlink" title="2.1（ps）番外：残差网络"></a>2.1（ps）番外：残差网络</h2><h2 id="2-2TF-Hub进行文本分类"><a href="#2-2TF-Hub进行文本分类" class="headerlink" title="2.2TF Hub进行文本分类"></a>2.2TF Hub进行文本分类</h2><h2 id="2-3对预处理文本进行文本分类"><a href="#2-3对预处理文本进行文本分类" class="headerlink" title="2.3对预处理文本进行文本分类"></a>2.3对预处理文本进行文本分类</h2><h2 id="2-4回归"><a href="#2-4回归" class="headerlink" title="2.4回归"></a>2.4回归</h2><h2 id="2-5欠拟合和过拟合"><a href="#2-5欠拟合和过拟合" class="headerlink" title="2.5欠拟合和过拟合"></a>2.5欠拟合和过拟合</h2><h2 id="2-6模型的回复和保存"><a href="#2-6模型的回复和保存" class="headerlink" title="2.6模型的回复和保存"></a>2.6模型的回复和保存</h2>
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/5/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+  </nav>
+
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      const commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">windsfox</span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="//cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
