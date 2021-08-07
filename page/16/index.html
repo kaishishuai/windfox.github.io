@@ -197,7 +197,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">23</span>
+          <span class="site-state-item-count">25</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -256,7 +256,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://windsfox.github.io/2021/01/20/%E7%88%AC%E8%99%AB%E5%AD%A6%E4%B9%A0/">
+    <link itemprop="mainEntityOfPage" href="http://windsfox.github.io/2021/01/25/MyLinux/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/kong.jpg">
@@ -269,7 +269,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/01/20/%E7%88%AC%E8%99%AB%E5%AD%A6%E4%B9%A0/" class="post-title-link" itemprop="url">My Web Crawlers</a>
+          <a href="/2021/01/25/MyLinux/" class="post-title-link" itemprop="url">MyLinux</a>
         </h2>
 
         <div class="post-meta-container">
@@ -280,14 +280,14 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2021-01-20 21:19:32" itemprop="dateCreated datePublished" datetime="2021-01-20T21:19:32+08:00">2021-01-20</time>
+      <time title="创建时间：2021-01-25 10:21:09" itemprop="dateCreated datePublished" datetime="2021-01-25T10:21:09+08:00">2021-01-25</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-02-11 17:21:43" itemprop="dateModified" datetime="2021-02-11T17:21:43+08:00">2021-02-11</time>
+        <time title="修改时间：2021-02-08 22:37:09" itemprop="dateModified" datetime="2021-02-08T22:37:09+08:00">2021-02-08</time>
       </span>
 
   
@@ -300,80 +300,283 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="第一章：requests模块"><a href="#第一章：requests模块" class="headerlink" title="第一章：requests模块"></a>第一章：requests模块</h1><h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><ol>
-<li>导入requests模块</li>
-<li>指定url</li>
-<li>UA伪装</li>
-<li>参数params</li>
-<li>response获取爬取结果</li>
-<li>持久化存储（list_data = response.text(json之类的)）</li>
+          <h1 id="第一章：基础篇"><a href="#第一章：基础篇" class="headerlink" title="第一章：基础篇"></a>第一章：基础篇</h1><h2 id="1-网络连接的三种模式："><a href="#1-网络连接的三种模式：" class="headerlink" title="1.网络连接的三种模式："></a>1.网络连接的三种模式：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">-桥接模式：虚拟系统可以和外部系统通信，但容易照成IP冲突</span><br><span class="line">-NAT模式（网络地址转换模式）：不照成IP冲突</span><br><span class="line">-主机模式：独立的系统</span><br></pre></td></tr></table></figure>
+<h2 id="2-克隆"><a href="#2-克隆" class="headerlink" title="2.克隆"></a>2.克隆</h2><ol>
+<li>关闭挂起或者正在运行的虚拟机。</li>
+<li>右键虚拟机-》管理-》克隆——–》创建完整克隆</li>
 </ol>
-<p>ps：response.text和response.json()一个有括号一个没有括号</p>
-<h1 id="第二章：数据解析"><a href="#第二章：数据解析" class="headerlink" title="第二章：数据解析"></a>第二章：数据解析</h1><h2 id="聚焦爬虫："><a href="#聚焦爬虫：" class="headerlink" title="聚焦爬虫："></a>聚焦爬虫：</h2><p>爬取页面中指定的内容。</p>
-<p>编码流程：</p>
+<h2 id="3-快照"><a href="#3-快照" class="headerlink" title="3.快照"></a>3.快照</h2><p>右键虚拟机-》快照-》拍摄快照</p>
+<p><img src="/2021/01/25/MyLinux/image-20210126131605999.png" alt="image-20210126131605999"></p>
+<p>右键虚拟机-》快照-》快照管理</p>
+<h2 id="4-vmtools"><a href="#4-vmtools" class="headerlink" title="4.vmtools"></a>4.vmtools</h2><p>可以和主机系统共享文件夹</p>
+<p>右键虚拟系统-》设置-》选项-》共享文件夹-》总是启用-》添加</p>
+<p>ps：一般工作中共享文件是使用远程方式完成的</p>
+<h2 id="5-目录结构"><a href="#5-目录结构" class="headerlink" title="5.目录结构"></a>5.目录结构</h2><p>在linux里一切皆为文件，硬件也映射为一个文件</p>
+<p>根目录下的一些子目录：</p>
 <ol>
-<li>指定url</li>
-<li>发起请求</li>
-<li>获取相应数据</li>
-<li>数据解析</li>
-<li>持久化存储</li>
+<li>bin【常用】：存放常用的命令</li>
+<li>sbin：存放系统管理员使用的系统管理程序</li>
+<li>home：存放普通用户的主目录，在Linux中每个用户都有一个自己的子目录</li>
+<li>root：管理员目录：只能管理员进入</li>
+<li>lib：开机所需要最基本的动态链接库，起作用类似于win里的dll文件，所有的应用程序都需要用到这些共享库</li>
+<li>lost+found：这个目录一般情况下是空的，当系统非法关机后，这里就存放了一些文件（隐藏了，需要在终端打开）</li>
+<li>usr【常用】：用于存放很多应用程序和重要文件，类似于win下的program files</li>
+<li>etc【常用】：系统管理所需要的配置文件和子目录，比如安装mysql数据库 my.conf</li>
+<li>boot【常用】：启动linux的一些核心文件，包括一些链接文件和镜像文件</li>
+<li>proc【别动】：虚拟的目录，是系统内存的映射，放稳这个目录获取系统信息</li>
+<li>srv【别动】：service的缩写，存放一些服务启动后需要提取的数据</li>
+<li>sys【别动】：Linux2.6内核的一个很大变化，安装2.6内核中新出现的一个文件系统sysfs=》【】</li>
+<li>tmp：存放一些临时文件</li>
+<li>dev：类似于win的设备管理器，所有硬件用文件形式存储</li>
+<li>media【常用】：linux系统自动识别设备，并把识别到的设备挂载到这个目录下</li>
+<li>mnt【常用】：让用户可以临时<strong>挂载</strong>别的文件系统，例如：myshare</li>
+<li>opt ：给主机额外<strong>安装软件</strong>所摆放的目录，利于oracle数据库就可放在该目录下，默认为空</li>
 </ol>
-<h2 id="数据解析分类"><a href="#数据解析分类" class="headerlink" title="数据解析分类"></a>数据解析分类</h2><ol>
-<li><p>正则：ex =(填div中的对应内容，使用（.<em>?）获取想得到的标签，或者标签里的属性，多余的数据用.</em>?省略)</p>
+<h2 id="6-远程登录"><a href="#6-远程登录" class="headerlink" title="6.远程登录"></a>6.远程登录</h2><p>客户端：Xshell和Xftp</p>
+<p>先找到linux系统在公网上的ip地址：（在终端使用命令：ifconfig）</p>
+<p><img src="/2021/01/25/MyLinux/image-20210126213436827.png" alt="image-20210126213436827"></p>
+<p>甚至reboot指令也能生效，重启linux系统</p>
+<p><img src="/2021/01/25/MyLinux/image-20210126213248577.png" alt="image-20210126213248577"></p>
+<h2 id="7-vi和vim"><a href="#7-vi和vim" class="headerlink" title="7.vi和vim"></a>7.vi和vim</h2><h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><p>vi：linux自带的一种文本编辑器</p>
+<ol>
+<li><p>vim Hello.java（命令）</p>
 </li>
-<li><p>bx4：实例化BeautifulSoup：(from bs4 import BeautifulSoup)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">#将本地的html文档的数据加载到该对象中</span><br><span class="line">fp &#x3D; open(&#39;.&#x2F;test.html&#39;,&#39;r&#39;,encoding &#x3D;&#39;utf-8&#39;)</span><br><span class="line">soup &#x3D; BeautifulSoup(fp,&#39;lxml&#39;)</span><br><span class="line">print(soup)</span><br><span class="line">#网页中的html对象</span><br><span class="line">page_text &#x3D; response.text</span><br><span class="line">soup &#x3D; BeautifulSoup(page_text,&#39;lxml&#39;)</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">soup.tagname  #返回该标签名第一次出现的那个标签</span><br><span class="line">soup.find(&#39;div&#39;，class_&#x3D; &#39;song&#39;) #返回该属性的div</span><br><span class="line">soup.find_all(&#39;a&#39;)</span><br><span class="line"></span><br><span class="line">select(&#39;某种选择器（id,class,标签。。。。选择器))，返回的是一个列表</span><br><span class="line">soup.select(&#39;.tang&gt;ul&gt;li&gt;a&#39;)[0] #拿到a标签列表中的第一个a标签</span><br><span class="line">soup.select(&#39;.tang&gt;ul&gt; a&#39;)[0] #空格表示多个层级</span><br><span class="line">soup.a.text&#x2F;get_text&#x2F;string #string只能获取该标签下的直系文本内容，text获取全部文本内容</span><br><span class="line">soup.a[&#39;href&#39;] # 获取标签中的属性值</span><br></pre></td></tr></table></figure>
-
-
+<li><p>进入文件后输入i，I,o,O,a,A,r,R中的任何一个字母才会进入编辑模式</p>
+<p><img src="/2021/01/25/MyLinux/image-20210126214359934.png" alt="image-20210126214359934"></p>
+</li>
+<li><p>切换到命令行：esc：wq（回车）##，esc是切换出编辑模式；wq是保存</p>
 </li>
 </ol>
-<ol start="3">
-<li><p>xpath（重点，通用性强）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">1.实例化一个etree对象，并且需要将被解析的页面源码数据加载到该对象中</span><br><span class="line">2.调用etree对象中的xpath种方法结合xpath表达式实现标签的定位和内容的捕获</span><br><span class="line">3.实例化对象：etree.parse(filepath)(本地)；etree.HTML（page_text）（网页）</span><br><span class="line">4.xpath（&#39;xpath表达式&#39;）：</span><br><span class="line">	r &#x3D; tree.xpath(&#39;&#x2F;html&#x2F;body&#x2F;div&#39;) #返回一个列表</span><br><span class="line">	r &#x3D; tree.xpath(&#39;&#x2F;html&#x2F;&#x2F;div&#39;) #两个斜杠表示多个层级</span><br><span class="line">	r &#x3D; tree.xpath(&#39;&#x2F;&#x2F;div[@class&#x3D;&#39;song&#39;]&#x2F;p[3]&#39;) # 取出来p标签列表中的第四个元素</span><br><span class="line">	r &#x3D; tree.xpath(&#39;&#x2F;&#x2F;div&#x2F;[@class&#x3D;&quot;tang&quot;]&#x2F;&#x2F;li[5]&#x2F;a&#x2F;text()&#39;)[0] #取出来一个标签返回的也是列表，所以加上索引0，表示第一个元素</span><br><span class="line">	&#x2F;@attrName（&#x2F;@src） #取属性值</span><br></pre></td></tr></table></figure>
-
-
-</li>
-</ol>
-<h2 id="数据解析原理"><a href="#数据解析原理" class="headerlink" title="数据解析原理"></a>数据解析原理</h2><ol>
-<li>解析的局部文本内容都会在标签纸剑或者标签对应的属性中进行存储</li>
-<li>进行指定标签的定位</li>
-<li>标签或者标签对应的属性中所存储的数据值进行提取（解析）</li>
-</ol>
-<h1 id="第三章：反爬机制"><a href="#第三章：反爬机制" class="headerlink" title="第三章：反爬机制"></a>第三章：反爬机制</h1><h2 id="验证码"><a href="#验证码" class="headerlink" title="验证码"></a>验证码</h2><p>使用第三方识别验证码平台（超级鹰）,代码已经封装好了</p>
-<p>chaojiying.PostPic(im,1902)返回的字典的第三个键值对的values为所需要的验证码值</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">chaojiying &#x3D; Chaojiying_Client(&#39;用户名&#39;, &#39;密码&#39;, &#39;912044&#39;)  # 用户中心&gt;&gt;软件ID 生成一个替换 96001</span><br><span class="line">im &#x3D; open(file_path, &#39;rb&#39;).read()  # 本地图片文件路径 来替换 a.jpg 有时WIN系统须要&#x2F;&#x2F;</span><br><span class="line">print(list((chaojiying.PostPic(im, 1902)).values())[3])  # 1902 验证码类型  </span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>ps：验证是否登录成功：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">response &#x3D; requests.post(url&#x3D;url,headers&#x3D;headers,data&#x3D;data)</span><br><span class="line">print(response.status_code)</span><br><span class="line">#如果打印200，证明登录成功</span><br></pre></td></tr></table></figure>
-<h2 id="cookie"><a href="#cookie" class="headerlink" title="cookie"></a>cookie</h2><ol>
-<li><p>来源：登录模拟的post请求后，有服务器端创建</p>
-</li>
-<li><p>session会话对象：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">作用：1.可以在请求的时候发送；2.如果请求过程产生了cookie会被自动存储到该session对象中</span><br><span class="line"></span><br><span class="line">exp：</span><br><span class="line">    session &#x3D; requests.Session()</span><br><span class="line"></span><br><span class="line">    user_url &#x3D; &#39;https:&#x2F;&#x2F;www.chaojiying.com&#x2F;user&#x2F;login&#x2F;&#39;</span><br><span class="line">    data &#x3D;&#123;</span><br><span class="line">        &#39;user&#39;: &#39;winsfox&#39;,</span><br><span class="line">        &#39;pass&#39;: &#39;510623zmh&#39;,</span><br><span class="line">        &#39;imgtxt&#39;:result,</span><br><span class="line">        &#39;act&#39;: &#39;1&#39;</span><br><span class="line">    &#125;</span><br><span class="line">    #（2）使用session进行post发送</span><br><span class="line">    response &#x3D; session.post(url&#x3D;user_url,headers&#x3D;headers,data&#x3D;data)</span><br><span class="line">    print(response.status_code)</span><br><span class="line">    detail_url &#x3D; &#39;https:&#x2F;&#x2F;www.chaojiying.com&#x2F;user&#x2F;&#39;</span><br><span class="line"></span><br><span class="line">    detail_page_text &#x3D; session.get(url&#x3D;detail_url,headers&#x3D;headers).text</span><br><span class="line">    with open(&#39;my chaojiying.html&#39;,&#39;w&#39;,encoding&#x3D;&#39;utf-8&#39;) as fp:</span><br><span class="line">        fp.write(detail_page_text)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h2 id="代理"><a href="#代理" class="headerlink" title="代理"></a>代理</h2></li>
-</ol>
-<p>破解封IP这种反爬机制</p>
-   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">——代理服务器。</span><br><span class="line">代理的作用：</span><br><span class="line">		———突破IP访问的限制</span><br><span class="line">		———隐藏自身真实IP</span><br><span class="line">代理相关网站：</span><br><span class="line">		———快代理</span><br><span class="line">		———西祠代理</span><br><span class="line">		———www.goubanjia.com</span><br><span class="line">代理IP的类型：</span><br><span class="line">		——https；http</span><br><span class="line">代理IP的匿名的：</span><br><span class="line">		——透明：服务器知道该次请求使用了代理；也知道真实的Ip</span><br><span class="line">		——匿名：知道使用了代理，但不知道真实的Ip</span><br><span class="line">		——高匿：不知道使用了代理更不知道本机的真实Ip（遇到封IP的反扒机制需要用这个）</span><br></pre></td></tr></table></figure>
-
-
-<p>ps:一个网站登录上后，再用爬虫爬的时候可能找不到验证码的位置</p>
-<h1 id="PS"><a href="#PS" class="headerlink" title="PS:"></a>PS:</h1><ol>
-<li>有时候拿到的src不全，需要进行字符串拼接</li>
-<li>div的class中有些无法获取，如：<img src="/2021/01/20/%E7%88%AC%E8%99%AB%E5%AD%A6%E4%B9%A0/image-20210122232346354.png" alt="image-20210122232346354"></li>
-<li>在使用etree.xpath()的时候需要删去，如</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a_list &#x3D; tree.xpath(&#39;&#x2F;&#x2F;div[@class&#x3D;&quot;box col3 ws_block&quot;]&#39;)</span><br></pre></td></tr></table></figure>
-<h1 id="第四章：高性能异步爬虫"><a href="#第四章：高性能异步爬虫" class="headerlink" title="第四章：高性能异步爬虫"></a>第四章：高性能异步爬虫</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">原因：发送请求会有延时，导致阻塞，后面的url请求</span><br><span class="line">	方式1：多线程（不建议使用，耗费cpu资源）</span><br><span class="line">	方式2：线程池（效率不明显，适当使用）</span><br><span class="line">	方法3：单线程+异步协程（推荐）</span><br></pre></td></tr></table></figure>
-<p>PS：在text中找不到元素就是通过ajax加载的，要用抓包工具找</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">requests.get()发起的请求是基于同步的，不能用在异步协程中，必须使用基于异步的网络请求的模块：aiohttp</span><br></pre></td></tr></table></figure>
-<h1 id="第五章：动态加载数据处理"><a href="#第五章：动态加载数据处理" class="headerlink" title="第五章：动态加载数据处理"></a>第五章：动态加载数据处理</h1><h2 id="模拟浏览器操作：selenium"><a href="#模拟浏览器操作：selenium" class="headerlink" title="模拟浏览器操作：selenium"></a>模拟浏览器操作：selenium</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">selenium模块</span><br><span class="line">	-便捷的获取网站中的动态加载数据</span><br><span class="line">	-便捷的实现模拟登陆</span><br><span class="line">	-基于浏览器自动化的一个模块</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">步骤：</span><br><span class="line">	——pip install selenium</span><br><span class="line">	——下载对应浏览器版本的驱动程序</span><br><span class="line">	——实例化一个浏览器对象</span><br><span class="line">	——编写基于浏览器自动化的操作代码</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">相关函数：</span><br><span class="line">	bro.get(url)</span><br><span class="line">	search_input &#x3D; bro.find_element_by_id(&#39;q&#39;) # 根据id查找元素（其他的选择器也行）</span><br><span class="line">	bro.execute_script(&#39;widnow.scrollTo(0,document.body.scrollHeight)&#39;) #执行js程序</span><br><span class="line">	botton &#x3D; (找到的一个input元素)；botton.click()</span><br><span class="line">	bro.back() #回退上一个页面；forward</span><br><span class="line">	bro.quit()</span><br><span class="line">	send_keys(字符串) #标签交互</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">selenlium处理iframe:</span><br><span class="line">	如果定位的标签存在与iframe标签中，必须使用switch_to.frame(id)</span><br><span class="line">	动作链（拖动）：from selenium。webdriver import ActionChains</span><br><span class="line">		实例化一个动作链对象：action &#x3D; ActionChains（bro）</span><br><span class="line">		click_and_hold(div):长按且点击操作</span><br><span class="line">		move_by_offset(x,y)</span><br><span class="line">		perform()让动作链立即执行</span><br><span class="line">		action.release()释放动作链对象</span><br></pre></td></tr></table></figure>
-<h3 id="无头浏览器-反检测："><a href="#无头浏览器-反检测：" class="headerlink" title="无头浏览器-反检测："></a>无头浏览器-反检测：</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line"><span class="keyword">from</span> time <span class="keyword">import</span> sleep</span><br><span class="line"><span class="comment">#实现无可视化界面的操作</span></span><br><span class="line"><span class="keyword">from</span> selenium.webdriver.chrome.options <span class="keyword">import</span> Options</span><br><span class="line"><span class="comment">#实现规避操作</span></span><br><span class="line"><span class="keyword">from</span> selenium.webdriver <span class="keyword">import</span> ChromeOptions</span><br><span class="line"></span><br><span class="line"><span class="comment">#实现无可视化界面</span></span><br><span class="line">chrome_options = Options()</span><br><span class="line">chrome_options.add_argument(<span class="string">&#x27;--headless&#x27;</span>)</span><br><span class="line">chrome_options.add_argument(<span class="string">&#x27;--disable-gpu&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#实现检测规避</span></span><br><span class="line">option = ChromeOptions()</span><br><span class="line">option.add_experimental_option(<span class="string">&#x27;excludeSwitches&#x27;</span>,[<span class="string">&#x27;enable-automation&#x27;</span>])</span><br><span class="line"></span><br><span class="line">bro = webdriver.Chrome(executable_path=<span class="string">&#x27;./chromedriver.exe&#x27;</span>,chrome_options=chrome_options,options=option)</span><br><span class="line"></span><br><span class="line"><span class="comment">#无可视化界面</span></span><br><span class="line">bro.get(<span class="string">&#x27;https://www.baidu.com&#x27;</span>)</span><br><span class="line">print(bro.page_source)</span><br><span class="line">sleep(<span class="number">2</span>)</span><br><span class="line">bro.quit()</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">其中使用的是bro.page_source返回页面详情数据</span><br></pre></td></tr></table></figure>
-<h3 id="点击式验证码："><a href="#点击式验证码：" class="headerlink" title="点击式验证码："></a>点击式验证码：</h3><p>参看源码-&gt;自制-&gt;pachong-&gt;第五章：动态加载数据处理-&gt;识别验证码(完成).py</p>
-
+<h3 id="各种模式的切换"><a href="#各种模式的切换" class="headerlink" title="各种模式的切换"></a>各种模式的切换</h3><p><img src="/2021/01/25/MyLinux/image-20210126214614149.png" alt="image-20210126214614149"></p>
+<p><img src="/2021/01/25/MyLinux/image-20210126214854026.png" alt="image-20210126214854026"></p>
+<h2 id="8-Linux基础命令"><a href="#8-Linux基础命令" class="headerlink" title="8.Linux基础命令"></a>8.Linux基础命令</h2><p><img src="/2021/01/25/MyLinux/image-20210126215402555.png" alt="image-20210126215402555"></p>
+<h1 id="第二章：用户管理"><a href="#第二章：用户管理" class="headerlink" title="第二章：用户管理"></a>第二章：用户管理</h1><h2 id="添加用户"><a href="#添加用户" class="headerlink" title="添加用户"></a>添加用户</h2><p><img src="/2021/01/25/MyLinux/image-20210127184718673.png" alt="image-20210127184718673"></p>
+<p>密码：<img src="/2021/01/25/MyLinux/image-20210127184754290.png" alt="image-20210127184754290"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">用户删除：</span><br><span class="line">pwd (显示当前在哪个目录下)</span><br><span class="line">userdel 用户名 ## 删掉用户，保留家目录</span><br><span class="line">userdel -r 用户名 ## 删掉用户，删掉家目录（一般不用）</span><br></pre></td></tr></table></figure>
+<h2 id="查询用户信息"><a href="#查询用户信息" class="headerlink" title="查询用户信息"></a>查询用户信息</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">id 用户名 （查询当前用户id信息）</span><br><span class="line">who am i ##当前用户登录信息（ps：显示第一次登录到的用户信息，不是层级登录的用户信息）</span><br></pre></td></tr></table></figure>
+<p><img src="/2021/01/25/MyLinux/image-20210127185149574.png" alt="image-20210127185149574"></p>
+<h2 id="用户组"><a href="#用户组" class="headerlink" title="用户组"></a>用户组</h2><p><img src="/2021/01/25/MyLinux/image-20210127185409004.png" alt="image-20210127185409004"></p>
+<p><img src="/2021/01/25/MyLinux/image-20210127185539073.png" alt="image-20210127185539073"></p>
+<h1 id="第三章：实用指令"><a href="#第三章：实用指令" class="headerlink" title="第三章：实用指令"></a>第三章：实用指令</h1><p><img src="/2021/01/25/MyLinux/image-20210127185738883.png" alt="image-20210127185738883"></p>
+<p><img src="/2021/01/25/MyLinux/image-20210127185802987.png" alt="image-20210127185802987"></p>
+<h2 id="找回root密码"><a href="#找回root密码" class="headerlink" title="找回root密码"></a>找回root密码</h2><p>网上查文档</p>
+<p><img src="/2021/01/25/MyLinux/image-20210127190604348.png" alt="image-20210127190604348"></p>
+<h2 id="其他实用的命令"><a href="#其他实用的命令" class="headerlink" title="其他实用的命令"></a>其他实用的命令</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">cd &#x2F;root #回到root的绝对路径</span><br><span class="line">cd ~ #同上</span><br><span class="line">mkdir -p &#x2F;home&#x2F;animal&#x2F;tiger（-p表示创建多级目录）</span><br><span class="line">rmdir -rf 要删除目录 # （-rf代表递归删除所有目录，一定要谨慎）</span><br><span class="line">rm -rf 文件名 ## 删除文件（-r表示进入目录，f表示强制）</span><br><span class="line">touch 文件名（带后缀） #创建一个空文件</span><br><span class="line">cp -r &#x2F;home&#x2F;bbb&#x2F; &#x2F;opt&#x2F; #从home&#x2F;bbb下拷贝所有文件到&#x2F;opt&#x2F;下（-r代表递归）</span><br><span class="line">实用\cp（代表强制覆盖）</span><br></pre></td></tr></table></figure>
+<p><img src="/2021/01/25/MyLinux/image-20210127215051243.png" alt="image-20210127215051243"></p>
+<p>mv指令：</p>
+<p><img src="/2021/01/25/MyLinux/image-20210128112123095.png" alt="image-20210128112123095"></p>
+<p>cat指令：</p>
+<p><img src="/2021/01/25/MyLinux/image-20210128112651023.png" alt="image-20210128112651023"></p>
+<p>more指令：</p>
+<p><img src="/2021/01/25/MyLinux/image-20210128112909079.png" alt="image-20210128112909079"></p>
+<p>less指令：</p>
+<p><img src="/2021/01/25/MyLinux/image-20210128112935551.png" alt="image-20210128112935551"></p>
+<p>echo，head指令</p>
+<p><img src="/2021/01/25/MyLinux/image-20210128113311127.png" alt="image-20210128113311127"></p>
+<p>tail指令：</p>
+<p><img src="/2021/01/25/MyLinux/image-20210128113526263.png" alt="image-20210128113526263"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;hello&quot; &gt; &#x2F;home&#x2F;hello.txt #覆盖写入内容</span><br><span class="line">echo &quot;hello&quot; &gt;&gt; &#x2F;home&#x2F;hello.txt #追加内容</span><br><span class="line"></span><br><span class="line">ls -l &#x2F;home&#x2F;</span><br></pre></td></tr></table></figure>
+<p><img src="/2021/01/25/MyLinux/image-20210128114146003.png" alt="image-20210128114146003"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cal &gt;&gt; &#x2F;home&#x2F;mycal ##将日历信息记录到该文件中</span><br><span class="line"></span><br><span class="line">cat &#x2F;etc&#x2F;profile &gt; &#x2F;home&#x2F;myprofile ## 复制，覆盖写入</span><br></pre></td></tr></table></figure>
+<p>软连接：cd myroot (相当于打开了源文件) # 本质上是一种共享</p>
+<p><img src="/2021/01/25/MyLinux/image-20210128114831273.png" alt="image-20210128114831273"></p>
+<p>history指令：</p>
+<p><img src="/2021/01/25/MyLinux/image-20210128115308576.png" alt="image-20210128115308576"></p>
+<p>date指令：</p>
+<p><img src="/2021/01/25/MyLinux/image-20210128115747776.png" alt="image-20210128115747776"></p>
+<p>find指令：</p>
+<p><img src="/2021/01/25/MyLinux/image-20210128120003779.png" alt="image-20210128120003779"></p>
+<p><img src="/2021/01/25/MyLinux/image-20210128121607877.png" alt="image-20210128121607877"></p>
+<p>locate指令：</p>
+<p><img src="/2021/01/25/MyLinux/image-20210128121817396.png" alt="image-20210128121817396"></p>
+<p>grep指令：</p>
+<p><img src="/2021/01/25/MyLinux/image-20210128132257826.png" alt="image-20210128132257826"></p>
+<p><img src="/2021/01/25/MyLinux/image-20210128133131582.png" alt="image-20210128133131582"></p>
+<p>gzip和gunzip指令：压缩文件和解压文件</p>
+<p><img src="/2021/01/25/MyLinux/image-20210128133318905.png" alt="image-20210128133318905"></p>
+<p><img src="/2021/01/25/MyLinux/image-20210128133848730.png" alt="image-20210128133848730"></p>
+<p><img src="/2021/01/25/MyLinux/image-20210128205729527.png" alt="image-20210128205729527"></p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">tar -zcvf pc.tar.gz &#x2F;home&#x2F;pig.txt &#x2F;home&#x2F;cat.txt</span><br><span class="line">#将两个文件压成pc.tar.gz</span><br><span class="line">tar -zcvf myhome.tar.gz &#x2F;home&#x2F;</span><br><span class="line"># 压缩home文件夹</span><br><span class="line">tar -zxvf pc.tar.gz</span><br><span class="line">#解压该文件</span><br><span class="line">tar -zxvf &#x2F;home&#x2F;myhome.tar.gz -C &#x2F;opt&#x2F;tmp2</span><br><span class="line">#将前一个文件解压到后面的目录中</span><br></pre></td></tr></table></figure>
+<h1 id="第四章：实操篇：组管理和权限管理"><a href="#第四章：实操篇：组管理和权限管理" class="headerlink" title="第四章：实操篇：组管理和权限管理"></a>第四章：实操篇：组管理和权限管理</h1><h3 id="文件所有者"><a href="#文件所有者" class="headerlink" title="文件所有者"></a>文件所有者</h3><p><img src="/2021/01/25/MyLinux/image-20210128213433138.png" alt="image-20210128213433138"></p>
+<p><img src="/2021/01/25/MyLinux/image-20210128213337825.png" alt="image-20210128213337825"></p>
+<p>组管理：<img src="/2021/01/25/MyLinux/image-20210128213616574.png" alt="image-20210128213616574"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls -ahl 查看详情信息，可查看在哪个组</span><br></pre></td></tr></table></figure>
+<p><img src="/2021/01/25/MyLinux/image-20210128214405554.png" alt="image-20210128214405554"></p>
+<p>其他组和改变用户所在组：</p>
+<p><img src="/2021/01/25/MyLinux/image-20210128214836132.png" alt="image-20210128214836132"></p>
+<h3 id="权限："><a href="#权限：" class="headerlink" title="权限："></a>权限：</h3><p><img src="/2021/01/25/MyLinux/image-20210128215336637.png" alt="image-20210128215336637"></p>
+<p>修改权限：chmod：</p>
+<p><img src="/2021/01/25/MyLinux/image-20210129093159500.png" alt="image-20210129093159500"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">案例：</span><br><span class="line">1. chmod u&#x3D;rwx,g&#x3D;rx,o&#x3D;rx abc</span><br><span class="line">2. chmod u-x,g+w abc</span><br><span class="line">3. chmod a+r abc</span><br></pre></td></tr></table></figure>
+<p><img src="/2021/01/25/MyLinux/image-20210129190544454.png" alt="image-20210129190544454"></p>
+<p>chown指令：</p>
+<p><img src="/2021/01/25/MyLinux/image-20210129190813886.png" alt="image-20210129190813886"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">chown tom &#x2F;home&#x2F;abc.txt</span><br><span class="line">chown -R tom &#x2F;home&#x2F;kkk</span><br></pre></td></tr></table></figure>
+<p>chgrp:</p>
+<p><img src="/2021/01/25/MyLinux/image-20210129191151214.png" alt="image-20210129191151214"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">chgrp shaolin &#x2F;home&#x2F;abc.txt</span><br><span class="line">chgrp -R shaolin &#x2F;home&#x2F;kkk</span><br></pre></td></tr></table></figure>
+<h3 id="小案例："><a href="#小案例：" class="headerlink" title="小案例："></a>小案例：</h3><p><img src="/2021/01/25/MyLinux/image-20210129194952405.png" alt="image-20210129194952405"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"># 创建组</span><br><span class="line">groupadd police </span><br><span class="line">groupadd bandit</span><br><span class="line"># 创建用户</span><br><span class="line">useradd -g police jack </span><br><span class="line">useradd -g police jerry</span><br><span class="line">useradd -g bandit xh</span><br><span class="line">useradd -g bandit xq</span><br><span class="line"># 创建文件以及权限设置</span><br><span class="line">vim jack.txt</span><br><span class="line">chomd 640 jack.txt</span><br><span class="line">chmod o&#x3D;r,g&#x3D;rw jack.txt</span><br><span class="line"># 将小红加到警察组</span><br><span class="line">usermod -g police xh</span><br><span class="line">## 但是小红还是不能修改jack文件夹内的jack.txt,因为小红根本连进入jack的权限都没有</span><br></pre></td></tr></table></figure>
+<h3 id="目录的权限的意思："><a href="#目录的权限的意思：" class="headerlink" title="目录的权限的意思："></a>目录的权限的意思：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">x表示可以进入该文件夹，但是不能列出来（相当于读权限）（ps:如果里面有当前用户可以修改或者读的文件，则改用户可以进入修改或读）</span><br><span class="line">r表示可以列出该目录的权限</span><br><span class="line">w表示对目录里的内容进行删除或者创建的权限</span><br></pre></td></tr></table></figure>
+<h1 id="定时任务调度"><a href="#定时任务调度" class="headerlink" title="定时任务调度"></a>定时任务调度</h1><h2 id="crond任务调度："><a href="#crond任务调度：" class="headerlink" title="crond任务调度："></a>crond任务调度：</h2><p><img src="/2021/01/25/MyLinux/image-20210129212607905.png" alt="image-20210129212607905"></p>
+<p>功能图：</p>
+<p><img src="/2021/01/25/MyLinux/image-20210129212943682.png" alt="image-20210129212943682"></p>
+<p><img src="/2021/01/25/MyLinux/image-20210129213221525.png" alt="image-20210129213221525"></p>
+<p><img src="/2021/01/25/MyLinux/image-20210130122355007.png" alt="image-20210130122355007"></p>
+<p>定时调用sh程序</p>
+<p><img src="/2021/01/25/MyLinux/image-20210130125541599.png" alt="image-20210130125541599"></p>
+<p>案例：</p>
+<p><img src="/2021/01/25/MyLinux/image-20210130130208902.png" alt="image-20210130130208902"></p>
+<h2 id="at定时"><a href="#at定时" class="headerlink" title="at定时:"></a>at定时:</h2><p><img src="/2021/01/25/MyLinux/image-20210130130415621.png" alt="image-20210130130415621"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">（ps：ctrl+d要输入两次）</span><br><span class="line">ps -ef | grep atd ## （检测当前所有正在运行的程序有哪儿些）|（过滤）</span><br></pre></td></tr></table></figure>
+<p><img src="/2021/01/25/MyLinux/image-20210130132123977.png" alt="image-20210130132123977"></p>
+<p>案例：</p>
+<p><img src="/2021/01/25/MyLinux/image-20210130133556292.png" alt="image-20210130133556292"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">atrm count #删除数字对应指定任务</span><br><span class="line">atq #显示当前任务</span><br></pre></td></tr></table></figure>
+<h1 id="Linux磁盘分区，挂载"><a href="#Linux磁盘分区，挂载" class="headerlink" title="Linux磁盘分区，挂载"></a>Linux磁盘分区，挂载</h1><p><img src="/2021/01/25/MyLinux/image-20210130192647888.png" alt="image-20210130192647888"></p>
+<p>UUID：格式化后得到一个四十位的唯一数字串</p>
+<p><img src="/2021/01/25/MyLinux/image-20210130192629905.png" alt="image-20210130192629905"></p>
+<h2 id="案例：挂载一个新磁盘"><a href="#案例：挂载一个新磁盘" class="headerlink" title="案例：挂载一个新磁盘"></a>案例：挂载一个新磁盘</h2><p><img src="/2021/01/25/MyLinux/image-20210130193411762.png" alt="image-20210130193411762"></p>
+<p>临时挂载：reboot后会断开</p>
+<p><img src="/2021/01/25/MyLinux/image-20210130193640713.png" alt="image-20210130193640713"></p>
+<p>永久挂载：</p>
+<p><img src="/2021/01/25/MyLinux/image-20210130194147351.png" alt="image-20210130194147351"></p>
+<p><img src="/2021/01/25/MyLinux/image-20210130194415127.png" alt="image-20210130194415127"></p>
+<h2 id="磁盘情况查询"><a href="#磁盘情况查询" class="headerlink" title="磁盘情况查询"></a>磁盘情况查询</h2><p><img src="/2021/01/25/MyLinux/image-20210130194614632.png" alt="image-20210130194614632"></p>
+<p><img src="/2021/01/25/MyLinux/image-20210130195029749.png" alt="image-20210130195029749"></p>
+<p><img src="/2021/01/25/MyLinux/image-20210131215007685.png" alt="image-20210131215007685"></p>
+<h2 id="工作实用指令："><a href="#工作实用指令：" class="headerlink" title="工作实用指令："></a>工作实用指令：</h2><p><img src="/2021/01/25/MyLinux/image-20210131215439026.png" alt="image-20210131215439026"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tree &#x2F;opt (如果没有tree则使用yum install tree指令安装)</span><br></pre></td></tr></table></figure>
+<h1 id="Linux网络配置："><a href="#Linux网络配置：" class="headerlink" title="Linux网络配置："></a>Linux网络配置：</h1><h2 id="VM原理："><a href="#VM原理：" class="headerlink" title="VM原理："></a>VM原理：</h2><p><img src="/2021/01/25/MyLinux/image-20210131215645136.png" alt="image-20210131215645136"></p>
+<h2 id="查看网络IP和网关："><a href="#查看网络IP和网关：" class="headerlink" title="查看网络IP和网关："></a>查看网络IP和网关：</h2><p>选中虚拟机-》编辑-》虚拟网络编辑器-》NAT模式</p>
+<h2 id="Linux网络配置方案："><a href="#Linux网络配置方案：" class="headerlink" title="Linux网络配置方案："></a>Linux网络配置方案：</h2><p>程序员手动设定IP地址：</p>
+<p><img src="/2021/01/25/MyLinux/image-20210131220431433.png" alt="image-20210131220431433"></p>
+<p>保存后，找到上面NAT模式下的子网IP，将其修改为对应IP</p>
+<p><img src="/2021/01/25/MyLinux/image-20210131221258632.png" alt="image-20210131221258632"></p>
+<p>然后reboot或者service network restart</p>
+<h2 id="设置主机名和hosts映射："><a href="#设置主机名和hosts映射：" class="headerlink" title="设置主机名和hosts映射："></a>设置主机名和hosts映射：</h2><p><img src="/2021/01/25/MyLinux/image-20210131222450196.png" alt="image-20210131222450196"></p>
+<h2 id="DNS"><a href="#DNS" class="headerlink" title="DNS"></a>DNS</h2><p><img src="/2021/01/25/MyLinux/image-20210131223032788.png" alt="image-20210131223032788"></p>
+<h1 id="Linux进程管理："><a href="#Linux进程管理：" class="headerlink" title="Linux进程管理："></a>Linux进程管理：</h1><p>每个进程都有前台和后台</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ps ## (查看系统正在运行的进程)</span><br></pre></td></tr></table></figure>
+<p><img src="/2021/01/25/MyLinux/image-20210201222458545.png" alt="image-20210201222458545"></p>
+<p><img src="/2021/01/25/MyLinux/image-20210201222623104.png" alt="image-20210201222623104"></p>
+<p>父进程：</p>
+<p><img src="/2021/01/25/MyLinux/image-20210201222855954.png" alt="image-20210201222855954"></p>
+<p>终止进程：</p>
+<p><img src="/2021/01/25/MyLinux/image-20210201223220706.png" alt="image-20210201223220706"></p>
+<p>案例一：</p>
+<p><img src="/2021/01/25/MyLinux/image-20210201223819812.png" alt="image-20210201223819812"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kill 进程号（kill 11421）</span><br></pre></td></tr></table></figure>
+<p>案例二：</p>
+<p><img src="/2021/01/25/MyLinux/image-20210201224019912.png" alt="image-20210201224019912"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">kill ssh对应的进程号 （kill 10748）</span><br><span class="line">## 重启sshd.service</span><br><span class="line">&#x2F;bin&#x2F;systemctl start sshd.service</span><br><span class="line">## 进程号会改变</span><br></pre></td></tr></table></figure>
+<p>案例三：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">killall gedit</span><br></pre></td></tr></table></figure>
+<p>案例四：</p>
+<p><img src="/2021/01/25/MyLinux/image-20210201224751851.png" alt="image-20210201224751851"></p>
+<h2 id="查看进程树："><a href="#查看进程树：" class="headerlink" title="查看进程树："></a>查看进程树：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pstree</span><br></pre></td></tr></table></figure>
+<p><img src="/2021/01/25/MyLinux/image-20210202114920389.png" alt="image-20210202114920389"></p>
+<h2 id="service管理"><a href="#service管理" class="headerlink" title="service管理"></a>service管理</h2><p><img src="/2021/01/25/MyLinux/image-20210202115202945.png" alt="image-20210202115202945"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ls -l &#x2F;etc&#x2F;init.d #查看部分服务</span><br><span class="line">setup ## 查看所有系统服务</span><br></pre></td></tr></table></figure>
+<h3 id="运行级别（runlevel）"><a href="#运行级别（runlevel）" class="headerlink" title="运行级别（runlevel）"></a>运行级别（runlevel）</h3><p><img src="/2021/01/25/MyLinux/image-20210202120747844.png" alt="image-20210202120747844"></p>
+<p><img src="/2021/01/25/MyLinux/image-20210202120935772.png" alt="image-20210202120935772"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chkconfig ##给各个服务在不同级别下设置不同的自启动（开&#x2F;关）</span><br></pre></td></tr></table></figure>
+<p><img src="/2021/01/25/MyLinux/image-20210202121015968.png" alt="image-20210202121015968"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">案例：</span><br><span class="line">	chkconfig --level 3 network on</span><br><span class="line">	chkconfig --level 3 network off</span><br></pre></td></tr></table></figure>
+<p>systemctl管理指令：</p>
+<p><img src="/2021/01/25/MyLinux/image-20210202212536841.png" alt="image-20210202212536841"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">管理的服务可</span><br><span class="line">	ls -l &#x2F;user&#x2F;lib&#x2F;systemd&#x2F;system</span><br><span class="line">查看</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">案例：</span><br><span class="line">systemctl status firewalld</span><br><span class="line">systemctl stop&#x2F;start firewalld ##status还是显示enable，下一次开机防火墙还是会打开，如果不想下次还打开，就使用（systemctl disable firewalld）</span><br><span class="line"></span><br><span class="line">systemctl list-unit-files | grep firewalld</span><br><span class="line">systemctl is-enable firewalld</span><br></pre></td></tr></table></figure>
+<p><img src="/2021/01/25/MyLinux/image-20210202222615290.png" alt="image-20210202222615290"></p>
+<p>原理图：</p>
+<p><img src="/2021/01/25/MyLinux/image-20210202222724749.png" alt="image-20210202222724749"></p>
+<h3 id="动态监控进程："><a href="#动态监控进程：" class="headerlink" title="动态监控进程："></a>动态监控进程：</h3><p>top指令：</p>
+<p><img src="/2021/01/25/MyLinux/image-20210204220854678.png" alt="image-20210204220854678"></p>
+<p><img src="/2021/01/25/MyLinux/image-20210204222808758.png" alt="image-20210204222808758"></p>
+<p>交互：</p>
+<p><img src="/2021/01/25/MyLinux/image-20210205182626980.png" alt="image-20210205182626980"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">案例三：</span><br><span class="line">top -d 10</span><br></pre></td></tr></table></figure>
+<h3 id="监控网络状态："><a href="#监控网络状态：" class="headerlink" title="监控网络状态："></a>监控网络状态：</h3><p><img src="/2021/01/25/MyLinux/image-20210205184132277.png" alt="image-20210205184132277"></p>
+<p>原理图：</p>
+<p><img src="/2021/01/25/MyLinux/image-20210205184934836.png" alt="image-20210205184934836"></p>
+<h1 id="RPM和YUM管理："><a href="#RPM和YUM管理：" class="headerlink" title="RPM和YUM管理："></a>RPM和YUM管理：</h1><h2 id="rpm："><a href="#rpm：" class="headerlink" title="rpm："></a>rpm：</h2><p><img src="/2021/01/25/MyLinux/image-20210205194901468.png" alt="image-20210205194901468"></p>
+<p><img src="/2021/01/25/MyLinux/image-20210205221528717.png" alt="image-20210205221528717"></p>
+<p>删除：<img src="/2021/01/25/MyLinux/image-20210206181640994.png" alt="image-20210206181640994"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rpm -e firefox # 不需要全部包名</span><br></pre></td></tr></table></figure>
+<p>安装：</p>
+<p><img src="/2021/01/25/MyLinux/image-20210206182122816.png" alt="image-20210206182122816"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">案例：</span><br><span class="line">	rpm -e firefox ## 删除</span><br><span class="line">	rpm -q firefox ##可以查看到已经删除</span><br><span class="line">	rpm -ivh &#x2F;opt&#x2F;firefox ##先将rpm文件夹复制到&#x2F;opt&#x2F;目录下，再执行此操作，rpm文件到光驱中寻找</span><br></pre></td></tr></table></figure>
+<h2 id="yum："><a href="#yum：" class="headerlink" title="yum："></a>yum：</h2><p><img src="/2021/01/25/MyLinux/image-20210206183058787.png" alt="image-20210206183058787"></p>
+<p>自动处理依赖关系：如果安装a需要b，那在安装a的时候自动会安装b</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">案例：</span><br><span class="line">	rpm -e firefox </span><br><span class="line">	yum list | grep firefox </span><br><span class="line">	yum install firefox</span><br></pre></td></tr></table></figure>
+<h1 id="搭建JavaEE环境："><a href="#搭建JavaEE环境：" class="headerlink" title="搭建JavaEE环境："></a>搭建JavaEE环境：</h1><p>jdk安装步骤：</p>
+<p><img src="/2021/01/25/MyLinux/image-20210206183905339.png" alt="image-20210206183905339"></p>
+<p>tomcat安装：</p>
+<p><img src="/2021/01/25/MyLinux/image-20210206212919679.png" alt="image-20210206212919679"></p>
+<p>mysql安装：</p>
+<p><img src="/2021/01/25/MyLinux/image-20210207123821952.png" alt="image-20210207123821952"></p>
+<h1 id="Linux大数据定制篇：Shell编程"><a href="#Linux大数据定制篇：Shell编程" class="headerlink" title="Linux大数据定制篇：Shell编程"></a>Linux大数据定制篇：Shell编程</h1><h2 id="Shell脚本："><a href="#Shell脚本：" class="headerlink" title="Shell脚本："></a>Shell脚本：</h2><p><img src="/2021/01/25/MyLinux/image-20210207165239724.png" alt="image-20210207165239724"></p>
+<p>shell脚本写完后没有执行权限，用chmod来增加权限</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">方法一：</span><br><span class="line">vim hello.sh</span><br><span class="line">	##以下是内容：</span><br><span class="line">	#!&#x2F;bin&#x2F;bash</span><br><span class="line">	echo &quot;helloword!!&quot;</span><br><span class="line">chmod u+x hello.sh </span><br><span class="line">.&#x2F;hello.sh ##或者使用绝对路径 &#x2F;root&#x2F;shcode&#x2F;hello.sh</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">方法二：</span><br><span class="line">sh hello.sh ##不需要执行权限</span><br></pre></td></tr></table></figure>
+<h2 id="Shell变量"><a href="#Shell变量" class="headerlink" title="Shell变量"></a>Shell变量</h2><p><img src="/2021/01/25/MyLinux/image-20210207170245036.png" alt="image-20210207170245036"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">有无双引号对语句无影响</span><br></pre></td></tr></table></figure>
+<p>案例：</p>
+<p><img src="/2021/01/25/MyLinux/image-20210207171430812.png" alt="image-20210207171430812"></p>
+<p>结果：</p>
+<p><img src="/2021/01/25/MyLinux/image-20210207171456622.png" alt="image-20210207171456622"></p>
+<h3 id="变量定义规则："><a href="#变量定义规则：" class="headerlink" title="变量定义规则："></a>变量定义规则：</h3><p><img src="/2021/01/25/MyLinux/image-20210207171627349.png" alt="image-20210207171627349"></p>
+<h3 id="设置环境变量："><a href="#设置环境变量：" class="headerlink" title="设置环境变量："></a>设置环境变量：</h3><p><img src="/2021/01/25/MyLinux/image-20210207171944780.png" alt="image-20210207171944780"></p>
+<h3 id="位置参数变量："><a href="#位置参数变量：" class="headerlink" title="位置参数变量："></a>位置参数变量：</h3><p><img src="/2021/01/25/MyLinux/image-20210207173729196.png" alt="image-20210207173729196"></p>
+<p>相当于在sh脚本中使用外部传进来的参数</p>
+<h3 id="预定义变量："><a href="#预定义变量：" class="headerlink" title="预定义变量："></a>预定义变量：</h3><p><img src="/2021/01/25/MyLinux/image-20210207181927372.png" alt="image-20210207181927372"></p>
+<h3 id="运算符："><a href="#运算符：" class="headerlink" title="运算符："></a>运算符：</h3><p><img src="/2021/01/25/MyLinux/image-20210207182843202.png" alt="image-20210207182843202"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">A&#x3D;&#96;date&#96;  ## &#96;&#96;的作用是将date的值赋给A</span><br></pre></td></tr></table></figure>
+<p><img src="/2021/01/25/MyLinux/image-20210207214916502.png" alt="image-20210207214916502"></p>
+<p>结果：</p>
+<p><img src="/2021/01/25/MyLinux/image-20210207215029972.png" alt="image-20210207215029972"></p>
+<h3 id="条件判断："><a href="#条件判断：" class="headerlink" title="条件判断："></a>条件判断：</h3><p><img src="/2021/01/25/MyLinux/image-20210207215156542.png" alt="image-20210207215156542"></p>
+<p><img src="/2021/01/25/MyLinux/image-20210207215340025.png" alt="image-20210207215340025"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">案例一：</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>代码：</p>
+<p><img src="/2021/01/25/MyLinux/image-20210207220416957.png" alt="image-20210207220416957"></p>
+<p>结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">equal</span><br><span class="line">大于</span><br><span class="line">存在</span><br></pre></td></tr></table></figure>
+<h3 id="流程控制："><a href="#流程控制：" class="headerlink" title="流程控制："></a>流程控制：</h3><h4 id="if："><a href="#if：" class="headerlink" title="if："></a>if：</h4><p><img src="/2021/01/25/MyLinux/image-20210207220619899.png" alt="image-20210207220619899"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">案例：</span><br><span class="line">#!&#x2F;bin&#x2F;bash</span><br><span class="line"># 案例一：请编写一个shell程序，如果输入的参数，大于等于60，则输出“及格了”，小于60，输出“不及格”</span><br><span class="line">if [ $1 -ge 60 ]</span><br><span class="line">then</span><br><span class="line">        echo &quot;及格了&quot;</span><br><span class="line">elif [ $1 -lt 60 ]</span><br><span class="line">then</span><br><span class="line">        echo &quot;不及格&quot;</span><br><span class="line">fi      </span><br></pre></td></tr></table></figure>
+<p>结果：</p>
+<p><img src="/2021/01/25/MyLinux/image-20210207221448168.png" alt="image-20210207221448168"></p>
+<h4 id="case："><a href="#case：" class="headerlink" title="case："></a>case：</h4><p><img src="/2021/01/25/MyLinux/image-20210207221540412.png" alt="image-20210207221540412"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">案例：</span><br><span class="line">#!&#x2F;bin&#x2F;bash</span><br><span class="line">case $1 in</span><br><span class="line">&quot;1&quot;)</span><br><span class="line">echo &quot;周一&quot;</span><br><span class="line">;;</span><br><span class="line">&quot;2&quot;)</span><br><span class="line">echo &quot;周二&quot;</span><br><span class="line">;;</span><br><span class="line">*)</span><br><span class="line">echo &quot;other...&quot;</span><br><span class="line">;;</span><br><span class="line">esac</span><br></pre></td></tr></table></figure>
+<p>结果：</p>
+<p><img src="/2021/01/25/MyLinux/image-20210207222044646.png" alt="image-20210207222044646"></p>
+<h4 id="for："><a href="#for：" class="headerlink" title="for："></a>for：</h4><p><img src="/2021/01/25/MyLinux/image-20210207222150734.png" alt="image-20210207222150734"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">案例1：</span><br><span class="line">#!&#x2F;bin&#x2F;bash</span><br><span class="line"># 注意“$*”是把输入的参数当做一个整体，所以只会输出一句话</span><br><span class="line"></span><br><span class="line">for i in &quot;$*&quot;</span><br><span class="line">do</span><br><span class="line">        echo &quot;num is $i&quot;</span><br><span class="line">done</span><br><span class="line"># 使用“$@”来获取出入的参数，注意，这时是分别对待，所以有几个参数就输出几句</span><br><span class="line">echo &quot;------------------------------&quot;</span><br><span class="line">for j in &quot;$@&quot;</span><br><span class="line">do</span><br><span class="line">        echo &quot;num is $j&quot;</span><br><span class="line">done</span><br></pre></td></tr></table></figure>
+<p>结果：</p>
+<p><img src="/2021/01/25/MyLinux/image-20210207223438384.png" alt="image-20210207223438384"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">案例二：</span><br><span class="line">#!&#x2F;bin&#x2F;bash</span><br><span class="line">SUM&#x3D;0</span><br><span class="line">for(( i&#x3D;0; i&lt;&#x3D;100; i++))</span><br><span class="line">do</span><br><span class="line">        SUM&#x3D;$[$SUM+$i]</span><br><span class="line">done</span><br><span class="line">echo &quot;总和&#x3D;$SUM&quot;</span><br></pre></td></tr></table></figure>
+<p>结果：</p>
+<p><img src="/2021/01/25/MyLinux/image-20210207224221806.png" alt="image-20210207224221806"></p>
+<h4 id="while"><a href="#while" class="headerlink" title="while:"></a>while:</h4><p><img src="/2021/01/25/MyLinux/image-20210208100151624.png" alt="image-20210208100151624"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">案例：</span><br><span class="line">#!&#x2F;bin&#x2F;bash</span><br><span class="line">SUM&#x3D;0</span><br><span class="line">i&#x3D;0</span><br><span class="line">while [ $i -le $1 ]</span><br><span class="line">do</span><br><span class="line">        SUM&#x3D;$[$SUM+$i]</span><br><span class="line">        i&#x3D;$[$i+1]</span><br><span class="line">done</span><br><span class="line">echo &quot;结果是：$SUM&quot;</span><br></pre></td></tr></table></figure>
+<p>结果：</p>
+<p><img src="/2021/01/25/MyLinux/image-20210208102355230.png" alt="image-20210208102355230"></p>
+<h4 id="read："><a href="#read：" class="headerlink" title="read："></a>read：</h4><p><img src="/2021/01/25/MyLinux/image-20210208102451605.png" alt="image-20210208102451605"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">案例：</span><br><span class="line">#!&#x2F;bin&#x2F;bash</span><br><span class="line"></span><br><span class="line">read -p &quot;请输入一个数：&quot; NUM1</span><br><span class="line">echo &quot;你输入的数字是：$NUM1&quot;</span><br><span class="line"></span><br><span class="line">read -t 10 -p &quot;请输入一个数字：&quot; NUM2</span><br><span class="line">echo &quot;你输入的数字是：$NUM2&quot;</span><br></pre></td></tr></table></figure>
+<p>结果：</p>
+<p><img src="/2021/01/25/MyLinux/image-20210208103106359.png" alt="image-20210208103106359"></p>
+<h4 id="函数："><a href="#函数：" class="headerlink" title="函数："></a>函数：</h4><h5 id="系统函数："><a href="#系统函数：" class="headerlink" title="系统函数："></a>系统函数：</h5><p><img src="/2021/01/25/MyLinux/image-20210208103307169.png" alt="image-20210208103307169"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">常用系统函数：</span><br><span class="line">basename [pathname] [suffix] #返回文件名部分</span><br><span class="line">dirname #返回文件路径部分</span><br></pre></td></tr></table></figure>
+<h5 id="自定义函数："><a href="#自定义函数：" class="headerlink" title="自定义函数："></a>自定义函数：</h5><p><img src="/2021/01/25/MyLinux/image-20210208151527748.png" alt="image-20210208151527748"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">案例：</span><br><span class="line">#!&#x2F;bin&#x2F;bash</span><br><span class="line"></span><br><span class="line">function getSum()&#123;</span><br><span class="line"></span><br><span class="line">        SUM&#x3D;$[$n1+$n2]</span><br><span class="line">        echo &quot;和是：$SUM&quot;</span><br><span class="line">&#125;</span><br><span class="line">read -p &quot;请输入一个数n1：&quot; n1</span><br><span class="line">read -p &quot;请输入一个数n2: &quot; n2</span><br><span class="line">getSum $n1 $n2</span><br></pre></td></tr></table></figure>
+<p>结果：</p>
+<p><img src="/2021/01/25/MyLinux/image-20210208152544857.png" alt="image-20210208152544857"></p>
+<h2 id="Shell编程综合案例："><a href="#Shell编程综合案例：" class="headerlink" title="Shell编程综合案例："></a>Shell编程综合案例：</h2><p><img src="/2021/01/25/MyLinux/image-20210208152648318.png" alt="image-20210208152648318"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">案例：</span><br><span class="line">#备份目录</span><br><span class="line">BACKUP&#x3D;&#x2F;data&#x2F;backup&#x2F;db</span><br><span class="line">#当前时间</span><br><span class="line">DATETIME&#x3D;$(date +%Y-%m-%d_%H%M%S)</span><br><span class="line">echo &quot;$DATETIME&quot;</span><br><span class="line">#数据库地址</span><br><span class="line">HOST&#x3D;localhost</span><br><span class="line">#数据库的用户名：</span><br><span class="line">DB_USER&#x3D;root</span><br><span class="line">#数据库密码</span><br><span class="line">DB_PW&#x3D;510623zmh</span><br><span class="line">#备份的数据库名：</span><br><span class="line">DATABASE&#x3D;zmhedu</span><br><span class="line"></span><br><span class="line">#创建备份目录，如果不存在就创建</span><br><span class="line">[ ! -d &quot;$&#123;BACKUP&#125;&#x2F;$&#123;DATETIME&#125;&quot; ] &amp;&amp; mkdir -p &quot;$&#123;BACKUP&#125;&#x2F;$&#123;DATETIME&#125;&quot;</span><br><span class="line"></span><br><span class="line">#备份数据库</span><br><span class="line">mysqldump -u$[DB_USER] -p$&#123;DB_PW&#125; --host&#x3D;$&#123;HOST&#125; -q -R --databases $&#123;DATABASE&#125; | gzip &gt; $&#123;BACKUP&#125;&#x2F;$&#123;DATETIME&#125;&#x2F;$DATETIME.sql.gz</span><br><span class="line"></span><br><span class="line">#将文件处理成tar.gz</span><br><span class="line">cd $&#123;BACKUP&#125;</span><br><span class="line">tar -zcvf $DATETIME.tar.gz $&#123;DATETIME&#125;</span><br><span class="line">#删除对应备份目录</span><br><span class="line">rm -rf $&#123;BACKUP&#125;&#x2F;$&#123;DATETIME&#125;</span><br><span class="line"></span><br><span class="line">#删除十天前的备份文件</span><br><span class="line">find $&#123;BACKUP&#125; -atime +10 -name &quot;*.tar.gz&quot; -exec rm -rf &#123;&#125; \;</span><br></pre></td></tr></table></figure>
+<p>结果：</p>
+<p><img src="/2021/01/25/MyLinux/image-20210208221332042.png" alt="image-20210208221332042"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">crontab -e ##添加crontd任务</span><br><span class="line">	30 2 * * * &#x2F;usr&#x2F;sbin&#x2F;mysql_db_backup.sh</span><br><span class="line">crontab -l ##查询crontd任务</span><br></pre></td></tr></table></figure>
+<h1 id="Ubuntu："><a href="#Ubuntu：" class="headerlink" title="Ubuntu："></a>Ubuntu：</h1>
       
     </div>
 
@@ -392,7 +595,7 @@
 
 
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/15/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/15/">15</a><span class="page-number current">16</span><a class="page-number" href="/page/17/">17</a><span class="space">&hellip;</span><a class="page-number" href="/page/23/">23</a><a class="extend next" rel="next" href="/page/17/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/page/15/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/15/">15</a><span class="page-number current">16</span><a class="page-number" href="/page/17/">17</a><span class="space">&hellip;</span><a class="page-number" href="/page/25/">25</a><a class="extend next" rel="next" href="/page/17/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 

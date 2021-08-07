@@ -197,7 +197,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">23</span>
+          <span class="site-state-item-count">25</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -256,7 +256,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://windsfox.github.io/2021/02/26/TFnotexiaosha/">
+    <link itemprop="mainEntityOfPage" href="http://windsfox.github.io/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/kong.jpg">
@@ -269,7 +269,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/02/26/TFnotexiaosha/" class="post-title-link" itemprop="url">TFnotexiaosha</a>
+          <a href="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="post-title-link" itemprop="url">数据库</a>
         </h2>
 
         <div class="post-meta-container">
@@ -279,10 +279,16 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2021-02-26 17:30:08 / 修改时间：17:40:19" itemprop="dateCreated datePublished" datetime="2021-02-26T17:30:08+08:00">2021-02-26</time>
+      <time title="创建时间：2021-03-01 13:20:35" itemprop="dateCreated datePublished" datetime="2021-03-01T13:20:35+08:00">2021-03-01</time>
     </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-05-19 23:12:58" itemprop="dateModified" datetime="2021-05-19T23:12:58+08:00">2021-05-19</time>
+      </span>
 
   
 </div>
@@ -294,7 +300,389 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="2-1基本图像分类"><a href="#2-1基本图像分类" class="headerlink" title="2.1基本图像分类"></a>2.1基本图像分类</h2><h2 id="2-1（ps）番外：残差网络"><a href="#2-1（ps）番外：残差网络" class="headerlink" title="2.1（ps）番外：残差网络"></a>2.1（ps）番外：残差网络</h2><h2 id="2-2TF-Hub进行文本分类"><a href="#2-2TF-Hub进行文本分类" class="headerlink" title="2.2TF Hub进行文本分类"></a>2.2TF Hub进行文本分类</h2><h2 id="2-3对预处理文本进行文本分类"><a href="#2-3对预处理文本进行文本分类" class="headerlink" title="2.3对预处理文本进行文本分类"></a>2.3对预处理文本进行文本分类</h2><h2 id="2-4回归"><a href="#2-4回归" class="headerlink" title="2.4回归"></a>2.4回归</h2><h2 id="2-5欠拟合和过拟合"><a href="#2-5欠拟合和过拟合" class="headerlink" title="2.5欠拟合和过拟合"></a>2.5欠拟合和过拟合</h2><h2 id="2-6模型的回复和保存"><a href="#2-6模型的回复和保存" class="headerlink" title="2.6模型的回复和保存"></a>2.6模型的回复和保存</h2>
+          <h1 id="数据库系统概论"><a href="#数据库系统概论" class="headerlink" title="数据库系统概论"></a>数据库系统概论</h1><h2 id="1-1数据库及系统概念"><a href="#1-1数据库及系统概念" class="headerlink" title="1.1数据库及系统概念"></a>1.1数据库及系统概念</h2><h3 id="1-1-1概念："><a href="#1-1-1概念：" class="headerlink" title="1.1.1概念："></a>1.1.1概念：</h3><ol>
+<li><p>数据：描述事物符号的记录</p>
+</li>
+<li><p>数据库：长期存储在计算机内的有组织的，可共享的大量数据的集合</p>
+</li>
+<li><p>数据库管理系统：位于用户与操作系统之间的一层管理软件，主要功能：</p>
+<ol>
+<li>DDL：数据定义语言</li>
+<li>DML：数据库操作语言（增删改查）</li>
+<li>数据库的运行管理</li>
+</ol>
+</li>
+<li><p>数据库系统：计算机中引用到数据库之后的系统。（包括：数据库，数据库管理系统（DBMS），数据库应用程序，数据库管理员（DBA）和用户）</p>
+</li>
+</ol>
+<h3 id="1-1-2数据模型："><a href="#1-1-2数据模型：" class="headerlink" title="1.1.2数据模型："></a>1.1.2数据模型：</h3><ol>
+<li>层次数据模型（树结构）</li>
+<li>网状数据模型（图结构）缺点：数据结构复杂，增加了数据查询和数据定位的困难</li>
+<li>关系数据模型（二维表结构）表之间通过具有相同属性列的数据值进行约束关联</li>
+<li>其他数据模型</li>
+</ol>
+<h3 id="1-1-3数据库应用程序："><a href="#1-1-3数据库应用程序：" class="headerlink" title="1.1.3数据库应用程序："></a>1.1.3数据库应用程序：</h3><p>是一种在DBMS支持下对数据库中数据进行访问处理的应用程序</p>
+<ol>
+<li>通过窗口输入框采集用户输入数据</li>
+<li>通过接口连接访问数据库</li>
+<li>执行用户数据查询  </li>
+<li>通过表单列表输出结果数据</li>
+</ol>
+<h3 id="1-1-4数据库管理系统："><a href="#1-1-4数据库管理系统：" class="headerlink" title="1.1.4数据库管理系统："></a>1.1.4数据库管理系统：</h3><p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210302201606385.png" alt="image-20210302201606385"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210302201619611.png" alt="image-20210302201619611"></p>
+<h3 id="1-1-5数据库："><a href="#1-1-5数据库：" class="headerlink" title="1.1.5数据库："></a>1.1.5数据库：</h3><p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210302201713863.png" alt="image-20210302201713863"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210302201754678.png" alt="image-20210302201754678"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210302201903138.png" alt="image-20210302201903138"></p>
+<h2 id="1-2数据库发展"><a href="#1-2数据库发展" class="headerlink" title="1.2数据库发展"></a>1.2数据库发展</h2><h3 id="1-2-1数据管理技术发展阶段："><a href="#1-2-1数据管理技术发展阶段：" class="headerlink" title="1.2.1数据管理技术发展阶段："></a>1.2.1数据管理技术发展阶段：</h3><ol>
+<li><p>人工管理阶段</p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210302202110474.png" alt="image-20210302202110474"></p>
+<p>特点：</p>
+<ul>
+<li>程序员组织和管理数据</li>
+<li>应用程序依赖数据集</li>
+<li>应用之间无数据共享，数据冗余度大</li>
+<li>数据集无结构</li>
+</ul>
+</li>
+<li><p>文件系统管理阶段</p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210302202430454.png" alt="image-20210302202430454"></p>
+<p>特点：</p>
+<ul>
+<li>由文件组织与存储数据</li>
+<li>数据文件的数据记录具有简单的字段结构，但文件整体无结构</li>
+<li>应用程序依赖于数据文件，需自己维护数据文件</li>
+<li>数据独立性差，难以实现应用程序之间的数据共享访问</li>
+</ul>
+</li>
+<li><p>数据库系统管理阶段：</p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210302202748613.png" alt="image-20210302202748613"></p>
+<p>特点：</p>
+<ul>
+<li>数据集结构化，易于查询与统计处理</li>
+<li>不同应用程序可以实现数据共享访问</li>
+<li>数据独立性高，应用可扩展</li>
+<li>数据由DBMS统一管理和访问操作</li>
+</ul>
+</li>
+</ol>
+<h3 id="1-2-2数据库技术发展经历时代"><a href="#1-2-2数据库技术发展经历时代" class="headerlink" title="1.2.2数据库技术发展经历时代"></a>1.2.2数据库技术发展经历时代</h3><p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210302203059099.png" alt="image-20210302203059099"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210302203114058.png" alt="image-20210302203114058"></p>
+<h3 id="1-2-3数据库技术领域"><a href="#1-2-3数据库技术领域" class="headerlink" title="1.2.3数据库技术领域"></a>1.2.3数据库技术领域</h3><h3 id="1-2-4数据库技术发展趋势"><a href="#1-2-4数据库技术发展趋势" class="headerlink" title="1.2.4数据库技术发展趋势"></a>1.2.4数据库技术发展趋势</h3><p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210302203239204.png" alt="image-20210302203239204"></p>
+<h2 id="1-3数据库应用系统"><a href="#1-3数据库应用系统" class="headerlink" title="1.3数据库应用系统"></a>1.3数据库应用系统</h2><h3 id="1-3-1类型"><a href="#1-3-1类型" class="headerlink" title="1.3.1类型"></a>1.3.1类型</h3><ol>
+<li>业务处理系统</li>
+<li>管理信息系统</li>
+<li>决策支持系统</li>
+</ol>
+<h3 id="1-3-2应用结构"><a href="#1-3-2应用结构" class="headerlink" title="1.3.2应用结构"></a>1.3.2应用结构</h3><ol>
+<li>单机用户结构</li>
+<li>集中式结构</li>
+<li>客户/服务器结构</li>
+<li>分布式结构</li>
+</ol>
+<h3 id="1-3-3生命周期"><a href="#1-3-3生命周期" class="headerlink" title="1.3.3生命周期"></a>1.3.3生命周期</h3><ol>
+<li>需求分析</li>
+<li>系统设计</li>
+<li>系统实现</li>
+<li>系统测试</li>
+<li>系统运行与维护</li>
+</ol>
+<h2 id="1-4典型数据库管理系统"><a href="#1-4典型数据库管理系统" class="headerlink" title="1.4典型数据库管理系统"></a>1.4典型数据库管理系统</h2><p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210303204333298.png" alt="image-20210303204333298"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210303204428056.png" alt="image-20210303204428056"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210303204557607.png" alt="image-20210303204557607"></p>
+<p>PS：记得看学堂在线的题目（继承表也可以叫对象表）</p>
+<h2 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h2><p>在数据库管理阶段才实现了数据共享</p>
+<p>SQL Server是关系数据库</p>
+<p><strong>数据存储</strong>负责对数据库的访问操作</p>
+<p><strong>数据仓库技术</strong>实现了数据集成</p>
+<p><strong>分布式结构</strong>适合做银行业务系统</p>
+<p>PostgreSQL是<strong>对象-关系数据库</strong></p>
+<p>PostgreSQL中<strong>不</strong>包括<strong>存储过程</strong>的数据库对象</p>
+<p>PostgreSQL不包括<strong>索引表</strong>（有关系，对象，外部三种表）</p>
+<p>MySQL数据库系统<strong>不是</strong>一种企业级DBMS。</p>
+<h1 id="数据库关系模型"><a href="#数据库关系模型" class="headerlink" title="数据库关系模型"></a>数据库关系模型</h1><h2 id="2-1关系及相关概念"><a href="#2-1关系及相关概念" class="headerlink" title="2.1关系及相关概念"></a>2.1关系及相关概念</h2><ol>
+<li><p>关系键：唯一标识元组的属性列，称为键</p>
+</li>
+<li><p>复和键：使用两列或者多列来做唯一标识</p>
+</li>
+<li><p>候选键：多个列可以做唯一标识</p>
+</li>
+<li><p>主键：最具有代表性的主键</p>
+</li>
+</ol>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210304223100537.png" alt="image-20210304223100537"></p>
+<ol start="5">
+<li>代理键：DBMS自动生成的序列作为主键</li>
+</ol>
+<h2 id="2-2关系模型原理"><a href="#2-2关系模型原理" class="headerlink" title="2.2关系模型原理"></a>2.2关系模型原理</h2><ol>
+<li><p>数据结构：</p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210307180530282.png" alt="image-20210307180530282"></p>
+</li>
+<li><p>数据操作</p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210307180549201.png" alt="image-20210307180549201"></p>
+<ul>
+<li>并运算操作</li>
+<li>关系差运算</li>
+<li>交运算操作</li>
+<li>笛卡尔积</li>
+</ul>
+</li>
+<li><p>数据关系约束</p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210307180642660.png" alt="image-20210307180642660"></p>
+</li>
+</ol>
+<h3 id="2-2-1完整性约束"><a href="#2-2-1完整性约束" class="headerlink" title="2.2.1完整性约束"></a>2.2.1完整性约束</h3><ol>
+<li><p>关系模型完整性</p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210307181116879.png" alt="image-20210307181116879"></p>
+</li>
+<li><p>实体关系完整性</p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210307181142060.png" alt="image-20210307181142060"></p>
+</li>
+<li><p>参照完整性</p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210307181351348.png" alt="image-20210307181351348"></p>
+</li>
+<li><p>用户自定义完整性</p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210307182124541.png" alt="image-20210307182124541"></p>
+</li>
+</ol>
+<h2 id="2-3-PostgreSQL数据库关系操作实践"><a href="#2-3-PostgreSQL数据库关系操作实践" class="headerlink" title="2.3 PostgreSQL数据库关系操作实践"></a>2.3 PostgreSQL数据库关系操作实践</h2><h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>常用的关系查询操作包括（选择、投影、连接、并、交）等；<strong>集合操作也算关系操作</strong></p>
+<p>自然连接是一种<strong>特殊的等值连接</strong></p>
+<p>在参照完整性中，可以定义<strong>级联操作</strong>。（级联操作【CASCADE】，修改主表中的属性值的时候必须参照别的字表中的元）</p>
+<p><strong>内连接</strong>是要求两个组合关系的匹配元组而形成的查询结果集</p>
+<h1 id="数据库操作语言SQL"><a href="#数据库操作语言SQL" class="headerlink" title="数据库操作语言SQL"></a>数据库操作语言SQL</h1><h2 id="概述："><a href="#概述：" class="headerlink" title="概述："></a>概述：</h2><ol>
+<li>DDL</li>
+<li><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210323142227124.png" alt="image-20210323142227124"></li>
+<li>DML</li>
+<li><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210323142252805.png" alt="image-20210323142252805"></li>
+<li>DQL和DCL</li>
+<li><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210323142323885.png" alt="image-20210323142323885"></li>
+<li>TPL</li>
+<li><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210323142359509.png" alt="image-20210323142359509"></li>
+<li>CCL</li>
+<li><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210323142427342.png" alt="image-20210323142427342"></li>
+</ol>
+<h2 id="SQL语句"><a href="#SQL语句" class="headerlink" title="SQL语句"></a>SQL语句</h2><p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210323143444543.png" alt="image-20210323143444543"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210323143519663.png" alt="image-20210323143519663"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210323143619728.png" alt="image-20210323143619728"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210323143639497.png" alt="image-20210323143639497"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210323143845414.png" alt="image-20210323143845414"></p>
+<p>代理键定义同上</p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210323144408847.png" alt="image-20210323144408847"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210323144443473.png" alt="image-20210323144443473"></p>
+<h2 id="题目-1"><a href="#题目-1" class="headerlink" title="题目"></a>题目</h2><p>视图可以创建视图</p>
+<p>主键可以为不同属性</p>
+<h1 id="数据库设计与实现"><a href="#数据库设计与实现" class="headerlink" title="数据库设计与实现"></a>数据库设计与实现</h1><h2 id="4-1数据库设计概述"><a href="#4-1数据库设计概述" class="headerlink" title="4.1数据库设计概述"></a>4.1数据库设计概述</h2><p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210401220244200.png" alt="image-20210401220244200"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210401220316000.png" alt="image-20210401220316000"></p>
+<ol>
+<li>数据需求分析阶段</li>
+<li>数据库设计阶段</li>
+<li><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210401220422981.png" alt="image-20210401220422981"></li>
+<li>数据库实现阶段</li>
+<li>数据库测试阶段</li>
+<li><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210401220437483.png" alt="image-20210401220437483"></li>
+</ol>
+<h3 id="设计策略"><a href="#设计策略" class="headerlink" title="设计策略"></a>设计策略</h3><ol>
+<li>自顶向下</li>
+<li>自底向上</li>
+<li>自内向外</li>
+<li>混合策略设计</li>
+</ol>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210401220705747.png" alt="image-20210401220705747"></p>
+<h2 id="4-2-ER模型方法"><a href="#4-2-ER模型方法" class="headerlink" title="4.2 ER模型方法"></a>4.2 ER模型方法</h2><p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210402153812876.png" alt="image-20210402153812876"></p>
+<ul>
+<li><p>属性</p>
+</li>
+<li><p>标识符（逻辑概念；区别于主键的物理概念）</p>
+</li>
+<li><p>联系（连着多少物体就有多少联系）</p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210402154153428.png" alt="image-20210402154153428"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210402154235843.png" alt="image-20210402154235843"></p>
+</li>
+</ul>
+<h3 id="实体继承联系"><a href="#实体继承联系" class="headerlink" title="实体继承联系"></a>实体继承联系</h3><ol>
+<li>互斥性继承联系（个人账户和公司账户都继承于银行账户）</li>
+<li>非互斥性继承联系（教师和干部都继承于职工）</li>
+</ol>
+<h4 id="强弱实体联系"><a href="#强弱实体联系" class="headerlink" title="强弱实体联系"></a>强弱实体联系</h4><p>弱实体依赖于强实体而存在</p>
+<ol>
+<li>标识符（ID）依赖弱实体（自身的标识符来自于自己依赖的对象）</li>
+<li>非标识符依赖弱实体（自己本身具有标识符）</li>
+</ol>
+<h2 id="4-3数据库建模设计"><a href="#4-3数据库建模设计" class="headerlink" title="4.3数据库建模设计"></a>4.3数据库建模设计</h2><p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210402160153250.png" alt="image-20210402160153250"></p>
+<p>非标识符弱实体转换成关系表的时候需要增加一个所依赖表的标识符作为的外键</p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210402160601747.png" alt="image-20210402160601747"></p>
+<p>标识符依赖弱实体就需要将所依赖表的主键作为自己的主键和外键</p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210402162340318.png" alt="image-20210402162340318"></p>
+<ol>
+<li><p>一对一实体属性（拥有外键的表适合查询）</p>
+</li>
+<li><p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210402162716906.png" alt="image-20210402162716906"></p>
+</li>
+<li><p>一对N转换表示（N表中放外键）</p>
+</li>
+<li><p>M对N实体联系</p>
+</li>
+<li><p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210402162922456.png" alt="image-20210402162922456"></p>
+</li>
+</ol>
+<p>概念模型</p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210402163330703.png" alt="image-20210402163330703"></p>
+<p>逻辑模型</p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210402163343473.png" alt="image-20210402163343473"></p>
+<p>物理模型</p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210402163400076.png" alt="image-20210402163400076"></p>
+<h2 id="4-4数据库规范化设计"><a href="#4-4数据库规范化设计" class="headerlink" title="4.4数据库规范化设计"></a>4.4数据库规范化设计</h2><h3 id="函数依赖"><a href="#函数依赖" class="headerlink" title="函数依赖"></a>函数依赖</h3><p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210402163633196.png" alt="image-20210402163633196"></p>
+<ol>
+<li>函数依赖类型</li>
+<li><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210402163655301.png" alt="image-20210402163655301"></li>
+<li></li>
+</ol>
+<h3 id="规范化范式"><a href="#规范化范式" class="headerlink" title="规范化范式"></a>规范化范式</h3><ol>
+<li>第一范式：若关系表中的属性不可再分，则满足第一范式</li>
+<li>第二范式：消除了部分属性的函数依赖（若有复合键，则所有的其他键一定对两个主键都要依赖）</li>
+<li>第三范式：切断了函数传递依赖</li>
+<li><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210402164700103.png" alt="image-20210402164700103"></li>
+<li><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210402165208888.png" alt="image-20210402165208888"></li>
+</ol>
+<h3 id="逆规范化处理"><a href="#逆规范化处理" class="headerlink" title="逆规范化处理"></a>逆规范化处理</h3><p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210402165542372.png" alt="image-20210402165542372"></p>
+<h2 id="4-5数据库设计模型的SQL实现"><a href="#4-5数据库设计模型的SQL实现" class="headerlink" title="4.5数据库设计模型的SQL实现"></a>4.5数据库设计模型的SQL实现</h2><h2 id="题目-2"><a href="#题目-2" class="headerlink" title="题目"></a>题目</h2><p>在E_R模型中，一个实体的其他关联实体数量称为<strong>联系度数</strong></p>
+<p>在<strong>物理模型</strong>中设计系统<strong>存储要素</strong></p>
+<p>在逻辑模型转换为关系模型中<strong>标识转换为主键</strong>不一定正确</p>
+<p><strong>物理模型</strong>可设计系统中的数据库索引要素</p>
+<p>E-R模型中一个实体可以既不是强实体也不是弱实体，定义一个实体的时候可以不指定标识符</p>
+<p>在进行关系数据库设计时，关系表的规范化程度越高，数据库性能就越好（错）</p>
+<p>在将数据库设计模型转换为数据库实现时，需要先将其转换为SQL程序（对）</p>
+<p>数据库建模设计的目的是为数据库实现提供方案（对）</p>
+<p>考虑数据库创建：系统实现</p>
+<p>关系表不是E_R基本元素</p>
+<h1 id="数据库管理"><a href="#数据库管理" class="headerlink" title="数据库管理"></a>数据库管理</h1><h2 id="5-1概述"><a href="#5-1概述" class="headerlink" title="5.1概述"></a>5.1概述</h2><p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210424161650504.png" alt="image-20210424161650504"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210424161726432.png" alt="image-20210424161726432"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210424161740226.png" alt="image-20210424161740226"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210424161856575.png" alt="image-20210424161856575"></p>
+<h2 id="5-2-事务管理"><a href="#5-2-事务管理" class="headerlink" title="5.2 事务管理"></a>5.2 事务管理</h2><p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210424161948058.png" alt="image-20210424161948058"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210424162114870.png" alt="image-20210424162114870"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210424162205992.png" alt="image-20210424162205992"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210424162217299.png" alt="image-20210424162217299"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210424162237628.png" alt="image-20210424162237628"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210424162253296.png" alt="image-20210424162253296"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210424162339159.png" alt="image-20210424162339159"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210424162355114.png" alt="image-20210424162355114"></p>
+<h2 id="5-3并发控制"><a href="#5-3并发控制" class="headerlink" title="5.3并发控制"></a>5.3并发控制</h2><p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210424164033796.png" alt="image-20210424164033796"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210424163952247.png" alt="image-20210424163952247"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210424164521637.png" alt="image-20210424164521637"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210424164534268.png" alt="image-20210424164534268"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210424164719068.png" alt="image-20210424164719068"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210424164704403.png" alt="image-20210424164704403"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210424165342747.png" alt="image-20210424165342747"></p>
+<p>一级：“丢失更新”；二级：”脏读“；三级：“不可重负读取”</p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210424165647374.png" alt="image-20210424165647374"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210424165716147.png" alt="image-20210424165716147"></p>
+<h2 id="5-4安全管理"><a href="#5-4安全管理" class="headerlink" title="5.4安全管理"></a>5.4安全管理</h2><p>权限</p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210424171246211.png" alt="image-20210424171246211"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210424171354366.png" alt="image-20210424171354366"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210424171414517.png" alt="image-20210424171414517"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210424183726319.png" alt="image-20210424183726319"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210424183827066.png" alt="image-20210424183827066"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210424184138061.png" alt="image-20210424184138061"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210424184159071.png" alt="image-20210424184159071"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210424184236231.png" alt="image-20210424184236231"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210424184254179.png" alt="image-20210424184254179"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210424184446944.png" alt="image-20210424184446944"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210424184600367.png" alt="image-20210424184600367"></p>
+<h2 id="5-5数据局备份与恢复"><a href="#5-5数据局备份与恢复" class="headerlink" title="5.5数据局备份与恢复"></a>5.5数据局备份与恢复</h2><p>备份方法</p>
+<ol>
+<li>完全数据库备份</li>
+<li>差异数据库备份</li>
+<li>事务数据库备份</li>
+<li>文件备份</li>
+</ol>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210424185601587.png" alt="image-20210424185601587"></p>
+<h2 id="题目：-1"><a href="#题目：-1" class="headerlink" title="题目："></a>题目：</h2><p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210427160206645.png" alt="image-20210427160206645"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210427160328272.png" alt="image-20210427160328272"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210427160443703.png" alt="image-20210427160443703"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210427200627414.png" alt="image-20210427200627414"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210427200705600.png" alt="image-20210427200705600"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210427200731448.png" alt="image-20210427200731448"></p>
+<h1 id="数据库的应用编程"><a href="#数据库的应用编程" class="headerlink" title="数据库的应用编程"></a>数据库的应用编程</h1><h2 id="6-1数据库连接技术"><a href="#6-1数据库连接技术" class="headerlink" title="6.1数据库连接技术"></a>6.1数据库连接技术</h2><h3 id="ODBC："><a href="#ODBC：" class="headerlink" title="ODBC："></a>ODBC：</h3><p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210426164025990.png" alt="image-20210426164025990"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210426164553783.png" alt="image-20210426164553783"></p>
+<p>ODBC应用程序接口：一种使用应用程序与数据库互联的标准接口</p>
+<p>ODBC驱动程序管理器：管理系统当中的各种驱动程序</p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210426164916992.png" alt="image-20210426164916992"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210426164952193.png" alt="image-20210426164952193"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210426165030082.png" alt="image-20210426165030082"></p>
+<p>不同厂商的数据库：用于存储数据库对象，数据</p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210426163858108.png" alt="image-20210426163858108"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210428223157938.png" alt="image-20210428223157938"></p>
+<h3 id="JDBC："><a href="#JDBC：" class="headerlink" title="JDBC："></a>JDBC：</h3><p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210426165527581.png" alt="image-20210426165527581"></p>
+<p>步骤：</p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210426165621469.png" alt="image-20210426165621469"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210426165754205.png" alt="image-20210426165754205"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210426170522169.png" alt="image-20210426170522169"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210426170731148.png" alt="image-20210426170731148"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210426170815362.png" alt="image-20210426170815362"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210426170926934.png" alt="image-20210426170926934"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210426171326095.png" alt="image-20210426171326095"></p>
+<p>完整例子：</p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210426171343410.png" alt="image-20210426171343410"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210426171504182.png" alt="image-20210426171504182"></p>
+<h2 id="6-2数据库存储过程"><a href="#6-2数据库存储过程" class="headerlink" title="6.2数据库存储过程"></a>6.2数据库存储过程</h2><p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210428230927771.png" alt="image-20210428230927771"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210428231007105.png" alt="image-20210428231007105"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210428231200332.png" alt="image-20210428231200332"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210428231229850.png" alt="image-20210428231229850"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210428231343542.png" alt="image-20210428231343542"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210428231415381.png" alt="image-20210428231415381"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210428231608580.png" alt="image-20210428231608580"></p>
+<p>删除存储过程testExee()</p>
+<p>drop function if exist testExee()</p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210428231836342.png" alt="image-20210428231836342"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210428231950904.png" alt="image-20210428231950904"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210428232235085.png" alt="image-20210428232235085"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210428233422695.png" alt="image-20210428233422695"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210428233949243.png" alt="image-20210428233949243"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210428234006830.png" alt="image-20210428234006830"></p>
+<h2 id="6-3数据库触发器"><a href="#6-3数据库触发器" class="headerlink" title="6.3数据库触发器"></a>6.3数据库触发器</h2><p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210429231629669.png" alt="image-20210429231629669"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210429231700218.png" alt="image-20210429231700218"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210429232931603.png" alt="image-20210429232931603"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210512203308943.png" alt="image-20210512203308943"></p>
+<p>创建触发器示例：</p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210512203434481.png" alt="image-20210512203434481"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210512203531534.png" alt="image-20210512203531534"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210512203542983.png" alt="image-20210512203542983"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210512204851716.png" alt="image-20210512204851716"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210429233222900.png" alt="image-20210429233222900"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210429233237079.png" alt="image-20210429233237079"></p>
+<h2 id="6-2数据库游标"><a href="#6-2数据库游标" class="headerlink" title="6.2数据库游标"></a>6.2数据库游标</h2><p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210518203310982.png" alt="image-20210518203310982"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210518203331434.png" alt="image-20210518203331434"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210518203401206.png" alt="image-20210518203401206"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210518203420044.png" alt="image-20210518203420044"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210518203504416.png" alt="image-20210518203504416"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210518203540341.png" alt="image-20210518203540341"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210518205359791.png" alt="image-20210518205359791"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210518205434787.png" alt="image-20210518205434787"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210518205453241.png" alt="image-20210518205453241"></p>
+<h2 id="6-6嵌入式sql编程"><a href="#6-6嵌入式sql编程" class="headerlink" title="6.6嵌入式sql编程"></a>6.6嵌入式sql编程</h2><p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210518205603096.png" alt="image-20210518205603096"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210518205702845.png" alt="image-20210518205702845"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210518205755342.png" alt="image-20210518205755342"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210518205839994.png" alt="image-20210518205839994"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210518205913834.png" alt="image-20210518205913834"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210518205942298.png" alt="image-20210518205942298"></p>
+<h2 id="题目：-2"><a href="#题目：-2" class="headerlink" title="题目："></a>题目：</h2><p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210518210036324.png" alt="image-20210518210036324"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210518210048115.png" alt="image-20210518210048115"></p>
+<p>c和Pascal使用“；”结尾。</p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210518210132734.png" alt="image-20210518210132734"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210518212353926.png" alt="image-20210518212353926"></p>
+<p>创建存储过程应该为A，只不过postgre的存储过程和函数是同一个东西！！！</p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210518212450220.png" alt="image-20210518212450220"></p>
+<p>触发器不能带参数！！！</p>
+<h1 id="NoSQL数据库"><a href="#NoSQL数据库" class="headerlink" title="NoSQL数据库"></a>NoSQL数据库</h1><h2 id="7-1NoSQL数据库概述"><a href="#7-1NoSQL数据库概述" class="headerlink" title="7.1NoSQL数据库概述"></a>7.1NoSQL数据库概述</h2><p>ACID：事务的一致性，原子性，隔离性，持久性。</p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210518215845715.png" alt="image-20210518215845715"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210518220201689.png" alt="image-20210518220201689"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210518220226611.png" alt="image-20210518220226611"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210518220428137.png" alt="image-20210518220428137"></p>
+<p><img src="/2021/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20210518220456420.png" alt="image-20210518220456420"></p>
+<h1 id="tips："><a href="#tips：" class="headerlink" title="tips："></a>tips：</h1><h2 id="多表查询连接："><a href="#多表查询连接：" class="headerlink" title="多表查询连接："></a>多表查询连接：</h2><p>join in（内连接）相当于where（条件）；条件两边都存在才会返回对应的row</p>
+<p>left   join in (左外连接)；条件左边存在便会返回相应的row</p>
+<p>full join in （全外连接）；只要有一边存在便会返回相应的row</p>
+
       
     </div>
 
@@ -313,7 +701,7 @@
 
 
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/9/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><span class="page-number current">10</span><a class="page-number" href="/page/11/">11</a><span class="space">&hellip;</span><a class="page-number" href="/page/23/">23</a><a class="extend next" rel="next" href="/page/11/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/page/9/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><span class="page-number current">10</span><a class="page-number" href="/page/11/">11</a><span class="space">&hellip;</span><a class="page-number" href="/page/25/">25</a><a class="extend next" rel="next" href="/page/11/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
