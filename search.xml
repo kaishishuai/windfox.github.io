@@ -335,6 +335,17 @@
       </categories>
   </entry>
   <entry>
+    <title>MyNumpy</title>
+    <url>/2021/01/18/numpy/</url>
+    <content><![CDATA[<h1 id="numpy基本函数"><a href="#numpy基本函数" class="headerlink" title="numpy基本函数"></a>numpy基本函数</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="matplotlib基本函数"><a href="#matplotlib基本函数" class="headerlink" title="matplotlib基本函数"></a>matplotlib基本函数</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="pandas基本函数"><a href="#pandas基本函数" class="headerlink" title="pandas基本函数"></a>pandas基本函数</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>深度学习</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>hexo学习</title>
     <url>/2020/12/22/hexo/</url>
     <content><![CDATA[<h3 id="问题一"><a href="#问题一" class="headerlink" title="问题一"></a>问题一</h3><p>​    域名必须和git账户名一样</p>
@@ -346,17 +357,6 @@
       </categories>
       <tags>
         <tag>技术学习</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>MyNumpy</title>
-    <url>/2021/01/18/numpy/</url>
-    <content><![CDATA[<h1 id="numpy基本函数"><a href="#numpy基本函数" class="headerlink" title="numpy基本函数"></a>numpy基本函数</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
-<h1 id="matplotlib基本函数"><a href="#matplotlib基本函数" class="headerlink" title="matplotlib基本函数"></a>matplotlib基本函数</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
-<h1 id="pandas基本函数"><a href="#pandas基本函数" class="headerlink" title="pandas基本函数"></a>pandas基本函数</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
-]]></content>
-      <tags>
-        <tag>深度学习</tag>
       </tags>
   </entry>
   <entry>
