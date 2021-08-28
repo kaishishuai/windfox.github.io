@@ -197,7 +197,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">29</span>
+          <span class="site-state-item-count">33</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -210,7 +210,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-count">19</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -256,7 +256,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://windsfox.github.io/2021/07/21/MySpring/">
+    <link itemprop="mainEntityOfPage" href="http://windsfox.github.io/2021/08/05/MySpringCloud/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/kong.jpg">
@@ -269,7 +269,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/07/21/MySpring/" class="post-title-link" itemprop="url">MySpring</a>
+          <a href="/2021/08/05/MySpringCloud/" class="post-title-link" itemprop="url">MySpringCloud</a>
         </h2>
 
         <div class="post-meta-container">
@@ -280,14 +280,14 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2021-07-21 16:26:27" itemprop="dateCreated datePublished" datetime="2021-07-21T16:26:27+08:00">2021-07-21</time>
+      <time title="创建时间：2021-08-05 12:33:32" itemprop="dateCreated datePublished" datetime="2021-08-05T12:33:32+08:00">2021-08-05</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-07-27 08:48:20" itemprop="dateModified" datetime="2021-07-27T08:48:20+08:00">2021-07-27</time>
+        <time title="修改时间：2021-08-08 14:36:46" itemprop="dateModified" datetime="2021-08-08T14:36:46+08:00">2021-08-08</time>
       </span>
 
   
@@ -300,294 +300,415 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>官网：<a target="_blank" rel="noopener" href="https://spring.io/projects/spring-framework#overview">https://spring.io/projects/spring-framework#overview</a></p>
-<p>官方下载地址：<a target="_blank" rel="noopener" href="https://repo1.maven.org/maven2/org/springframework/spring/">https://repo1.maven.org/maven2/org/springframework/spring/</a></p>
-<p>给特胡布：<a target="_blank" rel="noopener" href="https://github.com/spring-projects/spring-framework">https://github.com/spring-projects/spring-framework</a></p>
-<p>maven依赖：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-webmvc<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>5.2.10.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-jdbc<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>5.2.10.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h2 id="1-1优点："><a href="#1-1优点：" class="headerlink" title="1.1优点："></a>1.1优点：</h2><ul>
-<li>免费开元框架（容器）</li>
-<li>轻量级的，非入侵的框架</li>
-<li>控制反转（IOP），面向切面编程（AOP）</li>
-<li>支持事务处理，对框架整合支持</li>
+          <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><h2 id="1-1SpringCloud的常用五大组件"><a href="#1-1SpringCloud的常用五大组件" class="headerlink" title="1.1SpringCloud的常用五大组件"></a>1.1SpringCloud的常用五大组件</h2><ul>
+<li>服务发现——Netflix Eureka</li>
+<li>客服端负载均衡 Netflix Ribbon</li>
+<li>服务端负载均衡：Feign</li>
+<li>断路器——Netflix Hystrix</li>
+<li>服务网关——Netflix Zuul</li>
+<li>分布式配置——Spring Cloud Config</li>
 </ul>
-<h2 id="1-2组成"><a href="#1-2组成" class="headerlink" title="1.2组成"></a>1.2组成</h2><p><img src="/2021/07/21/MySpring/image-20210721225315387.png" alt="image-20210721225315387"></p>
-<h1 id="IOC理论"><a href="#IOC理论" class="headerlink" title="IOC理论"></a>IOC理论</h1><ul>
-<li>之前由程序员创建对象，控制权在程序员手上</li>
-<li>set注入之后，由用户输入创建，程序失去主动性，被动的接受用户所需要创建的对象</li>
+<h2 id="1-2常见面试题"><a href="#1-2常见面试题" class="headerlink" title="1.2常见面试题"></a>1.2常见面试题</h2><ul>
+<li>1、什么是微服务？</li>
+<li>2、微服务之间是如何独立通讯的？</li>
+<li>3、SpringCloud 和 Dubbo有哪些区别？</li>
+<li>4、SpringBoot和SpringCloud，请你谈谈对他们的理解</li>
+<li>5、什么是服务熔断？什么是服务降级</li>
+<li>6、微服务的优缺点是分别是什么？说下你在项目开发中遇到的坑</li>
+<li>7、你所知道的微服务技术栈有哪些？请列举一二</li>
+<li>8、eureka和zookeeper都可以提供服务注册与发现的功能，请说说两个的区别？</li>
 </ul>
-<p><img src="/2021/07/21/MySpring/image-20210722090558092.png" alt="image-20210722090558092"></p>
-<p>有属性的对象需要设置property</p>
-<p><img src="/2021/07/21/MySpring/image-20210722090801777.png" alt="image-20210722090801777"></p>
-<p>同过容器获取对象</p>
-<h1 id="IOC创建对象的方式"><a href="#IOC创建对象的方式" class="headerlink" title="IOC创建对象的方式"></a>IOC创建对象的方式</h1><ol>
-<li><p>使用无参构造方法执行，默认</p>
-</li>
-<li><p>提供有参构造创建方法</p>
-<p><img src="/2021/07/21/MySpring/image-20210722092048218.png" alt="image-20210722092048218"></p>
-</li>
-</ol>
-<h1 id="Spring配置"><a href="#Spring配置" class="headerlink" title="Spring配置"></a>Spring配置</h1><h2 id="4-1使用别名"><a href="#4-1使用别名" class="headerlink" title="4.1使用别名"></a>4.1使用别名</h2><p>alias标签</p>
-<h2 id="4-2Bean"><a href="#4-2Bean" class="headerlink" title="4.2Bean"></a>4.2Bean</h2><p><img src="/2021/07/21/MySpring/image-20210722101640745.png" alt="image-20210722101640745"></p>
-<h2 id="4-3-import"><a href="#4-3-import" class="headerlink" title="4.3 import"></a>4.3 import</h2><p>在一个applicationContext.xml中，导入其他bean.xml的包</p>
-<p><img src="/2021/07/21/MySpring/image-20210722100724463.png" alt="image-20210722100724463"></p>
-<h1 id="5依赖注入"><a href="#5依赖注入" class="headerlink" title="5依赖注入"></a>5依赖注入</h1><h2 id="5-1构造器注入"><a href="#5-1构造器注入" class="headerlink" title="5.1构造器注入"></a>5.1构造器注入</h2><p>bean通过构造器，实现将属性赋值</p>
-<h2 id="5-2-set方式注入（重点）"><a href="#5-2-set方式注入（重点）" class="headerlink" title="5.2 set方式注入（重点）"></a>5.2 set方式注入（重点）</h2><ul>
-<li><p>pojo类编写</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Student</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span>  String name;</span><br><span class="line">    <span class="keyword">private</span> Address address;</span><br><span class="line">    <span class="keyword">private</span> String[] books;</span><br><span class="line">    <span class="keyword">private</span> List&lt;String&gt; hobbys;</span><br><span class="line">    <span class="keyword">private</span> Map&lt;String ,String&gt; card;</span><br><span class="line">    <span class="keyword">private</span> Set&lt;String&gt; games;</span><br><span class="line">    <span class="keyword">private</span> String wife;</span><br><span class="line">    <span class="keyword">private</span> Properties info;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;Student&#123;&quot;</span> +</span><br><span class="line">                <span class="string">&quot;name=&#x27;&quot;</span> + name + <span class="string">&#x27;\&#x27;&#x27;</span> +</span><br><span class="line">                <span class="string">&quot;, address=&quot;</span> + address +</span><br><span class="line">                <span class="string">&quot;, books=&quot;</span> + Arrays.toString(books) +</span><br><span class="line">                <span class="string">&quot;, hobbys=&quot;</span> + hobbys +</span><br><span class="line">                <span class="string">&quot;, card=&quot;</span> + card +</span><br><span class="line">                <span class="string">&quot;, games=&quot;</span> + games +</span><br><span class="line">                <span class="string">&quot;, wife=&#x27;&quot;</span> + wife + <span class="string">&#x27;\&#x27;&#x27;</span> +</span><br><span class="line">                <span class="string">&quot;, info=&quot;</span> + info +</span><br><span class="line">                <span class="string">&#x27;&#125;&#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Address <span class="title">getAddress</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> address;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAddress</span><span class="params">(Address address)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.address = address;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> String[] getBooks() &#123;</span><br><span class="line">        <span class="keyword">return</span> books;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setBooks</span><span class="params">(String[] books)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.books = books;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> List&lt;String&gt; <span class="title">getHobbys</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> hobbys;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setHobbys</span><span class="params">(List&lt;String&gt; hobbys)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.hobbys = hobbys;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Map&lt;String, String&gt; <span class="title">getCard</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> card;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setCard</span><span class="params">(Map&lt;String, String&gt; card)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.card = card;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Set&lt;String&gt; <span class="title">getGames</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> games;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setGames</span><span class="params">(Set&lt;String&gt; games)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.games = games;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getWife</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> wife;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setWife</span><span class="params">(String wife)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.wife = wife;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Properties <span class="title">getInfo</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> info;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setInfo</span><span class="params">(Properties info)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.info = info;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Address</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String add;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;Address&#123;&quot;</span> +</span><br><span class="line">                <span class="string">&quot;add=&#x27;&quot;</span> + add + <span class="string">&#x27;\&#x27;&#x27;</span> +</span><br><span class="line">                <span class="string">&#x27;&#125;&#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getAdd</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> add;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAdd</span><span class="params">(String add)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.add = add;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-</li>
-</ul>
+<h1 id="一、微服务概述"><a href="#一、微服务概述" class="headerlink" title="一、微服务概述"></a>一、微服务概述</h1><h2 id="1-1、什么是微服务"><a href="#1-1、什么是微服务" class="headerlink" title="1.1、什么是微服务"></a>1.1、什么是微服务</h2><p>微服务（Microservice Architecture）是近几年流行的一种架构思想，关于它的概念很难一言以蔽之。究竟什么是</p>
+<p>微服务呢？我们在此引用 ThoughtWorks 公司的首席科学家 Martin Fowler于2014年提出的一段话：</p>
+<p>原文：<a target="_blank" rel="noopener" href="https://martinfowler.com/articles/microservices.html">https://martinfowler.com/articles/microservices.html</a><br>汉化：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/liuning8023/p/4493156.html">https://www.cnblogs.com/liuning8023/p/4493156.html</a></p>
 <ul>
-<li><p>测试类</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> com.kuang.pojo.Student;</span><br><span class="line"><span class="keyword">import</span> org.springframework.context.ApplicationContext;</span><br><span class="line"><span class="keyword">import</span> org.springframework.context.support.ClassPathXmlApplicationContext;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyTest</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        ApplicationContext context = <span class="keyword">new</span> ClassPathXmlApplicationContext(<span class="string">&quot;beans.xml&quot;</span>);</span><br><span class="line"></span><br><span class="line">        Student student = (Student) context.getBean(<span class="string">&quot;Student&quot;</span>);</span><br><span class="line"></span><br><span class="line">        System.out.println(student);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-</li>
+<li>就目前而言，对于微服务，业界并没有一个统一的，标准的定义<br>但通常而言，微服务架构是一种架构模式，或者说是一种架构风格， 它<strong>提倡将单一的应用程序划分成一组小的服务</strong>，每个服务运行在其独立的自己的进程内，服务之间互相协调，互相配置，为用户提供最终价值。服务之间采用轻量级的通信机制互相沟通，每个服务都围绕着具体的业务进行构建，并且能够被独立的部署到生产环境中，另外，应尽量避免统一的，集中式的服务管理机制，对具体的一个服务而言，应根据业务上下文，选择合适的语言，工具对其进行构建，可以有一个非常轻量级的集中式管理来协调这些服务，可以使用不同的语言来编写服务，也可以使用不同的数据存储；</li>
 </ul>
+<h2 id="我们从技术维度来理解下："><a href="#我们从技术维度来理解下：" class="headerlink" title="我们从技术维度来理解下："></a>我们从技术维度来理解下：</h2><ul>
+<li>微服务化的核心就是将传统的一站式应用，根据业务拆分成一个一个的服务，彻底地去耦合，每一个微<br>服务提供单个业务功能的服务，一个服务做一件事情，从技术角度看就是一种小而独立的处理过程，类似进程的概念，能够自行单独启动或销毁，拥有自己独立的数据库。</li>
+</ul>
+<h2 id="微服务与微服务架构"><a href="#微服务与微服务架构" class="headerlink" title="微服务与微服务架构"></a>微服务与微服务架构</h2><p><strong>微服务</strong></p>
+<p>强调的是服务的大小，他关注的是某一个点，是具体解决某一个问题/提供落地对应服务的一个服务应用，狭义的看，可以看做是IDEA中的一个个微服务工程，或者<strong>Moudel</strong></p>
+<p><strong>微服务架构</strong></p>
+<p>一种新的架构形式，Martin Fowler，2014提出！</p>
+<p>微服务架构是一种架构模式，它提倡<strong>将单一应用程序划分成一组小的服务</strong>，服务之间互相协调，互相配合，为用户提供最终价值。每个服务运行在其独立的进程中，服务于服务间采用轻量级的通信机制互相协作，每个服务都围绕着具体的业务进行构建，并且能够被独立的部署到生产环境中，另外，应尽量避免统一的，集中式的服务管理机制，对具体的一个服务而言，应根据业务上下文，选择合适的语言，工具对其进行构建。</p>
+<h2 id="微服务优缺点"><a href="#微服务优缺点" class="headerlink" title="微服务优缺点"></a>微服务优缺点</h2><p><strong>优点</strong></p>
 <ul>
-<li><p>注入信息</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;address&quot;</span> <span class="attr">class</span>=<span class="string">&quot;com.kuang.pojo.Address&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;add&quot;</span> <span class="attr">value</span>=<span class="string">&quot;xian&quot;</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;Student&quot;</span> <span class="attr">class</span>=<span class="string">&quot;com.kuang.pojo.Student&quot;</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--        第一种普通注入--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;name&quot;</span> <span class="attr">value</span>=<span class="string">&quot;琴江&quot;</span>/&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--        第二种 Bean注入--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;address&quot;</span> <span class="attr">ref</span>=<span class="string">&quot;address&quot;</span>/&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--        第三种：数组注入--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;books&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">array</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">value</span>&gt;</span>红楼梦<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">value</span>&gt;</span>水浒传<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">value</span>&gt;</span>西游记<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">array</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--        list注入--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;hobbys&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">list</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">value</span>&gt;</span>看定影<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">value</span>&gt;</span>刷狂神<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">value</span>&gt;</span>打游戏<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">list</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!--        map--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;card&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">map</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">entry</span> <span class="attr">value</span>=<span class="string">&quot;123344555&quot;</span> <span class="attr">key</span>=<span class="string">&quot;身份证&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">entry</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">map</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!--        set--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;games&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">set</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">value</span>&gt;</span>lol<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">value</span>&gt;</span>bob<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">value</span>&gt;</span>coc<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">set</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!--        null--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;wife&quot;</span> &gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">null</span>&gt;</span><span class="tag">&lt;/<span class="name">null</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!--        properties--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;info&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">props</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">prop</span> <span class="attr">key</span>=<span class="string">&quot;学号&quot;</span>&gt;</span>1234555<span class="tag">&lt;/<span class="name">prop</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">prop</span> <span class="attr">key</span>=<span class="string">&quot;姓名&quot;</span>&gt;</span>张一航<span class="tag">&lt;/<span class="name">prop</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">props</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h2 id="5-3拓展方式注入"><a href="#5-3拓展方式注入" class="headerlink" title="5.3拓展方式注入"></a>5.3拓展方式注入</h2></li>
+<li>每个服务足够内聚，足够小，代码容易理解，这样能聚焦一个指定的业务功能或业务需求；</li>
+<li>开发简单，开发效率提高，一个服务可能就是专一的只干一件事；</li>
+<li>微服务能够被小团队单独开发，这个小团队是2~5人的开发人员组成；</li>
+<li>微服务是松耦合的，是有功能意义的服务，无论是在开发阶段或部署阶段都是独立的。</li>
+<li>微服务能使用不同的语言开发。</li>
+<li>易于和第三方集成，微服务允许容易且灵活的方式集成自动部署，通过持续集成工具，如jenkins，Hudson，bamboo</li>
+<li>微服务易于被一个开发人员理解，修改和维护，这样小团队能够更关注自己的工作成果。无需通过合作才能体现价值。</li>
+<li>微服务允许你利用融合最新技术。</li>
+<li><strong>微服务只是业务逻辑的代码，不会和 HTML ， CSS 或其他界面混合</strong></li>
+<li><strong>每个微服务都有自己的存储能力，可以有自己的数据库，也可以有统一数据库</strong></li>
 </ul>
-<p>官方P命名空间和C命名空间</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">beans</span> <span class="attr">xmlns</span>=<span class="string">&quot;http://www.springframework.org/schema/beans&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">xmlns:xsi</span>=<span class="string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">xmlns:p</span>=<span class="string">&quot;http://www.springframework.org/schema/p&quot;</span> //这行导入依赖</span></span><br><span class="line"><span class="tag">    <span class="attr">xsi:schemaLocation</span>=<span class="string">&quot;http://www.springframework.org/schema/beans</span></span></span><br><span class="line"><span class="tag"><span class="string">    https://www.springframework.org/schema/beans/spring-beans.xsd&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;myDataSource&quot;</span> <span class="attr">class</span>=<span class="string">&quot;org.apache.commons.dbcp.BasicDataSource&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">destroy-method</span>=<span class="string">&quot;close&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">p:driverClassName</span>=<span class="string">&quot;com.mysql.jdbc.Driver&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">p:url</span>=<span class="string">&quot;jdbc:mysql://localhost:3306/mydb&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">p:username</span>=<span class="string">&quot;root&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">p:password</span>=<span class="string">&quot;misterkaoli&quot;</span>/&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">beans</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">beans</span> <span class="attr">xmlns</span>=<span class="string">&quot;http://www.springframework.org/schema/beans&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">xmlns:xsi</span>=<span class="string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">xmlns:c</span>=<span class="string">&quot;http://www.springframework.org/schema/c&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">xsi:schemaLocation</span>=<span class="string">&quot;http://www.springframework.org/schema/beans</span></span></span><br><span class="line"><span class="tag"><span class="string">        https://www.springframework.org/schema/beans/spring-beans.xsd&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;beanTwo&quot;</span> <span class="attr">class</span>=<span class="string">&quot;x.y.ThingTwo&quot;</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;beanThree&quot;</span> <span class="attr">class</span>=<span class="string">&quot;x.y.ThingThree&quot;</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- traditional declaration with optional argument names --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;beanOne&quot;</span> <span class="attr">class</span>=<span class="string">&quot;x.y.ThingOne&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">constructor-arg</span> <span class="attr">name</span>=<span class="string">&quot;thingTwo&quot;</span> <span class="attr">ref</span>=<span class="string">&quot;beanTwo&quot;</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">constructor-arg</span> <span class="attr">name</span>=<span class="string">&quot;thingThree&quot;</span> <span class="attr">ref</span>=<span class="string">&quot;beanThree&quot;</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">constructor-arg</span> <span class="attr">name</span>=<span class="string">&quot;email&quot;</span> <span class="attr">value</span>=<span class="string">&quot;something@somewhere.com&quot;</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- c-namespace declaration with argument names --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;beanOne&quot;</span> <span class="attr">class</span>=<span class="string">&quot;x.y.ThingOne&quot;</span> <span class="attr">c:thingTwo-ref</span>=<span class="string">&quot;beanTwo&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">c:thingThree-ref</span>=<span class="string">&quot;beanThree&quot;</span> <span class="attr">c:email</span>=<span class="string">&quot;something@somewhere.com&quot;</span>/&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">beans</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>ps:                           ==p命名和c命名不能直接使用，需要导入xml约束==</p>
-<h2 id="5-4bean的作用域"><a href="#5-4bean的作用域" class="headerlink" title="5.4bean的作用域"></a>5.4bean的作用域</h2><p><img src="/2021/07/21/MySpring/image-20210722130107255.png" alt="image-20210722130107255"></p>
-<ol>
-<li><p>单例模式（spring默认机制）</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;hello&quot;</span> <span class="attr">class</span>=<span class="string">&quot;com.kuang.pojo.Hello&quot;</span> <span class="attr">scope</span>=<span class="string">&quot;singleton&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;str&quot;</span> <span class="attr">value</span>=<span class="string">&quot;Spring&quot;</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
-<li><p>原型模式：每次从容器中get的时候，都会产生一个新对象</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;hello&quot;</span> <span class="attr">class</span>=<span class="string">&quot;com.kuang.pojo.Hello&quot;</span> <span class="attr">scope</span>=<span class="string">&quot;prototype&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;str&quot;</span> <span class="attr">value</span>=<span class="string">&quot;Spring&quot;</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-
-</li>
-</ol>
-<h1 id="6-Bean的自动装配"><a href="#6-Bean的自动装配" class="headerlink" title="6.Bean的自动装配"></a>6.Bean的自动装配</h1><ul>
-<li>自动装备是spring满足bean依赖的一种方式</li>
-<li>spring会在上下文中自动寻找，并自动给bean装备属性</li>
-</ul>
-<p>在Spring中三种转配方式</p>
-<ol>
-<li>在xml中显示配置</li>
-<li>在java中显示配置</li>
-<li>隐式的自动装配bean【重要】</li>
-</ol>
-<h2 id="6-1测试"><a href="#6-1测试" class="headerlink" title="6.1测试"></a>6.1测试</h2><ol>
-<li>一个人有猫狗两条宠物</li>
-<li></li>
-</ol>
-<h2 id="6-2ByName自动装配"><a href="#6-2ByName自动装配" class="headerlink" title="6.2ByName自动装配"></a>6.2ByName自动装配</h2><p>autowrie字段将自己寻找狗和猫来装入</p>
-<p><img src="/2021/07/21/MySpring/image-20210722224044048.png" alt="image-20210722224044048"></p>
-<p>原理：寻找配置文件中id和本bean中class对象中set方法中名字相等的bean来装配</p>
-<p><img src="/2021/07/21/MySpring/image-20210722224311256.png" alt="image-20210722224311256"></p>
-<h2 id="6-3ByType"><a href="#6-3ByType" class="headerlink" title="6.3ByType"></a>6.3ByType</h2><p><img src="/2021/07/21/MySpring/image-20210722224419581.png" alt="image-20210722224419581"></p>
-<h1 id="通过注解实现"><a href="#通过注解实现" class="headerlink" title="通过注解实现"></a>通过注解实现</h1><p>jdk1.5支持注解，Spring2.5就支持注解</p>
-<p>准备工作：</p>
-<ol>
-<li><p>导入约束</p>
-</li>
-<li><p>配置注解的支持</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">beans</span> <span class="attr">xmlns</span>=<span class="string">&quot;http://www.springframework.org/schema/beans&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">xmlns:xsi</span>=<span class="string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">xmlns:context</span>=<span class="string">&quot;http://www.springframework.org/schema/context&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">xsi:schemaLocation</span>=<span class="string">&quot;http://www.springframework.org/schema/beans</span></span></span><br><span class="line"><span class="tag"><span class="string">        https://www.springframework.org/schema/beans/spring-beans.xsd</span></span></span><br><span class="line"><span class="tag"><span class="string">        http://www.springframework.org/schema/context</span></span></span><br><span class="line"><span class="tag"><span class="string">        https://www.springframework.org/schema/context/spring-context.xsd&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">context:annotation-config</span>/&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">beans</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
-<li><p>在实体类中添加注解@Autowired</p>
-</li>
-<li><p>配置完成后</p>
-</li>
-</ol>
-<p><img src="/2021/07/21/MySpring/image-20210723095504000.png" alt="image-20210723095504000"></p>
-<p><img src="/2021/07/21/MySpring/image-20210723095105551.png" alt="image-20210723095105551"></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Autowired(required = false)</span> <span class="comment">//参数为false，可为null</span></span><br><span class="line"><span class="keyword">private</span>  String name;</span><br></pre></td></tr></table></figure>
-<p>Autowired自动装配默认使用的是bytype方式</p>
-<p>可以使用@Qualifier(value=”xxx”)xxx是id名</p>
-<h1 id="7-使用注解开发"><a href="#7-使用注解开发" class="headerlink" title="7.使用注解开发"></a>7.使用注解开发</h1><p>在spring之后</p>
-<ol>
-<li>bean</li>
-</ol>
-<p><img src="/2021/07/21/MySpring/image-20210723103611216.png" alt="image-20210723103611216"></p>
-<ol>
-<li><p>属性如何注入</p>
-<p><img src="/2021/07/21/MySpring/image-20210723103121750.png" alt="image-20210723103121750"></p>
-</li>
-<li><p>衍生的注解</p>
-<p>@Compoent有几个衍生注解，我们在web开发中，会按照三层mvc架构分层</p>
+<p><strong>缺点</strong></p>
 <ul>
-<li>dao【@Repository】</li>
-<li>service【@Service】</li>
-<li>controller【@Controller】</li>
-<li>这四个注解功能都是一样的，都代表类被注册到spring中，装配Bean</li>
+<li>开发人员要处理分布式系统的复杂性</li>
+<li>多服务运维难度，随着服务的增加，运维的压力也在增大</li>
+<li>系统部署依赖</li>
+<li>服务间通信成本</li>
+<li><strong>数据一致性</strong></li>
+<li>系统集成<strong>测试</strong></li>
+<li>性能<strong>监控</strong>…..</li>
 </ul>
-</li>
-<li><p>自动装配置</p>
+<h2 id="微服务技术栈"><a href="#微服务技术栈" class="headerlink" title="微服务技术栈"></a>微服务技术栈</h2><p><img src="/2021/08/05/MySpringCloud/kuangstudyb38df3de-89af-461e-9cec-4e9bdee7f5f8.png" alt="img"></p>
+<h1 id="二、SpringCloud入门"><a href="#二、SpringCloud入门" class="headerlink" title="二、SpringCloud入门"></a>二、SpringCloud入门</h1><h2 id="1-SpringCloud是什么"><a href="#1-SpringCloud是什么" class="headerlink" title="1.SpringCloud是什么"></a>1.SpringCloud是什么</h2><p>Spring官网:<a target="_blank" rel="noopener" href="https://spring.io/">https://spring.io/</a></p>
 <ul>
-<li><p>@Autowired ：自动装配通过类型，id</p>
-<p>如果Autowired不能唯一自动装配属性，则需要通过使用@Qualifier(value=”xxx”)xxx是id名找到唯一bean来注入</p>
-</li>
-<li><p>@Nullable：字段标记了这个注解，说明这个字段可以为null；</p>
-</li>
-<li><p>@Resource:自动装配，通过id，类型</p>
-</li>
+<li>SpringCloud, 基于SpringBoot提供了一套微服务解决方案，包括<strong>服务注册与发现，配置中心，全链路监<br>控，服务网关，负载均衡，熔断器等组件</strong>，除了基于NetFlix的开源组件做高度抽象封装之外，还有一些选型中立的开源组件。</li>
+<li>SpringCloud利用SpringBoot的开发便利性，巧妙地简化了分布式系统基础设施的开发，SpringCloud为开发人员提供了快速构建分布式系统的一些工具，<strong>包括配置管理，服务发现，断路器，路由，微代理，事件总线，全局锁，决策竞选，分布式会话等等</strong>，他们都可以用SpringBoot的开发风格做到一键启动和部署。</li>
+<li>SpringBoot并没有重复造轮子，它只是将目前各家公司开发的比较成熟，经得起实际考研的服务框架组合起来，通过SpringBoot风格进行再封装，屏蔽掉了复杂的配置和实现原理，最终给开发者留出了一套<br><strong>简单易懂，易部署和易维护的分布式系统开发工具包</strong></li>
+<li>SpringCloud 是 分布式微服务架构下的一站式解决方案，是各个微服务架构落地技术的集合体，俗称微服务全桶。</li>
 </ul>
-</li>
-<li><p>作用域</p>
-<p><img src="/2021/07/21/MySpring/image-20210723104606871.png" alt="image-20210723104606871"></p>
-</li>
-</ol>
-<ol start="5">
-<li><p>小结</p>
-<p>bean和注解最佳实现</p>
+<h2 id="2-SpringCloud和SpringBoot关系"><a href="#2-SpringCloud和SpringBoot关系" class="headerlink" title="2.SpringCloud和SpringBoot关系"></a>2.SpringCloud和SpringBoot关系</h2><p>SpringBoot专注于快速方便的开发<strong>单个个体微服务</strong>。</p>
+<p>SpringCloud是关注<strong>全局的微服务协调整理治理框架</strong>，它将SpringBoot开发的一个个单体微服务整合并管理起来，为各个微服务之间提供：配置管理，服务发现，断路器，路由，微代理，事件总线，全局锁，决策竞选，分布式会话等等集成服务。</p>
+<p>SpringBoot可以离开SpringClooud独立使用，开发项目，但是SpringCloud离不开SpringBoot，属于依赖关系</p>
+<h2 id="3-Dubbo-和-SpringCloud-对比"><a href="#3-Dubbo-和-SpringCloud-对比" class="headerlink" title="3.Dubbo 和 SpringCloud 对比"></a>3.Dubbo 和 SpringCloud 对比</h2><table>
+<thead>
+<tr>
+<th></th>
+<th>Dubbo</th>
+<th>SpringCloud</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>服务注册中心</td>
+<td>Zookeeper</td>
+<td>Spring Cloud Netfilx Eureka</td>
+</tr>
+<tr>
+<td>服务调用方式</td>
+<td>RPC</td>
+<td>REST API</td>
+</tr>
+<tr>
+<td>服务监控</td>
+<td>Dubbo-monitor</td>
+<td>Spring Boot Admin</td>
+</tr>
+<tr>
+<td>断路器</td>
+<td>不完善</td>
+<td>Spring Cloud Netfilx Hystrix</td>
+</tr>
+<tr>
+<td>服务网关</td>
+<td>无</td>
+<td>Spring Cloud Netfilx Zuul</td>
+</tr>
+<tr>
+<td>分布式配置</td>
+<td>无</td>
+<td>Spring Cloud Config</td>
+</tr>
+<tr>
+<td>服务跟踪</td>
+<td>无</td>
+<td>Spring Cloud Sleuth</td>
+</tr>
+<tr>
+<td>消息总栈</td>
+<td>无</td>
+<td>Spring Cloud Bus</td>
+</tr>
+<tr>
+<td>数据流</td>
+<td>无</td>
+<td>Spring Cloud Stream</td>
+</tr>
+<tr>
+<td>批量任务</td>
+<td>无</td>
+<td>Spring Cloud Task</td>
+</tr>
+</tbody></table>
+<p><strong>最大区别：SpringCloud抛弃了Dubbo的RPC通信，采用的是基于HTTP的REST方式。</strong></p>
+<p>严格来说，这两种方式各有优劣。虽然从一定程度上来说，后者牺牲了服务调用的性能，但也避免了上面提到的原生RPC带来的问题。而且REST相比RPC更为灵活，服务提供方和调用方的依赖只依靠一纸契约，不存在代码级别的强依赖，这在强调快速演化的微服务环境下，显得更加合适。</p>
+<p><strong>品牌机与组装机的区别</strong><br>很明显，Spring Cloud的功能比DUBBO更加强大，涵盖面更广，而且作为Spring的拳头项目，它也能够与Spring Framework、Spring Boot、Spring Data、Spring Batch等其他Spring项目完美融合，这些对于微服务而言是至关重要的。使用Dubbo构建的微服务架构就像组装电脑，各环节我们的选择自由度很高，但是最终结果很有可能因为一条内存质量不行就点不亮了，总是让人不怎么放心，但是如果你是一名高手，那这些都不是问题；而Spring Cloud就像品牌机，在Spring Source的整合下，做了大量的兼容性测试，保证了机器拥有更高的稳定性，但是如果要在使用非原装组件外的东西，就需要对其基础有足够的了解。</p>
+<p><strong>社区支持与更新力度</strong><br>最为重要的是，DUBBO停止了5年左右的更新，虽然2017.7重启了。对于技术发展的新需求，需要由开发者自行拓展升级（比如当当网弄出了DubboX），这对于很多想要采用微服务架构的中小软件组织，显然是不太合适的，中小公司没有这么强大的技术能力去修改Dubbo源码+周边的一整套解决方案，并不是每一个公司都有阿里的大牛+真实的线上生产环境测试过。</p>
+<p><strong>总结：</strong><br>曾风靡国内的开源 RPC 服务框架 Dubbo 在重启维护后，令许多用户为之雀跃，但同时，也迎来了一些质疑的声音。互联网技术发展迅速，Dubbo 是否还能跟上时代？Dubbo 与 Spring Cloud 相比又有何优势和差异？是否会有相关举措保证 Dubbo 的后续更新频率？</p>
+<p>人物：Dubbo重启维护开发的<strong>刘军</strong>，主要负责人之一</p>
+<p>刘军，阿里巴巴中间件高级研发工程师，主导了 Dubbo 重启维护以后的几个发版计划，专注于高性能RPC 框架和微服务相关领域。曾负责网易考拉 RPC 框架的研发及指导在内部使用，参与了服务治理平台、分布式跟踪系统、分布式一致性框架等从无到有的设计与开发过程。</p>
+<p><strong>解决的问题域不一样：Dubbo的定位是一款RPC框架，Spring Cloud的目标是微服务架构下的一站式解决方案</strong></p>
+<h2 id="4-Dubbo-和-SpringCloud-对比"><a href="#4-Dubbo-和-SpringCloud-对比" class="headerlink" title="4.Dubbo 和 SpringCloud 对比"></a>4.Dubbo 和 SpringCloud 对比</h2><ul>
+<li>Distributed/versioned configuration （分布式/版本控制配置）</li>
+<li>Service registration and discovery（服务注册与发现）</li>
+<li>Routing（路由）</li>
+<li>Service-to-service calls（服务到服务的调用）</li>
+<li>Load balancing（负载均衡配置）</li>
+<li>Circuit Breakers（断路器）</li>
+<li>Distributed messaging（分布式消息管理）<br>….</li>
+</ul>
+<h2 id="5-SpringCloud在哪下"><a href="#5-SpringCloud在哪下" class="headerlink" title="5.SpringCloud在哪下"></a>5.SpringCloud在哪下</h2><p>官网：<a target="_blank" rel="noopener" href="http://projects.spring.io/spring-cloud/">http://projects.spring.io/spring-cloud/</a><br>这玩意的版本号有点特别</p>
+<p><img src="/2021/08/05/MySpringCloud/20200521130004420.png" alt="img"></p>
+<p>SpringCloud没有采用数字编号的方式命名版本号，而是采用了<strong>伦敦地铁站</strong>的名称，同时根据字母表的顺序来对应版本时间顺序，比如最早的Realse版本：Angel，第二个Realse版本：Brixton，然后是Camden、Dalston\Edgware，目前最新的是Hoxton SR4 CURRENT GA通用稳定版。</p>
+<p><strong>自学参考书：</strong></p>
 <ul>
-<li>xml管理bean，注解实现属性的注入</li>
-<li>注意：记得导入context支持</li>
+<li>SpringCloud Netflix 中文文档：<a target="_blank" rel="noopener" href="https://springcloud.cc/spring-cloud-netflix.html">https://springcloud.cc/spring-cloud-netflix.html</a></li>
+<li>SpringCloud 中文API文档(官方文档翻译版)：<a target="_blank" rel="noopener" href="https://springcloud.cc/spring-cloud-dalston.html">https://springcloud.cc/spring-cloud-dalston.html</a></li>
+<li>SpringCloud中国社区：<a target="_blank" rel="noopener" href="http://springcloud.cn/">http://springcloud.cn/</a></li>
+<li>SpringCloud中文网：<a target="_blank" rel="noopener" href="https://springcloud.cc/">https://springcloud.cc</a></li>
 </ul>
-</li>
-</ol>
-<h1 id="8-使用java方式配置spring"><a href="#8-使用java方式配置spring" class="headerlink" title="8.使用java方式配置spring"></a>8.使用java方式配置spring</h1><p>Javaconfig是spring的一个子项目，spring4之后成为了核心内容</p>
-<p><img src="/2021/07/21/MySpring/image-20210723113144031.png" alt="image-20210723113144031"></p>
-<p>实体类</p>
-<p><img src="/2021/07/21/MySpring/image-20210723113350670.png" alt="image-20210723113350670"></p>
-<p>配置类</p>
-<p><img src="/2021/07/21/MySpring/image-20210723113257324.png" alt="image-20210723113257324"></p>
-<p>测试类</p>
-<p><img src="/2021/07/21/MySpring/image-20210723113411899.png" alt="image-20210723113411899"></p>
-<h1 id="10-代理模式"><a href="#10-代理模式" class="headerlink" title="10.代理模式"></a>10.代理模式</h1><h2 id="10-1静态代理"><a href="#10-1静态代理" class="headerlink" title="10.1静态代理"></a>10.1静态代理</h2><h3 id="角色分析："><a href="#角色分析：" class="headerlink" title="角色分析："></a>角色分析：</h3><ul>
-<li>抽象角色：一般会使用接口或者抽象类来解决</li>
-<li>真实角色：被代理的角色</li>
-<li>代理角色：代理真实角色，代理真实角色后，我们一般会做一些附属操作</li>
-<li>客户：访问代理对象的人！</li>
-</ul>
-<h3 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h3><p>接口：</p>
-<p><img src="/2021/07/21/MySpring/image-20210723130403192.png" alt="image-20210723130403192"></p>
-<p>真实角色：</p>
-<p><img src="/2021/07/21/MySpring/image-20210723130459659.png" alt="image-20210723130459659"></p>
-<p>代理角色</p>
-<p><img src="/2021/07/21/MySpring/image-20210723130257297.png" alt="image-20210723130257297"></p>
-<p>客户访问：</p>
-<p><img src="/2021/07/21/MySpring/image-20210723130321285.png" alt="image-20210723130321285"></p>
-<h3 id="代理模式的好处："><a href="#代理模式的好处：" class="headerlink" title="代理模式的好处："></a>代理模式的好处：</h3><ul>
-<li>可以是真实角色的操作更加纯粹，不用去关注一些公共的事务</li>
-<li>公共也就交给代理角色！实现了业务的分工</li>
-<li>公共业务发生扩展的时候，方便集中管理！</li>
-</ul>
-<p>缺点：</p>
+<h1 id="三、Eureka服务注册与发现"><a href="#三、Eureka服务注册与发现" class="headerlink" title="三、Eureka服务注册与发现"></a>三、Eureka服务注册与发现</h1><h2 id="4-1什么是Eureka"><a href="#4-1什么是Eureka" class="headerlink" title="4.1什么是Eureka"></a>4.1什么是Eureka</h2><p>Eureka：怎么读？</p>
+<p>Netflix 在设计Eureka 时，遵循的就是<strong>AP原则</strong><br><strong>CAP原则</strong>又称CAP定理，指的是在一个分布式系统中</p>
 <ul>
-<li>一个真实角色就会产生一个代理角色：代码量会翻倍，开发效率会变低</li>
+<li>一致性（Consistency）</li>
+<li>可用性（Availability）</li>
+<li>分区容错性（Partition tolerance）</li>
 </ul>
-<h2 id="10-2动态代理"><a href="#10-2动态代理" class="headerlink" title="10.2动态代理"></a>10.2动态代理</h2><ul>
-<li>动态代理和静态代理角色一样</li>
-<li>动态代理是自动生成的，</li>
-<li>动态代理分为两大类：基于接口的动态代理，基于类的动态代理<ul>
-<li>基于接口==========jdk动态代理【我们在这里使用】</li>
-<li>基于类：cglib</li>
-<li>Java字节码实现：javalist</li>
+<p>CAP 原则指的是，这三个要素<strong>最多只能同时实现两点，不可能三者兼顾</strong>。</p>
+<p>Eureka是Netflix的一个子模块，也是核心模块之一。Eureka是一个基于REST的服务，用于定位服务，以实现云端中间层服务发现和故障转移，服务注册与发现对于微服务来说是非常重要的，有了服务发现与注册，只需要使用服务的标识符，就可以访问到服务，而不需要修改服务调用的配置文件了，功能类似于Dubbo的注册中心，比如Zookeeper；</p>
+<h2 id="4-2原理讲解"><a href="#4-2原理讲解" class="headerlink" title="4.2原理讲解"></a>4.2原理讲解</h2><p><strong>Eureka的基本架构：</strong></p>
+<ul>
+<li>SpringCloud <strong>封装了</strong>NetFlix公司开发的<strong>Eureka模块来实现服务注册和发现</strong></li>
+<li>Eureka采用了C-S的架构设计，EurekaServer 作为服务注册功能的服务器，他是服务注册中心</li>
+<li>而系统中的其他微服务。使用Eureka的客户端连接到EurekaServer并<strong>维持心跳连接</strong>。这样系统的维护人员就可以通过EurekaServer来监控系统中各个微服务是否正常运行，SpringCloud的一些其他模块（比如Zuul）就可以通过EurekaServer来发现系统中的其他微服务，并执行相关的逻辑；</li>
 </ul>
-</li>
+<p><img src="/2021/08/05/MySpringCloud/20200521130157770.png" alt="img"></p>
+<p>对比Dobbo架构</p>
+<p><img src="/2021/08/05/MySpringCloud/20201120091517323.png" alt="img"></p>
+<p>Eureka 包含两个组件：<strong>Eureka Server</strong> 和 <strong>Eureka Client</strong> 。</p>
+<p><strong>Eureka Server</strong> 提供服务<strong>注册服务</strong>，各个节点启动后，会在EurekaServer中进行注册，这样EurekaServer中的服务注册表中将会存储所有可用服务节点的信息，服务节点的信息可以在界面中直观的看到。<br><strong>Eureka Client</strong>是一个Java客户端，用于简化EurekaServer的交互，客户端同时也具备一个内置的，使用<strong>轮询负载</strong>算法的负载均衡器。<strong>在应用启动后，将会向EurekaServer发送心跳（默认周期为30秒）。如果Eureka Server在多个心跳周期内没有接收到某个节点的心跳，EurekaServer将会从服务注册表中把这个服务节点移除掉（默认周期为90秒）</strong></p>
+<p><strong>三大角色</strong></p>
+<ul>
+<li>Eureka Server：提供服务的注册于发现。</li>
+<li>Service Provider：将自身服务注册到Eureka中，从而使消费方能够找到。</li>
+<li>Service Consumer：服务消费方从Eureka中获取注册服务列表，从而找到消费服务。</li>
 </ul>
-<p>需要了解的两个类：proxy：代理；InvacationHandler：调用处理程序</p>
-<h3 id="代码：-1"><a href="#代码：-1" class="headerlink" title="代码："></a>代码：</h3><p>Host实现了Rent接口</p>
+<h2 id="4-3服务构建"><a href="#4-3服务构建" class="headerlink" title="4.3服务构建"></a>4.3服务构建</h2><p><strong>1.erueka-server服务端</strong></p>
 <ol>
-<li><p>编写生成代理类的类</p>
-<p><img src="/2021/07/21/MySpring/image-20210723162722264.png" alt="image-20210723162722264"></p>
-</li>
-<li><p>编写用户</p>
-<p><img src="/2021/07/21/MySpring/image-20210723163107820.png" alt="image-20210723163107820"></p>
-</li>
+<li>建立springcloud-eureka-7001模块</li>
+<li>编辑pom.xml</li>
 </ol>
-<p><img src="/2021/07/21/MySpring/image-20210723164110541.png" alt="image-20210723164110541"></p>
-<p>左边的代码是固定的，只需要右边设置代理对象的时候改变接口的名字就行了</p>
-<h3 id="动态代理的好处："><a href="#动态代理的好处：" class="headerlink" title="动态代理的好处："></a>动态代理的好处：</h3><ul>
-<li>可以是真实角色的操作更加纯粹，不用去关注一些公共的事务</li>
-<li>公共也就交给代理角色！实现了业务的分工</li>
-<li>公共业务发生扩展的时候，方便集中管理！</li>
-<li>一个动态代理类实现的是一个接口，一般也对应一类业务</li>
-<li>一个动态代理类可以代理多个类，只要实现了同一个接口即可</li>
-</ul>
-<h1 id="AOP"><a href="#AOP" class="headerlink" title="AOP"></a>AOP</h1><p><img src="/2021/07/21/MySpring/image-20210723160655796.png" alt="image-20210723160655796"></p>
-<p>使用之前导包</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.aspectj<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>aspectjweaver<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.9.7<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h2 id="整合spring的代码："><a href="#整合spring的代码：" class="headerlink" title="整合spring的代码："></a>整合spring的代码：</h2><p>需求：在增删改查的业务逻辑层添加日志打印功能：</p>
-<h3 id="第一种方式"><a href="#第一种方式" class="headerlink" title="第一种方式"></a>第一种方式</h3><ol>
-<li><p>前置后置日志</p>
-<p><img src="/2021/07/21/MySpring/image-20210723170544025.png" alt="image-20210723170544025"></p>
-<p><img src="/2021/07/21/MySpring/image-20210723170703225.png" alt="image-20210723170703225"></p>
-</li>
-<li><p>真实业务类</p>
-<p><img src="/2021/07/21/MySpring/image-20210723170742554.png" alt="image-20210723170742554"></p>
-<p><img src="/2021/07/21/MySpring/image-20210723170807139.png" alt="image-20210723170807139"></p>
-</li>
-</ol>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">parent</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>springcloud<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.example<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.0-SNAPSHOT<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">parent</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">modelVersion</span>&gt;</span>4.0.0<span class="tag">&lt;/<span class="name">modelVersion</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>eureka<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">properties</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">maven.compiler.source</span>&gt;</span>8<span class="tag">&lt;/<span class="name">maven.compiler.source</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">maven.compiler.target</span>&gt;</span>8<span class="tag">&lt;/<span class="name">maven.compiler.target</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">properties</span>&gt;</span></span><br><span class="line">   <span class="comment">&lt;!--导包--&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--erueka-server服务端--&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.cloud<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-cloud-starter-eureka-server<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.4.6.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">       <span class="comment">&lt;!--热部署工具--&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-devtools<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <ol start="3">
-<li><p>bean.xml注册</p>
-<p><img src="/2021/07/21/MySpring/image-20210723170912212.png" alt="image-20210723170912212"></p>
-</li>
-<li><p>编写测试类</p>
-<p><img src="/2021/07/21/MySpring/image-20210723170957167.png" alt="image-20210723170957167"></p>
+<li><p>application.yaml</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">server:</span></span><br><span class="line">  <span class="attr">port:</span> <span class="number">7001</span></span><br><span class="line"><span class="comment">#Eureka配置</span></span><br><span class="line"><span class="attr">eureka:</span></span><br><span class="line">  <span class="attr">instance:</span></span><br><span class="line">    <span class="attr">hostname:</span> <span class="string">localhost</span>  <span class="comment">#Eureka服务端的实例名称</span></span><br><span class="line">  <span class="attr">client:</span></span><br><span class="line">    <span class="attr">register-with-eureka:</span> <span class="literal">false</span>  <span class="comment">#表示是否想eureka注册中心注册自己</span></span><br><span class="line">    <span class="attr">fetch-registry:</span> <span class="literal">false</span>  <span class="comment">#如果为false，则表示自己为注册中心，等别人过来连就好了</span></span><br><span class="line">    <span class="attr">service-url:</span>  <span class="comment">#监控页面</span></span><br><span class="line">     <span class="comment">#单机</span></span><br><span class="line">      <span class="attr">defaultZone:</span> <span class="string">http://$&#123;eureka.instance.hostname&#125;:$&#123;server.port&#125;/eureka/</span></span><br><span class="line">        <span class="comment"># 设置与Eureka Server交互的地址查询服务和注册服务都需要依赖这个defaultZone地址</span></span><br><span class="line">      <span class="comment">#  http://localhost:7001/eureka/</span></span><br></pre></td></tr></table></figure>
+<p>编写主启动类</p>
 </li>
 </ol>
-<h3 id="第二种方式"><a href="#第二种方式" class="headerlink" title="第二种方式"></a>第二种方式</h3><p><img src="/2021/07/21/MySpring/image-20210723175519254.png" alt="image-20210723175519254"></p>
-<p><img src="/2021/07/21/MySpring/image-20210723175439381.png" alt="image-20210723175439381"></p>
-<p><img src="/2021/07/21/MySpring/image-20210723175553234.png" alt="image-20210723175553234"></p>
-<h3 id="注解实现AOP"><a href="#注解实现AOP" class="headerlink" title="注解实现AOP"></a>注解实现AOP</h3><p><img src="/2021/07/21/MySpring/image-20210723224748484.png" alt="image-20210723224748484"></p>
-<p><img src="/2021/07/21/MySpring/image-20210723224806996.png" alt="image-20210723224806996"></p>
-<h1 id="12-整合Mybatis"><a href="#12-整合Mybatis" class="headerlink" title="12.整合Mybatis"></a>12.整合Mybatis</h1><p>步骤：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//启动之后访问http://localhost:7001</span></span><br><span class="line"><span class="meta">@SpringBootApplication</span></span><br><span class="line"><span class="meta">@EnableEurekaServer</span>  <span class="comment">//EnableEurekaServer 服务端的启动类，注册中心，可以接收别人注册进来</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">EurekaServer_7001</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        SpringApplication.run(EurekaServer_7001.class,args);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>启动，访问测试：</p>
+<p><img src="/2021/08/05/MySpringCloud/kuangstudy6ec6f944-73ac-4b3a-a107-972e4571efcb.png" alt="img"></p>
+<ul>
+<li>System Status：系统信息</li>
+<li>DS Replicas：服务器副本</li>
+<li>Instances currently registered with Eureka：已注册的微服务列表</li>
+<li>General Info：一般信息</li>
+<li>Instance Info：实例信息</li>
+</ul>
+<p><strong>2.erueka-client客户端</strong><br><strong>修改之前创建的springcloud-provider-dept-8001模块</strong></p>
 <ol>
-<li>导入相关jar包<ul>
-<li>junit</li>
-<li>mybatis</li>
-<li>mysql</li>
-<li>spring相关</li>
-<li>aop织入</li>
-<li>mybatis-spring【new】</li>
-</ul>
+<li><p>导入Eureka依赖</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--eureka,注册到服务中心--&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.cloud<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-cloud-starter-eureka<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.4.6.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+<li><p>application.yaml中导入Eureka支持</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#Eureka的配置，注册到哪里</span></span><br><span class="line"><span class="attr">eureka:</span></span><br><span class="line">  <span class="attr">client:</span></span><br><span class="line">    <span class="attr">service-url:</span></span><br><span class="line">      <span class="attr">defaultZone:</span> <span class="string">http://localhost:7001/eureka/</span></span><br><span class="line">  <span class="attr">instance:</span></span><br><span class="line">    <span class="attr">instance-id:</span> <span class="string">springcloud-provider-dept-8001</span>   <span class="comment">#修改erueka上的默认描述信息</span></span><br></pre></td></tr></table></figure></li>
+<li><p>主启动类添加注解</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@SpringBootApplication</span></span><br><span class="line"><span class="meta">@EnableEurekaClient</span>   <span class="comment">//在服务启动后，自动注册到eureka中</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DeptProvider8001</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        SpringApplication.run(DeptProvider8001.class,args);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>先启动7001服务端后启动8001客户端进行测试，然后访问监控页<a target="_blank" rel="noopener" href="http://localhost:7001/">http://localhost:7001/</a> 产看结果如图，成功</p>
 </li>
 </ol>
-<p><img src="/2021/07/21/MySpring/image-20210723225741092.png" alt="image-20210723225741092"></p>
-<ol start="2">
-<li>编写相关配置文件</li>
-<li>测试</li>
+<p><img src="/2021/08/05/MySpringCloud/kuangstudy8b8fd839-0548-4b76-8c88-2f1eb333832c.png" alt="img"></p>
+<h3 id="actuator与注册微服务信息完善"><a href="#actuator与注册微服务信息完善" class="headerlink" title="actuator与注册微服务信息完善"></a>actuator与注册微服务信息完善</h3><p>修改springcloud-provider-dept-8001模块中application.yml</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#Eureka的配置，注册到哪里</span></span><br><span class="line"><span class="attr">eureka:</span></span><br><span class="line">  <span class="attr">client:</span></span><br><span class="line">    <span class="attr">service-url:</span></span><br><span class="line">      <span class="attr">defaultZone:</span> <span class="string">http://localhost:7001/eureka/</span></span><br><span class="line">  <span class="attr">instance:</span></span><br><span class="line">    <span class="attr">instance-id:</span> <span class="string">springcloud-provider-dept-8001</span>   <span class="comment">#修改erueka上的默认描述信息</span></span><br><span class="line"><span class="comment"># info配置</span></span><br><span class="line"><span class="attr">info:</span></span><br><span class="line">  <span class="attr">app.name:</span> <span class="string">hejinjie-springcloud</span></span><br><span class="line">  <span class="attr">company.name:</span> <span class="string">blog-hejinjie</span></span><br></pre></td></tr></table></figure>
+<p>重启8001，刷新</p>
+<p><img src="/2021/08/05/MySpringCloud/kuangstudyfa47b699-6541-41b6-ae71-ca8852fd6981.png" alt="img"></p>
+<p>如果此时停掉springcloud-provider-dept-8001 等30s后 监控会开启保护机制：</p>
+<p><img src="/2021/08/05/MySpringCloud/20200521130557974.png" alt="img"></p>
+<p>配置关于服务加载的监控信息</p>
+<p><img src="/2021/08/05/MySpringCloud/20200521130718511.png" alt="img"></p>
+<p>pom.xml中添加依赖</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--完善监控信息--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-actuator<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>application.yml中添加配置</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># info配置</span></span><br><span class="line"><span class="attr">info:</span></span><br><span class="line">  <span class="attr">app.name:</span> <span class="string">hejinjie-springcloud</span></span><br><span class="line">  <span class="attr">company.name:</span> <span class="string">阜阳师范大学-计信院</span></span><br></pre></td></tr></table></figure>
+<p>此时点击<img src="/2021/08/05/MySpringCloud/20200521130756988.png" alt="img">跳转页面如下</p>
+<p><img src="/2021/08/05/MySpringCloud/kuangstudy72955f93-3faf-4545-a89e-965f491199e0.png" alt="img"></p>
+<h3 id="Eureka的自我保护机制"><a href="#Eureka的自我保护机制" class="headerlink" title="Eureka的自我保护机制"></a><strong>Eureka的自我保护机制</strong></h3><p><strong>自我保护机制：好死不如赖活着</strong><br><strong>一句话总结：某时刻某一个微服务不可以用了，eureka不会立刻清理，依旧会对该微服务的信息进行保存！</strong></p>
+<ul>
+<li>默认情况下，如果EurekaServer在一定时间内没有接收到某个微服务实例的心跳，EurekaServer将会注销该实例（默认90秒）。但是当网络分区故障发生时，微服务与Eureka之间无法正常通行，以上行为可能变得非常危险了—因为微服务本身其实是健康的，此时本不应该注销这个服务。Eureka通过 自我保护机制 来解决这个问题—当EurekaServer节点在短时间内丢失过多客户端时（可能发生了网络分区故障），那么这个节点就会进入自我保护模式。一旦进入该模式，EurekaServer就会保护服务注册表中的信息，不再删除服务注册表中的数据（也就是不会注销任何微服务）。当网络故障恢复后，该EurekaServer节点会自动退出自我保护模式。</li>
+<li>在自我保护模式中，EurekaServer会保护服务注册表中的信息，不再注销任何服务实例。当它收到的心跳数重新恢复到阈值以上时，该EurekaServer节点就会自动退出自我保护模式。它的设计哲学就是宁可保留错误的服务注册信息，也不盲目注销任何可能健康的服务实例。一句话：好死不如赖活着。</li>
+<li>综上，自我保护模式是一种应对网络异常的安全保护措施。它的架构哲学是宁可同时保留所有微服务（健康的微服务和不健康的微服务都会保留），也不盲目注销任何健康的微服务。使用自我保护模式，可以让Eureka集群更加的健壮和稳定。在SpringCloud中，可以使用 <code>eureka.server.enable-self-preservation = false</code> 禁用自我保护模式 【不推荐关闭自我保护机制】</li>
+</ul>
+<h3 id="springcloud-provider-dept-8001服务发现-Discovery（团队开发比较常用）"><a href="#springcloud-provider-dept-8001服务发现-Discovery（团队开发比较常用）" class="headerlink" title="springcloud-provider-dept-8001服务发现 Discovery（团队开发比较常用）"></a>springcloud-provider-dept-8001服务发现 Discovery（团队开发比较常用）</h3><p>对于注册进eureka里面的微服务，可以通过服务发现来获得该服务的信息。【对外暴露服务】</p>
+<p>修改springcloud-provider-dept-8001工程中的DeptController<br>新增一个方法</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@GetMapping(&quot;/discovery&quot;)</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Object <span class="title">discovery</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="comment">//获得微服务列表清单</span></span><br><span class="line">        List&lt;String&gt; list = client.getServices();</span><br><span class="line">        System.out.println(<span class="string">&quot;client.getServices()==&gt;&quot;</span>+list);</span><br><span class="line">        <span class="comment">//得到一个具体的微服务！</span></span><br><span class="line">        List&lt;ServiceInstance&gt; serviceInstanceList =</span><br><span class="line">                client.getInstances(<span class="string">&quot;springcloud-provider-dept&quot;</span>);</span><br><span class="line">        <span class="keyword">for</span> (ServiceInstance serviceInstance : serviceInstanceList) &#123;</span><br><span class="line">            System.out.println(</span><br><span class="line">                    serviceInstance.getServiceId()+<span class="string">&quot;\t&quot;</span>+</span><br><span class="line">                            serviceInstance.getHost()+<span class="string">&quot;\t&quot;</span>+</span><br><span class="line">                            serviceInstance.getPort()+<span class="string">&quot;\t&quot;</span>+</span><br><span class="line">                            serviceInstance.getUri()</span><br><span class="line">            );</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.client;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>主启动类增加一个注释</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@SpringBootApplication</span></span><br><span class="line"><span class="meta">@EnableEurekaClient</span>   <span class="comment">//在服务启动后，自动注册到eureka中</span></span><br><span class="line"><span class="meta">@EnableDiscoveryClient</span>  <span class="comment">//服务发现</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DeptProvider8001</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        SpringApplication.run(DeptProvider8001.class,args);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>启动Eureka服务，启动8001提供者<br>访问测试 <a target="_blank" rel="noopener" href="http://localhost:8001/dept/discovery">http://localhost:8001/dept/discovery</a></p>
+<p><img src="/2021/08/05/MySpringCloud/kuangstudye00065f0-0e4f-4116-ab02-9efed29daaa1.png" alt="img"></p>
+<p><img src="/2021/08/05/MySpringCloud/kuangstudy867b0235-ee6f-468e-b384-24c5166fbe63.png" alt="img"></p>
+<h3 id="consumer访问服务"><a href="#consumer访问服务" class="headerlink" title="consumer访问服务"></a>consumer访问服务</h3><p>springcloud-consumer-dept-80<br><strong>修改DeptConsumerController增加一个方法</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@GetMapping(&quot;/consumer/dept/discovery&quot;)</span></span><br><span class="line">   <span class="function"><span class="keyword">public</span> Object <span class="title">discovery</span><span class="params">()</span></span>&#123;</span><br><span class="line">       <span class="keyword">return</span></span><br><span class="line">               restTemplate.getForObject(REST_URL_PREFIX+<span class="string">&quot;/dept/discovery&quot;</span>,Object.class);</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+<p>启动80，访问<a target="_blank" rel="noopener" href="http://localhost/consumer/dept/discovery">http://localhost/consumer/dept/discovery</a></p>
+<p><img src="/2021/08/05/MySpringCloud/kuangstudy0528ab42-e914-4b22-8c10-21cf9a2a881f.png" alt="img"></p>
+<h2 id="4-4-Eureka：集群环境配置"><a href="#4-4-Eureka：集群环境配置" class="headerlink" title="4.4 Eureka：集群环境配置"></a>4.4 Eureka：集群环境配置</h2><ul>
+<li>新建工程springcloud-eureka-7002、springcloud-eureka-7003</li>
+<li>按照7001为模板粘贴POM</li>
+<li>修改7002和7003的主启动类</li>
+<li>修改映射配置 , <strong>windows域名映射</strong></li>
+</ul>
+<p><img src="/2021/08/05/MySpringCloud/20201120102037473.png" alt="img"></p>
+<p><img src="/2021/08/05/MySpringCloud/20200521131127278.png" alt="img"></p>
+<p>在hosts文件最后加上，要访问的本机名称，默认是localhost</p>
+<p><img src="/2021/08/05/MySpringCloud/20200521131141804.png" alt="img"></p>
+<p>修改3个EurekaServer的yaml文件夹<br>在集群中使springcloud-eureka-7001关联springcloud-eureka-7002、springcloud-eureka-7003</p>
+<p><strong>7001</strong></p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">server:</span></span><br><span class="line">  <span class="attr">port:</span> <span class="number">7001</span></span><br><span class="line"><span class="comment">#Eureka配置</span></span><br><span class="line"><span class="attr">eureka:</span></span><br><span class="line">  <span class="attr">instance:</span></span><br><span class="line">    <span class="attr">hostname:</span> <span class="string">eureka7001.com</span>  <span class="comment">#Eureka服务端的实例名称</span></span><br><span class="line">  <span class="attr">client:</span></span><br><span class="line">    <span class="attr">register-with-eureka:</span> <span class="literal">false</span>  <span class="comment">#表示是否想eureka注册中心注册自己</span></span><br><span class="line">    <span class="attr">fetch-registry:</span> <span class="literal">false</span>  <span class="comment">#如果为false，则表示自己为注册中心，等别人过来连就好了</span></span><br><span class="line">    <span class="attr">service-url:</span>  <span class="comment">#监控页面</span></span><br><span class="line">     <span class="comment">#单机</span></span><br><span class="line">      <span class="comment"># defaultZone: http://$&#123;eureka.instance.hostname&#125;:$&#123;server.port&#125;/eureka/</span></span><br><span class="line">        <span class="comment"># 设置与Eureka Server交互的地址查询服务和注册服务都需要依赖这个defaultZone地址</span></span><br><span class="line">      <span class="comment">#  http://localhost:7001/eureka/</span></span><br><span class="line">    <span class="comment">#集群（关联）</span></span><br><span class="line">        <span class="attr">defaultZone:</span> <span class="string">http://eureka7002.com:7002/eureka/，http://eureka7003.com:7003/eureka/</span></span><br></pre></td></tr></table></figure>
+<p>7002,7003与上面类似</p>
+<p>将8001微服务发布到1台eureka集群配置中，发现在集群中的其余注册中心也可以看到，但是平时我们<br>保险起见，都发布！<br>通过springcloud-provider-dept-8001下的yml配置文件，修改Eureka配置：配置服务注册中心地址</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#Eureka的配置，注册到哪里</span></span><br><span class="line"><span class="attr">eureka:</span></span><br><span class="line">  <span class="attr">client:</span></span><br><span class="line">    <span class="attr">service-url:</span></span><br><span class="line">      <span class="comment">#defaultZone: http://localhost:7001/eureka/</span></span><br><span class="line">      <span class="attr">defaultZone:</span> <span class="string">http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/</span></span><br><span class="line">  <span class="attr">instance:</span></span><br><span class="line">    <span class="attr">instance-id:</span> <span class="string">springcloud-provider-dept-8001</span>   <span class="comment">#修改erueka上的默认描述信息</span></span><br></pre></td></tr></table></figure>
+<p>启动集群测试</p>
+<p>访问<a target="_blank" rel="noopener" href="http://eureka7001.com:7001/">http://eureka7001.com:7001/</a></p>
+<p><img src="/2021/08/05/MySpringCloud/kuangstudy7a669d15-1f2a-494e-9abd-1f20f4783116.png" alt="img"></p>
+<p>这就是模拟集群，一个项目搭载到三个服务器上。</p>
+<h2 id="4-5-对比和Zookeeper区别—-重要"><a href="#4-5-对比和Zookeeper区别—-重要" class="headerlink" title="4.5 对比和Zookeeper区别—-重要"></a>4.5 对比和Zookeeper区别—-重要</h2><p><strong>1.回顾CAP原则</strong></p>
+<p>RDBMS （Mysql、Oracle、sqlServer）===&gt;ACID</p>
+<p>NoSQL（redis、mongdb）===&gt; CAP</p>
+<p><strong>2.ACID是什么？</strong></p>
+<ul>
+<li>A（Atomicity）原子性</li>
+<li>C（Consistency） 一致性</li>
+<li>I （Isolation）隔离性</li>
+<li>D（Durability）持久性</li>
+</ul>
+<p><strong>3.CAP是什么？</strong></p>
+<ul>
+<li>C（Consistency）强一致性</li>
+<li>A（Availability）可用性</li>
+<li>P（Partition tolerance）分区容错性</li>
+</ul>
+<p>CAP的三进二：CA、AP、CP</p>
+<p><strong>CAP理论的核心</strong></p>
+<p>一个分布式系统不可能同时很好的满足一致性，可用性和分区容错性这三个需求</p>
+<p>根据CAP原理，将NoSQL数据库分成了满足CA原则，满足CP原则和满足AP原则三大类：</p>
+<ul>
+<li>CA：单点集群，满足一致性，可用性的系统，通常可扩展性较差</li>
+<li>CP：满足一致性，分区容错性的系统，通常性能不是特别高</li>
+<li>AP：满足可用性，分区容错性的系统，通常可能对一致性要求低一些</li>
+</ul>
+<blockquote>
+<p>作为服务注册中心，Eureka比Zookeeper好在哪里？</p>
+</blockquote>
+<p>著名的CAP理论指出，一个分布式系统不可能同时满足C（一致性）、A（可用性）、P（容错性）。</p>
+<p>由于<strong>分区容错性P</strong>在分布式系统中是必须要保证的，因此我们只能在A和C之间进行权衡。</p>
+<ul>
+<li>Zookeeper保证的是CP；</li>
+<li>Eureka保证的是AP；</li>
+</ul>
+<p><strong>Zookeeper保证的是CP</strong></p>
+<p>当向注册中心查询服务列表时，我们可以容忍注册中心返回的是几分钟以前的注册信息，但不能接受服务直接down掉不可用。也就是说，<strong>服务注册功能对可用性的要求要高于一致性</strong>。但是zk会出现这样一种情况，当master节点因为网络故障与其他节点失去联系时，剩余节点会重新进行leader选举。问题在于，选举leader的时间太长，30~120s，且选举期间整个zk集群都是不可用的，这就导致在选举期间注册服务<strong>瘫痪</strong>。在云部署的环境下，因为网络问题使得zk集群失去master节点是较大概率会发生的事件，虽然服务最终能够恢复，但是漫长的选举时间导致的注册长期不可用是不能容忍的。</p>
+<p><strong>Eureka保证的是AP</strong><br>Eureka看明白了这一点，因此在设计时就优先保证可用性。<strong>Eureka各个节点都是平等的</strong>，几个节点挂掉不会影响正常节点的工作，剩余的节点依然可以提供注册和查询服务。而Eureka的客户端在向某个Eureka注册时，如果发现连接失败，则会自动切换至其他节点，只要有一台Eureka还在，就能保住注册服务的可用性，只不过查到的信息可能不是最新的，除此之外，Eureka还有一种自我保护机制，如果在15分钟内超过85%的节点都没有正常的心跳，那么Eureka就认为客户端与注册中心出现了网络故障，此时会出现以下几种情况：</p>
+<ul>
+<li><ol>
+<li>Eureka不再从注册列表中移除因为长时间没收到心跳而应该过期的服务</li>
 </ol>
-<h1 id="13-Mybatis-Spring"><a href="#13-Mybatis-Spring" class="headerlink" title="13.Mybatis-Spring"></a>13.Mybatis-Spring</h1><p><img src="/2021/07/21/MySpring/image-20210724091600686.png" alt="image-20210724091600686"></p>
-<p>代码：</p>
+</li>
+<li><ol>
+<li>Eureka仍然能够接受新服务的注册和查询请求，但是不会被同步到其他节点上（即保证当前节点依然可用）</li>
+</ol>
+</li>
+<li><ol>
+<li>当网络稳定时，当前实例新的注册信息会被同步到其他节点中</li>
+</ol>
+</li>
+</ul>
+<p><strong>因此，Eureka可以很好的应对因网络故障导致部分节点失去联系的情况，而不会像zookeeper那样使整个注册服务瘫痪</strong></p>
+<h1 id="四、Ribbon负载均衡（基于客户端）"><a href="#四、Ribbon负载均衡（基于客户端）" class="headerlink" title="四、Ribbon负载均衡（基于客户端）"></a>四、Ribbon负载均衡（基于客户端）</h1><h2 id="5-1Ribbon概述"><a href="#5-1Ribbon概述" class="headerlink" title="5.1Ribbon概述"></a>5.1Ribbon概述</h2><blockquote>
+<p>Ribbon是什么？</p>
+</blockquote>
+<p>Spring Cloud Ribbon是基于Netflix Ribbon实现的一套<strong>客户端负载均衡</strong>的工具。</p>
+<p>简单的说，Ribbon是Netflix发布的开源项目，主要功能是提供客户端的软件<strong>负载均衡算法</strong>，将NetFlix的中间层服务连接在一起。Ribbon的客户端组件提供一系列完整的配置项如：连接超时、重试等等。简单的说，就是在配置文件中列出LoadBalancer（简称LB：负载均衡）后面所有的机器，Ribbon会自动的帮助你基于某种规则（如简单轮询，随机连接等等）去连接这些机器。我们也很容易使用Ribbon实现自定义的负载均衡算法！</p>
+<blockquote>
+<p>Ribbon能干嘛？</p>
+</blockquote>
+<p><img src="/2021/08/05/MySpringCloud/20201121103107791.png" alt="img"></p>
+<p>LB，即负载均衡（Load Balance），在微服务或分布式集群中经常用的一种应用。</p>
+<p>负载均衡简单的说就是<strong>将用户的请求平摊的分配到多个服务上</strong>，从而达到系统的HA（<strong>高可用</strong>）。常见的负载均衡软件有 Nginx，Lvs 等等</p>
+<p>Dubbo、SpringCloud中均给我们提供了负载均衡，SpringCloud的负载均衡算法可以自定义负载均衡简单分类：</p>
+<ul>
+<li>集中式LB<ul>
+<li>即在服务的消费方和提供方之间使用独立的LB设施</li>
+<li>如之前学习的Nginx，由该设施负责把访问请求通过某种策略转发至服务的提供方！</li>
+</ul>
+</li>
+<li>进程式LB<ul>
+<li>将LB逻辑集成到消费方，消费方从服务注册中心获知有哪些地址可用，然后自己再从这些地址中选出一个合适的服务器。</li>
+<li><strong>Ribbon就属于进程内LB</strong>，它只是一个类库，集成于消费方进程，消费方通过它来获取到服务提供方的地址！</li>
+</ul>
+</li>
+</ul>
+<p>Ribbon的github地址 ： <a target="_blank" rel="noopener" href="https://github.com/NetFlix/ribbon">https://github.com/NetFlix/ribbon</a></p>
+<h2 id="5-2-Ribbon实现负载均衡"><a href="#5-2-Ribbon实现负载均衡" class="headerlink" title="5.2 Ribbon实现负载均衡"></a>5.2 Ribbon实现负载均衡</h2><blockquote>
+<p>Ribbon的初步配置</p>
+</blockquote>
+<p>1.复制springcloud-consumer-dept-80工程 springcloud-consumer-dept-ribbon-80</p>
+<p>2.修改pom.xml，添加Ribbon相关的配置</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--集成Ribbon--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.cloud<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-cloud-starter-ribbon<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.4.6.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.cloud<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-cloud-starter-eureka<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.4.6.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>3.修改application.yml ， 追加Eureka的服务注册地址</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">server:</span></span><br><span class="line">  <span class="attr">port:</span> <span class="number">80</span></span><br><span class="line"><span class="comment"># erueka配置</span></span><br><span class="line"><span class="attr">eureka:</span></span><br><span class="line">  <span class="attr">client:</span></span><br><span class="line">    <span class="attr">register-with-eureka:</span> <span class="literal">false</span>  <span class="comment">#不向eureka注册自己</span></span><br><span class="line">    <span class="attr">service-url:</span></span><br><span class="line">      <span class="attr">defaultZone:</span> <span class="string">http://eureka7003.com:7003/eureka/,</span></span><br><span class="line">      <span class="string">http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/</span></span><br></pre></td></tr></table></figure>
+<p>4.对里面的ConfigBean方法加上注解<a target="_blank" rel="noopener" href="https://github.com/LoadBalanced">@LoadBalanced</a>在 获得Rest时加入Ribbon的配置,开启Ribbon</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Configuration</span>  <span class="comment">//相当于spring中的applicationContext.xml</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DeptConfig</span> </span>&#123;</span><br><span class="line">    <span class="comment">//配置负载均衡实现RestTemplate</span></span><br><span class="line">    <span class="meta">@Bean</span>    <span class="comment">//原来是&lt;bean&gt;&lt;/bean&gt;,注入到Spring</span></span><br><span class="line">    <span class="meta">@LoadBalanced</span>  <span class="comment">//配置负载均衡实现RestTemplate</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> RestTemplate <span class="title">getRestTemplate</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> RestTemplate();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>5.主启动类添加<a target="_blank" rel="noopener" href="https://github.com/EnableEurekaClient">@EnableEurekaClient</a>，开启Eureka客户端</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Ribbon 和 Eureka 整合以后，客户端可以直接调用，不用关心IP地址和端口号</span></span><br><span class="line"><span class="meta">@SpringBootApplication</span></span><br><span class="line"><span class="meta">@EnableEurekaClient</span> <span class="comment">//开启Eureka客户端</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DeptRibbonConsumer80</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        SpringApplication.run(DeptRibbonConsumer80.class,args);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>6.修改DeptConsumerController客户端访问类，之前的写的地址是写死的，现在需要变化！</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//通过Ribbon，这里应该是一个变量，通过服务名来访问</span></span><br><span class="line">   <span class="comment">//private static final String REST_URL_PREFIX=&quot;http://localhost:8001&quot;;</span></span><br><span class="line">   <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String REST_URL_PREFIX=<span class="string">&quot;http://springcloud-provider-dept&quot;</span>;</span><br><span class="line">  <span class="comment">// springcloud-provider-dept  SPRINGCLOUD-PROVIDER-DEPT</span></span><br></pre></td></tr></table></figure>
+<p>7.先启动三个Eureka集群，在启动springcloud-provider-dept-8001，注册进Eureka,启动springcloud-consumer-dept-ribbon-80<br>测试<br><a target="_blank" rel="noopener" href="http://localhost/consumer/dept/list">http://localhost/consumer/dept/list</a></p>
+<p><strong>小结：Ribbon和Eureka整合后，客户端可以直接调用，而不用关心端口号和ip地址</strong></p>
+<blockquote>
+<p>Ribbon负载均衡</p>
+</blockquote>
+<p><img src="/2021/08/05/MySpringCloud/20200521131315626.png" alt="img"></p>
+<p>Ribbon不用向Eureka注册自己，上图有误</p>
+<p>Ribbon在工作时分成两步</p>
+<ul>
+<li>第一步先选择EurekaServer，它优先选择在同一个区域内<strong>负载均衡较少的Server</strong>。</li>
+<li>第二步在根据用户指定的<strong>策略</strong>，在从server去到的服务注册列表中选择一个地址。</li>
+</ul>
+<p>其中Ribbon提供了多种策略，比如<strong>轮询（默认），随机和根据响应时间加权重</strong>,,,等等</p>
+<p>1.参考springcloud-provider-dept-8001，新建两份，分别为8002,8003！</p>
+<p>2.修改端口号</p>
+<p>3.新建8002/8003数据库，各自微服务分别连接各自的数据库，复制DB1！</p>
+<p>4.修改各自的Yml文件</p>
+<ul>
+<li>端口</li>
+<li>数据库连接</li>
+<li>实例名也需要改</li>
+</ul>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">instance:</span></span><br><span class="line">    <span class="attr">instance-id:</span> <span class="string">springcloud-provider-dept-8002</span>   <span class="comment">#修改erueka上的默认描述信息</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>对外暴露统一的实例名必须一致</li>
+</ul>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#Spring配置</span></span><br><span class="line"><span class="attr">spring:</span></span><br><span class="line">  <span class="attr">application:</span></span><br><span class="line">    <span class="attr">name:</span> <span class="string">springcloud-provider-dept</span></span><br></pre></td></tr></table></figure>
+<p>测试<br>启动3个Eureka集群，启动3个provider微服务，启动消费者服务<br>测试三个都通过后<br><a target="_blank" rel="noopener" href="http://localhost:8001/dept/list">http://localhost:8001/dept/list</a><br><a target="_blank" rel="noopener" href="http://localhost:8002/dept/list">http://localhost:8002/dept/list</a><br><a target="_blank" rel="noopener" href="http://localhost:8003/dept/list">http://localhost:8003/dept/list</a><br>再测试<br><a target="_blank" rel="noopener" href="http://localhost/consumer/dept/list">http://localhost/consumer/dept/list</a><br>多刷新几次，并观察结果<br>每次访问都都是集群中的某个服务者提供者，这种情况叫做轮询，轮询算法还可以自定义</p>
+<h2 id="自定义轮询算法"><a href="#自定义轮询算法" class="headerlink" title="自定义轮询算法"></a>自定义轮询算法</h2><p><strong>Ribbon核心组件IRule</strong><br>IRule：根据特定算法从服务列表中选取一个要访问的服务！</p>
+<ul>
+<li>RoundRobinRule【轮询】</li>
+<li>RandomRule【随机】</li>
+<li>AvailabilityFilterRule【会先过滤掉由于多次访问故障而处于断路器跳闸的服务，还有并发的连接数量超过阈值的服务，然后对剩余的服务列表按照轮询策略进行访问】</li>
+<li>WeightedResponseTimeRule【根据平均响应时间计算所有服务的权重，响应时间越快服务权重越大，被选中的概率越高，刚启动时如果统计信息不足，则使用RoundRobinRule策略，等待统计信息足够，会切换到WeightedResponseTimeRule】</li>
+<li>RetryRule【先按照RoundRobinRule的策略获取服务，如果获取服务失败，则在指定时间内会进行重试，获取可用的服务】</li>
+<li>BestAvailableRule【会先过滤掉由于多次访问故障而处于断路器跳闸状态的服务，然后选择一个并发量最小的服务】</li>
+<li>ZoneAvoidanceRule【默认规则，复合判断server所在区域的性能和server的可用性选择服务器】</li>
+</ul>
+<p><strong>查看分析源码：</strong></p>
 <ol>
-<li><p>在resource目录下新建一个mybatis.config.xml（mybatis的一样）和spring-dao.xml</p>
-<p><img src="/2021/07/21/MySpring/image-20210724092800129.png" alt="image-20210724092800129"></p>
-</li>
-<li><p>新建一个applicationContext.xml</p>
-<p><img src="/2021/07/21/MySpring/image-20210724093030383.png" alt="image-20210724093030383"></p>
-</li>
-<li><p>编写UserMapper接口和实现类</p>
-<p><img src="/2021/07/21/MySpring/image-20210724093129010.png" alt="image-20210724093129010"></p>
-<p>比mybatis项目多实现类的原因：spring需要一个完整的类（构造注入和set注入）才能创建bean</p>
-<p><img src="/2021/07/21/MySpring/image-20210724095544860.png" alt="image-20210724095544860"></p>
-</li>
-<li><p>编写usermapper.xml（复制之前mybatis项目）</p>
-<p><img src="/2021/07/21/MySpring/image-20210724095430239.png" alt="image-20210724095430239"></p>
-</li>
-<li><p>编写测试类</p>
-<p><img src="/2021/07/21/MySpring/image-20210724093108084.png" alt="image-20210724093108084"></p>
-</li>
+<li>IRule</li>
+<li>ILoadBalancer</li>
+<li>AbstractLoadBalancer</li>
+<li>AbstractLoadBalancerRule：这个抽象父类十分重要！核心</li>
+<li>RoundRobinRule<br>省略。。。。</li>
 </ol>
-<h1 id="14-申明式事务"><a href="#14-申明式事务" class="headerlink" title="14. 申明式事务"></a>14. 申明式事务</h1><h2 id="spring中事务管理"><a href="#spring中事务管理" class="headerlink" title="spring中事务管理"></a>spring中事务管理</h2><ul>
-<li>声明式事务：AOP</li>
-<li>编程式事务：需要在代码中，进行事务管理（如try catch，不用）</li>
-</ul>
-<p><img src="/2021/07/21/MySpring/image-20210724102309245.png" alt="image-20210724102309245"></p>
-<p>只需要修改execution中的类名方法名就行了</p>
-<h1 id><a href="#" class="headerlink" title="=============================================================================="></a>==============================================================================</h1><h1 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h1><h2 id="bean-xml骨架"><a href="#bean-xml骨架" class="headerlink" title="bean.xml骨架"></a>bean.xml骨架</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">beans</span> <span class="attr">xmlns</span>=<span class="string">&quot;http://www.springframework.org/schema/beans&quot;</span></span></span><br><span class="line"><span class="tag">       <span class="attr">xmlns:xsi</span>=<span class="string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></span></span><br><span class="line"><span class="tag">       <span class="attr">xsi:schemaLocation</span>=<span class="string">&quot;http://www.springframework.org/schema/beans</span></span></span><br><span class="line"><span class="tag"><span class="string">                           https://www.springframework.org/schema/beans/spring-beans.xsd&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">beans</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h2 id="依赖"><a href="#依赖" class="headerlink" title="依赖"></a>依赖</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-webmvc<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>5.2.10.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!--        &lt;dependency&gt;--&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--            &lt;groupId&gt;org.springframework&lt;/groupId&gt;--&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--            &lt;artifactId&gt;spring-jdbc&lt;/artifactId&gt;--&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--            &lt;version&gt;5.2.10.RELEASE&lt;/version&gt;--&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--        &lt;/dependency&gt;--&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h2 id="注解归纳"><a href="#注解归纳" class="headerlink" title="注解归纳"></a>注解归纳</h2><ul>
-<li><p>@Autowired ：自动装配通过类型，id</p>
-<p>如果Autowired不能唯一自动装配属性，则需要通过使用@Qualifier(value=”xxx”)xxx是id名找到唯一bean来注入</p>
-</li>
-<li><p>@Nullable：字段标记了这个注解，说明这个字段可以为null；</p>
-</li>
-<li><p>@Resource:自动装配，通过id，类型</p>
-</li>
-<li><p>@Component：使用在类上，说明这个类被spring管理了，是是一个bean</p>
-</li>
-</ul>
+<p>切换为随机策略实现试试，在ConfigBean中添加方法</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> IRule <span class="title">myRule</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="comment">//使用我们重新选择的随机算法，替代默认的轮询！</span></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> RandomRule();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>一定要将配置类写在主启动器的上一级目录，不然compoent会扫描到覆盖</p>
+<p><img src="/2021/08/05/MySpringCloud/image-20210808120427570.png" alt="image-20210808120427570"></p>
+<p><img src="/2021/08/05/MySpringCloud/image-20210808120514060.png" alt="image-20210808120514060"></p>
+<p><img src="/2021/08/05/MySpringCloud/image-20210808120249522.png" alt="image-20210808120249522"></p>
+<p>熔断是解决服务器错误，降级是当服务器遇到洪流被迫关闭，使用户得到更好的响应而不是报错</p>
+<p>熔断在服务端，降级在客户端</p>
 
       
     </div>
@@ -607,7 +728,7 @@
 
 
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/9/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><span class="page-number current">10</span><a class="page-number" href="/page/11/">11</a><span class="space">&hellip;</span><a class="page-number" href="/page/29/">29</a><a class="extend next" rel="next" href="/page/11/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/page/9/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><span class="page-number current">10</span><a class="page-number" href="/page/11/">11</a><span class="space">&hellip;</span><a class="page-number" href="/page/33/">33</a><a class="extend next" rel="next" href="/page/11/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
