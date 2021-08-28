@@ -197,7 +197,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">33</span>
+          <span class="site-state-item-count">32</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -210,7 +210,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">19</span>
+        <span class="site-state-item-count">18</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -256,7 +256,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://windsfox.github.io/2021/02/26/TFnotexiaosha/">
+    <link itemprop="mainEntityOfPage" href="http://windsfox.github.io/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/kong.jpg">
@@ -269,7 +269,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/02/26/TFnotexiaosha/" class="post-title-link" itemprop="url">TFnotexiaosha</a>
+          <a href="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" class="post-title-link" itemprop="url">操作系统</a>
         </h2>
 
         <div class="post-meta-container">
@@ -279,10 +279,16 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2021-02-26 17:30:08 / 修改时间：17:40:19" itemprop="dateCreated datePublished" datetime="2021-02-26T17:30:08+08:00">2021-02-26</time>
+      <time title="创建时间：2021-02-21 13:35:16" itemprop="dateCreated datePublished" datetime="2021-02-21T13:35:16+08:00">2021-02-21</time>
     </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-04-26 16:08:15" itemprop="dateModified" datetime="2021-04-26T16:08:15+08:00">2021-04-26</time>
+      </span>
 
   
 </div>
@@ -294,7 +300,348 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="2-1基本图像分类"><a href="#2-1基本图像分类" class="headerlink" title="2.1基本图像分类"></a>2.1基本图像分类</h2><h2 id="2-1（ps）番外：残差网络"><a href="#2-1（ps）番外：残差网络" class="headerlink" title="2.1（ps）番外：残差网络"></a>2.1（ps）番外：残差网络</h2><h2 id="2-2TF-Hub进行文本分类"><a href="#2-2TF-Hub进行文本分类" class="headerlink" title="2.2TF Hub进行文本分类"></a>2.2TF Hub进行文本分类</h2><h2 id="2-3对预处理文本进行文本分类"><a href="#2-3对预处理文本进行文本分类" class="headerlink" title="2.3对预处理文本进行文本分类"></a>2.3对预处理文本进行文本分类</h2><h2 id="2-4回归"><a href="#2-4回归" class="headerlink" title="2.4回归"></a>2.4回归</h2><h2 id="2-5欠拟合和过拟合"><a href="#2-5欠拟合和过拟合" class="headerlink" title="2.5欠拟合和过拟合"></a>2.5欠拟合和过拟合</h2><h2 id="2-6模型的回复和保存"><a href="#2-6模型的回复和保存" class="headerlink" title="2.6模型的回复和保存"></a>2.6模型的回复和保存</h2>
+          <h1 id="概念（定义）"><a href="#概念（定义）" class="headerlink" title="概念（定义）"></a>概念（定义）</h1><p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210221162216072.png" alt="image-20210221162216072"></p>
+<p>联机命令接口 = 交互式命令接口；</p>
+<p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210221162605097.png" alt="image-20210221162605097"></p>
+<p>脱机命令接口 = sh；bat等命令文件</p>
+<p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210221162708922.png" alt="image-20210221162708922"></p>
+<p>程序接口：</p>
+<p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210221162815213.png" alt="image-20210221162815213"></p>
+<p>结构：</p>
+<p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210221162916300.png" alt="image-20210221162916300"></p>
+<h2 id="1-1四个特征："><a href="#1-1四个特征：" class="headerlink" title="1.1四个特征："></a>1.1四个特征：</h2><h3 id="1-1-1并发："><a href="#1-1-1并发：" class="headerlink" title="1.1.1并发："></a>1.1.1并发：</h3><p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210221163219138.png" alt="image-20210221163219138"></p>
+<h3 id="1-1-2共享："><a href="#1-1-2共享：" class="headerlink" title="1.1.2共享："></a>1.1.2共享：</h3><p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210221164538270.png" alt="image-20210221164538270"></p>
+<h3 id="1-1-3虚拟："><a href="#1-1-3虚拟：" class="headerlink" title="1.1.3虚拟："></a>1.1.3虚拟：</h3><p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210221164827695.png" alt="image-20210221164827695"></p>
+<p>空分复用技术：磁盘内存</p>
+<p>时分复用技术：虚拟处理器</p>
+<h3 id="1-1-4异步："><a href="#1-1-4异步：" class="headerlink" title="1.1.4异步："></a>1.1.4异步：</h3><p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210221165120845.png" alt="image-20210221165120845"></p>
+<h1 id="发展和分类："><a href="#发展和分类：" class="headerlink" title="发展和分类："></a>发展和分类：</h1><p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210221165312039.png" alt="image-20210221165312039"></p>
+<p>分时操作系统：每个用户享有平均的服务时间</p>
+<p>实时操作系统：能优先响应一些紧急任务，这些任务不需要时间片排队（及时性和可靠性，）</p>
+<p>分类：</p>
+<ol>
+<li>硬实时操作系统：必须严格在规定时间内完成（如导弹控制系统，自动驾驶系统）</li>
+<li>软实时操作系统：偶尔可以违反规定（如火车订票系统）</li>
+</ol>
+<h1 id="运行机制和体系结构："><a href="#运行机制和体系结构：" class="headerlink" title="运行机制和体系结构："></a>运行机制和体系结构：</h1><p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210221170950384.png" alt="image-20210221170950384"></p>
+<p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210221171207263.png" alt="image-20210221171207263"></p>
+<h2 id="2-1内核："><a href="#2-1内核：" class="headerlink" title="2.1内核："></a>2.1内核：</h2><p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210221172622695.png" alt="image-20210221172622695"></p>
+<p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210221172650050.png" alt="image-20210221172650050"></p>
+<h1 id="中断和异常"><a href="#中断和异常" class="headerlink" title="中断和异常"></a>中断和异常</h1><p><strong>用户态——&gt;核心态的唯一途径是中断</strong></p>
+<p>核心态-&gt;用户态：通过执行<strong>特权指令</strong>设置PSW状态字</p>
+<h2 id="3-1分类："><a href="#3-1分类：" class="headerlink" title="3.1分类："></a>3.1分类：</h2><p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210221174004292.png" alt="image-20210221174004292"></p>
+<p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210221173951671.png" alt="image-20210221173951671"></p>
+<h1 id="系统调用"><a href="#系统调用" class="headerlink" title="系统调用"></a>系统调用</h1><h2 id="4-1分类："><a href="#4-1分类：" class="headerlink" title="4.1分类："></a>4.1分类：</h2><p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210221174455871.png" alt="image-20210221174455871"></p>
+<h2 id="4-2系统调用和库函数的区别："><a href="#4-2系统调用和库函数的区别：" class="headerlink" title="4.2系统调用和库函数的区别："></a>4.2系统调用和库函数的区别：</h2><p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210221174648820.png" alt="image-20210221174648820"></p>
+<h2 id="4-3过程："><a href="#4-3过程：" class="headerlink" title="4.3过程："></a>4.3过程：</h2><p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210221175433942.png" alt="image-20210221175433942"></p>
+<h1 id="第一章题目："><a href="#第一章题目：" class="headerlink" title="第一章题目："></a>第一章题目：</h1><p>操作系统的主要目的是<strong>提高系统资源的利用率</strong></p>
+<p>OS是对资源的管理，不是对硬件的管理</p>
+<p>实现多道程序设计管理的主要问题是更大的内存，而不是更快的处理机</p>
+<p>推动微机OS的主要动力是：计算机的不断迭代更新</p>
+<p>不同地区发送邮件是：配置网络操作系统；统计局处理数据是：批处理操作系统</p>
+<p>多路，及时，独立，交互性，是分时处理系统的主要特征</p>
+<p>微内核技术：使用了客服/服务器技术和面向对象技术</p>
+<h1 id="进程"><a href="#进程" class="headerlink" title="进程"></a>进程</h1><h2 id="5-1定义："><a href="#5-1定义：" class="headerlink" title="5.1定义："></a>5.1定义：</h2><p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210221224907638.png" alt="image-20210221224907638"></p>
+<p>一般来说，在题目中进程可以就是进程实体，但是如果专门考这两者是是不是等价的，就不是同一个东西</p>
+<h2 id="5-2组成："><a href="#5-2组成：" class="headerlink" title="5.2组成："></a>5.2组成：</h2><p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210222122755704.png" alt="image-20210222122755704"></p>
+<h2 id="5-3组织："><a href="#5-3组织：" class="headerlink" title="5.3组织："></a>5.3组织：</h2><p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210222125236990.png" alt="image-20210222125236990"></p>
+<h2 id="5-4特征："><a href="#5-4特征：" class="headerlink" title="5.4特征："></a>5.4特征：</h2><p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210222125459439.png" alt="image-20210222125459439"></p>
+<h2 id="5-5总结："><a href="#5-5总结：" class="headerlink" title="5.5总结："></a>5.5总结：</h2><p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210222125809006.png" alt="image-20210222125809006"></p>
+<h2 id="5-6状态（以及切换）："><a href="#5-6状态（以及切换）：" class="headerlink" title="5.6状态（以及切换）："></a>5.6状态（以及切换）：</h2><ol>
+<li><p>三种基本状态：</p>
+<p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210222170825547.png" alt="image-20210222170825547"></p>
+</li>
+<li><p>另外两种：</p>
+<p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210222171031820.png" alt="image-20210222171031820"></p>
+</li>
+</ol>
+<h3 id="5-6-1转换："><a href="#5-6-1转换：" class="headerlink" title="5.6.1转换："></a>5.6.1转换：</h3><p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210222171350415.png" alt="image-20210222171350415"></p>
+<h2 id="5-7进程控制："><a href="#5-7进程控制：" class="headerlink" title="5.7进程控制："></a>5.7进程控制：</h2><p>流程：</p>
+<p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210222173623395.png" alt="image-20210222173623395"></p>
+<p>原语：</p>
+<ol>
+<li><p>创建原语</p>
+<p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210222174933439.png" alt="image-20210222174933439"></p>
+</li>
+<li><p>撤销原语：</p>
+<p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210222174941470.png" alt="image-20210222174941470"></p>
+</li>
+<li><p>阻塞原语：</p>
+<p> <img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210222175334583.png" alt="image-20210222175334583"></p>
+</li>
+<li><p>唤醒原语：</p>
+</li>
+<li><p>切换原语：</p>
+<p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210222175518661.png" alt="image-20210222175518661"></p>
+</li>
+</ol>
+<h2 id="5-8进程通信"><a href="#5-8进程通信" class="headerlink" title="5.8进程通信"></a>5.8进程通信</h2><h3 id="5-8-1共享存储"><a href="#5-8-1共享存储" class="headerlink" title="5.8.1共享存储"></a>5.8.1共享存储</h3><p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210222175904385.png" alt="image-20210222175904385"></p>
+<h3 id="5-8-2管道通信"><a href="#5-8-2管道通信" class="headerlink" title="5.8.2管道通信"></a>5.8.2管道通信</h3><p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210222180305823.png" alt="image-20210222180305823"></p>
+<h3 id="5-8-3消息传递"><a href="#5-8-3消息传递" class="headerlink" title="5.8.3消息传递"></a>5.8.3消息传递</h3><p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210222180441410.png" alt="image-20210222180441410"></p>
+<h3 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h3><p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210222180553783.png" alt="image-20210222180553783"></p>
+<h2 id="5-9线程"><a href="#5-9线程" class="headerlink" title="5.9线程"></a>5.9线程</h2><p>线程优势：</p>
+<p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210222192306103.png" alt="image-20210222192306103"></p>
+<p>属性：</p>
+<p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210222221306565.png" alt="image-20210222221306565"></p>
+<h3 id="5-9-1实现方式"><a href="#5-9-1实现方式" class="headerlink" title="5.9.1实现方式"></a>5.9.1实现方式</h3><p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210222222409199.png" alt="image-20210222222409199"></p>
+<h4 id="5-9-1-1模型："><a href="#5-9-1-1模型：" class="headerlink" title="5.9.1.1模型："></a>5.9.1.1模型：</h4><ol>
+<li><p>多对一：</p>
+<p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210222222518738.png" alt="image-20210222222518738"></p>
+</li>
+<li><p>一对一：</p>
+<p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210222222810913.png" alt="image-20210222222810913"></p>
+</li>
+<li><p>多对多：</p>
+<p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210222223019193.png" alt="image-20210222223019193"></p>
+</li>
+</ol>
+<h3 id="总结：-1"><a href="#总结：-1" class="headerlink" title="总结："></a>总结：</h3><p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210222223059054.png" alt="image-20210222223059054"></p>
+<h2 id="5-10处理机调度"><a href="#5-10处理机调度" class="headerlink" title="5.10处理机调度"></a>5.10处理机调度</h2><ol>
+<li><p>高级调度</p>
+<p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210303194152313.png" alt="image-20210303194152313"></p>
+</li>
+<li><p>中级调度</p>
+<p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210303194352912.png" alt="image-20210303194352912"></p>
+</li>
+<li><p>低级调度（进程调度）</p>
+<p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210303194547560.png" alt="image-20210303194547560"></p>
+</li>
+</ol>
+<p><strong>关系</strong>：<img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210303194927440.png" alt="image-20210303194927440"></p>
+<h3 id="七状态模型："><a href="#七状态模型：" class="headerlink" title="七状态模型："></a>七状态模型：</h3><p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210303195027326.png" alt="image-20210303195027326"></p>
+<h3 id="总结：-2"><a href="#总结：-2" class="headerlink" title="总结："></a>总结：</h3><p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210303195335384.png" alt="image-20210303195335384"></p>
+<h2 id="5-11进程调度时机，切换和过程，方式"><a href="#5-11进程调度时机，切换和过程，方式" class="headerlink" title="5.11进程调度时机，切换和过程，方式"></a>5.11进程调度时机，切换和过程，方式</h2><ol>
+<li><p>时机</p>
+<p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210303195750582.png" alt="image-20210303195750582"></p>
+<p>非剥夺方式：实现简单，系统开销小，但无法及时处理紧急任务，适合早期的批处理系统</p>
+<p>剥夺方式（抢占方式）：可以优先处理紧急进程，也可实现让各进程按时间片轮流执行的功能（通过时钟间断），适用于分时操作系统，实时操作系统</p>
+</li>
+<li><p>切换与过程</p>
+<p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210303200612956.png" alt="image-20210303200612956"></p>
+</li>
+</ol>
+<h2 id="调度算法评价指标"><a href="#调度算法评价指标" class="headerlink" title="调度算法评价指标"></a>调度算法评价指标</h2><h3 id="总览："><a href="#总览：" class="headerlink" title="总览："></a>总览：</h3><p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210303201646227.png" alt="image-20210303201646227"></p>
+<h3 id="周转时间："><a href="#周转时间：" class="headerlink" title="周转时间："></a>周转时间：</h3><p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210303201213397.png" alt="image-20210303201213397"></p>
+<h3 id="回顾"><a href="#回顾" class="headerlink" title="回顾"></a>回顾</h3><p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210303201734674.png" alt="image-20210303201734674"></p>
+<h2 id="FCFS算法（First-Come-First-Serve-（先来先服务算法）"><a href="#FCFS算法（First-Come-First-Serve-（先来先服务算法）" class="headerlink" title="FCFS算法（First  Come First Serve)（先来先服务算法）"></a>FCFS算法（First  Come First Serve)（先来先服务算法）</h2><p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210306221800328.png" alt="image-20210306221800328"></p>
+<p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210306222741267.png" alt="image-20210306222741267"></p>
+<h2 id="SJF算法（Shortest-Job-First）-短作业优先算法"><a href="#SJF算法（Shortest-Job-First）-短作业优先算法" class="headerlink" title="SJF算法（Shortest Job First）(短作业优先算法)"></a>SJF算法（Shortest Job First）(短作业优先算法)</h2><p>非抢占</p>
+<p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210306223507911.png" alt="image-20210306223507911"></p>
+<p>抢占式</p>
+<p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210306223756201.png" alt="image-20210306223756201"></p>
+<p>注意：</p>
+<p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210306224026144.png" alt="image-20210306224026144"></p>
+<p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210306224127097.png" alt="image-20210306224127097"></p>
+<h2 id="HRRN算法（Highest-Response-Ratio-Next）高响应比优先"><a href="#HRRN算法（Highest-Response-Ratio-Next）高响应比优先" class="headerlink" title="HRRN算法（Highest Response Ratio Next）高响应比优先"></a>HRRN算法（Highest Response Ratio Next）高响应比优先</h2><p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210306224922814.png" alt="image-20210306224922814"></p>
+<p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210306225011646.png" alt="image-20210306225011646"></p>
+<h3 id="对比"><a href="#对比" class="headerlink" title="对比"></a>对比</h3><p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210306225049832.png" alt="image-20210306225049832"></p>
+<h2 id="时间片轮转调度算法（RR）"><a href="#时间片轮转调度算法（RR）" class="headerlink" title="时间片轮转调度算法（RR）"></a>时间片轮转调度算法（RR）</h2><p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210306225621167.png" alt="image-20210306225621167"></p>
+<p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210306225838573.png" alt="image-20210306225838573"></p>
+<h2 id="优先级调度算法"><a href="#优先级调度算法" class="headerlink" title="优先级调度算法"></a>优先级调度算法</h2><p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210306230030070.png" alt="image-20210306230030070"></p>
+<p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210306230327875.png" alt="image-20210306230327875"></p>
+<p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210306230406627.png" alt="image-20210306230406627"></p>
+<p><strong>这里的就绪队列并没什么用，只是一个用来存放就绪程序的地方，并不指后面的要让前面的先执行</strong></p>
+<p>HRRN属于一种动态优先级算法，SJB算法属于一种静态优先级算法（还是说类似？）</p>
+<h2 id="多级反馈队列调度算法"><a href="#多级反馈队列调度算法" class="headerlink" title="多级反馈队列调度算法"></a>多级反馈队列调度算法</h2><p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210306230803323.png" alt="image-20210306230803323"></p>
+<p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210306230941713.png" alt="image-20210306230941713"></p>
+<p><strong>抢占式的被抢占进程会被放入队尾，如果之后再次上处理机，还是可以运行当前队列的整个时间片（不用管之前用没用一点时间片）</strong></p>
+<h3 id="对比-1"><a href="#对比-1" class="headerlink" title="对比"></a>对比</h3><p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210306231046978.png" alt="image-20210306231046978"></p>
+<h2 id="信号量机制"><a href="#信号量机制" class="headerlink" title="信号量机制"></a>信号量机制</h2><p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210311205736975.png" alt="image-20210311205736975"></p>
+<p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210311210058623.png" alt="image-20210311210058623"></p>
+<h3 id="进程互斥："><a href="#进程互斥：" class="headerlink" title="进程互斥："></a>进程互斥：</h3><p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210311210615295.png" alt="image-20210311210615295"></p>
+<h3 id="进程同步"><a href="#进程同步" class="headerlink" title="进程同步"></a>进程同步</h3><p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210311210646535.png" alt="image-20210311210646535"></p>
+<h3 id="前驱关系"><a href="#前驱关系" class="headerlink" title="前驱关系"></a>前驱关系</h3><p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210311210848245.png" alt="image-20210311210848245"></p>
+<h2 id="生产者-消费者模型"><a href="#生产者-消费者模型" class="headerlink" title="生产者/消费者模型"></a>生产者/消费者模型</h2><p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210311211849364.png" alt="image-20210311211849364"></p>
+<p><strong>一定要先同步，后互斥</strong></p>
+<h3 id="多生产者、多消费者模型"><a href="#多生产者、多消费者模型" class="headerlink" title="多生产者、多消费者模型"></a>多生产者、多消费者模型</h3><p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210311212402789.png" alt="image-20210311212402789"></p>
+<p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210311212824125.png" alt="image-20210311212824125"></p>
+<p>如果缓冲区变量不为1，则需要设置互斥变量来实现资源的互斥访问；如果为1，则可能不需要设置互斥变量</p>
+<p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210311213102887.png" alt="image-20210311213102887"></p>
+<p>同步信号量由对<strong>资源</strong>操作的事件来决定；而不是<strong>进程</strong>的操作事件</p>
+<h3 id="多消费者，单生产者模型（吸烟者模型）"><a href="#多消费者，单生产者模型（吸烟者模型）" class="headerlink" title="多消费者，单生产者模型（吸烟者模型）"></a>多消费者，单生产者模型（吸烟者模型）</h3><p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210311215708363.png" alt="image-20210311215708363"></p>
+<h2 id="读者-写者问题"><a href="#读者-写者问题" class="headerlink" title="读者-写者问题"></a>读者-写者问题</h2><p>读进程必须对count实现互斥操作；使一气呵成</p>
+<p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210312153055030.png" alt="image-20210312153055030"></p>
+<p>以上算法可能会引起写进程饥饿，给出一下程序解决问题</p>
+<p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210312154510374.png" alt="image-20210312154510374"></p>
+<h2 id="哲学家吃饭问题"><a href="#哲学家吃饭问题" class="headerlink" title="哲学家吃饭问题"></a>哲学家吃饭问题</h2><ol>
+<li><p>奇数号的哲学家先拿左边的筷子，偶数号的哲学家先拿右边的筷子</p>
+</li>
+<li><p>只允许四个哲学家同时去拿筷子；这样至少有一个哲学家能正常进餐</p>
+</li>
+<li><p>哲学家两边的筷子都被允许使用的时候，才被允许拿起筷子（更准确的说法是：设置一个mutex，不让两个哲学家同时进行拿筷子操作，当一个哲学家拿筷子吃饭时，另一个仍有可能拿起了一只筷子，而被阻塞，不过这时其他哲学家因为mutex被该哲学家占用，所以都不允许拿筷子，当吃饭的哲学家吃完后，拿到一只筷子的哲学家就可以开始进餐了）</p>
+<p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210312155334573.png" alt="image-20210312155334573"></p>
+</li>
+</ol>
+<h2 id="管程"><a href="#管程" class="headerlink" title="管程"></a>管程</h2><p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210315142302569.png" alt="image-20210315142302569"></p>
+<p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210315150815606.png" alt="image-20210315150815606"></p>
+<h2 id="死锁"><a href="#死锁" class="headerlink" title="死锁"></a>死锁</h2><p>预防死锁</p>
+<ol>
+<li><p>破坏互斥条件</p>
+<p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210321150507620.png" alt="image-20210321150507620"></p>
+</li>
+<li><p>破坏不可剥夺条件</p>
+<p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210321150806923.png" alt="image-20210321150806923"></p>
+</li>
+<li><p>破坏请求和保持条件</p>
+<p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210321150931832.png" alt="image-20210321150931832"></p>
+</li>
+<li><p>破坏循环等待条件</p>
+<p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210321151154011.png" alt="image-20210321151154011">                 </p>
+</li>
+</ol>
+<h3 id="银行家算法"><a href="#银行家算法" class="headerlink" title="银行家算法"></a>银行家算法</h3><p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210321152429280.png" alt="image-20210321152429280"></p>
+<p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210321152855129.png" alt="image-20210321152855129"></p>
+<p>不安全装态未必死锁，死锁一定是不安全状态</p>
+<h1 id="第二，三章题目"><a href="#第二，三章题目" class="headerlink" title="第二，三章题目"></a>第二，三章题目</h1><p>绝对不会发生的情况是：就绪——&gt;阻塞；一般不会发生的状况是：阻塞-&gt;运行</p>
+<p>用户态到核心态间的切换：访管指令和中断。</p>
+<p>write通信：输送到接受方的屏幕；共享文件的通信方式：管道通信</p>
+<p>单用户状态：程序：封闭性和可再现性</p>
+<p>引入进程的目的：程序正确地并发运行，提高系统资源利用率和吞吐量</p>
+<p>同步机制准则：空闲让进，忙则等待，有限等待，让权等待</p>
+<p>管道通信：共享文件</p>
+<p>死锁的四个必要条件：互斥条件；请求和保持条件；不剥夺条件；环路条件</p>
+<h1 id="内存管理"><a href="#内存管理" class="headerlink" title="内存管理"></a>内存管理</h1><h2 id="连续分配管理方式"><a href="#连续分配管理方式" class="headerlink" title="连续分配管理方式"></a>连续分配管理方式</h2><h3 id="动态分区分配算法"><a href="#动态分区分配算法" class="headerlink" title="动态分区分配算法"></a>动态分区分配算法</h3><ol>
+<li>首次适应算法</li>
+<li><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210330170541427.png" alt="image-20210330170541427"></li>
+<li>最佳适应算法</li>
+<li>最坏适应算法</li>
+<li>邻近适应算法</li>
+<li><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210330180254121.png" alt="image-20210330180254121"></li>
+<li></li>
+</ol>
+<h3 id="分页存储管理"><a href="#分页存储管理" class="headerlink" title="分页存储管理"></a>分页存储管理</h3><p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210330182859708.png" alt="image-20210330182859708"></p>
+<p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210330182423547.png" alt="image-20210330182423547"></p>
+<h4 id="多级页表"><a href="#多级页表" class="headerlink" title="多级页表"></a>多级页表</h4><p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210408160755533.png" alt="image-20210408160755533"></p>
+<p>缺页中断</p>
+<h3 id="基本分段"><a href="#基本分段" class="headerlink" title="基本分段"></a>基本分段</h3><p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210408165623830.png" alt="image-20210408165623830"></p>
+<p>段表中比页表多了一列：段长</p>
+<p>段号大于等于段表长度都会发生越界，段号是从0开始的，段表长度至少为1</p>
+<p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210408170715272.png" alt="image-20210408170715272"></p>
+<h3 id="段页式管理方式"><a href="#段页式管理方式" class="headerlink" title="段页式管理方式"></a>段页式管理方式</h3><p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210408180353523.png" alt="image-20210408180353523"></p>
+<h1 id="虚拟内存"><a href="#虚拟内存" class="headerlink" title="虚拟内存"></a>虚拟内存</h1><h2 id="请求分页管理方式"><a href="#请求分页管理方式" class="headerlink" title="请求分页管理方式"></a>请求分页管理方式</h2><p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210409182907801.png" alt="image-20210409182907801"></p>
+<p>修改位如果为0则不需要将内存中要被替换的页面调出到外存，直接覆盖即可（因为没有修改）</p>
+<p>访问字段：上一次访问的时间</p>
+<p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210409183325245.png" alt="image-20210409183325245"></p>
+<p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210409183342771.png" alt="image-20210409183342771"></p>
+<p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210409185849787.png" alt="image-20210409185849787"></p>
+<h2 id="页面置换算法"><a href="#页面置换算法" class="headerlink" title="页面置换算法"></a>页面置换算法</h2><h3 id="最佳置换算法（OPT）"><a href="#最佳置换算法（OPT）" class="headerlink" title="最佳置换算法（OPT）"></a>最佳置换算法（OPT）</h3><p>不被使用的换掉</p>
+<h3 id="先进先出置换算法（FIFO）"><a href="#先进先出置换算法（FIFO）" class="headerlink" title="先进先出置换算法（FIFO）"></a>先进先出置换算法（FIFO）</h3><p>性能很差，第一次到来的换掉，不管后面有没有再来，都按第一次来的时间算</p>
+<h3 id="最近最久未使用置换算法（LRU）"><a href="#最近最久未使用置换算法（LRU）" class="headerlink" title="最近最久未使用置换算法（LRU）"></a>最近最久未使用置换算法（LRU）</h3><p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210409221134450.png" alt="image-20210409221134450"></p>
+<p>和FIFO的区别：逆向用判断说明看的是最后一次装入的时间</p>
+<h3 id="时钟置换算法（CLOCK）最近未用算法"><a href="#时钟置换算法（CLOCK）最近未用算法" class="headerlink" title="时钟置换算法（CLOCK）最近未用算法"></a>时钟置换算法（CLOCK）最近未用算法</h3><p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210409222500671.png" alt="image-20210409222500671"></p>
+<p>链表中有页面的话就将该页的访问位置为1 ，如果没有的话，指针就从当前位置依次扫描，找到访问位为0的页面，替换掉</p>
+<h3 id="改进型时钟置换算法"><a href="#改进型时钟置换算法" class="headerlink" title="改进型时钟置换算法"></a>改进型时钟置换算法</h3><p>增加个修改位</p>
+<p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210409223155864.png" alt="image-20210409223155864"></p>
+<h2 id="页面分配策略"><a href="#页面分配策略" class="headerlink" title="页面分配策略"></a>页面分配策略</h2><p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210409224034575.png" alt="image-20210409224034575"></p>
+<p>全局置换的定义就要求有空闲物理块</p>
+<p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210409224359843.png" alt="image-20210409224359843"></p>
+<p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210409224502587.png" alt="image-20210409224502587"></p>
+<p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210409224730948.png" alt="image-20210409224730948"></p>
+<h1 id="IO系统"><a href="#IO系统" class="headerlink" title="IO系统"></a>IO系统</h1><h2 id="IO控制器"><a href="#IO控制器" class="headerlink" title="IO控制器"></a>IO控制器</h2><h3 id="功能："><a href="#功能：" class="headerlink" title="功能："></a>功能：</h3><ol>
+<li>接受和识别出cpu的命令（）</li>
+<li>向cpu报告IO设备的状态</li>
+<li>数据交换</li>
+<li>地址识别</li>
+</ol>
+<h3 id="组成："><a href="#组成：" class="headerlink" title="组成："></a>组成：</h3><p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210417210956033.png" alt="image-20210417210956033"></p>
+<p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210417211140766.png" alt="image-20210417211140766"></p>
+<h2 id="IO控制方式"><a href="#IO控制方式" class="headerlink" title="IO控制方式"></a>IO控制方式</h2><h3 id="程序直接控制方式"><a href="#程序直接控制方式" class="headerlink" title="程序直接控制方式"></a>程序直接控制方式</h3><p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210417212108588.png" alt="image-20210417212108588"></p>
+<h3 id="中断驱动方式"><a href="#中断驱动方式" class="headerlink" title="中断驱动方式"></a>中断驱动方式</h3><p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210417212421742.png" alt="image-20210417212421742"></p>
+<p>缺点：每次只能传一个字</p>
+<h3 id="DMA方式"><a href="#DMA方式" class="headerlink" title="DMA方式"></a>DMA方式</h3><p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210417212652815.png" alt="image-20210417212652815"></p>
+<p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210417213433506.png" alt="image-20210417213433506"></p>
+<h3 id="通道方式"><a href="#通道方式" class="headerlink" title="通道方式"></a>通道方式</h3><p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210417213646106.png" alt="image-20210417213646106"></p>
+<p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210417214001845.png" alt="image-20210417214001845"></p>
+<p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210417214011578.png" alt="image-20210417214011578"></p>
+<h2 id="IO软件的层次"><a href="#IO软件的层次" class="headerlink" title="IO软件的层次"></a>IO软件的层次</h2><p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210417220538305.png" alt="image-20210417220538305"></p>
+<h2 id="IO核心子系统"><a href="#IO核心子系统" class="headerlink" title="IO核心子系统"></a>IO核心子系统</h2><h3 id="IO调度"><a href="#IO调度" class="headerlink" title="IO调度"></a>IO调度</h3><p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210417220737079.png" alt="image-20210417220737079"></p>
+<h3 id="设备保护"><a href="#设备保护" class="headerlink" title="设备保护"></a>设备保护</h3><p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210417220852154.png" alt="image-20210417220852154"></p>
+<h3 id="假脱机技术"><a href="#假脱机技术" class="headerlink" title="假脱机技术"></a>假脱机技术</h3><p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210417221025699.png" alt="image-20210417221025699"></p>
+<p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210417221343283.png" alt="image-20210417221343283"></p>
+<h2 id="设备的分配和回收"><a href="#设备的分配和回收" class="headerlink" title="设备的分配和回收"></a>设备的分配和回收</h2><p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210417222736031.png" alt="image-20210417222736031"></p>
+<p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210417222904968.png" alt="image-20210417222904968"></p>
+<p>系统可有多个通道</p>
+<p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210417223022179.png" alt="image-20210417223022179"></p>
+<p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210417223059180.png" alt="image-20210417223059180"></p>
+<p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210417223136154.png" alt="image-20210417223136154"></p>
+<p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210417223209839.png" alt="image-20210417223209839"></p>
+<p>步骤：</p>
+<p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210417223537098.png" alt="image-20210417223537098"></p>
+<p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210417223708940.png" alt="image-20210417223708940"></p>
+<h2 id="缓冲区管理"><a href="#缓冲区管理" class="headerlink" title="缓冲区管理"></a>缓冲区管理</h2><p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210417224027886.png" alt="image-20210417224027886"></p>
+<h3 id="单缓冲"><a href="#单缓冲" class="headerlink" title="单缓冲"></a>单缓冲</h3><p>只有充满和空两种状态</p>
+<p>第一种情况：（T+M）</p>
+<p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210417224313253.png" alt="image-20210417224313253"></p>
+<p>第二种情况：（C+M）</p>
+<p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210417224411223.png" alt="image-20210417224411223"></p>
+<p>双缓冲区</p>
+<p>第一种情况：</p>
+<p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210417224552577.png" alt="image-20210417224552577"></p>
+<p>第二种情况</p>
+<p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210417224734704.png" alt="image-20210417224734704"></p>
+<p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210417224749799.png" alt="image-20210417224749799"></p>
+<p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210417225046991.png" alt="image-20210417225046991"></p>
+<h1 id="文件管理"><a href="#文件管理" class="headerlink" title="文件管理"></a>文件管理</h1><h2 id="逻辑结构"><a href="#逻辑结构" class="headerlink" title="逻辑结构"></a>逻辑结构</h2><p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210420163902539.png" alt="image-20210420163902539"></p>
+<h2 id="文件的物理结构"><a href="#文件的物理结构" class="headerlink" title="文件的物理结构"></a>文件的物理结构</h2><p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210420221530078.png" alt="image-20210420221530078"></p>
+<h3 id="连续分配"><a href="#连续分配" class="headerlink" title="连续分配"></a>连续分配</h3><p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210420221747013.png" alt="image-20210420221747013"></p>
+<p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210420222054767.png" alt="image-20210420222054767"></p>
+<p>产生大量内零头 </p>
+<h3 id="隐式链接"><a href="#隐式链接" class="headerlink" title="隐式链接"></a>隐式链接</h3><p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210420222235659.png" alt="image-20210420222235659">             </p>
+<p>（1）只支持顺序访问，查找效率低</p>
+<p>（2）但是方便拓展文件</p>
+<h3 id="显示链接："><a href="#显示链接：" class="headerlink" title="显示链接："></a>显示链接：</h3><p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210420230609334.png" alt="image-20210420230609334"></p>
+<h3 id="索引分配"><a href="#索引分配" class="headerlink" title="索引分配"></a>索引分配</h3><p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210420230934641.png" alt="image-20210420230934641"></p>
+<ol>
+<li>链接方式</li>
+<li><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210420231747408.png" alt="image-20210420231747408"></li>
+<li>多级页表方式</li>
+<li><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210420231530538.png" alt="image-20210420231530538"></li>
+<li>混合索引</li>
+<li><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210420231853718.png" alt="image-20210420231853718"></li>
+</ol>
+<p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210420232103826.png" alt="image-20210420232103826"></p>
+<p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210420232155830.png" alt="image-20210420232155830"></p>
+<h2 id="文件存储空间"><a href="#文件存储空间" class="headerlink" title="文件存储空间"></a>文件存储空间</h2><h3 id="划分与初始化"><a href="#划分与初始化" class="headerlink" title="划分与初始化"></a>划分与初始化</h3><p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210420232406572.png" alt="image-20210420232406572"></p>
+<h3 id="空闲表法："><a href="#空闲表法：" class="headerlink" title="空闲表法："></a>空闲表法：</h3><p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210420232606277.png" alt="image-20210420232606277"></p>
+<h3 id="空闲链表法"><a href="#空闲链表法" class="headerlink" title="空闲链表法"></a>空闲链表法</h3><p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210420233039845.png" alt="image-20210420233039845"></p>
+<ol>
+<li></li>
+<li><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210420233224525.png" alt="image-20210420233224525"></li>
+</ol>
+<h3 id="位示图法"><a href="#位示图法" class="headerlink" title="位示图法"></a>位示图法</h3><p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210421221338007.png" alt="image-20210421221338007"></p>
+<h3 id="成组链接法"><a href="#成组链接法" class="headerlink" title="成组链接法"></a>成组链接法</h3><p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210421221648191.png" alt="image-20210421221648191"></p>
+<p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210421222231552.png" alt="image-20210421222231552"></p>
+<p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210421222302231.png" alt="image-20210421222302231"></p>
+<h2 id="文件的基本操作"><a href="#文件的基本操作" class="headerlink" title="文件的基本操作"></a>文件的基本操作</h2><p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210421223831647.png" alt="image-20210421223831647"></p>
+<p>读文件的时候才会把文件调入内存，打开文件不会</p>
+<h2 id="文件共享"><a href="#文件共享" class="headerlink" title="文件共享"></a>文件共享</h2><p>硬链接</p>
+<p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210422222131935.png" alt="image-20210422222131935"></p>
+<p>软连接</p>
+<p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210422222251000.png" alt="image-20210422222251000"></p>
+<h2 id="文件保护"><a href="#文件保护" class="headerlink" title="文件保护"></a>文件保护</h2><ol>
+<li>口令保护</li>
+<li>加密保护</li>
+<li><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210422222620265.png" alt="image-20210422222620265"></li>
+<li>访问控制</li>
+<li><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210422222816530.png" alt="image-20210422222816530"></li>
+</ol>
+<h2 id="文件系统的层次结构"><a href="#文件系统的层次结构" class="headerlink" title="文件系统的层次结构"></a>文件系统的层次结构</h2><p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210422223144054.png" alt="image-20210422223144054"></p>
+<p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210422225109255.png" alt="image-20210422225109255"></p>
+<h2 id="磁盘"><a href="#磁盘" class="headerlink" title="磁盘"></a>磁盘</h2><p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210422230055122.png" alt="image-20210422230055122"></p>
+<p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210422230215110.png" alt="image-20210422230215110"></p>
+<p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210422230318778.png" alt="image-20210422230318778"></p>
+<p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210422230536198.png" alt="image-20210422230536198"></p>
+<p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210422230653790.png" alt="image-20210422230653790"></p>
+<p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210422230821098.png" alt="image-20210422230821098"></p>
+<p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210422230905028.png" alt="image-20210422230905028"></p>
+<p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210422231001668.png" alt="image-20210422231001668"></p>
+<h2 id="减少磁盘延迟时间的算法"><a href="#减少磁盘延迟时间的算法" class="headerlink" title="减少磁盘延迟时间的算法"></a>减少磁盘延迟时间的算法</h2><p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210422231439996.png" alt="image-20210422231439996"></p>
+<p>只需要激活磁头，不需要移动磁头</p>
+<p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210422231720193.png" alt="image-20210422231720193"></p>
+<h2 id="磁盘的管理"><a href="#磁盘的管理" class="headerlink" title="磁盘的管理"></a>磁盘的管理</h2><p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210422232121489.png" alt="image-20210422232121489"></p>
+<p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210422232032268.png" alt="image-20210422232032268"></p>
+<p><img src="/2021/02/21/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20210422232211184.png" alt="image-20210422232211184"></p>
+
       
     </div>
 
@@ -313,7 +660,7 @@
 
 
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/19/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/19/">19</a><span class="page-number current">20</span><a class="page-number" href="/page/21/">21</a><span class="space">&hellip;</span><a class="page-number" href="/page/33/">33</a><a class="extend next" rel="next" href="/page/21/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/page/19/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/19/">19</a><span class="page-number current">20</span><a class="page-number" href="/page/21/">21</a><span class="space">&hellip;</span><a class="page-number" href="/page/32/">32</a><a class="extend next" rel="next" href="/page/21/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 

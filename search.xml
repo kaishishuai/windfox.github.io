@@ -423,6 +423,64 @@
       </tags>
   </entry>
   <entry>
+    <title>Nginx</title>
+    <url>/2021/08/11/Nginx/</url>
+    <content><![CDATA[<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>负载均衡</p>
+<figure class="highlight armasm"><table><tr><td class="code"><pre><span class="line"><span class="symbol">Nginx</span>提供的负载均衡策略有<span class="number">2</span>种：内置策略和扩展策略。</span><br><span class="line">内置策略为轮询，加权轮询，<span class="built_in">Ip</span> hash。</span><br><span class="line">扩展策略，就天马行空，只有你想不到的没有他做不到的。</span><br></pre></td></tr></table></figure>
+
+
+<p>正向代理（VPN）</p>
+<p><img src="/2021/08/11/Nginx/20210712084043879.png" alt="在这里插入图片描述"></p>
+<p>反向代理（Nginx）</p>
+<p><img src="/2021/08/11/Nginx/20210712084056381.png" alt="在这里插入图片描述"></p>
+<p><strong>轮询</strong></p>
+<p><img src="/2021/08/11/Nginx/20210712084123110.png" alt="在这里插入图片描述"></p>
+<p><strong>加权轮询</strong></p>
+<p><img src="/2021/08/11/Nginx/20210712084144792.png" alt="在这里插入图片描述"></p>
+<p>iphash</p>
+<p>iphash对客户端请求的ip进行hash操作，然后根据hash结果将同一个客户端ip的请求分发给同一台服务器进行处理，可以解决session不共享的问题。</p>
+<p><img src="/2021/08/11/Nginx/20210712084215842.png" alt="在这里插入图片描述"></p>
+<figure class="highlight x86asm"><table><tr><td class="code"><pre><span class="line">动静分离，在我们的软件开发中，有些请求是需要后台处理的，有些请求是不需要经过后台处理的（如：css、html、jpg、<span class="keyword">js</span>等等文件），这些不需要经过后台处理的文件称为静态文件。让动态网站里的动态网页根据一定规则把不变的资源和经常变的资源区分开来，动静资源做好了拆分以后，我们就可以根据静态资源的特点将其做缓存操作。提高资源响应的速度。</span><br></pre></td></tr></table></figure>
+<p><img src="/2021/08/11/Nginx/20210712084246333.png" alt="在这里插入图片描述"></p>
+<h2 id="安装："><a href="#安装：" class="headerlink" title="安装："></a>安装：</h2><p>官网下载对应版本压缩包，本地解压（不能带中文路径）</p>
+<p><strong>检查是否成功</strong></p>
+<p>直接在浏览器地址栏输入网址 <code>http://localhost:80</code> 回车，出现以下页面说明启动成功！</p>
+<p><img src="/2021/08/11/Nginx/20210712084337774.png" alt="在这里插入图片描述"></p>
+<p><strong>关闭nginx</strong></p>
+<p>如果使用cmd命令窗口启动nginx， 关闭cmd窗口是不能结束nginx进程的，可使用两种方法关闭nginx</p>
+<p>(1)输入nginx命令 nginx -s stop(快速停止nginx) 或 nginx -s quit(完整有序的停止nginx)<br>(2)使用taskkill taskkill /f /t /im nginx.exe</p>
+<figure class="highlight dos"><table><tr><td class="code"><pre><span class="line">关闭nginx</span><br><span class="line">如果使用<span class="built_in">cmd</span>命令窗口启动nginx， 关闭<span class="built_in">cmd</span>窗口是不能结束nginx进程的，可使用两种方法关闭nginx</span><br><span class="line"></span><br><span class="line">(<span class="number">1</span>)输入nginx命令 nginx -s stop(快速停止nginx) 或 nginx -s quit(完整有序的停止nginx)</span><br><span class="line">(<span class="number">2</span>)使用<span class="built_in">taskkill</span> <span class="built_in">taskkill</span> /f /t /im nginx.exe</span><br></pre></td></tr></table></figure>
+<h2 id="Linux下安装"><a href="#Linux下安装" class="headerlink" title="Linux下安装"></a>Linux下安装</h2><p>1、安装gcc<br>安装 nginx 需要先将官网下载的源码进行编译，编译依赖 gcc 环境，如果没有 gcc 环境，则需要安装：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">yum install gcc-c++</span><br></pre></td></tr></table></figure>
+<p>2、PCRE pcre-devel 安装<br>PCRE(Perl Compatible Regular Expressions) 是一个Perl库，包括 perl 兼容的正则表达式库。nginx 的 http 模块使用 pcre 来解析正则表达式，所以需要在 linux 上安装 pcre 库，pcre-devel 是使用 pcre 开发的一个二次开发库。nginx也需要此库。命令：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">yum install -y pcre pcre-devel</span><br></pre></td></tr></table></figure>
+<p>3、zlib 安装<br>zlib 库提供了很多种压缩和解压缩的方式， nginx 使用 zlib 对 http 包的内容进行 gzip ，所以需要在 Centos 上安装 zlib 库。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">yum install -y zlib zlib-devel</span><br></pre></td></tr></table></figure>
+<p>4、OpenSSL 安装<br>OpenSSL 是一个强大的安全套接字层密码库，囊括主要的密码算法、常用的密钥和证书封装管理功能及 SSL 协议，并提供丰富的应用程序供测试或其它目的使用。<br>nginx 不仅支持 http 协议，还支持 https（即在ssl协议上传输http），所以需要在 Centos 安装 OpenSSL 库。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">yum install -y openssl openssl-devel</span><br></pre></td></tr></table></figure>
+
+<p>5、下载安装包<br>手动下载.tar.gz安装包，地址：<a href="https://nginx.org/en/download.html">https://nginx.org/en/download.html</a><br><img src="/2021/08/11/Nginx/20210712084719605.png" alt="在这里插入图片描述"></p>
+<p><strong>解压</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">tar -zxvf nginx-1.18.0.tar.gz</span><br><span class="line">cd nginx-1.18.0</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><img src="/2021/08/11/Nginx/20210712084830464.png" alt="在这里插入图片描述"></p>
+<p><strong>配置</strong></p>
+<ul>
+<li><p>使用默认配置,在nginx根目录下执行</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">./configure</span><br><span class="line">make</span><br><span class="line">make install</span><br></pre></td></tr></table></figure></li>
+<li><p>查找安装路径： <code>whereis nginx</code></p>
+</li>
+</ul>
+<h1 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h1><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cd /usr/local/nginx/sbin/</span><br><span class="line">./nginx  启动</span><br><span class="line">./nginx -s stop  停止</span><br><span class="line">./nginx -s quit  安全退出</span><br><span class="line">./nginx -s reload  重新加载配置文件</span><br><span class="line">ps aux|grep nginx  查看nginx进程</span><br></pre></td></tr></table></figure>
+<p><strong>注意：如何连接不上，检查阿里云安全组是否开放端口，或者服务器防火墙是否开放端口！</strong><br>相关命令：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 开启</span></span><br><span class="line">service firewalld start</span><br><span class="line"><span class="meta">#</span><span class="bash"> 重启</span></span><br><span class="line">service firewalld restart</span><br><span class="line"><span class="meta">#</span><span class="bash"> 关闭</span></span><br><span class="line">service firewalld stop</span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看防火墙规则</span></span><br><span class="line">firewall-cmd --list-all</span><br><span class="line"><span class="meta">#</span><span class="bash"> 查询端口是否开放</span></span><br><span class="line">firewall-cmd --query-port=8080/tcp</span><br><span class="line"><span class="meta">#</span><span class="bash"> 开放80端口</span></span><br><span class="line">firewall-cmd --permanent --add-port=80/tcp</span><br><span class="line"><span class="meta">#</span><span class="bash"> 移除端口</span></span><br><span class="line">firewall-cmd --permanent --remove-port=8080/tcp</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">重启防火墙(修改配置后要重启防火墙)</span></span><br><span class="line">firewall-cmd --reload</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 参数解释</span></span><br><span class="line">1、firwall-cmd：是Linux提供的操作firewall的一个工具；</span><br><span class="line">2、--permanent：表示设置为持久；</span><br><span class="line">3、--add-port：标识添加的端口；</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>演示</p>
+<figure class="highlight roboconf"><table><tr><td class="code"><pre><span class="line">upstream lb&#123;</span><br><span class="line">	<span class="attribute">server 127.0.0.1</span>:8080 weight=1;</span><br><span class="line">	<span class="attribute">server 127.0.0.1</span>:8081 weight=1;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">server&#123;</span><br><span class="line">	<span class="attribute">location / &#123;</span></span><br><span class="line"><span class="attribute">		proxy_pass http</span>://lb;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>工具</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Mynodejs</title>
     <url>/2021/07/29/Mynodejs/</url>
     <content><![CDATA[<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><h2 id="原理："><a href="#原理：" class="headerlink" title="原理："></a>原理：</h2><p><img src="/2021/07/29/Mynodejs/image-20210814100039365.png" alt="image-20210814100039365"></p>
@@ -561,64 +619,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Nginx</title>
-    <url>/2021/08/11/Nginx/</url>
-    <content><![CDATA[<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>负载均衡</p>
-<figure class="highlight armasm"><table><tr><td class="code"><pre><span class="line"><span class="symbol">Nginx</span>提供的负载均衡策略有<span class="number">2</span>种：内置策略和扩展策略。</span><br><span class="line">内置策略为轮询，加权轮询，<span class="built_in">Ip</span> hash。</span><br><span class="line">扩展策略，就天马行空，只有你想不到的没有他做不到的。</span><br></pre></td></tr></table></figure>
-
-
-<p>正向代理（VPN）</p>
-<p><img src="/2021/08/11/Nginx/20210712084043879.png" alt="在这里插入图片描述"></p>
-<p>反向代理（Nginx）</p>
-<p><img src="/2021/08/11/Nginx/20210712084056381.png" alt="在这里插入图片描述"></p>
-<p><strong>轮询</strong></p>
-<p><img src="/2021/08/11/Nginx/20210712084123110.png" alt="在这里插入图片描述"></p>
-<p><strong>加权轮询</strong></p>
-<p><img src="/2021/08/11/Nginx/20210712084144792.png" alt="在这里插入图片描述"></p>
-<p>iphash</p>
-<p>iphash对客户端请求的ip进行hash操作，然后根据hash结果将同一个客户端ip的请求分发给同一台服务器进行处理，可以解决session不共享的问题。</p>
-<p><img src="/2021/08/11/Nginx/20210712084215842.png" alt="在这里插入图片描述"></p>
-<figure class="highlight x86asm"><table><tr><td class="code"><pre><span class="line">动静分离，在我们的软件开发中，有些请求是需要后台处理的，有些请求是不需要经过后台处理的（如：css、html、jpg、<span class="keyword">js</span>等等文件），这些不需要经过后台处理的文件称为静态文件。让动态网站里的动态网页根据一定规则把不变的资源和经常变的资源区分开来，动静资源做好了拆分以后，我们就可以根据静态资源的特点将其做缓存操作。提高资源响应的速度。</span><br></pre></td></tr></table></figure>
-<p><img src="/2021/08/11/Nginx/20210712084246333.png" alt="在这里插入图片描述"></p>
-<h2 id="安装："><a href="#安装：" class="headerlink" title="安装："></a>安装：</h2><p>官网下载对应版本压缩包，本地解压（不能带中文路径）</p>
-<p><strong>检查是否成功</strong></p>
-<p>直接在浏览器地址栏输入网址 <code>http://localhost:80</code> 回车，出现以下页面说明启动成功！</p>
-<p><img src="/2021/08/11/Nginx/20210712084337774.png" alt="在这里插入图片描述"></p>
-<p><strong>关闭nginx</strong></p>
-<p>如果使用cmd命令窗口启动nginx， 关闭cmd窗口是不能结束nginx进程的，可使用两种方法关闭nginx</p>
-<p>(1)输入nginx命令 nginx -s stop(快速停止nginx) 或 nginx -s quit(完整有序的停止nginx)<br>(2)使用taskkill taskkill /f /t /im nginx.exe</p>
-<figure class="highlight dos"><table><tr><td class="code"><pre><span class="line">关闭nginx</span><br><span class="line">如果使用<span class="built_in">cmd</span>命令窗口启动nginx， 关闭<span class="built_in">cmd</span>窗口是不能结束nginx进程的，可使用两种方法关闭nginx</span><br><span class="line"></span><br><span class="line">(<span class="number">1</span>)输入nginx命令 nginx -s stop(快速停止nginx) 或 nginx -s quit(完整有序的停止nginx)</span><br><span class="line">(<span class="number">2</span>)使用<span class="built_in">taskkill</span> <span class="built_in">taskkill</span> /f /t /im nginx.exe</span><br></pre></td></tr></table></figure>
-<h2 id="Linux下安装"><a href="#Linux下安装" class="headerlink" title="Linux下安装"></a>Linux下安装</h2><p>1、安装gcc<br>安装 nginx 需要先将官网下载的源码进行编译，编译依赖 gcc 环境，如果没有 gcc 环境，则需要安装：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">yum install gcc-c++</span><br></pre></td></tr></table></figure>
-<p>2、PCRE pcre-devel 安装<br>PCRE(Perl Compatible Regular Expressions) 是一个Perl库，包括 perl 兼容的正则表达式库。nginx 的 http 模块使用 pcre 来解析正则表达式，所以需要在 linux 上安装 pcre 库，pcre-devel 是使用 pcre 开发的一个二次开发库。nginx也需要此库。命令：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">yum install -y pcre pcre-devel</span><br></pre></td></tr></table></figure>
-<p>3、zlib 安装<br>zlib 库提供了很多种压缩和解压缩的方式， nginx 使用 zlib 对 http 包的内容进行 gzip ，所以需要在 Centos 上安装 zlib 库。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">yum install -y zlib zlib-devel</span><br></pre></td></tr></table></figure>
-<p>4、OpenSSL 安装<br>OpenSSL 是一个强大的安全套接字层密码库，囊括主要的密码算法、常用的密钥和证书封装管理功能及 SSL 协议，并提供丰富的应用程序供测试或其它目的使用。<br>nginx 不仅支持 http 协议，还支持 https（即在ssl协议上传输http），所以需要在 Centos 安装 OpenSSL 库。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">yum install -y openssl openssl-devel</span><br></pre></td></tr></table></figure>
-
-<p>5、下载安装包<br>手动下载.tar.gz安装包，地址：<a href="https://nginx.org/en/download.html">https://nginx.org/en/download.html</a><br><img src="/2021/08/11/Nginx/20210712084719605.png" alt="在这里插入图片描述"></p>
-<p><strong>解压</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">tar -zxvf nginx-1.18.0.tar.gz</span><br><span class="line">cd nginx-1.18.0</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p><img src="/2021/08/11/Nginx/20210712084830464.png" alt="在这里插入图片描述"></p>
-<p><strong>配置</strong></p>
-<ul>
-<li><p>使用默认配置,在nginx根目录下执行</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">./configure</span><br><span class="line">make</span><br><span class="line">make install</span><br></pre></td></tr></table></figure></li>
-<li><p>查找安装路径： <code>whereis nginx</code></p>
-</li>
-</ul>
-<h1 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h1><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cd /usr/local/nginx/sbin/</span><br><span class="line">./nginx  启动</span><br><span class="line">./nginx -s stop  停止</span><br><span class="line">./nginx -s quit  安全退出</span><br><span class="line">./nginx -s reload  重新加载配置文件</span><br><span class="line">ps aux|grep nginx  查看nginx进程</span><br></pre></td></tr></table></figure>
-<p><strong>注意：如何连接不上，检查阿里云安全组是否开放端口，或者服务器防火墙是否开放端口！</strong><br>相关命令：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 开启</span></span><br><span class="line">service firewalld start</span><br><span class="line"><span class="meta">#</span><span class="bash"> 重启</span></span><br><span class="line">service firewalld restart</span><br><span class="line"><span class="meta">#</span><span class="bash"> 关闭</span></span><br><span class="line">service firewalld stop</span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看防火墙规则</span></span><br><span class="line">firewall-cmd --list-all</span><br><span class="line"><span class="meta">#</span><span class="bash"> 查询端口是否开放</span></span><br><span class="line">firewall-cmd --query-port=8080/tcp</span><br><span class="line"><span class="meta">#</span><span class="bash"> 开放80端口</span></span><br><span class="line">firewall-cmd --permanent --add-port=80/tcp</span><br><span class="line"><span class="meta">#</span><span class="bash"> 移除端口</span></span><br><span class="line">firewall-cmd --permanent --remove-port=8080/tcp</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">重启防火墙(修改配置后要重启防火墙)</span></span><br><span class="line">firewall-cmd --reload</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 参数解释</span></span><br><span class="line">1、firwall-cmd：是Linux提供的操作firewall的一个工具；</span><br><span class="line">2、--permanent：表示设置为持久；</span><br><span class="line">3、--add-port：标识添加的端口；</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>演示</p>
-<figure class="highlight roboconf"><table><tr><td class="code"><pre><span class="line">upstream lb&#123;</span><br><span class="line">	<span class="attribute">server 127.0.0.1</span>:8080 weight=1;</span><br><span class="line">	<span class="attribute">server 127.0.0.1</span>:8081 weight=1;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">server&#123;</span><br><span class="line">	<span class="attribute">location / &#123;</span></span><br><span class="line"><span class="attribute">		proxy_pass http</span>://lb;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-]]></content>
-      <tags>
-        <tag>工具</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>TFnotexiaosha</title>
     <url>/2021/02/26/TFnotexiaosha/</url>
     <content><![CDATA[<h2 id="2-1基本图像分类"><a href="#2-1基本图像分类" class="headerlink" title="2.1基本图像分类"></a>2.1基本图像分类</h2><h2 id="2-1（ps）番外：残差网络"><a href="#2-1（ps）番外：残差网络" class="headerlink" title="2.1（ps）番外：残差网络"></a>2.1（ps）番外：残差网络</h2><h2 id="2-2TF-Hub进行文本分类"><a href="#2-2TF-Hub进行文本分类" class="headerlink" title="2.2TF Hub进行文本分类"></a>2.2TF Hub进行文本分类</h2><h2 id="2-3对预处理文本进行文本分类"><a href="#2-3对预处理文本进行文本分类" class="headerlink" title="2.3对预处理文本进行文本分类"></a>2.3对预处理文本进行文本分类</h2><h2 id="2-4回归"><a href="#2-4回归" class="headerlink" title="2.4回归"></a>2.4回归</h2><h2 id="2-5欠拟合和过拟合"><a href="#2-5欠拟合和过拟合" class="headerlink" title="2.5欠拟合和过拟合"></a>2.5欠拟合和过拟合</h2><h2 id="2-6模型的回复和保存"><a href="#2-6模型的回复和保存" class="headerlink" title="2.6模型的回复和保存"></a>2.6模型的回复和保存</h2>]]></content>
@@ -656,6 +656,33 @@
       </categories>
   </entry>
   <entry>
+    <title>MyNumpy</title>
+    <url>/2021/01/18/numpy/</url>
+    <content><![CDATA[<h1 id="numpy基本函数"><a href="#numpy基本函数" class="headerlink" title="numpy基本函数"></a>numpy基本函数</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="matplotlib基本函数"><a href="#matplotlib基本函数" class="headerlink" title="matplotlib基本函数"></a>matplotlib基本函数</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="pandas基本函数"><a href="#pandas基本函数" class="headerlink" title="pandas基本函数"></a>pandas基本函数</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>深度学习</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>吴恩达机器学习</title>
+    <url>/2021/01/03/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/</url>
+    <content><![CDATA[<h1 id="深度学习模型"><a href="#深度学习模型" class="headerlink" title="深度学习模型"></a>深度学习模型</h1><p>房价预测：standrad NN；图像预测：CNN；音频和语言翻译：RNN；</p>
+<p>自动驾驶：image，Radar info更复制的神经网络结构</p>
+<p><img src="/2021/01/03/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/image-20210103170840250.png"></p>
+<p><strong>传统机器学习的弊端</strong></p>
+<p><img src="/2021/01/03/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/image-20210103171237693.png" alt="传统学习方法弊端"></p>
+<h2 id="二分类："><a href="#二分类：" class="headerlink" title="二分类："></a>二分类：</h2><p><img src="/2021/01/03/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/image-20210215113650842.png" alt="image-20210215113650842"></p>
+<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">三通道的图像，代表了3*像素点*像素点的图像数据，n_x = 3<span class="number">*64</span><span class="number">*64</span>（64X64的图片）</span><br><span class="line">训练集的特征是一个n_x行，m列的矩阵</span><br><span class="line">标签是一个一行，m列的矩阵</span><br></pre></td></tr></table></figure>
+<h2 id="logistic-回归："><a href="#logistic-回归：" class="headerlink" title="logistic 回归："></a>logistic 回归：</h2><p><img src="/2021/01/03/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/image-20210215121217431.png" alt="image-20210215121217431"></p>
+]]></content>
+      <tags>
+        <tag>机器学习</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>hexo学习</title>
     <url>/2020/12/22/hexo/</url>
     <content><![CDATA[<h3 id="问题一"><a href="#问题一" class="headerlink" title="问题一"></a>问题一</h3><p>​    域名必须和git账户名一样</p>
@@ -667,17 +694,6 @@
       </categories>
       <tags>
         <tag>技术学习</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>MyNumpy</title>
-    <url>/2021/01/18/numpy/</url>
-    <content><![CDATA[<h1 id="numpy基本函数"><a href="#numpy基本函数" class="headerlink" title="numpy基本函数"></a>numpy基本函数</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
-<h1 id="matplotlib基本函数"><a href="#matplotlib基本函数" class="headerlink" title="matplotlib基本函数"></a>matplotlib基本函数</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
-<h1 id="pandas基本函数"><a href="#pandas基本函数" class="headerlink" title="pandas基本函数"></a>pandas基本函数</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
-]]></content>
-      <tags>
-        <tag>深度学习</tag>
       </tags>
   </entry>
   <entry>
@@ -778,43 +794,6 @@
 <p>群发云函数代码：</p>
 <p><img src="/2021/05/02/weixin/image-20210504204152569.png" alt="image-20210504204152569"></p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>吴恩达机器学习</title>
-    <url>/2021/01/03/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/</url>
-    <content><![CDATA[<h1 id="深度学习模型"><a href="#深度学习模型" class="headerlink" title="深度学习模型"></a>深度学习模型</h1><p>房价预测：standrad NN；图像预测：CNN；音频和语言翻译：RNN；</p>
-<p>自动驾驶：image，Radar info更复制的神经网络结构</p>
-<p><img src="/2021/01/03/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/image-20210103170840250.png"></p>
-<p><strong>传统机器学习的弊端</strong></p>
-<p><img src="/2021/01/03/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/image-20210103171237693.png" alt="传统学习方法弊端"></p>
-<h2 id="二分类："><a href="#二分类：" class="headerlink" title="二分类："></a>二分类：</h2><p><img src="/2021/01/03/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/image-20210215113650842.png" alt="image-20210215113650842"></p>
-<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">三通道的图像，代表了3*像素点*像素点的图像数据，n_x = 3<span class="number">*64</span><span class="number">*64</span>（64X64的图片）</span><br><span class="line">训练集的特征是一个n_x行，m列的矩阵</span><br><span class="line">标签是一个一行，m列的矩阵</span><br></pre></td></tr></table></figure>
-<h2 id="logistic-回归："><a href="#logistic-回归：" class="headerlink" title="logistic 回归："></a>logistic 回归：</h2><p><img src="/2021/01/03/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/image-20210215121217431.png" alt="image-20210215121217431"></p>
-]]></content>
-      <tags>
-        <tag>机器学习</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>每个人的正义</title>
-    <url>/2021/08/21/%E6%AF%8F%E4%B8%AA%E4%BA%BA%E7%9A%84%E6%AD%A3%E4%B9%89/</url>
-    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>这个世界对每个人都不一样，每个人都有自己对公平的评判标准，这些标准虽然不一样，但也不会差太多，只有精神失常的人才会有违背人伦道德的标准。</p>
-<p>更多的时候事件当中的所有人都在站在自己的角度来看问题导致的，事件外的人往往会根据自己的人生经历选择他们认为对的一方，只要某一方错的太离谱（如为了钱杀人）就算是杀人了，这个世界上依然有人会相信他没有做错，因为也许他们也为了某些不得已的理由杀过人，这理由让他们及时重新来过，也会再次选择那条不归路。</p>
-<p>当然对于这些“大事”，整个世界上的绝大多数人看法都是会属于同一边。更多的会从思想上划分人群还是生活中的小事</p>
-<h1 id="双标"><a href="#双标" class="headerlink" title="双标"></a>双标</h1><p>一个词用的太多，就会衍生出非本来的意思。我们使用的太多，就不会去想这个词本身的意思是要在同等环境的情况下，而更多的人只关心了你做了什么，有没有不准别人做。</p>
-<h2 id="主观色彩"><a href="#主观色彩" class="headerlink" title="主观色彩"></a>主观色彩</h2><p>高中时期，我们八人寝室，我在左一上住过，当时我上床的时候会撑着栏杆直接跳上去（踩的话就是一根三角形的钢筋）。一天，我坐在下铺吃东西，我下铺的兄弟，直接像我平常一样跳到了我的床上，但当时他的裆部他的脚，基本上都是从我脸前擦过去的。我瞬间骂了一句：我草，你在搞啥？另一个和我跟我基本没有交集的室友说道：你平时也不是这样跳上去的吗？然后又说了一些讽刺的话。说是没有交集，但感觉得到他一直看我这类“书呆子“（他眼里的）很不爽。</p>
-<p>开始我以为是这个人看我一直不爽，故意假装没看见要踢到我脸了。但是我和我下铺的兄弟关系还挺不错的，他是觉得接受不了我跳上去，也不跟我说，就像用这种方式让我将心比心，没想到我是一个双标的人。</p>
-<p>大学期间，四人寝室，有一个人不怎么洗澡洗衣服，搞得整个寝室很臭，主要是他人和一个放脏衣服桶，一天晚上，实在臭的受不了了，在他没回来的时候，我用空气清新剂朝他桌位上喷了几下。另一位室友看见了，在第二天我吃方便面的时候，也朝着我桌位喷了几下，我骂：我草，你在干什么？他：喷空气清新剂啊，你不也往XXX桌子上喷吗？其实我是知道他和那个很臭的人关系比较好，每天晚上侃侃而谈，我和另一个室友到要戴着耳机睡觉的。别人就是想要给他的好朋友“打抱不平”，你怎么理论他都会装作听不懂的。就像小六子和胡万一样</p>
-<h2 id="其实"><a href="#其实" class="headerlink" title="其实"></a>其实</h2><p>后来也想通了，其实不是他们不是针对我，只是很多时候我们都会在评判发生自己身上的事的时候，已经站在了自己的角度，为了自己的目的。除了原则上的问题，否则都会潜意识倒向对自己有利的观点，相信自己是对的。</p>
-<p>每个人对这两件事都有不同的看法，有人会认为你不就是双标吗，不准别人做自己做过的事，也有人会赞同我的做法。都没有错，因为每个人都有自己的经历，对一件模棱两可的的事的看法都会不同，如果你想强行改变自己的看法，那可以说你是在扭曲你自己，你将会使你自己不复存在，也可以说是你成长了。</p>
-<h1 id="针对"><a href="#针对" class="headerlink" title="针对"></a>针对</h1><p>没有人会针对一个人，即使他犯过永远不会得到你原谅的错，那也只是在针对那个错误而已。没有永远的朋友，只有永远的利益。的对立面：没有永远的敌人，只有永远的过错。</p>
-<p>要永远相信，没有人会去针对一个不认识的人，也无法做到针对陌生人。这是一个悖论。</p>
-<h1 id="不同的思想"><a href="#不同的思想" class="headerlink" title="不同的思想"></a>不同的思想</h1><p>有的人不喜欢别人在寝室里学习（说多也不多，说少也不少，即使不说出来，潜意识里也会反感），即使戴耳机，不发出声音也不行。他们认为寝室不是学习的地方，学习应该去图书馆或者教室。他们当中有一部分是因为自己无法在寝室静下心来，会不时的玩起来，有一部分就是单纯的认为寝室不是学习的地方。当别人在寝室里学习的时候他们就会不舒服，</p>
-<p>我是觉得去图书馆浪费时间，而且生怕动一下会发出很大声音。当然如果在寝室里学不下去，这点路还是值得的。</p>
-]]></content>
-      <tags>
-        <tag>随笔</tag>
-      </tags>
   </entry>
   <entry>
     <title>My Web Crawlers</title>
@@ -3530,7 +3509,7 @@
 <p> 出现以下信息即可</p>
 <blockquote>
 <p>C:\Users\XXXX&gt; cnpm -v</p>
-<p><a href="mailto:&#x63;&#x6e;&#x70;&#109;&#x40;&#53;&#46;&#49;&#x2e;&#49;">&#x63;&#x6e;&#x70;&#109;&#x40;&#53;&#46;&#49;&#x2e;&#49;</a> (F:\Live\NODE\node_global\node_modules\cnpm\lib\parse_argv.js)<br><a href="mailto:&#110;&#x70;&#109;&#x40;&#x35;&#46;&#x36;&#46;&#48;">&#110;&#x70;&#109;&#x40;&#x35;&#46;&#x36;&#46;&#48;</a> (F:\Live\NODE\node_global\node_modules\cnpm\node_modules\npm\lib\npm.js)<br><a href="mailto:&#x6e;&#x6f;&#x64;&#x65;&#x40;&#56;&#46;&#57;&#x2e;&#49;">&#x6e;&#x6f;&#x64;&#x65;&#x40;&#56;&#46;&#57;&#x2e;&#49;</a> (F:\Live\NODE\node.exe)<br><a href="mailto:&#x6e;&#x70;&#x6d;&#105;&#x6e;&#x73;&#x74;&#x61;&#x6c;&#x6c;&#64;&#x33;&#46;&#x32;&#46;&#x31;">&#x6e;&#x70;&#x6d;&#105;&#x6e;&#x73;&#x74;&#x61;&#x6c;&#x6c;&#64;&#x33;&#46;&#x32;&#46;&#x31;</a> (F:\Live\NODE\node_global\node_modules\cnpm\node_modules\npminstall\lib\index.js)<br>prefix=F:\Live\NODE\node_global<br>win32 x64 10.0.16299<br>registry=<a href="http://registry.npm.taobao.org/">http://registry.npm.taobao.org</a></p>
+<p><a href="mailto:&#99;&#110;&#112;&#x6d;&#x40;&#53;&#46;&#49;&#46;&#49;">&#99;&#110;&#112;&#x6d;&#x40;&#53;&#46;&#49;&#46;&#49;</a> (F:\Live\NODE\node_global\node_modules\cnpm\lib\parse_argv.js)<br><a href="mailto:&#110;&#112;&#109;&#x40;&#x35;&#x2e;&#x36;&#x2e;&#48;">&#110;&#112;&#109;&#x40;&#x35;&#x2e;&#x36;&#x2e;&#48;</a> (F:\Live\NODE\node_global\node_modules\cnpm\node_modules\npm\lib\npm.js)<br><a href="mailto:&#110;&#x6f;&#100;&#x65;&#x40;&#56;&#x2e;&#57;&#46;&#49;">&#110;&#x6f;&#100;&#x65;&#x40;&#56;&#x2e;&#57;&#46;&#49;</a> (F:\Live\NODE\node.exe)<br><a href="mailto:&#x6e;&#112;&#x6d;&#x69;&#110;&#115;&#116;&#97;&#x6c;&#108;&#x40;&#51;&#x2e;&#50;&#x2e;&#49;">&#x6e;&#112;&#x6d;&#x69;&#110;&#115;&#116;&#97;&#x6c;&#108;&#x40;&#51;&#x2e;&#50;&#x2e;&#49;</a> (F:\Live\NODE\node_global\node_modules\cnpm\node_modules\npminstall\lib\index.js)<br>prefix=F:\Live\NODE\node_global<br>win32 x64 10.0.16299<br>registry=<a href="http://registry.npm.taobao.org/">http://registry.npm.taobao.org</a></p>
 </blockquote>
 <h3 id="在ElasticSearch-elasticsearch-head-master即ES-head目录下"><a href="#在ElasticSearch-elasticsearch-head-master即ES-head目录下" class="headerlink" title="在ElasticSearch\elasticsearch-head-master即ES head目录下"></a><strong>在ElasticSearch\elasticsearch-head-master即ES head目录下</strong></h3><p> <strong>下载依赖</strong></p>
 <blockquote>

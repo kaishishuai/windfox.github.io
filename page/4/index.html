@@ -197,7 +197,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">33</span>
+          <span class="site-state-item-count">32</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -210,7 +210,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">19</span>
+        <span class="site-state-item-count">18</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -256,7 +256,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://windsfox.github.io/2021/08/13/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">
+    <link itemprop="mainEntityOfPage" href="http://windsfox.github.io/2021/08/12/Aliyun/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/kong.jpg">
@@ -269,7 +269,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/08/13/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" class="post-title-link" itemprop="url">设计模式</a>
+          <a href="/2021/08/12/Aliyun/" class="post-title-link" itemprop="url">Aliyun</a>
         </h2>
 
         <div class="post-meta-container">
@@ -281,7 +281,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2021-08-13 21:07:09 / 修改时间：21:13:17" itemprop="dateCreated datePublished" datetime="2021-08-13T21:07:09+08:00">2021-08-13</time>
+      <time title="创建时间：2021-08-12 16:39:00 / 修改时间：20:03:05" itemprop="dateCreated datePublished" datetime="2021-08-12T16:39:00+08:00">2021-08-12</time>
     </span>
 
   
@@ -294,25 +294,146 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="一、设计模式的分类"><a href="#一、设计模式的分类" class="headerlink" title="一、设计模式的分类"></a>一、设计模式的分类</h2><p>总体来说设计模式分为三大类：</p>
-<p>创建型模式，共五种：工厂方法模式、抽象工厂模式、单例模式、建造者模式、原型模式。</p>
-<p>结构型模式，共七种：适配器模式、装饰器模式、代理模式、外观模式、桥接模式、组合模式、享元模式。</p>
-<p>行为型模式，共十一种：策略模式、模板方法模式、观察者模式、迭代子模式、责任链模式、命令模式、备忘录模式、状态模式、访问者模式、中介者模式、解释器模式。</p>
-<p>其实还有两类：并发型模式和线程池模式。用一个图片来整体描述一下：</p>
-<p><img src="/2021/08/13/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/57a92d42-4d84-3aa9-a8b9-63a0b02c2c36.jpg" alt="img"></p>
-<h2 id="二、设计模式的六大原则"><a href="#二、设计模式的六大原则" class="headerlink" title="二、设计模式的六大原则"></a>二、设计模式的六大原则</h2><h3 id="总原则：开闭原则（Open-Close-Principle）"><a href="#总原则：开闭原则（Open-Close-Principle）" class="headerlink" title="总原则：开闭原则（Open Close Principle）"></a>总原则：开闭原则（Open Close Principle）</h3><p>开闭原则就是说<strong>对扩展开放，对修改关闭</strong>。在程序需要进行拓展的时候，不能去修改原有的代码，而是要扩展原有代码，实现一个热插拔的效果。所以一句话概括就是：为了使程序的扩展性好，易于维护和升级。想要达到这样的效果，我们需要使用接口和抽象类等，后面的具体设计中我们会提到这点。</p>
-<h3 id="1、单一职责原则"><a href="#1、单一职责原则" class="headerlink" title="1、单一职责原则"></a>1、单一职责原则</h3><p>不要存在多于一个导致类变更的原因，也就是说每个类应该实现单一的职责，如若不然，就应该把类拆分。</p>
-<h3 id="2、里氏替换原则（Liskov-Substitution-Principle）"><a href="#2、里氏替换原则（Liskov-Substitution-Principle）" class="headerlink" title="2、里氏替换原则（Liskov Substitution Principle）"></a>2、里氏替换原则（Liskov Substitution Principle）</h3><p>里氏代换原则(Liskov Substitution Principle LSP)面向对象设计的基本原则之一。 里氏代换原则中说，任何基类可以出现的地方，子类一定可以出现。 LSP是继承复用的基石，只有当衍生类可以替换掉基类，软件单位的功能不受到影响时，基类才能真正被复用，而衍生类也能够在基类的基础上增加新的行为。里氏代换原则是对“开-闭”原则的补充。实现“开-闭”原则的关键步骤就是抽象化。而基类与子类的继承关系就是抽象化的具体实现，所以里氏代换原则是对实现抽象化的具体步骤的规范。—— From Baidu 百科</p>
-<p>历史替换原则中，子类对父类的方法尽量不要重写和重载。因为父类代表了定义好的结构，通过这个规范的接口与外界交互，子类不应该随便破坏它。</p>
-<h3 id="3、依赖倒转原则（Dependence-Inversion-Principle）"><a href="#3、依赖倒转原则（Dependence-Inversion-Principle）" class="headerlink" title="3、依赖倒转原则（Dependence Inversion Principle）"></a>3、依赖倒转原则（Dependence Inversion Principle）</h3><p>这个是开闭原则的基础，具体内容：面向接口编程，依赖于抽象而不依赖于具体。写代码时用到具体类时，不与具体类交互，而与具体类的上层接口交互。</p>
-<h3 id="4、接口隔离原则（Interface-Segregation-Principle）"><a href="#4、接口隔离原则（Interface-Segregation-Principle）" class="headerlink" title="4、接口隔离原则（Interface Segregation Principle）"></a>4、接口隔离原则（Interface Segregation Principle）</h3><p>这个原则的意思是：每个接口中不存在子类用不到却必须实现的方法，如果不然，就要将接口拆分。使用多个隔离的接口，比使用单个接口（多个接口方法集合到一个的接口）要好。</p>
-<h3 id="5、迪米特法则（最少知道原则）（Demeter-Principle）"><a href="#5、迪米特法则（最少知道原则）（Demeter-Principle）" class="headerlink" title="5、迪米特法则（最少知道原则）（Demeter Principle）"></a>5、迪米特法则（最少知道原则）（Demeter Principle）</h3><p>就是说：一个类对自己依赖的类知道的越少越好。也就是说无论被依赖的类多么复杂，都应该将逻辑封装在方法的内部，通过public方法提供给外部。这样当被依赖的类变化时，才能最小的影响该类。</p>
-<p>最少知道原则的另一个表达方式是：只与直接的朋友通信。类之间只要有耦合关系，就叫朋友关系。耦合分为依赖、关联、聚合、组合等。我们称出现为成员变量、方法参数、方法返回值中的类为直接朋友。局部变量、临时变量则不是直接的朋友。我们要求陌生的类不要作为局部变量出现在类中。</p>
-<h3 id="6、合成复用原则（Composite-Reuse-Principle）"><a href="#6、合成复用原则（Composite-Reuse-Principle）" class="headerlink" title="6、合成复用原则（Composite Reuse Principle）"></a>6、合成复用原则（Composite Reuse Principle）</h3><p>原则是尽量首先使用合成/聚合的方式，而不是使用继承。</p>
-<h2 id="三、Java的23中设计模式"><a href="#三、Java的23中设计模式" class="headerlink" title="三、Java的23中设计模式"></a>三、Java的23中设计模式</h2><h2 id="A、创建模式"><a href="#A、创建模式" class="headerlink" title="A、创建模式"></a>A、创建模式</h2><p>从这一块开始，我们详细介绍Java中23种设计模式的概念，应用场景等情况，并结合他们的特点及设计模式的原则进行分析。</p>
-<p>首先，简单工厂模式不属于23中涉及模式，简单工厂一般分为：普通简单工厂、多方法简单工厂、静态方法简单工厂。</p>
-<h3 id="0、简单工厂模式"><a href="#0、简单工厂模式" class="headerlink" title="0、简单工厂模式"></a><strong>0、简单工厂模式</strong></h3><p>简单工厂模式模式分为三种：</p>
-<h4 id="01、普通"><a href="#01、普通" class="headerlink" title="01、普通\"></a><strong><em>01、普通\</em></strong></h4><p>就是建立一个工厂类，对实现了同一接口的一些类进行实例的创建。首先看下关系图：</p>
+          <h1 id="弹性计算"><a href="#弹性计算" class="headerlink" title="弹性计算"></a>弹性计算</h1><h1 id="购买服务器"><a href="#购买服务器" class="headerlink" title="购买服务器"></a>购买服务器</h1><p>云服务实例ECS</p>
+<h1 id="设置实例密码："><a href="#设置实例密码：" class="headerlink" title="设置实例密码："></a>设置实例密码：</h1><p>购买完服务器之后，在工作台——云服务实例打开后台界面</p>
+<p><img src="/2021/08/12/Aliyun/image-20210812164352177.png" alt="image-20210812164352177"></p>
+<p><img src="/2021/08/12/Aliyun/image-20210812164514401.png" alt="image-20210812164514401"></p>
+<p>实例界面</p>
+<p><img src="/2021/08/12/Aliyun/image-20210812164646268.png" alt="image-20210812164646268"></p>
+<h1 id="设置安全组合安全规则"><a href="#设置安全组合安全规则" class="headerlink" title="设置安全组合安全规则"></a>设置安全组合安全规则</h1><h2 id="端口放行"><a href="#端口放行" class="headerlink" title="端口放行"></a>端口放行</h2><p><img src="/2021/08/12/Aliyun/image-20210812165503176.png" alt="image-20210812165503176"></p>
+<p><img src="/2021/08/12/Aliyun/image-20210812165650050.png" alt="image-20210812165650050"></p>
+<p><img src="/2021/08/12/Aliyun/image-20210812165907370.png" alt="image-20210812165907370"></p>
+<p>服务器向外访问都是放行的</p>
+<p><img src="/2021/08/12/Aliyun/image-20210812170033323.png" alt="image-20210812170033323"></p>
+<h2 id="安全组特点"><a href="#安全组特点" class="headerlink" title="安全组特点"></a>安全组特点</h2><ul>
+<li>一台ECS实例至少有一个安全组，可以同时有多个</li>
+<li>一个安全组可以管理一个地域内的多台ECS实例，这些实例要求具有相同安全保护需求并相互信任</li>
+<li>在没有设置允许访问的安全组规则的情况下，不同的安全组的ecs实例默认内网不通</li>
+<li>同一安全组内的ECS实例之间可以实现内网互通</li>
+<li>（仅普通安全组）可以通过安全组规则授权两个安全组之间互访</li>
+<li>安全组支持状态应用，一个有状态的会话连接中，会话最长的保持时间是910秒，安全组会默认放行同一通话中的通信，例如，在会话期间内，如果连接的数据包在入方向是允许的，则在出方向也是允许的</li>
+</ul>
+<h2 id="创建安全组"><a href="#创建安全组" class="headerlink" title="创建安全组"></a>创建安全组</h2><p><img src="/2021/08/12/Aliyun/image-20210812170256465.png" alt="image-20210812170256465"></p>
+<p><img src="/2021/08/12/Aliyun/image-20210812171123529.png" alt="image-20210812171123529"></p>
+<p>绑定安全组到实例</p>
+<p><img src="/2021/08/12/Aliyun/image-20210812171226819.png" alt="image-20210812171226819"></p>
+<p><img src="/2021/08/12/Aliyun/image-20210812171258885.png" alt="image-20210812171258885"></p>
+<h1 id="Xshell和Xftp安装和使用"><a href="#Xshell和Xftp安装和使用" class="headerlink" title="Xshell和Xftp安装和使用"></a>Xshell和Xftp安装和使用</h1><h1 id="环境安装"><a href="#环境安装" class="headerlink" title="环境安装"></a>环境安装</h1><h2 id="安装JDK"><a href="#安装JDK" class="headerlink" title="安装JDK"></a>安装JDK</h2><ol>
+<li><p>解压JDK到<code>/usr/java</code>目录下</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf jdk-9.0.1</span><br></pre></td></tr></table></figure></li>
+<li><p>添加到环境变量</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/profile</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">在最后一行<span class="built_in">set</span> java environment</span></span><br><span class="line">JAVA_HOME=/usr/java/jdk-9.0.1</span><br><span class="line">CLASSPATH=.:$JAVA_HOME/lib.tools.jar</span><br><span class="line">PATH=$JAVA_HOME/bin:$PATH</span><br><span class="line">export JAVA_HOME CLASSPATH PATH</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">保存退出</span></span><br></pre></td></tr></table></figure></li>
+<li><p>生效</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">source /etc/profile</span><br><span class="line"><span class="meta">#</span><span class="bash"> 检查</span></span><br><span class="line">java -version</span><br></pre></td></tr></table></figure>
+<p>Tomcat</p>
+</li>
+</ol>
+<hr>
+<ol>
+<li><p>进入到/home/soft,将Tomcat解压到/usr/local</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf tomcat -C /usr/local</span><br></pre></td></tr></table></figure></li>
+<li><p>进入tomcat目录，启动start.sh文件</p>
+</li>
+<li><p>在公网上访问服务器IP的8080端口，进入Tomcat主页</p>
+</li>
+</ol>
+<h2 id="安装数据库（MariaDB）"><a href="#安装数据库（MariaDB）" class="headerlink" title="安装数据库（MariaDB）"></a>安装数据库（MariaDB）</h2><p>官网：<a target="_blank" rel="noopener" href="https://downloads.mariadb.org/mariadb/repositories/">https://downloads.mariadb.org/mariadb/repositories/</a></p>
+<p><strong>使用MariaDB代替mysql数据库（MariaDB数据库管理系统是MySQL的一个分支，主要由开源社区在维护，采用GPL授权许可。开发这个分支的原因之一是：甲骨文公司收购了MySQL后，有将MySQL闭源的潜在风险，因此社区采用分支的方式来避开这个风险。</strong></p>
+<p>1.首先确定centos版本</p>
+<p>cat /etc/redhat-release</p>
+<p><img src="/2021/08/12/Aliyun/1247170-20200422103217076-433323331.png" alt="img"></p>
+<p>2.yum安装  </p>
+<p>yum -y install mariadb-server</p>
+<p> 3.启动服务</p>
+<p>systemctl start mariadb.service</p>
+<p> 4.开机自动启动</p>
+<p>systemctl enable mariadb.service</p>
+<p> 5.修改密码</p>
+<p>mysqladmin -u root password ‘123456’或者</p>
+<p>/usr/bin/mysqladmin -u root password ‘123456’</p>
+<p>6.登录</p>
+<p>mysql -uroot -p123456</p>
+<p> 【修改mysql(yum安装)字符集及端口号】</p>
+<p>登录进入mysql后 查看字符集</p>
+<p><img src="/2021/08/12/Aliyun/1247170-20200422103709793-115390543.png" alt="img"></p>
+<p> 8.更改字符集及端口</p>
+<p>vim /etc/my.cnf</p>
+<p><img src="/2021/08/12/Aliyun/1247170-20200422103824762-1611462059.png" alt="img"></p>
+<p>9.重新启动mysql</p>
+<p>systemctl restart mariadb.service 或者 systemctl restart mariadb</p>
+<p>如果无法重启 可以通过 ps -ef | grep mysql 查找进程号 然后kill掉  再重启</p>
+<p> 10.再次登录mysql 查看字符集</p>
+<p><img src="/2021/08/12/Aliyun/1247170-20200422104107030-1736300756.png" alt="img"></p>
+<p>11 修改数据库字符集成功后 navicat连接数据库</p>
+<p><img src="/2021/08/12/Aliyun/1247170-20200422104606682-2039274759.png" alt="img"></p>
+<p><img src="/2021/08/12/Aliyun/1247170-20200422104621635-655108759.png" alt="img"></p>
+<p> 连接过程遇到问题，百度了下解决方案，客户端连接报错</p>
+<p>这个问题是因为用户在数据库服务器中的mysql数据库中的user的表中没有权限</p>
+<p>（1）下面是解决客户端连接不上的问题</p>
+<p>连接服务器 mysql -u root -p</p>
+<p>输入密码进入数据库</p>
+<p>（2）</p>
+<p><img src="/2021/08/12/Aliyun/1247170-20200422104901825-586473901.png" alt="img"></p>
+<p><img src="/2021/08/12/Aliyun/1247170-20200422105004987-154840583.png" alt="img"></p>
+<p><img src="/2021/08/12/Aliyun/1247170-20200422104959930-2127014322.png" alt="img"></p>
+<p>（3） <strong>查看user表中的数据：select Host, User,Password from user;</strong></p>
+<p><strong>（4）上面localhost表示只允许本地连接 不能远程连接</strong></p>
+<p><strong>修改user表中的host</strong></p>
+<p><strong>update user set Host=’%’ where User=’root’ and Host=”localhost”;</strong></p>
+<p><img src="/2021/08/12/Aliyun/1247170-20200422105809411-1554988867.png" alt="img"></p>
+<p> （5）重新navicate连接数据库客户端</p>
+<p><img src="/2021/08/12/Aliyun/1247170-20200422105924947-1584919177.png" alt="img"></p>
+<p>【遇到一个问题】</p>
+<p>Linux本地看不到完整的表</p>
+<p>【解决方案】</p>
+<p>ps -ef | grep mysql </p>
+<p>systemctl stop mariadb</p>
+<p>停掉mysql应用，加入配置</p>
+<p>mysqld_safe –skip-grant-tables，或者vi /etc/my.cnf，在[mysqld]段中加入 skip-grant-tables</p>
+<p>select * from user;</p>
+<p>delete from user where host=’localhost’;</p>
+<p>INSERT INTO <code>user</code> VALUES (‘localhost’,’root’,’’,’Y’,’Y’,’Y’,’Y’,’Y’,’Y’,’Y’,’Y’,’Y’,’Y’,’Y’,’Y’,’Y’,’Y’,’Y’,’Y’,’Y’,’Y’,’Y’,’Y’,’Y’,’Y’,’Y’,’Y’,’Y’,’Y’,’Y’,’Y’,’Y’,’’,’’,’’,’’,’0’,’0’,’0’,’0’,’’,’’);</p>
+<h2 id="安装fastDFS和Nginx"><a href="#安装fastDFS和Nginx" class="headerlink" title="安装fastDFS和Nginx"></a>安装fastDFS和Nginx</h2><h2 id="配置Nginx的config文件"><a href="#配置Nginx的config文件" class="headerlink" title="配置Nginx的config文件"></a>配置Nginx的config文件</h2><ol>
+<li>配置配置文件</li>
+</ol>
+<p><img src="/2021/08/12/Aliyun/image-20210812193406362.png" alt="image-20210812193406362"></p>
+<ol start="2">
+<li>启动Nginx</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./nginx -s reload</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>关闭安全组里的8080端口</li>
+</ol>
+<h1 id="前后端分别打包"><a href="#前后端分别打包" class="headerlink" title="前后端分别打包"></a>前后端分别打包</h1><p>这里没有前端</p>
+<ol>
+<li><p>IDea后端打包，使用的原生的tomcat，需要将spring中内置的tomcat移出再打包</p>
+<p><img src="/2021/08/12/Aliyun/image-20210812195543979.png" alt="image-20210812195543979"></p>
+</li>
+<li><p>打包插件</p>
+<p><img src="/2021/08/12/Aliyun/image-20210812195427045.png" alt="image-20210812195427045"></p>
+</li>
+<li><p>使用一个类来启动Application</p>
+</li>
+</ol>
+<p><img src="/2021/08/12/Aliyun/image-20210812195331313.png" alt="image-20210812195331313"><br>5. maven-项目名-clean-install（得到war包）</p>
+<h2 id="创建数据库"><a href="#创建数据库" class="headerlink" title="创建数据库"></a>创建数据库</h2><h2 id="将war包上传到Tomcat"><a href="#将war包上传到Tomcat" class="headerlink" title="将war包上传到Tomcat"></a>将war包上传到Tomcat</h2><ol>
+<li><p>先停止tomcat</p>
+</li>
+<li><p>上传到webapps目录下</p>
+</li>
+<li><p>在bin下启动start.sh（启动tomcat自动解压webapps）</p>
+</li>
+</ol>
+<h1 id="分割线"><a href="#分割线" class="headerlink" title="==============分割线==============="></a>==============分割线===============</h1><h2 id="linux目录"><a href="#linux目录" class="headerlink" title="linux目录"></a>linux目录</h2><p>1、bin，这个文件夹存放的是普通用户使用的命令。如下图中我们都熟悉的yum zip mkdir……，与之对应的是sbin,存放的是管理员使用的命令。</p>
+<p>2、boot 这个目录中存放的是系统启动相关的文件，例如grub(引导安装的程序)</p>
+<p>3、dev 这个文件中存放的是一些计算机设备文件</p>
+<p>4、etc 这个目录中存放的是一些配置文件，如配置网络信息了，用户信息等（如图中network就存放着网络相关的配置信息。）。</p>
+<p>5、home 这各目录是用来存放，非root用户的家目录的，也就是你在登录普通用户后主机名后是“~”时所在的目录。</p>
+<p>6、root目录是root用户家目录的。</p>
+<p>7、run 是用来存放各种运行的数据，是运行中进程产生的文件。</p>
+<p>8、tmp,这个文件是用来存放临时文件的，进程产生的文件。</p>
+<p><strong>9、usr存放系统文件，相当于windows 的C:/windows 文件。</strong></p>
+<p>10、var存放的是一写变化的文件，如日志、数据库等</p>
 
       
     </div>
@@ -332,7 +453,7 @@
 
 
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/33/">33</a><a class="extend next" rel="next" href="/page/5/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/32/">32</a><a class="extend next" rel="next" href="/page/5/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 

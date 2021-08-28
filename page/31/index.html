@@ -197,7 +197,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">33</span>
+          <span class="site-state-item-count">32</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -210,7 +210,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">19</span>
+        <span class="site-state-item-count">18</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -256,7 +256,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://windsfox.github.io/2020/12/25/MyJava/">
+    <link itemprop="mainEntityOfPage" href="http://windsfox.github.io/2020/12/22/hexo/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/kong.jpg">
@@ -269,7 +269,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2020/12/25/MyJava/" class="post-title-link" itemprop="url">Java学习</a>
+          <a href="/2020/12/22/hexo/" class="post-title-link" itemprop="url">hexo学习</a>
         </h2>
 
         <div class="post-meta-container">
@@ -280,14 +280,14 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2020-12-25 15:32:43" itemprop="dateCreated datePublished" datetime="2020-12-25T15:32:43+08:00">2020-12-25</time>
+      <time title="创建时间：2020-12-22 15:09:00" itemprop="dateCreated datePublished" datetime="2020-12-22T15:09:00+08:00">2020-12-22</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-01-19 21:13:50" itemprop="dateModified" datetime="2021-01-19T21:13:50+08:00">2021-01-19</time>
+        <time title="修改时间：2020-12-29 22:07:37" itemprop="dateModified" datetime="2020-12-29T22:07:37+08:00">2020-12-29</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -295,7 +295,7 @@
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
+          <a href="/categories/%E5%85%B6%E4%BB%96/" itemprop="url" rel="index"><span itemprop="name">其他</span></a>
         </span>
     </span>
 
@@ -309,35 +309,9 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="多线程"><a href="#多线程" class="headerlink" title="多线程"></a>多线程</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyThread</span> <span class="keyword">extends</span> <span class="title">Thread</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(Thread.currntThread.getName() + <span class="string">&quot;正在运行&quot;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>但是一般不这样用，使用Runnable接口，这样以后该线程还可以去继承其他类</p>
-<p>如下：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test01</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        MyRunnable r = <span class="keyword">new</span> MyRunnable();</span><br><span class="line">        Thread t = <span class="keyword">new</span> Thread(r);</span><br><span class="line">        t.setName(<span class="string">&quot;张一航&quot;</span>);</span><br><span class="line">        t.start();</span><br><span class="line">        <span class="comment">// 模拟5秒</span></span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            Thread.sleep(<span class="number">1000</span>*<span class="number">5</span>);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//五秒后结束进程</span></span><br><span class="line"></span><br><span class="line">        r.run = <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyRunnable</span> <span class="keyword">implements</span> <span class="title">Runnable</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">boolean</span> run = <span class="keyword">true</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span> <span class="params">()</span></span>&#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>;i&lt;<span class="number">10</span>;i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(run)&#123;</span><br><span class="line">                System.out.println(Thread.currentThread().getName() + <span class="string">&quot;--&gt;&quot;</span> + i);</span><br><span class="line">                <span class="keyword">try</span> &#123;</span><br><span class="line">                    Thread.sleep(<span class="number">1000</span>);</span><br><span class="line">                &#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">                    e.printStackTrace();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="comment">//终止线程</span></span><br><span class="line">                <span class="comment">//save-- 保存数据</span></span><br><span class="line">                <span class="keyword">return</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//这是一个终止线程的例子，更简单的唤醒线程使用Thread.interrupt();就行了</span></span><br></pre></td></tr></table></figure>
-<p><img src="/2020/12/25/MyJava/image-20201226233017626.png" alt="线程基本图"></p>
-<p>线程调度方法：</p>
-<p>​    实例方法：void setPriority(int newPriority) 设置线程的优先级</p>
-<p>​            int getPriority()获取线程优先级；最低优先级1，最高优先级10，，默认优先级5</p>
-<p>​    静态方法：static void yield()让位方法；暂停当前正在执行的的线程对象，并执行其他线程</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Thread.join();<span class="comment">//将改Thead加入到执行中，本句所在线程进入阻塞状态</span></span><br></pre></td></tr></table></figure>
-<h2 id="线程安全是重点"><a href="#线程安全是重点" class="headerlink" title="线程安全是重点"></a>线程安全是重点</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">synchronized</span>(<span class="keyword">this</span>) <span class="comment">//放入需要排队线程的共同操作对象</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li><p><strong>守护线程</strong></p>
-<p>用户线程结束，守护线程就结束（main是一个用户线程）</p>
-<p>守护线程一般是个死循环;用来备份数据的。</p>
-</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
-<p><img src="/2020/12/25/MyJava/image-20210102225839783.png" alt="image-20210102225839783"></p>
-<h1 id="反射"><a href="#反射" class="headerlink" title="反射"></a>反射</h1><p><img src="/2020/12/25/MyJava/image-20210103131543280.png" alt="反射01"></p>
-<p>class.forname导致类加载，导致类中的静态代码块执行。</p>
-<p>实例代码块：new实例的时候执行。</p>
-<p> <strong>如何拿到绝对路径</strong>（必须在src路径下）</p>
-<p><img src="/2020/12/25/MyJava/image-20210103134938850.png" alt="如何拿到绝对路径"></p>
-<p>利用反射创建类的优点：可以吧类名写在文件里，创建时候随意创建</p>
-<p><img src="/2020/12/25/MyJava/image-20210105215633572.png" alt="image-20210105215633572"></p>
-<p>是用资源绑定器：ResourceBundle.getBundle()</p>
-<p><img src="/2020/12/25/MyJava/image-20210105220848999.png" alt="image-20210105220848999"></p>
-<h2 id="通过反射给对象属性赋值"><a href="#通过反射给对象属性赋值" class="headerlink" title="通过反射给对象属性赋值"></a>通过反射给对象属性赋值</h2><p><img src="/2020/12/25/MyJava/image-20210107110806652.png" alt="image-20210107110806652"></p>
+          <h3 id="问题一"><a href="#问题一" class="headerlink" title="问题一"></a>问题一</h3><p>​    域名必须和git账户名一样</p>
+<h3 id="问题二"><a href="#问题二" class="headerlink" title="问题二"></a>问题二</h3><p>​    title后面的：必须英文，新建的page名称必须和配置文件中的一样，和title中的一样</p>
+<h3 id="问题三"><a href="#问题三" class="headerlink" title="问题三"></a>问题三</h3><p>​    本地服务器不需要hexo s，只需要刷新。</p>
 
       
     </div>
@@ -357,7 +331,7 @@
 
 
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/30/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/30/">30</a><span class="page-number current">31</span><a class="page-number" href="/page/32/">32</a><a class="page-number" href="/page/33/">33</a><a class="extend next" rel="next" href="/page/32/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/page/30/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/30/">30</a><span class="page-number current">31</span><a class="page-number" href="/page/32/">32</a><a class="extend next" rel="next" href="/page/32/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
