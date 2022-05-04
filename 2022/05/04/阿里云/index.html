@@ -1,129 +1,148 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  
-  
-  <title>阿里云 | Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="弹性计算购买服务器云服务实例ECS 设置实例密码：购买完服务器之后，在工作台——云服务实例打开后台界面   实例界面  设置安全组合安全规则端口放行   服务器向外访问都是放行的  安全组特点 一台ECS实例至少有一个安全组，可以同时有多个 一个安全组可以管理一个地域内的多台ECS实例，这些实例要求具有相同安全保护需求并相互信任 在没有设置允许访问的安全组规则的情况下，不同的安全组的ecs实例默认">
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>阿里云 | windsfox</title><meta name="keywords" content="madao Soraka StickFinger"><meta name="author" content="madao"><meta name="copyright" content="madao"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="弹性计算购买服务器云服务实例ECS 设置实例密码：购买完服务器之后，在工作台——云服务实例打开后台界面   实例界面  设置安全组合安全规则端口放行   服务器向外访问都是放行的  安全组特点 一台ECS实例至少有一个安全组，可以同时有多个 一个安全组可以管理一个地域内的多台ECS实例，这些实例要求具有相同安全保护需求并相互信任 在没有设置允许访问的安全组规则的情况下，不同的安全组的ecs实例默认">
 <meta property="og:type" content="article">
 <meta property="og:title" content="阿里云">
 <meta property="og:url" content="http://example.com/2022/05/04/%E9%98%BF%E9%87%8C%E4%BA%91/index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:site_name" content="windsfox">
 <meta property="og:description" content="弹性计算购买服务器云服务实例ECS 设置实例密码：购买完服务器之后，在工作台——云服务实例打开后台界面   实例界面  设置安全组合安全规则端口放行   服务器向外访问都是放行的  安全组特点 一台ECS实例至少有一个安全组，可以同时有多个 一个安全组可以管理一个地域内的多台ECS实例，这些实例要求具有相同安全保护需求并相互信任 在没有设置允许访问的安全组规则的情况下，不同的安全组的ecs实例默认">
-<meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://raw.githubusercontent.com/windsfox/blog_img/master/blog2022/image-20210812164352177.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/windsfox/blog_img/master/blog2022/image-20210812164514401.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/windsfox/blog_img/master/blog2022/image-20210812164646268.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/windsfox/blog_img/master/blog2022/image-20210812165503176.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/windsfox/blog_img/master/blog2022/image-20210812165650050.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/windsfox/blog_img/master/blog2022/image-20210812165907370.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/windsfox/blog_img/master/blog2022/image-20210812170033323.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/windsfox/blog_img/master/blog2022/image-20210812170256465.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/windsfox/blog_img/master/blog2022/image-20210812171123529.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/windsfox/blog_img/master/blog2022/image-20210812171226819.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/windsfox/blog_img/master/blog2022/image-20210812171258885.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/windsfox/blog_img/master/blog2022/1247170-20200422103217076-433323331.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/windsfox/blog_img/master/blog2022/1247170-20200422103709793-115390543.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/windsfox/blog_img/master/blog2022/1247170-20200422103824762-1611462059.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/windsfox/blog_img/master/blog2022/1247170-20200422104107030-1736300756.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/windsfox/blog_img/master/blog2022/1247170-20200422104606682-2039274759.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/windsfox/blog_img/master/blog2022/1247170-20200422104621635-655108759.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/windsfox/blog_img/master/blog2022/1247170-20200422104901825-586473901.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/windsfox/blog_img/master/blog2022/1247170-20200422105004987-154840583.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/windsfox/blog_img/master/blog2022/1247170-20200422104959930-2127014322.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/windsfox/blog_img/master/blog2022/1247170-20200422105809411-1554988867.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/windsfox/blog_img/master/blog2022/1247170-20200422105924947-1584919177.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/windsfox/blog_img/master/blog2022/image-20210812193406362.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/windsfox/blog_img/master/blog2022/image-20210812195543979.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/windsfox/blog_img/master/blog2022/image-20210812195427045.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/windsfox/blog_img/master/blog2022/image-20210812195331313.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/windsfox/blog_img/master/blog2022/image-20210925212042402.png">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png">
 <meta property="article:published_time" content="2022-05-04T07:19:49.000Z">
 <meta property="article:modified_time" content="2022-05-04T08:05:12.600Z">
-<meta property="article:author" content="John Doe">
+<meta property="article:author" content="madao">
+<meta property="article:tag" content="madao Soraka StickFinger">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/windsfox/blog_img/master/blog2022/image-20210812164352177.png">
-  
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
-  
-  
-    <link rel="shortcut icon" href="/favicon.png">
-  
-  
-    
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+<meta name="twitter:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2022/05/04/%E9%98%BF%E9%87%8C%E4%BA%91/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '阿里云',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-05-04 16:05:12'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
 
-  
-  
-<link rel="stylesheet" href="/css/style.css">
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
 
-  
-    
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
 
-  
-<meta name="generator" content="Hexo 6.1.0"></head>
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
 
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
-      </h1>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
-      </div>
-    </div>
-  </div>
-</header>
-
-      <div class="outer">
-        <section id="main"><article id="post-阿里云" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/05/04/%E9%98%BF%E9%87%8C%E4%BA%91/" class="article-date">
-  <time class="dt-published" datetime="2022-05-04T07:19:49.000Z" itemprop="datePublished">2022-05-04</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
   
-    <h1 class="p-name article-title" itemprop="headline name">
-      阿里云
-    </h1>
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
   
-
-      </header>
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
     
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="弹性计算"><a href="#弹性计算" class="headerlink" title="弹性计算"></a>弹性计算</h1><h1 id="购买服务器"><a href="#购买服务器" class="headerlink" title="购买服务器"></a>购买服务器</h1><p>云服务实例ECS</p>
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.1.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">9</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">windsfox</a></span><div id="menus"><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">阿里云</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-05-04T07:19:49.000Z" title="发表于 2022-05-04 15:19:49">2022-05-04</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-05-04T08:05:12.600Z" title="更新于 2022-05-04 16:05:12">2022-05-04</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="阿里云"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="弹性计算"><a href="#弹性计算" class="headerlink" title="弹性计算"></a>弹性计算</h1><h1 id="购买服务器"><a href="#购买服务器" class="headerlink" title="购买服务器"></a>购买服务器</h1><p>云服务实例ECS</p>
 <h1 id="设置实例密码："><a href="#设置实例密码：" class="headerlink" title="设置实例密码："></a>设置实例密码：</h1><p>购买完服务器之后，在工作台——云服务实例打开后台界面</p>
 <p><img src="https://raw.githubusercontent.com/windsfox/blog_img/master/blog2022/image-20210812164352177.png" alt="image-20210812164352177"></p>
 <p><img src="https://raw.githubusercontent.com/windsfox/blog_img/master/blog2022/image-20210812164514401.png" alt="image-20210812164514401"></p>
@@ -270,135 +289,4 @@
 <p>10、var存放的是一写变化的文件，如日志、数据库等</p>
 <h1 id="tips："><a href="#tips：" class="headerlink" title="tips："></a>tips：</h1><p>accesskey入口：</p>
 <p><img src="https://raw.githubusercontent.com/windsfox/blog_img/master/blog2022/image-20210925212042402.png" alt="image-20210925212042402"></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/05/04/%E9%98%BF%E9%87%8C%E4%BA%91/" data-id="cl2r96h920002k8vs3u6j5llv" data-title="阿里云" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/2022/05/04/%E7%88%AC%E8%99%AB/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          爬虫
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2022/05/04/Typora-PicGo/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Typora+PicGo</div>
-    </a>
-  
-</nav>
-
-  
-</article>
-
-
-</section>
-        
-          <aside id="sidebar">
-  
-    
-
-  
-    
-
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2022/05/04/%E7%BB%BC%E5%90%88%E8%AE%BE%E8%AE%A1/">综合设计</a>
-          </li>
-        
-          <li>
-            <a href="/2022/05/04/%E7%BB%BC%E5%90%88%E8%AE%BE%E8%AE%A1%E6%88%90%E5%8A%9F/">综合设计成功</a>
-          </li>
-        
-          <li>
-            <a href="/2022/05/04/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">吴恩达机器学习</a>
-          </li>
-        
-          <li>
-            <a href="/2022/05/04/%E7%88%AC%E8%99%AB/">爬虫</a>
-          </li>
-        
-          <li>
-            <a href="/2022/05/04/%E9%98%BF%E9%87%8C%E4%BA%91/">阿里云</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      
-      &copy; 2022 John Doe<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
-
-
-<script src="/js/jquery-3.4.1.min.js"></script>
-
-
-
-  
-<script src="/fancybox/jquery.fancybox.min.js"></script>
-
-
-
-
-<script src="/js/script.js"></script>
-
-
-
-
-
-  </div>
-</body>
-</html>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://example.com">madao</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2022/05/04/%E9%98%BF%E9%87%8C%E4%BA%91/">http://example.com/2022/05/04/%E9%98%BF%E9%87%8C%E4%BA%91/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">windsfox</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/gh/overtrue/share.js@master/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/05/04/%E7%88%AC%E8%99%AB/"><img class="prev-cover" src="/" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">爬虫</div></div></a></div><div class="next-post pull-right"><a href="/2022/05/04/Typora-PicGo/"><img class="next-cover" src="/" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Typora+PicGo</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">madao</div><div class="author-info__description">something is made of stuff</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">9</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BC%B9%E6%80%A7%E8%AE%A1%E7%AE%97"><span class="toc-number">1.</span> <span class="toc-text">弹性计算</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%B4%AD%E4%B9%B0%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="toc-number">2.</span> <span class="toc-text">购买服务器</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE%E5%AE%9E%E4%BE%8B%E5%AF%86%E7%A0%81%EF%BC%9A"><span class="toc-number">3.</span> <span class="toc-text">设置实例密码：</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE%E5%AE%89%E5%85%A8%E7%BB%84%E5%90%88%E5%AE%89%E5%85%A8%E8%A7%84%E5%88%99"><span class="toc-number">4.</span> <span class="toc-text">设置安全组合安全规则</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AB%AF%E5%8F%A3%E6%94%BE%E8%A1%8C"><span class="toc-number">4.1.</span> <span class="toc-text">端口放行</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E5%85%A8%E7%BB%84%E7%89%B9%E7%82%B9"><span class="toc-number">4.2.</span> <span class="toc-text">安全组特点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E5%AE%89%E5%85%A8%E7%BB%84"><span class="toc-number">4.3.</span> <span class="toc-text">创建安全组</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Xshell%E5%92%8CXftp%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8"><span class="toc-number">5.</span> <span class="toc-text">Xshell和Xftp安装和使用</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85"><span class="toc-number">6.</span> <span class="toc-text">环境安装</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85JDK"><span class="toc-number">6.1.</span> <span class="toc-text">安装JDK</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E6%95%B0%E6%8D%AE%E5%BA%93%EF%BC%88MariaDB%EF%BC%89"><span class="toc-number">6.2.</span> <span class="toc-text">安装数据库（MariaDB）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85fastDFS%E5%92%8CNginx"><span class="toc-number">6.3.</span> <span class="toc-text">安装fastDFS和Nginx</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AENginx%E7%9A%84config%E6%96%87%E4%BB%B6"><span class="toc-number">6.4.</span> <span class="toc-text">配置Nginx的config文件</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%89%8D%E5%90%8E%E7%AB%AF%E5%88%86%E5%88%AB%E6%89%93%E5%8C%85"><span class="toc-number">7.</span> <span class="toc-text">前后端分别打包</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-number">7.1.</span> <span class="toc-text">创建数据库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B0%86war%E5%8C%85%E4%B8%8A%E4%BC%A0%E5%88%B0Tomcat"><span class="toc-number">7.2.</span> <span class="toc-text">将war包上传到Tomcat</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#x3D-x3D-x3D-x3D-x3D-x3D-x3D-x3D-x3D-x3D-x3D-x3D-x3D-x3D-%E5%88%86%E5%89%B2%E7%BA%BF-x3D-x3D-x3D-x3D-x3D-x3D-x3D-x3D-x3D-x3D-x3D-x3D-x3D-x3D-x3D"><span class="toc-number">8.</span> <span class="toc-text">&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;分割线&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#linux%E7%9B%AE%E5%BD%95"><span class="toc-number">8.1.</span> <span class="toc-text">linux目录</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#tips%EF%BC%9A"><span class="toc-number">9.</span> <span class="toc-text">tips：</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><div class="content"><a class="title" href="/2022/05/04/%E7%BB%BC%E5%90%88%E8%AE%BE%E8%AE%A1/" title="综合设计">综合设计</a><time datetime="2022-05-04T07:20:21.000Z" title="发表于 2022-05-04 15:20:21">2022-05-04</time></div></div><div class="aside-list-item"><div class="content"><a class="title" href="/2022/05/04/%E7%BB%BC%E5%90%88%E8%AE%BE%E8%AE%A1%E6%88%90%E5%8A%9F/" title="综合设计成功">综合设计成功</a><time datetime="2022-05-04T07:20:15.000Z" title="发表于 2022-05-04 15:20:15">2022-05-04</time></div></div><div class="aside-list-item"><div class="content"><a class="title" href="/2022/05/04/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" title="吴恩达机器学习">吴恩达机器学习</a><time datetime="2022-05-04T07:20:06.000Z" title="发表于 2022-05-04 15:20:06">2022-05-04</time></div></div><div class="aside-list-item"><div class="content"><a class="title" href="/2022/05/04/%E7%88%AC%E8%99%AB/" title="爬虫">爬虫</a><time datetime="2022-05-04T07:19:59.000Z" title="发表于 2022-05-04 15:19:59">2022-05-04</time></div></div><div class="aside-list-item"><div class="content"><a class="title" href="/2022/05/04/%E9%98%BF%E9%87%8C%E4%BA%91/" title="阿里云">阿里云</a><time datetime="2022-05-04T07:19:49.000Z" title="发表于 2022-05-04 15:19:49">2022-05-04</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By madao</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
