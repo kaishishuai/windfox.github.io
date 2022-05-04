@@ -110,7 +110,7 @@
 <ol>
 <li>在此目录下运行下面命令</li>
 </ol>
-<p><img src="https://gitee.com/gitzuo/blog2021/raw/master/blog2022/image-20210817124854046.png" alt="image-20210817124854046"></p>
+<p><img src="https://raw.githubusercontent.com/windsfox/blog_img/master/blog2022/image-20210817124854046.png" alt="image-20210817124854046"></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python object_detection/model_main.py --pipeline_config_path=training_my/ssdlite_mobilenet_v2_coco.config --model_dir=training_my --alsologtostderr</span><br></pre></td></tr></table></figure>
 
 <ol>
@@ -449,10 +449,10 @@
 <p>nohup python  object_detection&#x2F;model_main.py –pipeline_config_path&#x3D;training_my&#x2F;ssd_mobilenet_v2_oid_v4.config –model_dir&#x3D;training_my –sample_1_of_n_eval_examples&#x3D;25 –alsologtostderr   &gt;&#x2F;dev&#x2F;null  2&gt;log.file &amp;</p>
 <p>tensorboard –logdir&#x3D;training_my</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">https://www.cnblogs.com/matpool/p/14504908.html</span><br><span class="line"></span><br><span class="line">根据这篇文章，使用隧道连接，有意思的是xshell中只允许ip地址，不允许域名，所以我们只能使用命令行，进行隧道连接</span><br><span class="line"></span><br><span class="line">因为命令行会dns解析。</span><br><span class="line"></span><br><span class="line">睡觉喽。</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>ssh -p 26937 -NL 6006:localhost:6006 <a href="mailto:&#114;&#111;&#111;&#x74;&#x40;&#x68;&#x7a;&#x2d;&#x74;&#51;&#46;&#x6d;&#97;&#x74;&#112;&#x6f;&#111;&#108;&#46;&#99;&#x6f;&#x6d;">&#114;&#111;&#111;&#x74;&#x40;&#x68;&#x7a;&#x2d;&#x74;&#51;&#46;&#x6d;&#97;&#x74;&#112;&#x6f;&#111;&#108;&#46;&#99;&#x6f;&#x6d;</a>(最后这个是主机名)</p>
+<p>ssh -p 26937 -NL 6006:localhost:6006 <a href="mailto:&#114;&#x6f;&#111;&#x74;&#x40;&#104;&#x7a;&#45;&#x74;&#51;&#x2e;&#109;&#x61;&#x74;&#x70;&#x6f;&#111;&#x6c;&#46;&#99;&#x6f;&#x6d;">&#114;&#x6f;&#111;&#x74;&#x40;&#104;&#x7a;&#45;&#x74;&#51;&#x2e;&#109;&#x61;&#x74;&#x70;&#x6f;&#111;&#x6c;&#46;&#99;&#x6f;&#x6d;</a>(最后这个是主机名)</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">然后就可在本地6006访问远程的tensorBoard了</span><br><span class="line"></span><br><span class="line">![image-20211124124146403](https://gitee.com/gitzuo/blog2021/raw/master/blog2021/image-20211124124146403.png)</span><br><span class="line"></span><br><span class="line">![image-20211124124103368](https://gitee.com/gitzuo/blog2021/raw/master/blog2021/image-20211124124103368.png)</span><br><span class="line"></span><br><span class="line">可以看到对大物体的检测效果已经很好了，但是对小物体的检测效果却很垃圾（这一点我们尽量忽略，因为我们主要是在一个对准窗户的情景下，这样婴儿和窗户都会显得很大）</span><br><span class="line"></span><br><span class="line">![image-20211124131205474](https://gitee.com/gitzuo/blog2021/raw/master/blog2021/image-20211124131205474.png)</span><br><span class="line"></span><br><span class="line">现在的问题：检测人的效果非常好，但是窗户基本检测不出来了</span><br><span class="line"></span><br><span class="line"># 训练两个模型，</span><br><span class="line"></span><br><span class="line">一个检测窗户，一个检测人体，检测人体用上面那个就OK了</span><br><span class="line"></span><br><span class="line">现在我们来制作窗户数据集：</span><br><span class="line"></span><br><span class="line">制作好后训练：但这次采用coco的配置文件</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <p>nohup python object_detection&#x2F;model_main.py –pipeline_config_path&#x3D;training&#x2F;ssdlite_mobilenet_v2_coco.config –model_dir&#x3D;training  –alsologtostderr   &gt;&#x2F;dev&#x2F;null  2&gt;log.file &amp;</p>
-<p>ssh -p 29689 -NL 6006:localhost:6006 <a href="mailto:&#x72;&#111;&#111;&#116;&#64;&#x68;&#x7a;&#x2d;&#116;&#x33;&#46;&#x6d;&#x61;&#116;&#112;&#x6f;&#111;&#x6c;&#46;&#99;&#111;&#x6d;">&#x72;&#111;&#111;&#116;&#64;&#x68;&#x7a;&#x2d;&#116;&#x33;&#46;&#x6d;&#x61;&#116;&#112;&#x6f;&#111;&#x6c;&#46;&#99;&#111;&#x6d;</a></p>
+<p>ssh -p 29689 -NL 6006:localhost:6006 <a href="mailto:&#114;&#x6f;&#111;&#x74;&#64;&#104;&#122;&#x2d;&#116;&#x33;&#x2e;&#x6d;&#x61;&#116;&#x70;&#x6f;&#x6f;&#x6c;&#46;&#99;&#111;&#109;">&#114;&#x6f;&#111;&#x74;&#64;&#104;&#122;&#x2d;&#116;&#x33;&#x2e;&#x6d;&#x61;&#116;&#x70;&#x6f;&#x6f;&#x6c;&#46;&#99;&#111;&#109;</a></p>
 <p>tensorboard –logdir&#x3D;training</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">![image-20211124184713604](https://gitee.com/gitzuo/blog2021/raw/master/blog2021/image-20211124184713604.png)</span><br><span class="line"></span><br><span class="line">我现在怀疑是coco模型的问题。</span><br><span class="line"></span><br><span class="line">![image-20211124203917869](https://gitee.com/gitzuo/blog2021/raw/master/blog2021/image-20211124203917869.png)</span><br><span class="line"></span><br><span class="line">![image-20211124204214095](https://gitee.com/gitzuo/blog2021/raw/master/blog2021/image-20211124204214095.png)</span><br><span class="line"></span><br><span class="line">实际效果不太行</span><br><span class="line"></span><br><span class="line">改用oid模型：</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <p>nohup python object_detection&#x2F;model_main.py –pipeline_config_path&#x3D;training&#x2F;ssd_mobilenet_v2_oid_v4.config –model_dir&#x3D;training  –alsologtostderr   &gt;&#x2F;dev&#x2F;null  2&gt;log.file &amp;</p>
@@ -560,7 +560,7 @@
         <p>本文用于记录综合设计中成功的步骤，思路加步骤移步综合设计.md</p>
 <h1 id="安装环境"><a href="#安装环境" class="headerlink" title="安装环境"></a>安装环境</h1><p>先自行安装VSC++和Ananconda</p>
 <p>新建一个名为PYTHONPATH的环境变量：</p>
-<p><img src="https://gitee.com/gitzuo/blog2021/raw/master/blog2022/image-20220504125505736.png" alt="image-20220504125505736"></p>
+<p><img src="https://raw.githubusercontent.com/windsfox/blog_img/master/blog2022/image-20220504125505736.png" alt="image-20220504125505736"></p>
 <p>同时将上面三个路径复制到PATH里。</p>
 <p>安装protoc：</p>
 <ol>
@@ -575,7 +575,7 @@
 <p>cuda：<a target="_blank" rel="noopener" href="https://developer.nvidia.com/cuda-toolkit-archive">https://developer.nvidia.com/cuda-toolkit-archive</a></p>
 <p>cuda：10.0，cudnn：7.4 tensorflow：1.14</p>
 <p>安装cuda的时候选择local，只选择这四个</p>
-<p><img src="https://gitee.com/gitzuo/blog2021/raw/master/blog2022/image-20220504125543190.png" alt="image-20220504125543190"></p>
+<p><img src="https://raw.githubusercontent.com/windsfox/blog_img/master/blog2022/image-20220504125543190.png" alt="image-20220504125543190"></p>
 <p>cudnn下载好后，将里面的三个文件夹复制到C盘里的cuda10.0的目录，完成</p>
 <h1 id="准备数据集"><a href="#准备数据集" class="headerlink" title="准备数据集"></a>准备数据集</h1><p>参考：<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/3d9436b4cb66">https://www.jianshu.com/p/3d9436b4cb66</a></p>
 <p>标注数据集：labelimg</p>
@@ -715,13 +715,13 @@
       
         <h1 id="深度学习模型"><a href="#深度学习模型" class="headerlink" title="深度学习模型"></a>深度学习模型</h1><p>房价预测：standrad NN；图像预测：CNN；音频和语言翻译：RNN；</p>
 <p>自动驾驶：image，Radar info更复制的神经网络结构</p>
-<p><img src="https://gitee.com/gitzuo/blog2021/raw/master/blog2022/image-20210103170840250.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/windsfox/blog_img/master/blog2022/image-20210103170840250.png" alt="img"></p>
 <p><strong>传统机器学习的弊端</strong></p>
-<p><img src="https://gitee.com/gitzuo/blog2021/raw/master/blog2022/image-20210103171237693.png" alt="传统学习方法弊端"></p>
-<h2 id="二分类："><a href="#二分类：" class="headerlink" title="二分类："></a>二分类：</h2><p><img src="https://gitee.com/gitzuo/blog2021/raw/master/blog2022/image-20210215113650842.png" alt="image-20210215113650842"></p>
+<p><img src="https://raw.githubusercontent.com/windsfox/blog_img/master/blog2022/image-20210103171237693.png" alt="传统学习方法弊端"></p>
+<h2 id="二分类："><a href="#二分类：" class="headerlink" title="二分类："></a>二分类：</h2><p><img src="https://raw.githubusercontent.com/windsfox/blog_img/master/blog2022/image-20210215113650842.png" alt="image-20210215113650842"></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">三通道的图像，代表了3*像素点*像素点的图像数据，n_x = 3*64*64（64X64的图片）</span><br><span class="line">训练集的特征是一个n_x行，m列的矩阵</span><br><span class="line">标签是一个一行，m列的矩阵</span><br></pre></td></tr></table></figure>
 
-<h2 id="logistic-回归："><a href="#logistic-回归：" class="headerlink" title="logistic 回归："></a>logistic 回归：</h2><p><img src="https://gitee.com/gitzuo/blog2021/raw/master/blog2022/image-20210215121217431.png" alt="image-20210215121217431"></p>
+<h2 id="logistic-回归："><a href="#logistic-回归：" class="headerlink" title="logistic 回归："></a>logistic 回归：</h2><p><img src="https://raw.githubusercontent.com/windsfox/blog_img/master/blog2022/image-20210215121217431.png" alt="image-20210215121217431"></p>
 
       
     </div>
@@ -815,7 +815,7 @@
 <p>ps:一个网站登录上后，再用爬虫爬的时候可能找不到验证码的位置</p>
 <h1 id="PS"><a href="#PS" class="headerlink" title="PS:"></a>PS:</h1><ol>
 <li>有时候拿到的src不全，需要进行字符串拼接</li>
-<li>div的class中有些无法获取，如：<img src="https://gitee.com/gitzuo/blog2021/raw/master/blog2022/image-20210122232346354.png" alt="image-20210122232346354"></li>
+<li>div的class中有些无法获取，如：<img src="https://raw.githubusercontent.com/windsfox/blog_img/master/blog2022/image-20210122232346354.png" alt="image-20210122232346354"></li>
 <li>在使用etree.xpath()的时候需要删去，如</li>
 </ol>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a_list = tree.xpath(&#x27;//div[@class=&quot;box col3 ws_block&quot;]&#x27;)</span><br></pre></td></tr></table></figure>
@@ -870,15 +870,15 @@
       
         <h1 id="弹性计算"><a href="#弹性计算" class="headerlink" title="弹性计算"></a>弹性计算</h1><h1 id="购买服务器"><a href="#购买服务器" class="headerlink" title="购买服务器"></a>购买服务器</h1><p>云服务实例ECS</p>
 <h1 id="设置实例密码："><a href="#设置实例密码：" class="headerlink" title="设置实例密码："></a>设置实例密码：</h1><p>购买完服务器之后，在工作台——云服务实例打开后台界面</p>
-<p><img src="https://gitee.com/gitzuo/blog2021/raw/master/blog2022/image-20210812164352177.png" alt="image-20210812164352177"></p>
-<p><img src="https://gitee.com/gitzuo/blog2021/raw/master/blog2022/image-20210812164514401.png" alt="image-20210812164514401"></p>
+<p><img src="https://raw.githubusercontent.com/windsfox/blog_img/master/blog2022/image-20210812164352177.png" alt="image-20210812164352177"></p>
+<p><img src="https://raw.githubusercontent.com/windsfox/blog_img/master/blog2022/image-20210812164514401.png" alt="image-20210812164514401"></p>
 <p>实例界面</p>
-<p><img src="https://gitee.com/gitzuo/blog2021/raw/master/blog2022/image-20210812164646268.png" alt="image-20210812164646268"></p>
-<h1 id="设置安全组合安全规则"><a href="#设置安全组合安全规则" class="headerlink" title="设置安全组合安全规则"></a>设置安全组合安全规则</h1><h2 id="端口放行"><a href="#端口放行" class="headerlink" title="端口放行"></a>端口放行</h2><p><img src="https://gitee.com/gitzuo/blog2021/raw/master/blog2022/image-20210812165503176.png" alt="image-20210812165503176"></p>
-<p><img src="https://gitee.com/gitzuo/blog2021/raw/master/blog2022/image-20210812165650050.png" alt="image-20210812165650050"></p>
-<p><img src="https://gitee.com/gitzuo/blog2021/raw/master/blog2022/image-20210812165907370.png" alt="image-20210812165907370"></p>
+<p><img src="https://raw.githubusercontent.com/windsfox/blog_img/master/blog2022/image-20210812164646268.png" alt="image-20210812164646268"></p>
+<h1 id="设置安全组合安全规则"><a href="#设置安全组合安全规则" class="headerlink" title="设置安全组合安全规则"></a>设置安全组合安全规则</h1><h2 id="端口放行"><a href="#端口放行" class="headerlink" title="端口放行"></a>端口放行</h2><p><img src="https://raw.githubusercontent.com/windsfox/blog_img/master/blog2022/image-20210812165503176.png" alt="image-20210812165503176"></p>
+<p><img src="https://raw.githubusercontent.com/windsfox/blog_img/master/blog2022/image-20210812165650050.png" alt="image-20210812165650050"></p>
+<p><img src="https://raw.githubusercontent.com/windsfox/blog_img/master/blog2022/image-20210812165907370.png" alt="image-20210812165907370"></p>
 <p>服务器向外访问都是放行的</p>
-<p><img src="https://gitee.com/gitzuo/blog2021/raw/master/blog2022/image-20210812170033323.png" alt="image-20210812170033323"></p>
+<p><img src="https://raw.githubusercontent.com/windsfox/blog_img/master/blog2022/image-20210812170033323.png" alt="image-20210812170033323"></p>
 <h2 id="安全组特点"><a href="#安全组特点" class="headerlink" title="安全组特点"></a>安全组特点</h2><ul>
 <li>一台ECS实例至少有一个安全组，可以同时有多个</li>
 <li>一个安全组可以管理一个地域内的多台ECS实例，这些实例要求具有相同安全保护需求并相互信任</li>
@@ -887,11 +887,11 @@
 <li>（仅普通安全组）可以通过安全组规则授权两个安全组之间互访</li>
 <li>安全组支持状态应用，一个有状态的会话连接中，会话最长的保持时间是910秒，安全组会默认放行同一通话中的通信，例如，在会话期间内，如果连接的数据包在入方向是允许的，则在出方向也是允许的</li>
 </ul>
-<h2 id="创建安全组"><a href="#创建安全组" class="headerlink" title="创建安全组"></a>创建安全组</h2><p><img src="https://gitee.com/gitzuo/blog2021/raw/master/blog2022/image-20210812170256465.png" alt="image-20210812170256465"></p>
-<p><img src="https://gitee.com/gitzuo/blog2021/raw/master/blog2022/image-20210812171123529.png" alt="image-20210812171123529"></p>
+<h2 id="创建安全组"><a href="#创建安全组" class="headerlink" title="创建安全组"></a>创建安全组</h2><p><img src="https://raw.githubusercontent.com/windsfox/blog_img/master/blog2022/image-20210812170256465.png" alt="image-20210812170256465"></p>
+<p><img src="https://raw.githubusercontent.com/windsfox/blog_img/master/blog2022/image-20210812171123529.png" alt="image-20210812171123529"></p>
 <p>绑定安全组到实例</p>
-<p><img src="https://gitee.com/gitzuo/blog2021/raw/master/blog2022/image-20210812171226819.png" alt="image-20210812171226819"></p>
-<p><img src="https://gitee.com/gitzuo/blog2021/raw/master/blog2022/image-20210812171258885.png" alt="image-20210812171258885"></p>
+<p><img src="https://raw.githubusercontent.com/windsfox/blog_img/master/blog2022/image-20210812171226819.png" alt="image-20210812171226819"></p>
+<p><img src="https://raw.githubusercontent.com/windsfox/blog_img/master/blog2022/image-20210812171258885.png" alt="image-20210812171258885"></p>
 <h1 id="Xshell和Xftp安装和使用"><a href="#Xshell和Xftp安装和使用" class="headerlink" title="Xshell和Xftp安装和使用"></a>Xshell和Xftp安装和使用</h1><h1 id="环境安装"><a href="#环境安装" class="headerlink" title="环境安装"></a>环境安装</h1><h2 id="安装JDK"><a href="#安装JDK" class="headerlink" title="安装JDK"></a>安装JDK</h2><ol>
 <li><p>解压JDK到<code>/usr/java</code>目录下</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf jdk-9.0.1</span><br></pre></td></tr></table></figure>
@@ -919,7 +919,7 @@
 <p><strong>使用MariaDB代替mysql数据库（MariaDB数据库管理系统是MySQL的一个分支，主要由开源社区在维护，采用GPL授权许可。开发这个分支的原因之一是：甲骨文公司收购了MySQL后，有将MySQL闭源的潜在风险，因此社区采用分支的方式来避开这个风险。</strong></p>
 <p>1.首先确定centos版本</p>
 <p>cat &#x2F;etc&#x2F;redhat-release</p>
-<p><img src="https://gitee.com/gitzuo/blog2021/raw/master/blog2022/1247170-20200422103217076-433323331.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/windsfox/blog_img/master/blog2022/1247170-20200422103217076-433323331.png" alt="img"></p>
 <p>2.yum安装</p>
 <p>yum -y install mariadb-server</p>
 <p>3.启动服务</p>
@@ -933,34 +933,34 @@
 <p>mysql -uroot -p123456</p>
 <p>【修改mysql(yum安装)字符集及端口号】</p>
 <p>登录进入mysql后 查看字符集</p>
-<p><img src="https://gitee.com/gitzuo/blog2021/raw/master/blog2022/1247170-20200422103709793-115390543.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/windsfox/blog_img/master/blog2022/1247170-20200422103709793-115390543.png" alt="img"></p>
 <p>8.更改字符集及端口</p>
 <p>vim &#x2F;etc&#x2F;my.cnf</p>
-<p><img src="https://gitee.com/gitzuo/blog2021/raw/master/blog2022/1247170-20200422103824762-1611462059.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/windsfox/blog_img/master/blog2022/1247170-20200422103824762-1611462059.png" alt="img"></p>
 <p>9.重新启动mysql</p>
 <p>systemctl restart mariadb.service 或者 systemctl restart mariadb</p>
 <p>如果无法重启 可以通过 ps -ef | grep mysql 查找进程号 然后kill掉 再重启</p>
 <p>10.再次登录mysql 查看字符集</p>
-<p><img src="https://gitee.com/gitzuo/blog2021/raw/master/blog2022/1247170-20200422104107030-1736300756.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/windsfox/blog_img/master/blog2022/1247170-20200422104107030-1736300756.png" alt="img"></p>
 <p>11 修改数据库字符集成功后 navicat连接数据库</p>
-<p><img src="https://gitee.com/gitzuo/blog2021/raw/master/blog2022/1247170-20200422104606682-2039274759.png" alt="img"></p>
-<p><img src="https://gitee.com/gitzuo/blog2021/raw/master/blog2022/1247170-20200422104621635-655108759.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/windsfox/blog_img/master/blog2022/1247170-20200422104606682-2039274759.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/windsfox/blog_img/master/blog2022/1247170-20200422104621635-655108759.png" alt="img"></p>
 <p>连接过程遇到问题，百度了下解决方案，客户端连接报错</p>
 <p>这个问题是因为用户在数据库服务器中的mysql数据库中的user的表中没有权限</p>
 <p>（1）下面是解决客户端连接不上的问题</p>
 <p>连接服务器 mysql -u root -p</p>
 <p>输入密码进入数据库</p>
 <p>（2）</p>
-<p><img src="https://gitee.com/gitzuo/blog2021/raw/master/blog2022/1247170-20200422104901825-586473901.png" alt="img"></p>
-<p><img src="https://gitee.com/gitzuo/blog2021/raw/master/blog2022/1247170-20200422105004987-154840583.png" alt="img"></p>
-<p><img src="https://gitee.com/gitzuo/blog2021/raw/master/blog2022/1247170-20200422104959930-2127014322.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/windsfox/blog_img/master/blog2022/1247170-20200422104901825-586473901.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/windsfox/blog_img/master/blog2022/1247170-20200422105004987-154840583.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/windsfox/blog_img/master/blog2022/1247170-20200422104959930-2127014322.png" alt="img"></p>
 <p>（3） <strong>查看user表中的数据：select Host, User,Password from user;</strong></p>
 <p><strong>（4）上面localhost表示只允许本地连接 不能远程连接</strong></p>
 <p><strong>修改user表中的host</strong></p>
 <p><strong>update user set Host&#x3D;’%’ where User&#x3D;’root’ and Host&#x3D;”localhost”;</strong></p>
-<p><img src="https://gitee.com/gitzuo/blog2021/raw/master/blog2022/1247170-20200422105809411-1554988867.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/windsfox/blog_img/master/blog2022/1247170-20200422105809411-1554988867.png" alt="img"></p>
 <p>（5）重新navicate连接数据库客户端</p>
-<p><img src="https://gitee.com/gitzuo/blog2021/raw/master/blog2022/1247170-20200422105924947-1584919177.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/windsfox/blog_img/master/blog2022/1247170-20200422105924947-1584919177.png" alt="img"></p>
 <p>【遇到一个问题】</p>
 <p>Linux本地看不到完整的表</p>
 <p>【解决方案】</p>
@@ -974,7 +974,7 @@
 <h2 id="安装fastDFS和Nginx"><a href="#安装fastDFS和Nginx" class="headerlink" title="安装fastDFS和Nginx"></a>安装fastDFS和Nginx</h2><h2 id="配置Nginx的config文件"><a href="#配置Nginx的config文件" class="headerlink" title="配置Nginx的config文件"></a>配置Nginx的config文件</h2><ol>
 <li>配置配置文件</li>
 </ol>
-<p><img src="https://gitee.com/gitzuo/blog2021/raw/master/blog2022/image-20210812193406362.png" alt="image-20210812193406362"></p>
+<p><img src="https://raw.githubusercontent.com/windsfox/blog_img/master/blog2022/image-20210812193406362.png" alt="image-20210812193406362"></p>
 <ol>
 <li>启动Nginx</li>
 </ol>
@@ -986,15 +986,18 @@
 <h1 id="前后端分别打包"><a href="#前后端分别打包" class="headerlink" title="前后端分别打包"></a>前后端分别打包</h1><p>这里没有前端</p>
 <ol>
 <li><p>IDea后端打包，使用的原生的tomcat，需要将spring中内置的tomcat移出再打包</p>
-<p><img src="https://gitee.com/gitzuo/blog2021/raw/master/blog2022/image-20210812195543979.png" alt="image-20210812195543979"></p>
+<p><img src="https://raw.githubusercontent.com/windsfox/blog_img/master/blog2022/image-20210812195543979.png" alt="image-20210812195543979"></p>
 </li>
 <li><p>打包插件</p>
-<p><img src="https://gitee.com/gitzuo/blog2021/raw/master/blog2022/image-20210812195427045.png" alt="image-20210812195427045"></p>
+<p><img src="https://raw.githubusercontent.com/windsfox/blog_img/master/blog2022/image-20210812195427045.png" alt="image-20210812195427045"></p>
 </li>
 <li><p>使用一个类来启动Application</p>
 </li>
 </ol>
-<p><img src="https://gitee.com/gitzuo/blog2021/raw/master/blog2022/image-20210812195331313.png" alt="image-20210812195331313"><br>\5. maven-项目名-clean-install（得到war包）</p>
+<p><img src="https://raw.githubusercontent.com/windsfox/blog_img/master/blog2022/image-20210812195331313.png" alt="image-20210812195331313"></p>
+<ol start="5">
+<li>maven-项目名-clean-install（得到war包）</li>
+</ol>
 <h2 id="创建数据库"><a href="#创建数据库" class="headerlink" title="创建数据库"></a>创建数据库</h2><h2 id="将war包上传到Tomcat"><a href="#将war包上传到Tomcat" class="headerlink" title="将war包上传到Tomcat"></a>将war包上传到Tomcat</h2><ol>
 <li>先停止tomcat</li>
 <li>上传到webapps目录下</li>
@@ -1011,7 +1014,7 @@
 <p><strong>9、usr存放系统文件，相当于windows 的C:&#x2F;windows 文件。</strong></p>
 <p>10、var存放的是一写变化的文件，如日志、数据库等</p>
 <h1 id="tips："><a href="#tips：" class="headerlink" title="tips："></a>tips：</h1><p>accesskey入口：</p>
-<p><img src="https://gitee.com/gitzuo/blog2021/raw/master/blog2022/image-20210925212042402.png" alt="image-20210925212042402"></p>
+<p><img src="https://raw.githubusercontent.com/windsfox/blog_img/master/blog2022/image-20210925212042402.png" alt="image-20210925212042402"></p>
 
       
     </div>
@@ -1050,7 +1053,37 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        
+        <p>最近gitee上的图片要验证了，浏览器上没授权访问不了，还是用回github</p>
+<h1 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h1><p><a target="_blank" rel="noopener" href="https://github.com/Molunerfinn/picgo/releases">https://github.com/Molunerfinn/picgo/releases</a></p>
+<h1 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h1><p>这里只介绍Github配置：</p>
+<ol>
+<li>登录自己的github，点击头像，点击settings</li>
+<li>点击Developer Settings，点击Personal access tokens</li>
+<li>点击Generate new token</li>
+<li>权限第一个大项全选</li>
+<li>设置永不过期</li>
+<li>完成，复制token（它永远不会再次显示，你要自己记在自己的密码本上）</li>
+<li>新建一个仓库，创建一个文件夹</li>
+</ol>
+<p>PicGo配置：</p>
+<ol>
+<li>安装完成后运行，点击图床设置，github图床</li>
+<li>仓库名就是github名&#x2F;刚刚的仓库名</li>
+<li>token就是刚复制的</li>
+<li>指定路径，就是文件夹&#x2F;</li>
+<li>自定义域名：<a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/windsfox/blog_img/master">https://raw.githubusercontent.com/windsfox/blog_img/master</a></li>
+</ol>
+<h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><h2 id="success：false"><a href="#success：false" class="headerlink" title="success：false"></a>success：false</h2><p>这种情况一般是，之前上传的时候，图片已经传上去了，但是没有得到网络路径。 解决方案：你需要自己用替换功能，将图片那里的本地文件夹替换成上面说的自定义域名</p>
+<h2 id="fail-to-fetch"><a href="#fail-to-fetch" class="headerlink" title="fail to fetch"></a>fail to fetch</h2><p>这种情况是说，本地端口出现了问题 原因：你使用Typora会话框一起上传文件，会导致多个PicGo.exe进程同时占用原本的端口（36677）。有的就会开辟另外的端口（366771）但这就超出了本地端口地址的范围（65535） 解决方案：将所有上传进程关闭，打开客户端，点击PicGo设置，点击设置Server，将端口号设置为36677。然后重新一个一个上传</p>
+<h1 id="gitee"><a href="#gitee" class="headerlink" title="gitee"></a>gitee</h1><p>因为github上的图片有时候会被墙，所以现在改用gitee（插件需要nodejs）</p>
+<ol>
+<li>下载插件：<img src="https://raw.githubusercontent.com/windsfox/blog_img/master/blog2022/664e2152df89e60dec2f3b58e165f7b0.png" alt="image.png"></li>
+<li>设置拉到最下面里选择将gitee打开</li>
+<li>图床设置里，打开gitee<img src="https://raw.githubusercontent.com/windsfox/blog_img/master/blog2022/f9a9c7f5331a698c40251dfc0fe1e1e3.png" alt="image.png"></li>
+<li>设置为默认图床</li>
+</ol>
+<p><strong>文章作者：</strong><a target="_blank" rel="noopener" href="https://www.windsfox.top/"> windsfox</a></p>
+
       
     </div>
     <footer class="article-footer">
@@ -1178,7 +1211,7 @@
 
 <p>创建，不能复制文件。</p>
 <p>3， 文章中不能有一下符号</p>
-<p><img src="https://gitee.com/gitzuo/blog2021/raw/master/blog2022/image-20220504153744856.png" alt="image-20220504153744856"></p>
+<p><img src="https://raw.githubusercontent.com/windsfox/blog_img/master/blog2022/image-20220504153744856.png" alt="image-20220504153744856"></p>
 <p>最好用空格分开：{ {内容} }</p>
 
       
